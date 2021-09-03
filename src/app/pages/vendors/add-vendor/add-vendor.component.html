@@ -1,0 +1,108 @@
+<div class="card">
+    <div class="card-body">
+        <div class="d-block text-right">
+            <button class="btn btn-primary" routerLink="/vendors/vendorlist">Back</button>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Name" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label for="">Wristband ID</label>
+                <input type="text" placeholder="#433433" class="form-control" readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label>Father's Name</label>
+                <input type="text" placeholder="Name" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label for="">Mother's Name</label>
+                <input type="text" placeholder="Mother Name" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label for="">Gurdian's Name</label>
+                <input type="text" placeholder="Gurdian Name" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label for="">Parents Email</label>
+                <input type="email" placeholder="Add Your Email" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label>Select Gendor</label>
+               <select name="" id="" class="form-control">
+                   <option value="">Male</option>
+                   <option value="">Female</option>
+                   <!-- <option value="">Other</option> -->
+               </select>
+               </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label for="">Dob</label>
+                <input type="date" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label>Class Alotted</label>
+                <div class="form-group mat-form-control">
+                    <mat-form-field >
+                        <!-- <label>Class Alotted</label> -->
+                        <mat-select  >
+                          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Section</label>
+                    <select name="" id="" class="form-control">
+                        <option value="">A</option>
+                        <option value="">B</option>
+                        <option value="">C</option>
+                        <option value="">D</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Phone No.</label>
+                    <input type="text" placeholder="+91-344232343"  class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Alternate No.</label>
+                    <input type="text" placeholder="+91-344232343"  class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Medical Condition</label>
+                    <input type="text" placeholder="+91-344232343"  class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Location</label>
+                    <input type="text" placeholder="+91-344232343"  class="form-control">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

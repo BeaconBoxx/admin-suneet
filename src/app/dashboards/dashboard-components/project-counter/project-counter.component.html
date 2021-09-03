@@ -1,0 +1,69 @@
+<div class="card-group m-t-30">
+  <div class="card mb-2 mx-2">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="m-b-0">
+            <i class="mdi mdi-account-multiple text-info"></i>
+          </h2>
+          <h3 class="">650</h3>
+          <h6 class="card-subtitle">Total Users Registered</h6>
+        </div>
+        <div class="col-12">
+          <ngb-progressbar [showValue]="false" type="info" [value]="50"></ngb-progressbar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+  <!-- Column -->
+  <div class="card mb-2 mx-2">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="m-b-0">
+            <i class="mdi mdi-alert-circle text-success"></i>
+          </h2>
+          <h3 class="">1546</h3>
+          <h6 class="card-subtitle">Total Emergency messages</h6>
+        </div>
+        <div class="col-12">
+          <ngb-progressbar [showValue]="false" type="success" [value]="50"></ngb-progressbar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+  <!-- <div class="card mb-2 mx-2">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex">
+            <h2 class="m-b-0">
+              <i class="mdi mdi-phone text-warning"></i>
+            </h2>
+            <div ngbDropdown class="d-inline-block ml-auto">
+              <button class="btn btn-outline-primary btn-sm mr-2" id="dropdownBasic1" ngbDropdownToggle>
+                Help requests
+              </button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu dropdown-menu-right" (click)="Calls($event)">
+                <button class="dropdown-item" value="first">First Calls</button>
+                <button class="dropdown-item" value="emergency">Emergency Calls</button>
+              </div>
+            </div>
+          </div>
+          <div >
+            <h3 class="d-flex w-100" *ngIf="calls">First Calls <span class="text-primary pl-2">100</span></h3>
+            <h3 class="d-flex w-100" *ngIf="!calls">Emergency Calls <span class="text-primary pl-2">50</span></h3>
+          </div>
+          <h6 class="card-subtitle">Total Help Requests</h6>
+        </div>
+        <div class="col-12">
+          <ngb-progressbar [showValue]="false" type="warning" [value]="50"></ngb-progressbar>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- Column -->
+
+</div>

@@ -1,0 +1,47 @@
+<div class="row no-gutters my-3">
+    <div class="col-md-4">             
+        <div class="">
+          <input type="text" class="form-control" id="prenametext" placeholder="Search">
+        </div>              
+    </div>
+    <div class="col-md-8  text-right">
+      <!-- <div ngbDropdown class="d-inline-block">
+        <button
+          class="btn btn-outline-primary btn-sm mr-2"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+         All
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">ALL</button>
+          <button class="dropdown-item">Active</button>
+          <button class="dropdown-item">Inactive</button>
+        </div>
+      </div> -->
+    </div>
+  </div>
+<div class="table-responsive">
+    <table class="table">
+      <tr>
+        <th>#</th>
+        <th>Teacher Name</th>
+        <th>Wristband ID</th>
+        <th>Class</th>      
+        <th>Phone No</th>
+        <th>Qualification</th>
+        <th>Gendor</th>     
+        <th> Action</th>
+      </tr>
+      <tr *ngFor="let list of data">
+          <td>{{list.no}}</td>
+        <td>{{list.name}}</td>
+        <td>{{list.WristbandID}}</td>
+        <td>{{list.class}}</td>
+        <td>{{list.phoneNo}}</td>
+        <td>{{list.email}}</td>
+        <td><p class="mb-0">{{list.gendor}}</td>
+        <td><button class="btn btn-primary" routerLink="/users/userdetail">View</button></td>
+      </tr>
+    </table>
+  </div>
