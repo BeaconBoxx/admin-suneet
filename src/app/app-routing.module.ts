@@ -1,7 +1,7 @@
+import { AuthGuard } from './_gurads/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 
@@ -9,19 +9,22 @@ export const routes: Routes = [
     {
         path: '',
         component: FullComponent,
+        canActivate : [AuthGuard],
         children: [
             { path: '', redirectTo: '/dashboard/dashboard', pathMatch: 'full' },
             {
                 path: 'dashboard',
-                loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
+                loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule),
             },
             {
                 path: 'starter',
-                loadChildren: () => import('./starter/starter.module').then(m => m.StarterModule)
+                loadChildren: () => import('./starter/starter.module').then(m => m.StarterModule),
+
             },
             {
                 path: 'component',
-                loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
+                loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule),
+        
             },
             { path: 'icons', loadChildren: () => import('./icons/icons.module').then(m => m.IconsModule) },
             { path: 'forms', loadChildren: () => import('./form/forms.module').then(m => m.FormModule) },

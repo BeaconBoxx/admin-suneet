@@ -1,3 +1,4 @@
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import * as $ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,8 +8,8 @@ import {
     HashLocationStrategy
 } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
@@ -23,12 +24,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
+import {MatSliderModule} from '@angular/material/slider';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { HeaderVerticalComponent } from './shared/header-vertical/header-vertical.component';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AuthService } from './_services/auth.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -55,23 +60,32 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         FormsModule,
         HttpClientModule,
         NgbModule,
+        GooglePlaceModule,
         ToastrModule.forRoot(),
         NgMultiSelectDropDownModule.forRoot(),
         PerfectScrollbarModule,
         AppRoutingModule,
         AgmCoreModule.forRoot({
             //  apiKey: ''
-            })
+            }),
+            ReactiveFormsModule,
+            MatInputModule,
+            MatFormFieldModule,
+            MatSliderModule,
+            RouterModule,
+            NgxSpinnerModule
     ],
     providers: [
+        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
-            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
         },
-        {
-            provide: LocationStrategy,
-            useClass: HashLocationStrategy
-        }
+        // {
+        //     provide: LocationStrategy,
+        //     useClass: HashLocationStrategy
+        // },
+        AuthService
     ],
     bootstrap: [AppComponent]
 })

@@ -1,9 +1,11 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+// ng build --base-href "/Beconbox/admin/"
 export const environment = {
-  production: false
+  production: false,
+  baseUrl:'http://182.72.246.251:1402/api/auth/admin/',
+  storageKey: 'token',
 };
 
 /*

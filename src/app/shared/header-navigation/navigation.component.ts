@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   NgbModal,
   ModalDismissReasons,
@@ -6,8 +7,9 @@ import {
   NgbCarouselConfig
 } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { environment } from '../../../environments/environment';
 declare var $: any;
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -17,7 +19,7 @@ export class NavigationComponent implements AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal,private _router: Router) {}
 
   // This is for Notifications
   notifications: Object[] = [
@@ -82,6 +84,26 @@ export class NavigationComponent implements AfterViewInit {
       time: '9:00 AM'
     }
   ];
-
+   
   ngAfterViewInit() {}
+
+  logoutMe() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this !',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, Log Out !',
+      cancelButtonText: 'No, Stay here'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        sessionStorage.removeItem(environment.storageKey);
+				this._router.navigate(['/authentication/login']);
+        Swal.fire(
+          'Success!',
+          'Log Out Successfully!',
+          'success'
+        )}});
+	}
+  
 }
