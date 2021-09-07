@@ -3,6 +3,10 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
+import Swal from 'sweetalert2';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { OtpComponent } from '../../_shared/otp/otp.component';
+import { ToastrService } from 'ngx-toastr';
 declare var $:any;
 @Component({
   selector: 'app-login',
@@ -11,11 +15,16 @@ declare var $:any;
 })
 export class LoginComponent implements OnInit, AfterViewInit {
   loginForm: FormGroup;
-  constructor(public router: Router,private _auth: AuthService,private _fb:FormBuilder,private spinner: NgxSpinnerService) {
+  forgotPassword: FormGroup;
+  bsModalRef: BsModalRef;
+  constructor(public router: Router,private _auth: AuthService,private toastr:ToastrService,private _fb:FormBuilder,private spinner: NgxSpinnerService,private modalService: BsModalService) {
     this.loginForm = this._fb.group({
 			email: [null, [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
 			password: [null, Validators.required],
       rememberMe: [""]
+		});
+    this.forgotPassword = this._fb.group({
+			email: [null, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]]
 		})
   }
 
@@ -41,7 +50,28 @@ export class LoginComponent implements OnInit, AfterViewInit {
         });
   }
 
-
+  forgotNow() {
+		if (this.forgotPassword.valid) {
+			if (this.forgotPassword.controls.email.value) {
+				this.forgotPassword.controls.email.setValue(this.forgotPassword.controls.email.value.trim());
+			}
+			this._auth.forgot(this.forgotPassword.value).subscribe(res => {
+        if(res.code==200)
+        {
+          this.bsModalRef=this.modalService.show(OtpComponent);
+          this.toastr.success(res.message,"Success");
+        }
+        else
+        {
+          this.toastr.error(res.message,"Error");
+        }
+			}, error=> {
+        this.toastr.error(error.message,"Error");
+			})
+		} else {
+			this.forgotPassword.markAllAsTouched();
+		}
+	}
 
   onLoggedin() {
     this.spinner.show();
@@ -56,8 +86,17 @@ export class LoginComponent implements OnInit, AfterViewInit {
 		if (this.loginForm.valid) {
 			let body=this.loginForm.value;
 			this._auth.login(body).subscribe(res => {
-        setTimeout(()=>{this.spinner.hide();},1500);
+        console.log(res);
+        if(res.code==200)
+        {
+          setTimeout(()=>{this.spinner.hide();},1500);
 				this.router.navigate(['/dashboard/dashboard']);
+        }
+        else
+        {
+          this.toastr.warning(res.message,"Error");
+          this.spinner.hide();
+        }
       }, error => {
         setTimeout(()=>{this.spinner.hide();},1500);
 			})

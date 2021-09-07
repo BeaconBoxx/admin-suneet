@@ -9,7 +9,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
-import { environment } from 'environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -34,7 +34,7 @@ export class ErrorInterceptor implements HttpInterceptor {
             }
             else {
                 var error = err.error.error_description || err.error.message || err.statusText || err.message;
-                this._noti.show(error,'Error!')
+                this._noti.error(error,'Error!')
             }
             var error = err.error.error_description || err.error.message || err.statusText || err.message;
             return throwError(error);

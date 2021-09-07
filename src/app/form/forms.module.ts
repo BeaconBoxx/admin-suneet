@@ -11,7 +11,7 @@ import { BasicComponent } from './form-basic/basic.component';
 import { FormvalComponent } from './form-validation/form-validation.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { CustomFormsModule } from 'ngx-custom-validators';
+import { UploadComponent } from '../extra-component/file-upload/upload.component';
 
 @NgModule({
     imports: [
@@ -21,13 +21,13 @@ import { CustomFormsModule } from 'ngx-custom-validators';
         RouterModule.forChild(FormsRoutes),
         FormsModule,
         NgMultiSelectDropDownModule,
-        NGXFormWizardModule,
-        CustomFormsModule
+        NGXFormWizardModule
     ],
     declarations: [
         BasicComponent,
         FormvalComponent,
-        MultiselectComponent
+        MultiselectComponent,
+        UploadComponent
     ]
 })
 export class FormModule { }

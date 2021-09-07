@@ -12,6 +12,7 @@ import { Signup2Component } from './signup2/signup2.component';
 import { AuthenticationRoutes } from './authentication.routing';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { SetpasswordComponent } from './setpassword/setpassword.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MatInputModule } from '@angular/material/input';
     SignupComponent,
     LockComponent,
     Login2Component,
-    Signup2Component
+    Signup2Component,
+    SetpasswordComponent
   ]
 })
 export class AuthenticationModule {}

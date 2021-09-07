@@ -4,7 +4,7 @@
 // ng build --base-href "/Beconbox/admin/"
 export const environment = {
   production: false,
-  baseUrl:'http://182.72.246.251:1402/api/auth/admin/',
+  baseUrl:'http://182.72.246.251:1402/api/',
   storageKey: 'token',
 };
 

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonService } from './../../../_services/common.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -6,10 +10,94 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  @ViewChild("placeRef") placesRef: GooglePlaceDirective;
   active = 1;
-  constructor() { }
+  items: any;
+  long: any;
+  lati: any;
+  autoAddress: any;
+  profileForm:FormGroup;
+  passwordForm:FormGroup;
+  constructor(private commn_:CommonService,private fb:FormBuilder,private toastr:ToastrService) { 
+    this.profileForm=this.fb.group({
+      first_name:['',[Validators.required,Validators.maxLength(10),Validators.minLength(3)]],
+      last_name:['',[Validators.required,Validators.maxLength(10),Validators.minLength(3)]],
+      phone_no:['',{disabled: true},[Validators.required,Validators.minLength(7),Validators.maxLength(15)]],
+      email:['',{disabled: true},[Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      address:['',[Validators.required]]
+    });
+    this.passwordForm=this.fb.group({
+
+    });
+  }
 
   ngOnInit(): void {
+    this.getProfile();
+  }
+ 
+  getProfile(){
+    this.commn_.get("user/get-user-profile-by-token/").subscribe(res=>{
+    console.log(res);
+    this.items=res?.data;
+    this.lati=res?.data?.latitude;
+    this.long=res?.data?.longitude;
+    console.log(this.lati,this.long);
+    this.profileForm.get('first_name').patchValue(res?.data?.first_name);
+    this.profileForm.get('last_name').patchValue(res?.data?.last_name);
+    this.profileForm.get('address').patchValue(res?.data?.address);
+    this.profileForm.get('phone_no').patchValue(res?.data?.phone_no);
+    });
+  }
+  
+  update()
+  {
+    let body={
+      "first_name":this.profileForm.get('first_name').value,
+    "last_name":this.profileForm.get('last_name').value,
+    "address":this.profileForm.get('address').value,
+    "latitude":this.lati,
+    "longitude":this.long,
+    "role":1
+    };
+    console.log(body);
+    this.commn_.put("user/update-user-profile-by-token/",body).subscribe(res=>{
+      if(res.code==200)
+      {
+      this.toastr.success(res.message,"Success",{timeOut:1500});
+      }
+      else{
+        this.toastr.error(res.message,"Error",{timeOut:1500});
+      }
+    })
+  }
+
+   //Location Dropdown
+   public AddressChange(address: any) {
+    this.autoAddress = address.formatted_address;
+    this.lati = address.geometry.location.lat();
+    this.long = address.geometry.location.lng();
+  }
+  
+   // Alphabatic text only
+   alphabate(event) {
+    const charCode = event.which ? event.which : event.keyCode;
+    if (
+      (charCode >= 65 && charCode <= 90) ||
+      (charCode >= 97 && charCode <= 122) ||
+      charCode == 32
+    ) {
+      return true;
+    }
+    return false;
+  }
+ 
+  // Allow Numberic input only
+  phoneNoInput(event) {
+    const charCode = event.which ? event.which : event.keyCode;
+    if ((charCode >= 48 && charCode <= 57) || charCode == 43) {
+      return true;
+    }
+    return false;
   }
 
 }
