@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       localStorage.removeItem("remember");
     }
 		if (this.loginForm.valid) {
-			let body=this.loginForm.value;
+			let body={email:this.loginForm.get('email').value,password:this.loginForm.get('password').value};
 			this._auth.login(body).subscribe(res => {
         console.log(res);
         if(res.code==200)
@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
         }
         else
         {
-          this.toastr.warning(res.message,"Error");
+          this.toastr.error(res.message,"Error");
           this.spinner.hide();
         }
       }, error => {

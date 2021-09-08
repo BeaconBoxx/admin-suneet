@@ -552,10 +552,17 @@ class LoginComponent {
             localStorage.removeItem("remember");
         }
         if (this.loginForm.valid) {
-            let body = this.loginForm.value;
+            let body = { email: this.loginForm.get('email').value, password: this.loginForm.get('password').value };
             this._auth.login(body).subscribe(res => {
-                setTimeout(() => { this.spinner.hide(); }, 1500);
-                this.router.navigate(['/dashboard/dashboard']);
+                console.log(res);
+                if (res.code == 200) {
+                    setTimeout(() => { this.spinner.hide(); }, 1500);
+                    this.router.navigate(['/dashboard/dashboard']);
+                }
+                else {
+                    this.toastr.error(res.message, "Error");
+                    this.spinner.hide();
+                }
             }, error => {
                 setTimeout(() => { this.spinner.hide(); }, 1500);
             });

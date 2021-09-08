@@ -20,7 +20,7 @@
         <small class="text-muted p-t-30 db">Address</small>
         <h6>{{items?.address}}</h6>
         <div>
-          <agm-map [latitude]="lati" [longitude]="long" [zoom]="14">
+          <agm-map [latitude]="lati" [longitude]="long" [zoom]="zoom">
             <agm-marker [latitude]="lati" [agmFitBounds]="true" [longitude]="long"></agm-marker>
           </agm-map>
         </div>
@@ -71,16 +71,20 @@
                 <div class="form-group">
                   <label class="col-md-12">First Name</label>
                   <div class="col-md-12">
-                    <input type="text" (keypress)="alphabate($event)" formControlName="first_name" placeholder="Johnathan" class="form-control form-control-line">
-                    <p class="text-danger" *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('maxlength')"
+                    <input type="text" (keypress)="alphabate($event)" formControlName="first_name"
+                      placeholder="Johnathan" class="form-control form-control-line">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('maxlength')"
                       class="text-danger d-inline-block pt-1">
                       *Max Character Length 10!
                     </p>
-                    <p class="text-danger"  *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('minlength')"
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('minlength')"
                       class="text-danger d-inline-block pt-1">
                       *Min Character Length 3!
                     </p>
-                    <p  class="text-danger" *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('required')">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('required')">
                       *First Name is required!
                     </p>
                   </div>
@@ -88,16 +92,20 @@
                 <div class="form-group">
                   <label class="col-md-12">Last Name</label>
                   <div class="col-md-12">
-                    <input type="text" (keypress)="alphabate($event)" formControlName="last_name" placeholder="Doe" class="form-control form-control-line">
-                    <p class="text-danger" *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('maxlength')"
+                    <input type="text" (keypress)="alphabate($event)" formControlName="last_name" placeholder="Doe"
+                      class="form-control form-control-line">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('maxlength')"
                       class="text-danger d-inline-block pt-1">
                       *Max Character Length 10!
                     </p>
-                    <p class="text-danger"  *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('minlength')"
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('minlength')"
                       class="text-danger d-inline-block pt-1">
                       *Min Character Length 3!
                     </p>
-                    <p  class="text-danger" *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('required')">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('required')">
                       *Last Name is required!
                     </p>
                   </div>
@@ -105,13 +113,15 @@
                 <div class="form-group">
                   <label for="example-email" class="col-md-12">Email</label>
                   <div class="col-md-12">
-                    <input type="email" formControlName="email" placeholder="johnathan@admin.com" class="form-control form-control-line"
-                      name="example-email" id="example-email">
-                      <p class="text-danger"  *ngIf="profileForm.controls['email'].touched && profileForm.controls['email'].hasError('pattern')"
+                    <input type="email" formControlName="email" placeholder="johnathan@admin.com"
+                      class="form-control form-control-line" name="example-email" id="example-email">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['email'].touched && profileForm.controls['email'].hasError('pattern')"
                       class="text-danger d-inline-block pt-1">
                       *Email invalid!
                     </p>
-                    <p  class="text-danger" *ngIf="profileForm.controls['email'].touched && profileForm.controls['email'].hasError('required')">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['email'].touched && profileForm.controls['email'].hasError('required')">
                       *Email is required!
                     </p>
                   </div>
@@ -119,33 +129,42 @@
                 <div class="form-group">
                   <label class="col-md-12">Address</label>
                   <div class="col-md-12">
-                    <input type="text" formControlName="address" ngx-google-places-autocomplete #placesRef="ngx-places" #address
-                      class="form-control form-control-line" (onAddressChange)="AddressChange($event)">
-                      <p  class="text-danger" *ngIf="profileForm.controls['address'].touched && profileForm.controls['address'].hasError('required')">
-                        *Address is required!
-                      </p>
+                    <input type="text" formControlName="address" ngx-google-places-autocomplete #placesRef="ngx-places"
+                      #address class="form-control form-control-line" (onAddressChange)="AddressChange($event)">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['address'].touched && profileForm.controls['address'].hasError('required')">
+                      *Address is required!
+                    </p>
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['address'].touched && profileForm.get('cnfaddress').hasError('passwordMismatch') && !(profileForm.controls['address'].hasError('required'))">
+                      *Please Select From Suggestion!
+                    </p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-12">Phone No</label>
                   <div class="col-md-12">
-                    <input type="text" (keypress)="phoneNoInput($event)" formControlName="phone_no" placeholder="123 456 7890" class="form-control form-control-line">
-                    <p class="text-danger" *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('maxlength')"
+                    <input type="text" (keypress)="phoneNoInput($event)" formControlName="phone_no"
+                      placeholder="123 456 7890" class="form-control form-control-line">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('maxlength')"
                       class="text-danger d-inline-block pt-1">
                       *Max Length 15!
                     </p>
-                    <p class="text-danger"  *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('minlength')"
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('minlength')"
                       class="text-danger d-inline-block pt-1">
                       *Min Length 7!
                     </p>
-                    <p  class="text-danger" *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('required')">
+                    <p class="text-danger"
+                      *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('required')">
                       *Phone No is required!
                     </p>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <button class="btn btn-primary" (click)="update()" >Update Profile</button>
+                    <button class="btn btn-primary" (click)="update()">Update Profile</button>
                   </div>
                 </div>
               </form>
@@ -160,21 +179,42 @@
                 <div class="form-group">
                   <label class="col-md-12">Old Password</label>
                   <div class="col-md-12">
-                    <input type="password" placeholder="Old Password" class="form-control form-control-line">
+                    <input type="password" formControlName="current_password" placeholder="Old Password"
+                      class="form-control form-control-line">
+                    <p class="text-danger"
+                      *ngIf="passwordForm.get('current_password').touched && passwordForm.get('current_password').hasError('required')">
+                      Please enter Old Password.
+                    </p>
+                    <p class="text-danger"
+                      *ngIf="passwordForm.get('current_password').touched && passwordForm.get('current_password').hasError('minlength')">
+                      Minlength should 8.
+                    </p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="example-email" class="col-md-12">New Password</label>
                   <div class="col-md-12">
-                    <input type="password" placeholder="New Passowrd" class="form-control form-control-line"
-                      name="example-email" id="example-email">
+                    <input type="password" formControlName="new_password" placeholder="New Passowrd"
+                      class="form-control form-control-line" name="example-email" id="example-email">
+                    <p class="text-danger"
+                      *ngIf="passwordForm.get('new_password').touched && passwordForm.get('new_password').hasError('required')">
+                      Please enter New Password.
+                    </p>
+                    <p class="text-danger"
+                      *ngIf="passwordForm.get('new_password').touched && passwordForm.get('new_password').hasError('minlength')">
+                      Minlength should 8.
+                    </p>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="example-email" class="col-md-12">Confirm Password</label>
                   <div class="col-md-12">
-                    <input type="password" placeholder="Confirm Passowrd" class="form-control form-control-line"
-                      name="example-email" id="example-email">
+                    <input type="password" formControlName="cnfnew_password" placeholder="Confirm Passowrd"
+                      class="form-control form-control-line" name="example-email" id="example-email">
+                    <p class="text-danger"
+                      *ngIf="passwordForm.get('cnfnew_password').touched && passwordForm.get('cnfnew_password').hasError('passwordMismatch')">
+                      *Password don't match
+                    </p>
                   </div>
                 </div>
 

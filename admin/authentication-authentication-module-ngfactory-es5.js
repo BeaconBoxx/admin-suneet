@@ -1462,14 +1462,25 @@
             }
 
             if (this.loginForm.valid) {
-              var body = this.loginForm.value;
+              var body = {
+                email: this.loginForm.get('email').value,
+                password: this.loginForm.get('password').value
+              };
 
               this._auth.login(body).subscribe(function (res) {
-                setTimeout(function () {
-                  _this2.spinner.hide();
-                }, 1500);
+                console.log(res);
 
-                _this2.router.navigate(['/dashboard/dashboard']);
+                if (res.code == 200) {
+                  setTimeout(function () {
+                    _this2.spinner.hide();
+                  }, 1500);
+
+                  _this2.router.navigate(['/dashboard/dashboard']);
+                } else {
+                  _this2.toastr.error(res.message, "Error");
+
+                  _this2.spinner.hide();
+                }
               }, function (error) {
                 setTimeout(function () {
                   _this2.spinner.hide();

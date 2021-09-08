@@ -737,7 +737,17 @@
           ngIf: [0, "ngIf"]
         }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ProfileComponent_14)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](80, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], {
           ngIf: [0, "ngIf"]
-        }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](81, 0, null, null, 3, "div", [["class", "form-group"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](82, 0, null, null, 2, "div", [["class", "col-sm-12"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](83, 0, null, null, 1, "button", [["class", "btn btn-primary"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["Update Profile"]))], function (_ck, _v) {
+        }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](81, 0, null, null, 3, "div", [["class", "form-group"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](82, 0, null, null, 2, "div", [["class", "col-sm-12"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](83, 0, null, null, 1, "button", [["class", "btn btn-primary"]], null, [[null, "click"]], function (_v, en, $event) {
+          var ad = true;
+          var _co = _v.component;
+
+          if ("click" === en) {
+            var pd_0 = _co.update() !== false;
+            ad = pd_0 && ad;
+          }
+
+          return ad;
+        }, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["Update Profile"]))], function (_ck, _v) {
           var _co = _v.component;
           var currVal_7 = _co.profileForm;
 
@@ -1278,11 +1288,17 @@
           this.fb = fb;
           this.toastr = toastr;
           this.active = 1;
+          this["long"] = 76.717873;
+          this.lati = 30.704649;
           this.profileForm = this.fb.group({
             first_name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
             last_name: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(10), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
-            phone_no: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(7), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(15)]],
-            email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+            phone_no: ['', {
+              disabled: true
+            }, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(7), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(15)]],
+            email: ['', {
+              disabled: true
+            }, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
             address: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
           });
           this.passwordForm = this.fb.group({});
@@ -1299,12 +1315,21 @@
             var _this2 = this;
 
             this.commn_.get("user/get-user-profile-by-token/").subscribe(function (res) {
-              var _a, _b;
+              var _a, _b, _c, _d, _e, _f;
 
               console.log(res);
               _this2.items = res === null || res === void 0 ? void 0 : res.data;
               _this2.lati = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.latitude;
               _this2["long"] = (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.longitude;
+              console.log(_this2.lati, _this2["long"]);
+
+              _this2.profileForm.get('first_name').patchValue((_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.first_name);
+
+              _this2.profileForm.get('last_name').patchValue((_d = res === null || res === void 0 ? void 0 : res.data) === null || _d === void 0 ? void 0 : _d.last_name);
+
+              _this2.profileForm.get('address').patchValue((_e = res === null || res === void 0 ? void 0 : res.data) === null || _e === void 0 ? void 0 : _e.address);
+
+              _this2.profileForm.get('phone_no').patchValue((_f = res === null || res === void 0 ? void 0 : res.data) === null || _f === void 0 ? void 0 : _f.phone_no);
             });
           }
         }, {
@@ -1312,7 +1337,16 @@
           value: function update() {
             var _this3 = this;
 
-            var body = {};
+            var body = {
+              "first_name": this.profileForm.get('first_name').value.trim(),
+              "last_name": this.profileForm.get('last_name').value.trim(),
+              "address": this.profileForm.get('address').value.trim(),
+              "email": this.profileForm.get('email').value.trim(),
+              "latitude": this.lati,
+              "longitude": this["long"],
+              "role": 1
+            };
+            console.log(body);
             this.commn_.put("user/update-user-profile-by-token/", body).subscribe(function (res) {
               if (res.code == 200) {
                 _this3.toastr.success(res.message, "Success", {

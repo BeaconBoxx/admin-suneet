@@ -326,8 +326,10 @@
           key: "login",
           value: function login(formData) {
             return this._http.post("".concat(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].baseUrl, "auth/admin/login/"), formData).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["map"])(function (data) {
-              // login successful if there's a jwt token in the response
-              if (data) {
+              var _a; // login successful if there's a jwt token in the response
+
+
+              if ((_a = data === null || data === void 0 ? void 0 : data.data) === null || _a === void 0 ? void 0 : _a.token) {
                 sessionStorage.setItem(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].storageKey, JSON.stringify(data.data.token));
               }
 

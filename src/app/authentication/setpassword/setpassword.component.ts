@@ -15,7 +15,7 @@ export class SetpasswordComponent implements OnInit {
 	isLoading: boolean = false;
   constructor(public router: Router, private _auth: AuthService,private toastr:ToastrService, private _fb: FormBuilder,private customvalidator:CustomValidationService) { 
     this.newPassword = this._fb.group({
-			password: [null, [Validators.required,Validators.minLength(8)]],
+	  password: [null, [Validators.required,Validators.minLength(8)]],
       Cnfpassword:['']
 		},{
       validator:this.customvalidator.passwordMatchValidator("password","Cnfpassword")
