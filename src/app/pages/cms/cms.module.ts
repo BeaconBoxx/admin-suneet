@@ -9,6 +9,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactComponent } from './contact/contact.component';
 import { QuillModule } from 'ngx-quill';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CmsComponent, AboutComponent, LegalComponent, PrivacyComponent, FaqComponent, ContactComponent],
@@ -16,7 +17,8 @@ import { QuillModule } from 'ngx-quill';
     CommonModule,
     CmsRoutingModule,
     QuillModule.forRoot(),
-    MatTabsModule
+    MatTabsModule,
+    FormsModule
   ]
 })
 export class CmsModule { }
