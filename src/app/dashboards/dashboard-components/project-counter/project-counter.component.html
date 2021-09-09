@@ -6,11 +6,11 @@
           <h2 class="m-b-0">
             <i class="mdi mdi-account-multiple text-info"></i>
           </h2>
-          <h3 class="">650</h3>
+          <h3 class="">{{data?.total_users}}</h3>
           <h6 class="card-subtitle">Total Users Registered</h6>
         </div>
         <div class="col-12">
-          <ngb-progressbar [showValue]="false" type="info" [value]="50"></ngb-progressbar>
+          <ngb-progressbar [showValue]="false" type="info" [value]="data?.total_users"></ngb-progressbar>
         </div>
       </div>
     </div>
@@ -24,11 +24,11 @@
           <h2 class="m-b-0">
             <i class="mdi mdi-alert-circle text-success"></i>
           </h2>
-          <h3 class="">1546</h3>
+          <h3 class="">{{data?.total_emergency_messages}}</h3>
           <h6 class="card-subtitle">Total Emergency messages</h6>
         </div>
         <div class="col-12">
-          <ngb-progressbar [showValue]="false" type="success" [value]="50"></ngb-progressbar>
+          <ngb-progressbar [showValue]="false" type="success" [value]="data?.total_emergency_messages"></ngb-progressbar>
         </div>
       </div>
     </div>

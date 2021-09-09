@@ -28,12 +28,12 @@
                 Users Reports
               </button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu dropdown-menu-right">
-                <button class="dropdown-item">Monthly</button>
-                <button class="dropdown-item">Yearly</button>
+                <button class="dropdown-item" (click)="getUserData(2)">Weekly</button>
+                <button class="dropdown-item" (click)="getUserData(3)">Monthly</button>
               </div>
             </div>
           </div>
-          <div style="height:350px;">
+          <div style="height:350px;" *ngIf="status ==true">
             <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
               [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"> </canvas>
           </div>
@@ -50,8 +50,8 @@
                 Emergency Messages
               </button>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-menu dropdown-menu-right">
-                <button class="dropdown-item">Monthly</button>
-                <button class="dropdown-item">Yearly</button>
+                <button class="dropdown-item" (click)="getEmergencyData(2)">Weekly</button>
+                <button class="dropdown-item" (click)="getEmergencyData(3)">Monthly</button>
               </div>
             </div>
           </div>

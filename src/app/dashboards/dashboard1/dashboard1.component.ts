@@ -1,15 +1,61 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
+import { CommonService } from '../../_services/common.service';
 
 @Component({
   templateUrl: './dashboard1.component.html',
   styleUrls: ['./dashboard1.component.css']
 })
-export class Dashboard1Component {
+export class Dashboard1Component implements OnInit{
   subtitle: string;
-  constructor() {
+  data: any;
+  data1: any;
+  data2:any;
+  data3:any;
+  status: boolean = false;
+  constructor(private http:CommonService) {
     this.subtitle = 'This is some text within a card block.';
   }
+
+  userData:any;
+  emergencyData:any;
+
+  ngOnInit(){
+    this.getUserData(2);
+    this.getEmergencyData(2);
+  }
+
+  getUserData(type:any){
+    var params={
+      'filter_type':type
+    }
+     this.http.post('admin/get-total-users-graph/',params).subscribe((res :any) => {
+        if(res.code == 200){
+          this.userData=res.data;
+          this.data = this.userData.map(val => val.date);
+        this.lineChartLabels = [...this.data];
+        this.data1 = this.userData.map(val => val.count);
+        this.lineChartData[0]['data'] = [...this.data1];
+        this.status = true;
+        }
+     })
+  }
+
+  getEmergencyData(type:any){
+    var params={
+      'filter_type':type
+    }
+    this.http.post('admin/get-total-emergency-messages-graph/',params).subscribe((res :any) => {
+     if(res.code == 200){
+       this.emergencyData=res.data;
+       this.data2 = this.emergencyData.map(val => val.date);
+        this.barChartLabels = [...this.data2];
+        this.data3 = this.emergencyData.map(val => val.count);
+        this.barChartData[0]['data'] = [...this.data3];
+        this.status = true;
+     }
+  })
+ }
   // This is for the dashboar line chart
   // lineChart
   public lineChartData: Array<any> = [
@@ -17,15 +63,7 @@ export class Dashboard1Component {
     // { data: [80, 100, 60, 200, 150, 100, 150], label: 'Earnings' }
   ];
 
-  public lineChartLabels: Array<any> = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July'
-  ];
+  public lineChartLabels: Array<any> = [];
   public lineChartOptions: any = {
     scales: {
       yAxes: [
@@ -93,13 +131,6 @@ export class Dashboard1Component {
     { data: [1.1, 1.4, 1.1, 0.9, 2.1, 1, 0.3], label: 'Cost' }
   ];
   public barChartLabels: Array<any> = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7'
   ];
   public barChartOptions: any = {
     maintainAspectRatio: false,
