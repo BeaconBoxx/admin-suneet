@@ -9,7 +9,9 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactComponent } from './contact/contact.component';
 import { QuillModule } from 'ngx-quill';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatError ,MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [CmsComponent, AboutComponent, LegalComponent, PrivacyComponent, FaqComponent, ContactComponent],
@@ -18,7 +20,11 @@ import { FormsModule } from '@angular/forms';
     CmsRoutingModule,
     QuillModule.forRoot(),
     MatTabsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
+
   ]
 })
 export class CmsModule { }

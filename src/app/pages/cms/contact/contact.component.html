@@ -1,23 +1,53 @@
 <!-- .row -->
 <div class="row">
-    <div class="col-sm-12">
-        <div class="card card-body">           
-            <form class="form-horizontal m-t-30" >               
-                <div class="form-group">
-                    <label for="example-email">Email</label>
-                    <input type="email" id="example-email" name="example-email" class="form-control" placeholder="Email">
-                </div>   
-                <div class="form-group">
-                    <label for="example-email">Contact</label>
-                    <input type="text" id="contact" name="example-email" class="form-control" placeholder="Contact No">
-                </div>   
-                <div class="form-group">
-                    <label>Address</label>
-                    <textarea class="form-control" rows="5"></textarea>
-                </div>
-                <button type="button" class="btn btn-primary">Save</button>
-            </form>
+  <div class="col-sm-12">
+    <div class="card card-body">
+      <form class="form-horizontal m-t-30">
+        <div>
+          <form [formGroup]="contactForm">
+
+            <div class="form-group">
+              <label for="example-email">Email</label>
+              <input #email (keydown.space)="doSomething($event ,email.value)" formControlName="email" type="email"
+                id="example-email" name="example-email" class="form-control" placeholder="Email">
+              <mat-error *ngIf="contactForm.controls['email'].touched && contactForm.controls['email'].invalid"
+                class="text-danger d-inline-block pt-1">
+                *Please enter valid email
+              </mat-error>
+              <p class="text-danger" *ngIf="submitted && errorHandling('email', 'required')">
+                *Email is required!
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="example-email">Contact</label>
+              <input (keypress)="phoneNoInput($event)" formControlName="contact" type="text" id="contact"
+                name="example-email" class="form-control" placeholder="Contact No">
+              <mat-error *ngIf="contactForm.controls['contact'].touched && contactForm.controls['contact'].invalid"
+                class="text-danger d-inline-block pt-1">
+                *Please enter valid Contact No
+              </mat-error>
+              <p class="text-danger" *ngIf="submitted && errorHandling('contact', 'required')">
+                *Contact No. is required!
+              </p>
+            </div>
+            <div class="form-group">
+              <label>Address</label>
+              <input #address (keydown.space)="doSomething($event ,address.value)" formControlName="address"
+                ngx-google-places-autocomplete (onAddressChange)="AddressChange($event)" class="form-control"
+                rows="5">
+              <mat-error *ngIf="contactForm.controls['address'].touched && contactForm.controls['address'].invalid"
+                class="text-danger d-inline-block pt-1">
+                *Please enter valid address
+              </mat-error>
+              <p class="text-danger" *ngIf="submitted && errorHandling('address', 'required')">
+                *Address is required!
+              </p>
+            </div>
+          </form>
         </div>
+        <button (click)="update()" class="btn btn-primary">Save</button>
+      </form>
     </div>
+  </div>
 </div>
 <!-- /.row -->
