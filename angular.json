@@ -52,7 +52,8 @@
               "src/assets/scss/style.scss",
               "node_modules/@swimlane/ngx-datatable/index.css",
               "node_modules/@swimlane/ngx-datatable/themes/material.css",
-              "node_modules/@swimlane/ngx-datatable/assets/icons.css"
+              "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+              "./node_modules/intl-tel-input/build/css/intlTelInput.css"
             ],
             "scripts": []
           },
