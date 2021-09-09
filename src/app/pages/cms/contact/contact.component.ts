@@ -67,7 +67,7 @@ export class ContactComponent implements OnInit {
       this.http.post('cms/create-update-cms/',body).subscribe((res: any) => {
         if (res.code == 200) {
           this.submitted = false;
-          Swal.fire("Updated", "Details updated successfully", "success");
+          this.toastr.success("Details updated successfully");
           // this.toastr.success(res.message,'Success');
           this.getData();
           // this.Srvc.searchdata();
