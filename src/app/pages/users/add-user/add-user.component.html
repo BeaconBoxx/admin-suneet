@@ -16,7 +16,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text" (keyup)="Alphabet($event)" formControlName="first_name" placeholder="First Name"
+          <input type="text"  formControlName="first_name" placeholder="First Name"
             class="form-control" />
           <p class="text-danger"
             *ngIf="userForm.controls['first_name'].touched && userForm.controls['first_name'].hasError('required')">
@@ -28,6 +28,11 @@
             *Must have at most 10 character!
           </p>
           <p class="text-danger"
+            *ngIf="userForm.controls['first_name'].touched && userForm.controls['first_name'].hasError('pattern')"
+            class="text-danger d-inline-block pt-1">
+            *Valid Name Required!
+          </p>
+          <p class="text-danger"
             *ngIf="userForm.controls['first_name'].touched && userForm.controls['first_name'].hasError('minlength')"
             class="text-danger d-inline-block pt-1">
             *Must have at least 3 character!
@@ -37,7 +42,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Middle Name</label>
-          <input type="text" (keyup)="Alphabet($event)" formControlName="middle_name" placeholder="Middle Name"
+          <input type="text"  formControlName="middle_name" placeholder="Middle Name"
             class="form-control" />
           <p class="text-danger"
             *ngIf="userForm.controls['middle_name'].touched && userForm.controls['middle_name'].hasError('maxlength')">
@@ -47,16 +52,26 @@
             *ngIf="userForm.controls['middle_name'].touched && userForm.controls['middle_name'].hasError('minlength')">
             *Must have at least 3 character!
           </p>
+          <p class="text-danger"
+            *ngIf="userForm.controls['middle_name'].touched && userForm.controls['middle_name'].hasError('pattern')"
+            class="text-danger d-inline-block pt-1">
+            *Valid Name Required!
+          </p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text" (keyup)="Alphabet($event)" formControlName="last_name" placeholder="Last Name"
+          <input type="text"  formControlName="last_name" placeholder="Last Name"
             class="form-control" />
           <p class="text-danger"
             *ngIf="userForm.controls['last_name'].touched && userForm.controls['last_name'].hasError('required')">
             *Last Name is required!
+          </p>
+          <p class="text-danger"
+            *ngIf="userForm.controls['last_name'].touched && userForm.controls['last_name'].hasError('pattern')"
+            class="text-danger d-inline-block pt-1">
+            *Valid Name Required!
           </p>
         </div>
       </div>
@@ -102,7 +117,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="form-group">
+        <div class="form-group d-flex flex-column">
           <label>Phone No</label>
           <ngx-intl-tel-input [cssClass]="'form-control'" [preferredCountries]="preferredCountries"
           [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
@@ -111,20 +126,25 @@
           [phoneValidation]="true" [separateDialCode]="separateDialCode"
           [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="fullPhone" >
         </ngx-intl-tel-input>
-          <p class="text-danger"
-            *ngIf="userForm.controls['phone'].touched && userForm.controls['phone'].hasError('maxlength')"
-            class="text-danger d-inline-block pt-1">
-            *Must have at most 15 character!
-          </p>
-          <p class="text-danger"
-            *ngIf="userForm.controls['phone'].touched && userForm.controls['phone'].hasError('minlength')"
-            class="text-danger d-inline-block pt-1">
-            *Must have at least 7 character!
-          </p>
-          <p class="text-danger"
-            *ngIf="userForm.controls['phone'].touched && userForm.controls['phone'].hasError('required')">
-            *Phone No is required!
-          </p>
+        <p class="text-danger"
+        *ngIf="userForm.controls['fullPhone'].touched && userForm.controls['fullPhone'].hasError('maxlength')"
+        class="text-danger d-inline-block pt-1">
+        *Must have at most 15 character!
+      </p>
+      <p class="text-danger"
+        *ngIf="userForm.controls['fullPhone'].touched && userForm.controls['fullPhone'].hasError('minlength')"
+        class="text-danger d-inline-block pt-1">
+        *Must have at least 7 character!
+      </p>
+      <p class="text-danger"
+        *ngIf="userForm.controls['fullPhone'].touched && userForm.controls['fullPhone'].invalid && !(userForm.controls['fullPhone'].hasError('required'))"
+        class="text-danger d-inline-block pt-1">
+        *Invalid Number!
+      </p>
+      <p class="text-danger"
+        *ngIf="userForm.controls['fullPhone'].touched && userForm.controls['fullPhone'].hasError('required')">
+        *Phone No is required!
+      </p>
         </div>
       </div>
     </div>

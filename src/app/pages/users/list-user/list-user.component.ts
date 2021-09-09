@@ -5,6 +5,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ExportToCsv } from 'export-to-csv';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
@@ -13,7 +14,7 @@ import Swal from 'sweetalert2';
 export class ListUserComponent implements OnInit {
   closeResult: string;
   is_active: any = null;
-  constructor(private commn_: CommonService, private spinner: NgxSpinnerService, private toastr: ToastrService) { }
+  constructor(private commn_: CommonService, private spinner: NgxSpinnerService,private router: Router, private toastr: ToastrService) { }
   //table: any
   action: string;
   page = 1;
@@ -25,6 +26,18 @@ export class ListUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.userList();
+  }
+  
+  //
+  
+  // Route to Edit
+  sendID(id) {
+    this.router.navigate(["/users/useredit"], { queryParams: { id: id } });
+  }
+
+  // Route to Edit
+  ViewSendID(id) {
+    this.router.navigate(["/users/userdetail"], { queryParams: { id: id } });
   }
 
   //get all users

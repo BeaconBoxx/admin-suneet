@@ -3,23 +3,17 @@
 
   function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
+  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
   function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
   function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
+  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
   function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
 
   function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
-
-  function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-  function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-  function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
   function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -37,253 +31,11 @@
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pages-others-others-module-ngfactory"], {
-    /***/
-    "./node_modules/@angular/material/button/index.ngfactory.js":
-    /*!******************************************************************!*\
-      !*** ./node_modules/@angular/material/button/index.ngfactory.js ***!
-      \******************************************************************/
-
-    /*! exports provided: MatButtonModuleNgFactory, RenderType_MatButton, View_MatButton_0, View_MatButton_Host_0, MatButtonNgFactory, RenderType_MatAnchor, View_MatAnchor_0, View_MatAnchor_Host_0, MatAnchorNgFactory */
-
-    /***/
-    function node_modulesAngularMaterialButtonIndexNgfactoryJs(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatButtonModuleNgFactory", function () {
-        return MatButtonModuleNgFactory;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RenderType_MatButton", function () {
-        return RenderType_MatButton;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "View_MatButton_0", function () {
-        return View_MatButton_0;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "View_MatButton_Host_0", function () {
-        return View_MatButton_Host_0;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatButtonNgFactory", function () {
-        return MatButtonNgFactory;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "RenderType_MatAnchor", function () {
-        return RenderType_MatAnchor;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "View_MatAnchor_0", function () {
-        return View_MatAnchor_0;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "View_MatAnchor_Host_0", function () {
-        return View_MatAnchor_Host_0;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatAnchorNgFactory", function () {
-        return MatAnchorNgFactory;
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      "./node_modules/@angular/core/fesm2015/core.js");
-      /* harmony import */
-
-
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/material/button */
-      "./node_modules/@angular/material/fesm2015/button.js");
-      /* harmony import */
-
-
-      var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/cdk/bidi */
-      "./node_modules/@angular/cdk/fesm2015/bidi.js");
-      /* harmony import */
-
-
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/material/core */
-      "./node_modules/@angular/material/fesm2015/core.js");
-      /* harmony import */
-
-
-      var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @angular/cdk/a11y */
-      "./node_modules/@angular/cdk/fesm2015/a11y.js");
-      /* harmony import */
-
-
-      var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! @angular/common */
-      "./node_modules/@angular/common/fesm2015/common.js");
-      /* harmony import */
-
-
-      var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! @angular/cdk/platform */
-      "./node_modules/@angular/cdk/fesm2015/platform.js");
-      /* harmony import */
-
-
-      var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! @angular/platform-browser/animations */
-      "./node_modules/@angular/platform-browser/fesm2015/animations.js");
-      /**
-       * @fileoverview This file was generated by the Angular template compiler. Do not edit.
-       *
-       * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes,extraRequire}
-       * tslint:disable
-       */
-
-
-      var MatButtonModuleNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcmf"](_angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatButtonModule"], [], function (_l) {
-        return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmod"]([_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵCodegenComponentFactoryResolver"], [[8, []], [3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"]], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleRef"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__["BidiModule"], _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__["BidiModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatCommonModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatCommonModule"], [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_4__["HighContrastModeDetector"], [2, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MATERIAL_SANITY_CHECKS"]], [2, _angular_common__WEBPACK_IMPORTED_MODULE_5__["DOCUMENT"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_6__["PlatformModule"], _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_6__["PlatformModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatRippleModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatRippleModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatButtonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatButtonModule"], [])]);
-      });
-
-      var styles_MatButton = [".mat-button .mat-button-focus-overlay,.mat-icon-button .mat-button-focus-overlay{opacity:0}.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:.04}@media(hover: none){.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:0}}.mat-button,.mat-icon-button,.mat-stroked-button,.mat-flat-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-button.mat-button-disabled,.mat-icon-button.mat-button-disabled,.mat-stroked-button.mat-button-disabled,.mat-flat-button.mat-button-disabled{cursor:default}.mat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-button.cdk-program-focused .mat-button-focus-overlay,.mat-icon-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-icon-button.cdk-program-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-program-focused .mat-button-focus-overlay,.mat-flat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-flat-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-raised-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button.mat-button-disabled{cursor:default}.mat-raised-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-raised-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-raised-button::-moz-focus-inner{border:0}._mat-animation-noopable.mat-raised-button{transition:none;animation:none}.mat-stroked-button{border:1px solid currentColor;padding:0 15px;line-height:34px}.mat-stroked-button .mat-button-ripple.mat-ripple,.mat-stroked-button .mat-button-focus-overlay{top:-1px;left:-1px;right:-1px;bottom:-1px}.mat-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:56px;height:56px;padding:0;flex-shrink:0}.mat-fab::-moz-focus-inner{border:0}.mat-fab.mat-button-disabled{cursor:default}.mat-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-fab{transition:none;animation:none}.mat-fab .mat-button-wrapper{padding:16px 0;display:inline-block;line-height:24px}.mat-mini-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:40px;height:40px;padding:0;flex-shrink:0}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab.mat-button-disabled{cursor:default}.mat-mini-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-mini-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-mini-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-mini-fab{transition:none;animation:none}.mat-mini-fab .mat-button-wrapper{padding:8px 0;display:inline-block;line-height:24px}.mat-icon-button{padding:0;min-width:0;width:40px;height:40px;flex-shrink:0;line-height:40px;border-radius:50%}.mat-icon-button i,.mat-icon-button .mat-icon{line-height:24px}.mat-button-ripple.mat-ripple,.mat-button-focus-overlay{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-button-ripple.mat-ripple:not(:empty){transform:translateZ(0)}.mat-button-focus-overlay{opacity:0;transition:opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable .mat-button-focus-overlay{transition:none}.mat-button-ripple-round{border-radius:50%;z-index:1}.mat-button .mat-button-wrapper>*,.mat-flat-button .mat-button-wrapper>*,.mat-stroked-button .mat-button-wrapper>*,.mat-raised-button .mat-button-wrapper>*,.mat-icon-button .mat-button-wrapper>*,.mat-fab .mat-button-wrapper>*,.mat-mini-fab .mat-button-wrapper>*{vertical-align:middle}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button{display:block;font-size:inherit;width:2.5em;height:2.5em}.cdk-high-contrast-active .mat-button,.cdk-high-contrast-active .mat-flat-button,.cdk-high-contrast-active .mat-raised-button,.cdk-high-contrast-active .mat-icon-button,.cdk-high-contrast-active .mat-fab,.cdk-high-contrast-active .mat-mini-fab{outline:solid 1px}.cdk-high-contrast-active .mat-button-base.cdk-keyboard-focused,.cdk-high-contrast-active .mat-button-base.cdk-program-focused{outline:solid 3px}\n"];
-
-      var RenderType_MatButton = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcrt"]({
-        encapsulation: 2,
-        styles: styles_MatButton,
-        data: {}
-      });
-
-      function View_MatButton_0(_l) {
-        return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](2, [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵqud"](671088640, 1, {
-          ripple: 0
-        }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](1, 0, null, null, 1, "span", [["class", "mat-button-wrapper"]], null, null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵncd"](null, 0), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](3, 0, null, null, 1, "span", [["class", "mat-button-ripple mat-ripple"], ["matRipple", ""]], [[2, "mat-button-ripple-round", null], [2, "mat-ripple-unbounded", null]], null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵdid"](4, 212992, [[1, 4]], 0, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatRipple"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_6__["Platform"], [2, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MAT_RIPPLE_GLOBAL_OPTIONS"]], [2, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["ANIMATION_MODULE_TYPE"]]], {
-          centered: [0, "centered"],
-          disabled: [1, "disabled"],
-          trigger: [2, "trigger"]
-        }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](5, 0, null, null, 0, "span", [["class", "mat-button-focus-overlay"]], null, null, null, null, null))], function (_ck, _v) {
-          var _co = _v.component;
-          var currVal_2 = _co.isIconButton;
-
-          var currVal_3 = _co._isRippleDisabled();
-
-          var currVal_4 = _co._getHostElement();
-
-          _ck(_v, 4, 0, currVal_2, currVal_3, currVal_4);
-        }, function (_ck, _v) {
-          var _co = _v.component;
-          var currVal_0 = _co.isRoundButton || _co.isIconButton;
-
-          var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 4).unbounded;
-
-          _ck(_v, 3, 0, currVal_0, currVal_1);
-        });
-      }
-
-      function View_MatButton_Host_0(_l) {
-        return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](0, 0, null, null, 1, "button", [["class", "mat-focus-indicator"], ["mat-button", ""]], [[1, "disabled", 0], [2, "_mat-animation-noopable", null], [2, "mat-button-disabled", null]], null, null, View_MatButton_0, RenderType_MatButton)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵdid"](1, 4374528, null, 0, _angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatButton"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_4__["FocusMonitor"], [2, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["ANIMATION_MODULE_TYPE"]]], null, null)], null, function (_ck, _v) {
-          var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1).disabled || null;
-          var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1)._animationMode === "NoopAnimations";
-
-          var currVal_2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1).disabled;
-
-          _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2);
-        });
-      }
-
-      var MatButtonNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵccf"]("button[mat-button], button[mat-raised-button], button[mat-icon-button],\n             button[mat-fab], button[mat-mini-fab], button[mat-stroked-button],\n             button[mat-flat-button]", _angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatButton"], View_MatButton_Host_0, {
-        disabled: "disabled",
-        disableRipple: "disableRipple",
-        color: "color"
-      }, {}, ["*"]);
-
-      var styles_MatAnchor = [".mat-button .mat-button-focus-overlay,.mat-icon-button .mat-button-focus-overlay{opacity:0}.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:.04}@media(hover: none){.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:0}}.mat-button,.mat-icon-button,.mat-stroked-button,.mat-flat-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-button.mat-button-disabled,.mat-icon-button.mat-button-disabled,.mat-stroked-button.mat-button-disabled,.mat-flat-button.mat-button-disabled{cursor:default}.mat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-button.cdk-program-focused .mat-button-focus-overlay,.mat-icon-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-icon-button.cdk-program-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-program-focused .mat-button-focus-overlay,.mat-flat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-flat-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-raised-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button.mat-button-disabled{cursor:default}.mat-raised-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-raised-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-raised-button::-moz-focus-inner{border:0}._mat-animation-noopable.mat-raised-button{transition:none;animation:none}.mat-stroked-button{border:1px solid currentColor;padding:0 15px;line-height:34px}.mat-stroked-button .mat-button-ripple.mat-ripple,.mat-stroked-button .mat-button-focus-overlay{top:-1px;left:-1px;right:-1px;bottom:-1px}.mat-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:56px;height:56px;padding:0;flex-shrink:0}.mat-fab::-moz-focus-inner{border:0}.mat-fab.mat-button-disabled{cursor:default}.mat-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-fab{transition:none;animation:none}.mat-fab .mat-button-wrapper{padding:16px 0;display:inline-block;line-height:24px}.mat-mini-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:40px;height:40px;padding:0;flex-shrink:0}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab.mat-button-disabled{cursor:default}.mat-mini-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-mini-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-mini-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-mini-fab{transition:none;animation:none}.mat-mini-fab .mat-button-wrapper{padding:8px 0;display:inline-block;line-height:24px}.mat-icon-button{padding:0;min-width:0;width:40px;height:40px;flex-shrink:0;line-height:40px;border-radius:50%}.mat-icon-button i,.mat-icon-button .mat-icon{line-height:24px}.mat-button-ripple.mat-ripple,.mat-button-focus-overlay{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-button-ripple.mat-ripple:not(:empty){transform:translateZ(0)}.mat-button-focus-overlay{opacity:0;transition:opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable .mat-button-focus-overlay{transition:none}.mat-button-ripple-round{border-radius:50%;z-index:1}.mat-button .mat-button-wrapper>*,.mat-flat-button .mat-button-wrapper>*,.mat-stroked-button .mat-button-wrapper>*,.mat-raised-button .mat-button-wrapper>*,.mat-icon-button .mat-button-wrapper>*,.mat-fab .mat-button-wrapper>*,.mat-mini-fab .mat-button-wrapper>*{vertical-align:middle}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button{display:block;font-size:inherit;width:2.5em;height:2.5em}.cdk-high-contrast-active .mat-button,.cdk-high-contrast-active .mat-flat-button,.cdk-high-contrast-active .mat-raised-button,.cdk-high-contrast-active .mat-icon-button,.cdk-high-contrast-active .mat-fab,.cdk-high-contrast-active .mat-mini-fab{outline:solid 1px}.cdk-high-contrast-active .mat-button-base.cdk-keyboard-focused,.cdk-high-contrast-active .mat-button-base.cdk-program-focused{outline:solid 3px}\n"];
-
-      var RenderType_MatAnchor = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcrt"]({
-        encapsulation: 2,
-        styles: styles_MatAnchor,
-        data: {}
-      });
-
-      function View_MatAnchor_0(_l) {
-        return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](2, [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵqud"](671088640, 1, {
-          ripple: 0
-        }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](1, 0, null, null, 1, "span", [["class", "mat-button-wrapper"]], null, null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵncd"](null, 0), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](3, 0, null, null, 1, "span", [["class", "mat-button-ripple mat-ripple"], ["matRipple", ""]], [[2, "mat-button-ripple-round", null], [2, "mat-ripple-unbounded", null]], null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵdid"](4, 212992, [[1, 4]], 0, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MatRipple"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_6__["Platform"], [2, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__["MAT_RIPPLE_GLOBAL_OPTIONS"]], [2, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["ANIMATION_MODULE_TYPE"]]], {
-          centered: [0, "centered"],
-          disabled: [1, "disabled"],
-          trigger: [2, "trigger"]
-        }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](5, 0, null, null, 0, "span", [["class", "mat-button-focus-overlay"]], null, null, null, null, null))], function (_ck, _v) {
-          var _co = _v.component;
-          var currVal_2 = _co.isIconButton;
-
-          var currVal_3 = _co._isRippleDisabled();
-
-          var currVal_4 = _co._getHostElement();
-
-          _ck(_v, 4, 0, currVal_2, currVal_3, currVal_4);
-        }, function (_ck, _v) {
-          var _co = _v.component;
-          var currVal_0 = _co.isRoundButton || _co.isIconButton;
-
-          var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 4).unbounded;
-
-          _ck(_v, 3, 0, currVal_0, currVal_1);
-        });
-      }
-
-      function View_MatAnchor_Host_0(_l) {
-        return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](0, 0, null, null, 1, "a", [["class", "mat-focus-indicator"], ["mat-button", ""]], [[1, "tabindex", 0], [1, "disabled", 0], [1, "aria-disabled", 0], [2, "_mat-animation-noopable", null], [2, "mat-button-disabled", null]], [[null, "click"]], function (_v, en, $event) {
-          var ad = true;
-
-          if ("click" === en) {
-            var pd_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1)._haltDisabledEvents($event) !== false;
-            ad = pd_0 && ad;
-          }
-
-          return ad;
-        }, View_MatAnchor_0, RenderType_MatAnchor)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵdid"](1, 4374528, null, 0, _angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatAnchor"], [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_4__["FocusMonitor"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], [2, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["ANIMATION_MODULE_TYPE"]]], null, null)], null, function (_ck, _v) {
-          var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1).disabled ? 0 - 1 : _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1).tabIndex || 0;
-          var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1).disabled || null;
-
-          var currVal_2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1).disabled.toString();
-
-          var currVal_3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1)._animationMode === "NoopAnimations";
-
-          var currVal_4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵnov"](_v, 1).disabled;
-
-          _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4);
-        });
-      }
-
-      var MatAnchorNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵccf"]("a[mat-button], a[mat-raised-button], a[mat-icon-button], a[mat-fab],\n             a[mat-mini-fab], a[mat-stroked-button], a[mat-flat-button]", _angular_material_button__WEBPACK_IMPORTED_MODULE_1__["MatAnchor"], View_MatAnchor_Host_0, {
-        disabled: "disabled",
-        disableRipple: "disableRipple",
-        color: "color",
-        tabIndex: "tabIndex"
-      }, {}, ["*"]);
-      /***/
-
-    },
-
     /***/
     "./node_modules/@angular/material/datepicker/index.ngfactory.js":
     /*!**********************************************************************!*\
@@ -1832,349 +1584,6 @@
     },
 
     /***/
-    "./node_modules/@angular/material/fesm2015/button.js":
-    /*!***********************************************************!*\
-      !*** ./node_modules/@angular/material/fesm2015/button.js ***!
-      \***********************************************************/
-
-    /*! exports provided: MatAnchor, MatButton, MatButtonModule */
-
-    /***/
-    function node_modulesAngularMaterialFesm2015ButtonJs(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatAnchor", function () {
-        return MatAnchor;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatButton", function () {
-        return MatButton;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "MatButtonModule", function () {
-        return MatButtonModule;
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      "./node_modules/@angular/core/fesm2015/core.js");
-      /* harmony import */
-
-
-      var _angular_material_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/material/core */
-      "./node_modules/@angular/material/fesm2015/core.js");
-      /* harmony import */
-
-
-      var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/cdk/a11y */
-      "./node_modules/@angular/cdk/fesm2015/a11y.js");
-      /* harmony import */
-
-
-      var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/platform-browser/animations */
-      "./node_modules/@angular/platform-browser/fesm2015/animations.js");
-      /**
-       * @license
-       * Copyright Google LLC All Rights Reserved.
-       *
-       * Use of this source code is governed by an MIT-style license that can be
-       * found in the LICENSE file at https://angular.io/license
-       */
-
-      /** Default color palette for round buttons (mat-fab and mat-mini-fab) */
-
-
-      var DEFAULT_ROUND_BUTTON_COLOR = 'accent';
-      /**
-       * List of classes to add to MatButton instances based on host attributes to
-       * style as different variants.
-       */
-
-      var BUTTON_HOST_ATTRIBUTES = ['mat-button', 'mat-flat-button', 'mat-icon-button', 'mat-raised-button', 'mat-stroked-button', 'mat-mini-fab', 'mat-fab']; // Boilerplate for applying mixins to MatButton.
-
-      /** @docs-private */
-
-      var MatButtonBase = function MatButtonBase(_elementRef) {
-        _classCallCheck(this, MatButtonBase);
-
-        this._elementRef = _elementRef;
-      };
-
-      var _MatButtonMixinBase = Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["mixinColor"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["mixinDisabled"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["mixinDisableRipple"])(MatButtonBase)));
-      /**
-       * Material design button.
-       */
-
-
-      var MatButton = /*#__PURE__*/function (_MatButtonMixinBase2) {
-        _inherits(MatButton, _MatButtonMixinBase2);
-
-        var _super = _createSuper(MatButton);
-
-        function MatButton(elementRef, _focusMonitor, _animationMode) {
-          var _this;
-
-          _classCallCheck(this, MatButton);
-
-          _this = _super.call(this, elementRef);
-          _this._focusMonitor = _focusMonitor;
-          _this._animationMode = _animationMode;
-          /** Whether the button is round. */
-
-          _this.isRoundButton = _this._hasHostAttributes('mat-fab', 'mat-mini-fab');
-          /** Whether the button is icon button. */
-
-          _this.isIconButton = _this._hasHostAttributes('mat-icon-button'); // For each of the variant selectors that is present in the button's host
-          // attributes, add the correct corresponding class.
-
-          var _iterator = _createForOfIteratorHelper(BUTTON_HOST_ATTRIBUTES),
-              _step;
-
-          try {
-            for (_iterator.s(); !(_step = _iterator.n()).done;) {
-              var attr = _step.value;
-
-              if (_this._hasHostAttributes(attr)) {
-                _this._getHostElement().classList.add(attr);
-              }
-            } // Add a class that applies to all buttons. This makes it easier to target if somebody
-            // wants to target all Material buttons. We do it here rather than `host` to ensure that
-            // the class is applied to derived classes.
-
-          } catch (err) {
-            _iterator.e(err);
-          } finally {
-            _iterator.f();
-          }
-
-          elementRef.nativeElement.classList.add('mat-button-base');
-
-          if (_this.isRoundButton) {
-            _this.color = DEFAULT_ROUND_BUTTON_COLOR;
-          }
-
-          return _this;
-        }
-
-        _createClass(MatButton, [{
-          key: "ngAfterViewInit",
-          value: function ngAfterViewInit() {
-            this._focusMonitor.monitor(this._elementRef, true);
-          }
-        }, {
-          key: "ngOnDestroy",
-          value: function ngOnDestroy() {
-            this._focusMonitor.stopMonitoring(this._elementRef);
-          }
-          /** Focuses the button. */
-
-        }, {
-          key: "focus",
-          value: function focus() {
-            var origin = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'program';
-            var options = arguments.length > 1 ? arguments[1] : undefined;
-
-            this._focusMonitor.focusVia(this._getHostElement(), origin, options);
-          }
-        }, {
-          key: "_getHostElement",
-          value: function _getHostElement() {
-            return this._elementRef.nativeElement;
-          }
-        }, {
-          key: "_isRippleDisabled",
-          value: function _isRippleDisabled() {
-            return this.disableRipple || this.disabled;
-          }
-          /** Gets whether the button has one of the given attributes. */
-
-        }, {
-          key: "_hasHostAttributes",
-          value: function _hasHostAttributes() {
-            var _this2 = this;
-
-            for (var _len = arguments.length, attributes = new Array(_len), _key = 0; _key < _len; _key++) {
-              attributes[_key] = arguments[_key];
-            }
-
-            return attributes.some(function (attribute) {
-              return _this2._getHostElement().hasAttribute(attribute);
-            });
-          }
-        }]);
-
-        return MatButton;
-      }(_MatButtonMixinBase);
-
-      MatButton.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: "button[mat-button], button[mat-raised-button], button[mat-icon-button],\n             button[mat-fab], button[mat-mini-fab], button[mat-stroked-button],\n             button[mat-flat-button]",
-          exportAs: 'matButton',
-          host: {
-            '[attr.disabled]': 'disabled || null',
-            '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
-            // Add a class for disabled button styling instead of the using attribute
-            // selector or pseudo-selector.  This allows users to create focusabled
-            // disabled buttons without recreating the styles.
-            '[class.mat-button-disabled]': 'disabled',
-            'class': 'mat-focus-indicator'
-          },
-          template: "<span class=\"mat-button-wrapper\"><ng-content></ng-content></span>\n<span matRipple class=\"mat-button-ripple\"\n      [class.mat-button-ripple-round]=\"isRoundButton || isIconButton\"\n      [matRippleDisabled]=\"_isRippleDisabled()\"\n      [matRippleCentered]=\"isIconButton\"\n      [matRippleTrigger]=\"_getHostElement()\"></span>\n<span class=\"mat-button-focus-overlay\"></span>\n",
-          inputs: ['disabled', 'disableRipple', 'color'],
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
-          styles: [".mat-button .mat-button-focus-overlay,.mat-icon-button .mat-button-focus-overlay{opacity:0}.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:.04}@media(hover: none){.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:0}}.mat-button,.mat-icon-button,.mat-stroked-button,.mat-flat-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-button.mat-button-disabled,.mat-icon-button.mat-button-disabled,.mat-stroked-button.mat-button-disabled,.mat-flat-button.mat-button-disabled{cursor:default}.mat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-button.cdk-program-focused .mat-button-focus-overlay,.mat-icon-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-icon-button.cdk-program-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-program-focused .mat-button-focus-overlay,.mat-flat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-flat-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-raised-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button.mat-button-disabled{cursor:default}.mat-raised-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-raised-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-raised-button::-moz-focus-inner{border:0}._mat-animation-noopable.mat-raised-button{transition:none;animation:none}.mat-stroked-button{border:1px solid currentColor;padding:0 15px;line-height:34px}.mat-stroked-button .mat-button-ripple.mat-ripple,.mat-stroked-button .mat-button-focus-overlay{top:-1px;left:-1px;right:-1px;bottom:-1px}.mat-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:56px;height:56px;padding:0;flex-shrink:0}.mat-fab::-moz-focus-inner{border:0}.mat-fab.mat-button-disabled{cursor:default}.mat-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-fab{transition:none;animation:none}.mat-fab .mat-button-wrapper{padding:16px 0;display:inline-block;line-height:24px}.mat-mini-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:40px;height:40px;padding:0;flex-shrink:0}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab.mat-button-disabled{cursor:default}.mat-mini-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-mini-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-mini-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-mini-fab{transition:none;animation:none}.mat-mini-fab .mat-button-wrapper{padding:8px 0;display:inline-block;line-height:24px}.mat-icon-button{padding:0;min-width:0;width:40px;height:40px;flex-shrink:0;line-height:40px;border-radius:50%}.mat-icon-button i,.mat-icon-button .mat-icon{line-height:24px}.mat-button-ripple.mat-ripple,.mat-button-focus-overlay{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-button-ripple.mat-ripple:not(:empty){transform:translateZ(0)}.mat-button-focus-overlay{opacity:0;transition:opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable .mat-button-focus-overlay{transition:none}.mat-button-ripple-round{border-radius:50%;z-index:1}.mat-button .mat-button-wrapper>*,.mat-flat-button .mat-button-wrapper>*,.mat-stroked-button .mat-button-wrapper>*,.mat-raised-button .mat-button-wrapper>*,.mat-icon-button .mat-button-wrapper>*,.mat-fab .mat-button-wrapper>*,.mat-mini-fab .mat-button-wrapper>*{vertical-align:middle}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button{display:block;font-size:inherit;width:2.5em;height:2.5em}.cdk-high-contrast-active .mat-button,.cdk-high-contrast-active .mat-flat-button,.cdk-high-contrast-active .mat-raised-button,.cdk-high-contrast-active .mat-icon-button,.cdk-high-contrast-active .mat-fab,.cdk-high-contrast-active .mat-mini-fab{outline:solid 1px}.cdk-high-contrast-active .mat-button-base.cdk-keyboard-focused,.cdk-high-contrast-active .mat-button-base.cdk-program-focused{outline:solid 3px}\n"]
-        }]
-      }];
-
-      MatButton.ctorParameters = function () {
-        return [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
-        }, {
-          type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["FocusMonitor"]
-        }, {
-          type: String,
-          decorators: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
-          }, {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
-            args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["ANIMATION_MODULE_TYPE"]]
-          }]
-        }];
-      };
-
-      MatButton.propDecorators = {
-        ripple: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-          args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRipple"]]
-        }]
-      };
-      /**
-       * Material design anchor button.
-       */
-
-      var MatAnchor = /*#__PURE__*/function (_MatButton) {
-        _inherits(MatAnchor, _MatButton);
-
-        var _super2 = _createSuper(MatAnchor);
-
-        function MatAnchor(focusMonitor, elementRef, animationMode) {
-          _classCallCheck(this, MatAnchor);
-
-          return _super2.call(this, elementRef, focusMonitor, animationMode);
-        }
-
-        _createClass(MatAnchor, [{
-          key: "_haltDisabledEvents",
-          value: function _haltDisabledEvents(event) {
-            // A disabled button shouldn't apply any actions
-            if (this.disabled) {
-              event.preventDefault();
-              event.stopImmediatePropagation();
-            }
-          }
-        }]);
-
-        return MatAnchor;
-      }(MatButton);
-
-      MatAnchor.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: "a[mat-button], a[mat-raised-button], a[mat-icon-button], a[mat-fab],\n             a[mat-mini-fab], a[mat-stroked-button], a[mat-flat-button]",
-          exportAs: 'matButton, matAnchor',
-          host: {
-            // Note that we ignore the user-specified tabindex when it's disabled for
-            // consistency with the `mat-button` applied on native buttons where even
-            // though they have an index, they're not tabbable.
-            '[attr.tabindex]': 'disabled ? -1 : (tabIndex || 0)',
-            '[attr.disabled]': 'disabled || null',
-            '[attr.aria-disabled]': 'disabled.toString()',
-            '(click)': '_haltDisabledEvents($event)',
-            '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
-            '[class.mat-button-disabled]': 'disabled',
-            'class': 'mat-focus-indicator'
-          },
-          inputs: ['disabled', 'disableRipple', 'color'],
-          template: "<span class=\"mat-button-wrapper\"><ng-content></ng-content></span>\n<span matRipple class=\"mat-button-ripple\"\n      [class.mat-button-ripple-round]=\"isRoundButton || isIconButton\"\n      [matRippleDisabled]=\"_isRippleDisabled()\"\n      [matRippleCentered]=\"isIconButton\"\n      [matRippleTrigger]=\"_getHostElement()\"></span>\n<span class=\"mat-button-focus-overlay\"></span>\n",
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush,
-          styles: [".mat-button .mat-button-focus-overlay,.mat-icon-button .mat-button-focus-overlay{opacity:0}.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:.04}@media(hover: none){.mat-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay,.mat-stroked-button:hover:not(.mat-button-disabled) .mat-button-focus-overlay{opacity:0}}.mat-button,.mat-icon-button,.mat-stroked-button,.mat-flat-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-button.mat-button-disabled,.mat-icon-button.mat-button-disabled,.mat-stroked-button.mat-button-disabled,.mat-flat-button.mat-button-disabled{cursor:default}.mat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-button.cdk-program-focused .mat-button-focus-overlay,.mat-icon-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-icon-button.cdk-program-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-stroked-button.cdk-program-focused .mat-button-focus-overlay,.mat-flat-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-flat-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-button::-moz-focus-inner,.mat-icon-button::-moz-focus-inner,.mat-stroked-button::-moz-focus-inner,.mat-flat-button::-moz-focus-inner{border:0}.mat-raised-button{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1)}.mat-raised-button::-moz-focus-inner{border:0}.mat-raised-button.mat-button-disabled{cursor:default}.mat-raised-button.cdk-keyboard-focused .mat-button-focus-overlay,.mat-raised-button.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-raised-button::-moz-focus-inner{border:0}._mat-animation-noopable.mat-raised-button{transition:none;animation:none}.mat-stroked-button{border:1px solid currentColor;padding:0 15px;line-height:34px}.mat-stroked-button .mat-button-ripple.mat-ripple,.mat-stroked-button .mat-button-focus-overlay{top:-1px;left:-1px;right:-1px;bottom:-1px}.mat-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:56px;height:56px;padding:0;flex-shrink:0}.mat-fab::-moz-focus-inner{border:0}.mat-fab.mat-button-disabled{cursor:default}.mat-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-fab{transition:none;animation:none}.mat-fab .mat-button-wrapper{padding:16px 0;display:inline-block;line-height:24px}.mat-mini-fab{box-sizing:border-box;position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:transparent;display:inline-block;white-space:nowrap;text-decoration:none;vertical-align:baseline;text-align:center;margin:0;min-width:64px;line-height:36px;padding:0 16px;border-radius:4px;overflow:visible;transform:translate3d(0, 0, 0);transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);min-width:0;border-radius:50%;width:40px;height:40px;padding:0;flex-shrink:0}.mat-mini-fab::-moz-focus-inner{border:0}.mat-mini-fab.mat-button-disabled{cursor:default}.mat-mini-fab.cdk-keyboard-focused .mat-button-focus-overlay,.mat-mini-fab.cdk-program-focused .mat-button-focus-overlay{opacity:.12}.mat-mini-fab::-moz-focus-inner{border:0}._mat-animation-noopable.mat-mini-fab{transition:none;animation:none}.mat-mini-fab .mat-button-wrapper{padding:8px 0;display:inline-block;line-height:24px}.mat-icon-button{padding:0;min-width:0;width:40px;height:40px;flex-shrink:0;line-height:40px;border-radius:50%}.mat-icon-button i,.mat-icon-button .mat-icon{line-height:24px}.mat-button-ripple.mat-ripple,.mat-button-focus-overlay{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-button-ripple.mat-ripple:not(:empty){transform:translateZ(0)}.mat-button-focus-overlay{opacity:0;transition:opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable .mat-button-focus-overlay{transition:none}.mat-button-ripple-round{border-radius:50%;z-index:1}.mat-button .mat-button-wrapper>*,.mat-flat-button .mat-button-wrapper>*,.mat-stroked-button .mat-button-wrapper>*,.mat-raised-button .mat-button-wrapper>*,.mat-icon-button .mat-button-wrapper>*,.mat-fab .mat-button-wrapper>*,.mat-mini-fab .mat-button-wrapper>*{vertical-align:middle}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button{display:block;font-size:inherit;width:2.5em;height:2.5em}.cdk-high-contrast-active .mat-button,.cdk-high-contrast-active .mat-flat-button,.cdk-high-contrast-active .mat-raised-button,.cdk-high-contrast-active .mat-icon-button,.cdk-high-contrast-active .mat-fab,.cdk-high-contrast-active .mat-mini-fab{outline:solid 1px}.cdk-high-contrast-active .mat-button-base.cdk-keyboard-focused,.cdk-high-contrast-active .mat-button-base.cdk-program-focused{outline:solid 3px}\n"]
-        }]
-      }];
-
-      MatAnchor.ctorParameters = function () {
-        return [{
-          type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__["FocusMonitor"]
-        }, {
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]
-        }, {
-          type: String,
-          decorators: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Optional"]
-          }, {
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"],
-            args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["ANIMATION_MODULE_TYPE"]]
-          }]
-        }];
-      };
-
-      MatAnchor.propDecorators = {
-        tabIndex: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }]
-      };
-      /**
-       * @license
-       * Copyright Google LLC All Rights Reserved.
-       *
-       * Use of this source code is governed by an MIT-style license that can be
-       * found in the LICENSE file at https://angular.io/license
-       */
-
-      var MatButtonModule = function MatButtonModule() {
-        _classCallCheck(this, MatButtonModule);
-      };
-
-      MatButtonModule.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
-        args: [{
-          imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatRippleModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatCommonModule"]],
-          exports: [MatButton, MatAnchor, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__["MatCommonModule"]],
-          declarations: [MatButton, MatAnchor]
-        }]
-      }];
-      /**
-       * @license
-       * Copyright Google LLC All Rights Reserved.
-       *
-       * Use of this source code is governed by an MIT-style license that can be
-       * found in the LICENSE file at https://angular.io/license
-       */
-
-      /**
-       * Generated bundle index. Do not edit.
-       */
-      //# sourceMappingURL=button.js.map
-
-      /***/
-    },
-
-    /***/
     "./node_modules/@angular/material/fesm2015/datepicker.js":
     /*!***************************************************************!*\
       !*** ./node_modules/@angular/material/fesm2015/datepicker.js ***!
@@ -2558,6 +1967,283 @@
       /** @docs-private */
 
 
+      var _c0 = ["mat-calendar-body", ""];
+
+      function MatCalendarBody_tr_0_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "td", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstyleProp"]("padding-top", ctx_r0._cellPadding)("padding-bottom", ctx_r0._cellPadding);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("colspan", ctx_r0.numCols);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", ctx_r0.label, " ");
+        }
+      }
+
+      function MatCalendarBody_tr_1_td_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "td", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstyleProp"]("padding-top", ctx_r4._cellPadding)("padding-bottom", ctx_r4._cellPadding);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("colspan", ctx_r4._firstRowOffset);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", ctx_r4._firstRowOffset >= ctx_r4.labelMinRequiredCells ? ctx_r4.label : "", " ");
+        }
+      }
+
+      function MatCalendarBody_tr_1_td_2_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "td", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MatCalendarBody_tr_1_td_2_Template_td_click_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r9);
+
+            var item_r6 = ctx.$implicit;
+
+            var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2);
+
+            return ctx_r8._cellClicked(item_r6, $event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "div", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var item_r6 = ctx.$implicit;
+          var colIndex_r7 = ctx.index;
+
+          var rowIndex_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().index;
+
+          var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstyleProp"]("width", ctx_r5._cellWidth)("padding-top", ctx_r5._cellPadding)("padding-bottom", ctx_r5._cellPadding);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-calendar-body-disabled", !item_r6.enabled)("mat-calendar-body-active", ctx_r5._isActiveCell(rowIndex_r3, colIndex_r7))("mat-calendar-body-range-start", ctx_r5._isRangeStart(item_r6.compareValue))("mat-calendar-body-range-end", ctx_r5._isRangeEnd(item_r6.compareValue))("mat-calendar-body-in-range", ctx_r5._isInRange(item_r6.compareValue))("mat-calendar-body-comparison-bridge-start", ctx_r5._isComparisonBridgeStart(item_r6.compareValue, rowIndex_r3, colIndex_r7))("mat-calendar-body-comparison-bridge-end", ctx_r5._isComparisonBridgeEnd(item_r6.compareValue, rowIndex_r3, colIndex_r7))("mat-calendar-body-comparison-start", ctx_r5._isComparisonStart(item_r6.compareValue))("mat-calendar-body-comparison-end", ctx_r5._isComparisonEnd(item_r6.compareValue))("mat-calendar-body-in-comparison-range", ctx_r5._isInComparisonRange(item_r6.compareValue))("mat-calendar-body-preview-start", ctx_r5._isPreviewStart(item_r6.compareValue))("mat-calendar-body-preview-end", ctx_r5._isPreviewEnd(item_r6.compareValue))("mat-calendar-body-in-preview", ctx_r5._isInPreview(item_r6.compareValue));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", item_r6.cssClasses)("tabindex", ctx_r5._isActiveCell(rowIndex_r3, colIndex_r7) ? 0 : 0 - 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("data-mat-row", rowIndex_r3)("data-mat-col", colIndex_r7)("aria-label", item_r6.ariaLabel)("aria-disabled", !item_r6.enabled || null)("aria-selected", ctx_r5._isSelected(item_r6.compareValue));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-calendar-body-selected", ctx_r5._isSelected(item_r6.compareValue))("mat-calendar-body-comparison-identical", ctx_r5._isComparisonIdentical(item_r6.compareValue))("mat-calendar-body-today", ctx_r5.todayValue === item_r6.compareValue);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", item_r6.displayValue, " ");
+        }
+      }
+
+      function MatCalendarBody_tr_1_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "tr", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, MatCalendarBody_tr_1_td_1_Template, 2, 6, "td", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, MatCalendarBody_tr_1_td_2_Template, 4, 46, "td", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var row_r2 = ctx.$implicit;
+          var rowIndex_r3 = ctx.index;
+
+          var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", rowIndex_r3 === 0 && ctx_r1._firstRowOffset);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", row_r2);
+        }
+      }
+
+      function MatMonthView_th_3_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "th", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var day_r1 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-label", day_r1["long"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](day_r1.narrow);
+        }
+      }
+
+      var _c1 = ["*"];
+
+      function MatCalendar_ng_template_0_Template(rf, ctx) {}
+
+      function MatCalendar_mat_month_view_2_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-month-view", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("activeDateChange", function MatCalendar_mat_month_view_2_Template_mat_month_view_activeDateChange_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r5);
+
+            var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r4.activeDate = $event;
+          })("_userSelection", function MatCalendar_mat_month_view_2_Template_mat_month_view__userSelection_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r5);
+
+            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r6._dateSelected($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("activeDate", ctx_r1.activeDate)("selected", ctx_r1.selected)("dateFilter", ctx_r1.dateFilter)("maxDate", ctx_r1.maxDate)("minDate", ctx_r1.minDate)("dateClass", ctx_r1.dateClass)("comparisonStart", ctx_r1.comparisonStart)("comparisonEnd", ctx_r1.comparisonEnd);
+        }
+      }
+
+      function MatCalendar_mat_year_view_3_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-year-view", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("activeDateChange", function MatCalendar_mat_year_view_3_Template_mat_year_view_activeDateChange_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r8);
+
+            var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r7.activeDate = $event;
+          })("monthSelected", function MatCalendar_mat_year_view_3_Template_mat_year_view_monthSelected_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r8);
+
+            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r9._monthSelectedInYearView($event);
+          })("selectedChange", function MatCalendar_mat_year_view_3_Template_mat_year_view_selectedChange_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r8);
+
+            var ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r10._goToDateInView($event, "month");
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("activeDate", ctx_r2.activeDate)("selected", ctx_r2.selected)("dateFilter", ctx_r2.dateFilter)("maxDate", ctx_r2.maxDate)("minDate", ctx_r2.minDate)("dateClass", ctx_r2.dateClass);
+        }
+      }
+
+      function MatCalendar_mat_multi_year_view_4_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-multi-year-view", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("activeDateChange", function MatCalendar_mat_multi_year_view_4_Template_mat_multi_year_view_activeDateChange_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r12);
+
+            var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r11.activeDate = $event;
+          })("yearSelected", function MatCalendar_mat_multi_year_view_4_Template_mat_multi_year_view_yearSelected_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r12);
+
+            var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r13._yearSelectedInMultiYearView($event);
+          })("selectedChange", function MatCalendar_mat_multi_year_view_4_Template_mat_multi_year_view_selectedChange_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r12);
+
+            var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r14._goToDateInView($event, "year");
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("activeDate", ctx_r3.activeDate)("selected", ctx_r3.selected)("dateFilter", ctx_r3.dateFilter)("maxDate", ctx_r3.maxDate)("minDate", ctx_r3.minDate)("dateClass", ctx_r3.dateClass);
+        }
+      }
+
+      var _c2 = ["button"];
+
+      function MatDatepickerToggle__svg_svg_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnamespaceSVG"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "svg", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "path", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+      }
+
+      var _c3 = [[["", "matDatepickerToggleIcon", ""]]];
+      var _c4 = ["[matDatepickerToggleIcon]"];
+      var _c5 = [[["input", "matStartDate", ""]], [["input", "matEndDate", ""]]];
+      var _c6 = ["input[matStartDate]", "input[matEndDate]"];
+
       function createMissingDateImplError(provider) {
         return Error("MatDatepicker: No provider found for ".concat(provider, ". You must import one of the following ") + "modules at your application root: MatNativeDateModule, MatMomentDateModule, or provide a " + "custom implementation.");
       }
@@ -2625,6 +2311,10 @@
         return MatDatepickerIntl;
       }();
 
+      MatDatepickerIntl.ɵfac = function MatDatepickerIntl_Factory(t) {
+        return new (t || MatDatepickerIntl)();
+      };
+
       MatDatepickerIntl.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"])({
         factory: function MatDatepickerIntl_Factory() {
           return new MatDatepickerIntl();
@@ -2632,12 +2322,18 @@
         token: MatDatepickerIntl,
         providedIn: "root"
       });
-      MatDatepickerIntl.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"],
-        args: [{
-          providedIn: 'root'
-        }]
-      }];
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepickerIntl, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [];
+        }, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -2650,6 +2346,7 @@
        * An internal class that represents the data corresponding to a single calendar cell.
        * @docs-private
        */
+
 
       var MatCalendarCell = function MatCalendarCell(value, displayValue, ariaLabel, enabled) {
         var cssClasses = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
@@ -2674,7 +2371,7 @@
 
       var MatCalendarBody = /*#__PURE__*/function () {
         function MatCalendarBody(_elementRef, _ngZone) {
-          var _this3 = this;
+          var _this = this;
 
           _classCallCheck(this, MatCalendarBody);
 
@@ -2713,18 +2410,18 @@
            */
 
           this._enterHandler = function (event) {
-            if (_this3._skipNextFocus && event.type === 'focus') {
-              _this3._skipNextFocus = false;
+            if (_this._skipNextFocus && event.type === 'focus') {
+              _this._skipNextFocus = false;
               return;
             } // We only need to hit the zone when we're selecting a range.
 
 
-            if (event.target && _this3.isRange) {
-              var cell = _this3._getCellFromElement(event.target);
+            if (event.target && _this.isRange) {
+              var cell = _this._getCellFromElement(event.target);
 
               if (cell) {
-                _this3._ngZone.run(function () {
-                  return _this3.previewChange.emit({
+                _this._ngZone.run(function () {
+                  return _this.previewChange.emit({
                     value: cell.enabled ? cell : null,
                     event: event
                   });
@@ -2740,13 +2437,13 @@
 
           this._leaveHandler = function (event) {
             // We only need to hit the zone when we're selecting a range.
-            if (_this3.previewEnd !== null && _this3.isRange) {
+            if (_this.previewEnd !== null && _this.isRange) {
               // Only reset the preview end value when leaving cells. This looks better, because
               // we have a gap between the cells and the rows and we don't want to remove the
               // range just for it to show up again when the user moves a few pixels to the side.
               if (event.target && isTableCell(event.target)) {
-                _this3._ngZone.run(function () {
-                  return _this3.previewChange.emit({
+                _this._ngZone.run(function () {
+                  return _this.previewChange.emit({
                     value: null,
                     event: event
                   });
@@ -2757,10 +2454,10 @@
 
           _ngZone.runOutsideAngular(function () {
             var element = _elementRef.nativeElement;
-            element.addEventListener('mouseenter', _this3._enterHandler, true);
-            element.addEventListener('focus', _this3._enterHandler, true);
-            element.addEventListener('mouseleave', _this3._leaveHandler, true);
-            element.addEventListener('blur', _this3._leaveHandler, true);
+            element.addEventListener('mouseenter', _this._enterHandler, true);
+            element.addEventListener('focus', _this._enterHandler, true);
+            element.addEventListener('mouseleave', _this._leaveHandler, true);
+            element.addEventListener('blur', _this._leaveHandler, true);
           });
         }
         /** Called when a cell is clicked. */
@@ -2829,17 +2526,17 @@
         }, {
           key: "_focusActiveCell",
           value: function _focusActiveCell() {
-            var _this4 = this;
+            var _this2 = this;
 
             var movePreview = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
             this._ngZone.runOutsideAngular(function () {
-              _this4._ngZone.onStable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function () {
-                var activeCell = _this4._elementRef.nativeElement.querySelector('.mat-calendar-body-active');
+              _this2._ngZone.onStable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function () {
+                var activeCell = _this2._elementRef.nativeElement.querySelector('.mat-calendar-body-active');
 
                 if (activeCell) {
                   if (!movePreview) {
-                    _this4._skipNextFocus = true;
+                    _this2._skipNextFocus = true;
                   }
 
                   activeCell.focus();
@@ -2993,22 +2690,60 @@
         return MatCalendarBody;
       }();
 
-      MatCalendarBody.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: '[mat-calendar-body]',
-          template: "<!--\n  If there's not enough space in the first row, create a separate label row. We mark this row as\n  aria-hidden because we don't want it to be read out as one of the weeks in the month.\n-->\n<tr *ngIf=\"_firstRowOffset < labelMinRequiredCells\" aria-hidden=\"true\">\n  <td class=\"mat-calendar-body-label\"\n      [attr.colspan]=\"numCols\"\n      [style.paddingTop]=\"_cellPadding\"\n      [style.paddingBottom]=\"_cellPadding\">\n    {{label}}\n  </td>\n</tr>\n\n<!-- Create the first row separately so we can include a special spacer cell. -->\n<tr *ngFor=\"let row of rows; let rowIndex = index\" role=\"row\">\n  <!--\n    We mark this cell as aria-hidden so it doesn't get read out as one of the days in the week.\n    The aspect ratio of the table cells is maintained by setting the top and bottom padding as a\n    percentage of the width (a variant of the trick described here:\n    https://www.w3schools.com/howto/howto_css_aspect_ratio.asp).\n  -->\n  <td *ngIf=\"rowIndex === 0 && _firstRowOffset\"\n      aria-hidden=\"true\"\n      class=\"mat-calendar-body-label\"\n      [attr.colspan]=\"_firstRowOffset\"\n      [style.paddingTop]=\"_cellPadding\"\n      [style.paddingBottom]=\"_cellPadding\">\n    {{_firstRowOffset >= labelMinRequiredCells ? label : ''}}\n  </td>\n  <td *ngFor=\"let item of row; let colIndex = index\"\n      role=\"gridcell\"\n      class=\"mat-calendar-body-cell\"\n      [ngClass]=\"item.cssClasses\"\n      [tabindex]=\"_isActiveCell(rowIndex, colIndex) ? 0 : -1\"\n      [attr.data-mat-row]=\"rowIndex\"\n      [attr.data-mat-col]=\"colIndex\"\n      [class.mat-calendar-body-disabled]=\"!item.enabled\"\n      [class.mat-calendar-body-active]=\"_isActiveCell(rowIndex, colIndex)\"\n      [class.mat-calendar-body-range-start]=\"_isRangeStart(item.compareValue)\"\n      [class.mat-calendar-body-range-end]=\"_isRangeEnd(item.compareValue)\"\n      [class.mat-calendar-body-in-range]=\"_isInRange(item.compareValue)\"\n      [class.mat-calendar-body-comparison-bridge-start]=\"_isComparisonBridgeStart(item.compareValue, rowIndex, colIndex)\"\n      [class.mat-calendar-body-comparison-bridge-end]=\"_isComparisonBridgeEnd(item.compareValue, rowIndex, colIndex)\"\n      [class.mat-calendar-body-comparison-start]=\"_isComparisonStart(item.compareValue)\"\n      [class.mat-calendar-body-comparison-end]=\"_isComparisonEnd(item.compareValue)\"\n      [class.mat-calendar-body-in-comparison-range]=\"_isInComparisonRange(item.compareValue)\"\n      [class.mat-calendar-body-preview-start]=\"_isPreviewStart(item.compareValue)\"\n      [class.mat-calendar-body-preview-end]=\"_isPreviewEnd(item.compareValue)\"\n      [class.mat-calendar-body-in-preview]=\"_isInPreview(item.compareValue)\"\n      [attr.aria-label]=\"item.ariaLabel\"\n      [attr.aria-disabled]=\"!item.enabled || null\"\n      [attr.aria-selected]=\"_isSelected(item.compareValue)\"\n      (click)=\"_cellClicked(item, $event)\"\n      [style.width]=\"_cellWidth\"\n      [style.paddingTop]=\"_cellPadding\"\n      [style.paddingBottom]=\"_cellPadding\">\n      <div class=\"mat-calendar-body-cell-content mat-focus-indicator\"\n        [class.mat-calendar-body-selected]=\"_isSelected(item.compareValue)\"\n        [class.mat-calendar-body-comparison-identical]=\"_isComparisonIdentical(item.compareValue)\"\n        [class.mat-calendar-body-today]=\"todayValue === item.compareValue\">\n        {{item.displayValue}}\n      </div>\n      <div class=\"mat-calendar-body-cell-preview\"></div>\n  </td>\n</tr>\n",
-          host: {
-            'class': 'mat-calendar-body',
-            'role': 'grid',
-            'aria-readonly': 'true'
-          },
-          exportAs: 'matCalendarBody',
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
-          styles: [".mat-calendar-body{min-width:224px}.mat-calendar-body-label{height:0;line-height:0;text-align:left;padding-left:4.7142857143%;padding-right:4.7142857143%}.mat-calendar-body-cell{position:relative;height:0;line-height:0;text-align:center;outline:none;cursor:pointer}.mat-calendar-body-cell::before,.mat-calendar-body-cell::after,.mat-calendar-body-cell-preview{content:\"\";position:absolute;top:5%;left:0;z-index:0;box-sizing:border-box;height:90%;width:100%}.mat-calendar-body-range-start:not(.mat-calendar-body-in-comparison-range)::before,.mat-calendar-body-range-start::after,.mat-calendar-body-comparison-start:not(.mat-calendar-body-comparison-bridge-start)::before,.mat-calendar-body-comparison-start::after,.mat-calendar-body-preview-start .mat-calendar-body-cell-preview{left:5%;width:95%;border-top-left-radius:999px;border-bottom-left-radius:999px}[dir=rtl] .mat-calendar-body-range-start:not(.mat-calendar-body-in-comparison-range)::before,[dir=rtl] .mat-calendar-body-range-start::after,[dir=rtl] .mat-calendar-body-comparison-start:not(.mat-calendar-body-comparison-bridge-start)::before,[dir=rtl] .mat-calendar-body-comparison-start::after,[dir=rtl] .mat-calendar-body-preview-start .mat-calendar-body-cell-preview{left:0;border-radius:0;border-top-right-radius:999px;border-bottom-right-radius:999px}.mat-calendar-body-range-end:not(.mat-calendar-body-in-comparison-range)::before,.mat-calendar-body-range-end::after,.mat-calendar-body-comparison-end:not(.mat-calendar-body-comparison-bridge-end)::before,.mat-calendar-body-comparison-end::after,.mat-calendar-body-preview-end .mat-calendar-body-cell-preview{width:95%;border-top-right-radius:999px;border-bottom-right-radius:999px}[dir=rtl] .mat-calendar-body-range-end:not(.mat-calendar-body-in-comparison-range)::before,[dir=rtl] .mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-end:not(.mat-calendar-body-comparison-bridge-end)::before,[dir=rtl] .mat-calendar-body-comparison-end::after,[dir=rtl] .mat-calendar-body-preview-end .mat-calendar-body-cell-preview{left:5%;border-radius:0;border-top-left-radius:999px;border-bottom-left-radius:999px}[dir=rtl] .mat-calendar-body-comparison-bridge-start.mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-bridge-end.mat-calendar-body-range-start::after{width:95%;border-top-right-radius:999px;border-bottom-right-radius:999px}.mat-calendar-body-comparison-start.mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-start.mat-calendar-body-range-end::after,.mat-calendar-body-comparison-end.mat-calendar-body-range-start::after,[dir=rtl] .mat-calendar-body-comparison-end.mat-calendar-body-range-start::after{width:90%}.mat-calendar-body-in-preview .mat-calendar-body-cell-preview{border-top:dashed 1px;border-bottom:dashed 1px}.mat-calendar-body-preview-start .mat-calendar-body-cell-preview{border-left:dashed 1px}[dir=rtl] .mat-calendar-body-preview-start .mat-calendar-body-cell-preview{border-left:0;border-right:dashed 1px}.mat-calendar-body-preview-end .mat-calendar-body-cell-preview{border-right:dashed 1px}[dir=rtl] .mat-calendar-body-preview-end .mat-calendar-body-cell-preview{border-right:0;border-left:dashed 1px}.mat-calendar-body-disabled{cursor:default}.mat-calendar-body-cell-content{top:5%;left:5%;z-index:1;display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:90%;height:90%;line-height:1;border-width:1px;border-style:solid;border-radius:999px}.mat-calendar-body-cell-content.mat-focus-indicator{position:absolute}.cdk-high-contrast-active .mat-calendar-body-cell-content{border:none}.cdk-high-contrast-active .mat-datepicker-popup:not(:empty),.cdk-high-contrast-active .mat-calendar-body-selected{outline:solid 1px}.cdk-high-contrast-active .mat-calendar-body-today{outline:dotted 1px}.cdk-high-contrast-active .cdk-keyboard-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),.cdk-high-contrast-active .cdk-program-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected){outline:dotted 2px}[dir=rtl] .mat-calendar-body-label{text-align:right}@media(hover: none){.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected){background-color:transparent}}\n"]
-        }]
-      }];
+      MatCalendarBody.ɵfac = function MatCalendarBody_Factory(t) {
+        return new (t || MatCalendarBody)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]));
+      };
+
+      MatCalendarBody.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatCalendarBody,
+        selectors: [["", "mat-calendar-body", ""]],
+        hostAttrs: ["role", "grid", "aria-readonly", "true", 1, "mat-calendar-body"],
+        inputs: {
+          numCols: "numCols",
+          activeCell: "activeCell",
+          isRange: "isRange",
+          cellAspectRatio: "cellAspectRatio",
+          previewStart: "previewStart",
+          previewEnd: "previewEnd",
+          label: "label",
+          rows: "rows",
+          todayValue: "todayValue",
+          startValue: "startValue",
+          endValue: "endValue",
+          labelMinRequiredCells: "labelMinRequiredCells",
+          comparisonStart: "comparisonStart",
+          comparisonEnd: "comparisonEnd"
+        },
+        outputs: {
+          selectedValueChange: "selectedValueChange",
+          previewChange: "previewChange"
+        },
+        exportAs: ["matCalendarBody"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵNgOnChangesFeature"]],
+        attrs: _c0,
+        decls: 2,
+        vars: 2,
+        consts: [["aria-hidden", "true", 4, "ngIf"], ["role", "row", 4, "ngFor", "ngForOf"], ["aria-hidden", "true"], [1, "mat-calendar-body-label"], ["role", "row"], ["aria-hidden", "true", "class", "mat-calendar-body-label", 3, "paddingTop", "paddingBottom", 4, "ngIf"], ["role", "gridcell", "class", "mat-calendar-body-cell", 3, "ngClass", "tabindex", "mat-calendar-body-disabled", "mat-calendar-body-active", "mat-calendar-body-range-start", "mat-calendar-body-range-end", "mat-calendar-body-in-range", "mat-calendar-body-comparison-bridge-start", "mat-calendar-body-comparison-bridge-end", "mat-calendar-body-comparison-start", "mat-calendar-body-comparison-end", "mat-calendar-body-in-comparison-range", "mat-calendar-body-preview-start", "mat-calendar-body-preview-end", "mat-calendar-body-in-preview", "width", "paddingTop", "paddingBottom", "click", 4, "ngFor", "ngForOf"], ["aria-hidden", "true", 1, "mat-calendar-body-label"], ["role", "gridcell", 1, "mat-calendar-body-cell", 3, "ngClass", "tabindex", "click"], [1, "mat-calendar-body-cell-content", "mat-focus-indicator"], [1, "mat-calendar-body-cell-preview"]],
+        template: function MatCalendarBody_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, MatCalendarBody_tr_0_Template, 3, 6, "tr", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](1, MatCalendarBody_tr_1_Template, 3, 2, "tr", 1);
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx._firstRowOffset < ctx.labelMinRequiredCells);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx.rows);
+          }
+        },
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"]],
+        styles: [".mat-calendar-body{min-width:224px}.mat-calendar-body-label{height:0;line-height:0;text-align:left;padding-left:4.7142857143%;padding-right:4.7142857143%}.mat-calendar-body-cell{position:relative;height:0;line-height:0;text-align:center;outline:none;cursor:pointer}.mat-calendar-body-cell::before,.mat-calendar-body-cell::after,.mat-calendar-body-cell-preview{content:\"\";position:absolute;top:5%;left:0;z-index:0;box-sizing:border-box;height:90%;width:100%}.mat-calendar-body-range-start:not(.mat-calendar-body-in-comparison-range)::before,.mat-calendar-body-range-start::after,.mat-calendar-body-comparison-start:not(.mat-calendar-body-comparison-bridge-start)::before,.mat-calendar-body-comparison-start::after,.mat-calendar-body-preview-start .mat-calendar-body-cell-preview{left:5%;width:95%;border-top-left-radius:999px;border-bottom-left-radius:999px}[dir=rtl] .mat-calendar-body-range-start:not(.mat-calendar-body-in-comparison-range)::before,[dir=rtl] .mat-calendar-body-range-start::after,[dir=rtl] .mat-calendar-body-comparison-start:not(.mat-calendar-body-comparison-bridge-start)::before,[dir=rtl] .mat-calendar-body-comparison-start::after,[dir=rtl] .mat-calendar-body-preview-start .mat-calendar-body-cell-preview{left:0;border-radius:0;border-top-right-radius:999px;border-bottom-right-radius:999px}.mat-calendar-body-range-end:not(.mat-calendar-body-in-comparison-range)::before,.mat-calendar-body-range-end::after,.mat-calendar-body-comparison-end:not(.mat-calendar-body-comparison-bridge-end)::before,.mat-calendar-body-comparison-end::after,.mat-calendar-body-preview-end .mat-calendar-body-cell-preview{width:95%;border-top-right-radius:999px;border-bottom-right-radius:999px}[dir=rtl] .mat-calendar-body-range-end:not(.mat-calendar-body-in-comparison-range)::before,[dir=rtl] .mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-end:not(.mat-calendar-body-comparison-bridge-end)::before,[dir=rtl] .mat-calendar-body-comparison-end::after,[dir=rtl] .mat-calendar-body-preview-end .mat-calendar-body-cell-preview{left:5%;border-radius:0;border-top-left-radius:999px;border-bottom-left-radius:999px}[dir=rtl] .mat-calendar-body-comparison-bridge-start.mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-bridge-end.mat-calendar-body-range-start::after{width:95%;border-top-right-radius:999px;border-bottom-right-radius:999px}.mat-calendar-body-comparison-start.mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-start.mat-calendar-body-range-end::after,.mat-calendar-body-comparison-end.mat-calendar-body-range-start::after,[dir=rtl] .mat-calendar-body-comparison-end.mat-calendar-body-range-start::after{width:90%}.mat-calendar-body-in-preview .mat-calendar-body-cell-preview{border-top:dashed 1px;border-bottom:dashed 1px}.mat-calendar-body-preview-start .mat-calendar-body-cell-preview{border-left:dashed 1px}[dir=rtl] .mat-calendar-body-preview-start .mat-calendar-body-cell-preview{border-left:0;border-right:dashed 1px}.mat-calendar-body-preview-end .mat-calendar-body-cell-preview{border-right:dashed 1px}[dir=rtl] .mat-calendar-body-preview-end .mat-calendar-body-cell-preview{border-right:0;border-left:dashed 1px}.mat-calendar-body-disabled{cursor:default}.mat-calendar-body-cell-content{top:5%;left:5%;z-index:1;display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:90%;height:90%;line-height:1;border-width:1px;border-style:solid;border-radius:999px}.mat-calendar-body-cell-content.mat-focus-indicator{position:absolute}.cdk-high-contrast-active .mat-calendar-body-cell-content{border:none}.cdk-high-contrast-active .mat-datepicker-popup:not(:empty),.cdk-high-contrast-active .mat-calendar-body-selected{outline:solid 1px}.cdk-high-contrast-active .mat-calendar-body-today{outline:dotted 1px}.cdk-high-contrast-active .cdk-keyboard-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),.cdk-high-contrast-active .cdk-program-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected){outline:dotted 2px}[dir=rtl] .mat-calendar-body-label{text-align:right}@media(hover: none){.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected){background-color:transparent}}\n"],
+        encapsulation: 2,
+        changeDetection: 0
+      });
 
       MatCalendarBody.ctorParameters = function () {
         return [{
@@ -3068,7 +2803,83 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatCalendarBody, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: '[mat-calendar-body]',
+            template: "<!--\n  If there's not enough space in the first row, create a separate label row. We mark this row as\n  aria-hidden because we don't want it to be read out as one of the weeks in the month.\n-->\n<tr *ngIf=\"_firstRowOffset < labelMinRequiredCells\" aria-hidden=\"true\">\n  <td class=\"mat-calendar-body-label\"\n      [attr.colspan]=\"numCols\"\n      [style.paddingTop]=\"_cellPadding\"\n      [style.paddingBottom]=\"_cellPadding\">\n    {{label}}\n  </td>\n</tr>\n\n<!-- Create the first row separately so we can include a special spacer cell. -->\n<tr *ngFor=\"let row of rows; let rowIndex = index\" role=\"row\">\n  <!--\n    We mark this cell as aria-hidden so it doesn't get read out as one of the days in the week.\n    The aspect ratio of the table cells is maintained by setting the top and bottom padding as a\n    percentage of the width (a variant of the trick described here:\n    https://www.w3schools.com/howto/howto_css_aspect_ratio.asp).\n  -->\n  <td *ngIf=\"rowIndex === 0 && _firstRowOffset\"\n      aria-hidden=\"true\"\n      class=\"mat-calendar-body-label\"\n      [attr.colspan]=\"_firstRowOffset\"\n      [style.paddingTop]=\"_cellPadding\"\n      [style.paddingBottom]=\"_cellPadding\">\n    {{_firstRowOffset >= labelMinRequiredCells ? label : ''}}\n  </td>\n  <td *ngFor=\"let item of row; let colIndex = index\"\n      role=\"gridcell\"\n      class=\"mat-calendar-body-cell\"\n      [ngClass]=\"item.cssClasses\"\n      [tabindex]=\"_isActiveCell(rowIndex, colIndex) ? 0 : -1\"\n      [attr.data-mat-row]=\"rowIndex\"\n      [attr.data-mat-col]=\"colIndex\"\n      [class.mat-calendar-body-disabled]=\"!item.enabled\"\n      [class.mat-calendar-body-active]=\"_isActiveCell(rowIndex, colIndex)\"\n      [class.mat-calendar-body-range-start]=\"_isRangeStart(item.compareValue)\"\n      [class.mat-calendar-body-range-end]=\"_isRangeEnd(item.compareValue)\"\n      [class.mat-calendar-body-in-range]=\"_isInRange(item.compareValue)\"\n      [class.mat-calendar-body-comparison-bridge-start]=\"_isComparisonBridgeStart(item.compareValue, rowIndex, colIndex)\"\n      [class.mat-calendar-body-comparison-bridge-end]=\"_isComparisonBridgeEnd(item.compareValue, rowIndex, colIndex)\"\n      [class.mat-calendar-body-comparison-start]=\"_isComparisonStart(item.compareValue)\"\n      [class.mat-calendar-body-comparison-end]=\"_isComparisonEnd(item.compareValue)\"\n      [class.mat-calendar-body-in-comparison-range]=\"_isInComparisonRange(item.compareValue)\"\n      [class.mat-calendar-body-preview-start]=\"_isPreviewStart(item.compareValue)\"\n      [class.mat-calendar-body-preview-end]=\"_isPreviewEnd(item.compareValue)\"\n      [class.mat-calendar-body-in-preview]=\"_isInPreview(item.compareValue)\"\n      [attr.aria-label]=\"item.ariaLabel\"\n      [attr.aria-disabled]=\"!item.enabled || null\"\n      [attr.aria-selected]=\"_isSelected(item.compareValue)\"\n      (click)=\"_cellClicked(item, $event)\"\n      [style.width]=\"_cellWidth\"\n      [style.paddingTop]=\"_cellPadding\"\n      [style.paddingBottom]=\"_cellPadding\">\n      <div class=\"mat-calendar-body-cell-content mat-focus-indicator\"\n        [class.mat-calendar-body-selected]=\"_isSelected(item.compareValue)\"\n        [class.mat-calendar-body-comparison-identical]=\"_isComparisonIdentical(item.compareValue)\"\n        [class.mat-calendar-body-today]=\"todayValue === item.compareValue\">\n        {{item.displayValue}}\n      </div>\n      <div class=\"mat-calendar-body-cell-preview\"></div>\n  </td>\n</tr>\n",
+            host: {
+              'class': 'mat-calendar-body',
+              'role': 'grid',
+              'aria-readonly': 'true'
+            },
+            exportAs: 'matCalendarBody',
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
+            styles: [".mat-calendar-body{min-width:224px}.mat-calendar-body-label{height:0;line-height:0;text-align:left;padding-left:4.7142857143%;padding-right:4.7142857143%}.mat-calendar-body-cell{position:relative;height:0;line-height:0;text-align:center;outline:none;cursor:pointer}.mat-calendar-body-cell::before,.mat-calendar-body-cell::after,.mat-calendar-body-cell-preview{content:\"\";position:absolute;top:5%;left:0;z-index:0;box-sizing:border-box;height:90%;width:100%}.mat-calendar-body-range-start:not(.mat-calendar-body-in-comparison-range)::before,.mat-calendar-body-range-start::after,.mat-calendar-body-comparison-start:not(.mat-calendar-body-comparison-bridge-start)::before,.mat-calendar-body-comparison-start::after,.mat-calendar-body-preview-start .mat-calendar-body-cell-preview{left:5%;width:95%;border-top-left-radius:999px;border-bottom-left-radius:999px}[dir=rtl] .mat-calendar-body-range-start:not(.mat-calendar-body-in-comparison-range)::before,[dir=rtl] .mat-calendar-body-range-start::after,[dir=rtl] .mat-calendar-body-comparison-start:not(.mat-calendar-body-comparison-bridge-start)::before,[dir=rtl] .mat-calendar-body-comparison-start::after,[dir=rtl] .mat-calendar-body-preview-start .mat-calendar-body-cell-preview{left:0;border-radius:0;border-top-right-radius:999px;border-bottom-right-radius:999px}.mat-calendar-body-range-end:not(.mat-calendar-body-in-comparison-range)::before,.mat-calendar-body-range-end::after,.mat-calendar-body-comparison-end:not(.mat-calendar-body-comparison-bridge-end)::before,.mat-calendar-body-comparison-end::after,.mat-calendar-body-preview-end .mat-calendar-body-cell-preview{width:95%;border-top-right-radius:999px;border-bottom-right-radius:999px}[dir=rtl] .mat-calendar-body-range-end:not(.mat-calendar-body-in-comparison-range)::before,[dir=rtl] .mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-end:not(.mat-calendar-body-comparison-bridge-end)::before,[dir=rtl] .mat-calendar-body-comparison-end::after,[dir=rtl] .mat-calendar-body-preview-end .mat-calendar-body-cell-preview{left:5%;border-radius:0;border-top-left-radius:999px;border-bottom-left-radius:999px}[dir=rtl] .mat-calendar-body-comparison-bridge-start.mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-bridge-end.mat-calendar-body-range-start::after{width:95%;border-top-right-radius:999px;border-bottom-right-radius:999px}.mat-calendar-body-comparison-start.mat-calendar-body-range-end::after,[dir=rtl] .mat-calendar-body-comparison-start.mat-calendar-body-range-end::after,.mat-calendar-body-comparison-end.mat-calendar-body-range-start::after,[dir=rtl] .mat-calendar-body-comparison-end.mat-calendar-body-range-start::after{width:90%}.mat-calendar-body-in-preview .mat-calendar-body-cell-preview{border-top:dashed 1px;border-bottom:dashed 1px}.mat-calendar-body-preview-start .mat-calendar-body-cell-preview{border-left:dashed 1px}[dir=rtl] .mat-calendar-body-preview-start .mat-calendar-body-cell-preview{border-left:0;border-right:dashed 1px}.mat-calendar-body-preview-end .mat-calendar-body-cell-preview{border-right:dashed 1px}[dir=rtl] .mat-calendar-body-preview-end .mat-calendar-body-cell-preview{border-right:0;border-left:dashed 1px}.mat-calendar-body-disabled{cursor:default}.mat-calendar-body-cell-content{top:5%;left:5%;z-index:1;display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:90%;height:90%;line-height:1;border-width:1px;border-style:solid;border-radius:999px}.mat-calendar-body-cell-content.mat-focus-indicator{position:absolute}.cdk-high-contrast-active .mat-calendar-body-cell-content{border:none}.cdk-high-contrast-active .mat-datepicker-popup:not(:empty),.cdk-high-contrast-active .mat-calendar-body-selected{outline:solid 1px}.cdk-high-contrast-active .mat-calendar-body-today{outline:dotted 1px}.cdk-high-contrast-active .cdk-keyboard-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected),.cdk-high-contrast-active .cdk-program-focused .mat-calendar-body-active>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected){outline:dotted 2px}[dir=rtl] .mat-calendar-body-label{text-align:right}@media(hover: none){.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected){background-color:transparent}}\n"]
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }];
+        }, {
+          numCols: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          activeCell: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          isRange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          cellAspectRatio: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          previewStart: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          previewEnd: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          selectedValueChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          previewChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          label: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          rows: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          todayValue: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          startValue: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          endValue: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          labelMinRequiredCells: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          comparisonStart: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          comparisonEnd: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /** Checks whether a node is a table cell element. */
+
 
       function isTableCell(node) {
         return node.nodeName === 'TD';
@@ -3161,9 +2972,13 @@
         return MatDateSelectionModel;
       }();
 
-      MatDateSelectionModel.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      MatDateSelectionModel.ɵfac = function MatDateSelectionModel_Factory(t) {
+        return new (t || MatDateSelectionModel)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](undefined), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]));
+      };
+
+      MatDateSelectionModel.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatDateSelectionModel
+      });
 
       MatDateSelectionModel.ctorParameters = function () {
         return [{
@@ -3172,18 +2987,32 @@
           type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDateSelectionModel, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: undefined
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
+          }];
+        }, null);
+      })();
       /**  A selection model that contains a single date. */
 
 
       var MatSingleDateSelectionModel = /*#__PURE__*/function (_MatDateSelectionMode) {
         _inherits(MatSingleDateSelectionModel, _MatDateSelectionMode);
 
-        var _super3 = _createSuper(MatSingleDateSelectionModel);
+        var _super = _createSuper(MatSingleDateSelectionModel);
 
         function MatSingleDateSelectionModel(adapter) {
           _classCallCheck(this, MatSingleDateSelectionModel);
 
-          return _super3.call(this, null, adapter);
+          return _super.call(this, null, adapter);
         }
         /**
          * Adds a date to the current selection. In the case of a single date selection, the added date
@@ -3218,27 +3047,44 @@
         return MatSingleDateSelectionModel;
       }(MatDateSelectionModel);
 
-      MatSingleDateSelectionModel.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"]
-      }];
+      MatSingleDateSelectionModel.ɵfac = function MatSingleDateSelectionModel_Factory(t) {
+        return new (t || MatSingleDateSelectionModel)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]));
+      };
+
+      MatSingleDateSelectionModel.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({
+        token: MatSingleDateSelectionModel,
+        factory: MatSingleDateSelectionModel.ɵfac
+      });
 
       MatSingleDateSelectionModel.ctorParameters = function () {
         return [{
           type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatSingleDateSelectionModel, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"]
+        }], function () {
+          return [{
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
+          }];
+        }, null);
+      })();
       /**  A selection model that contains a date range. */
 
 
       var MatRangeDateSelectionModel = /*#__PURE__*/function (_MatDateSelectionMode2) {
         _inherits(MatRangeDateSelectionModel, _MatDateSelectionMode2);
 
-        var _super4 = _createSuper(MatRangeDateSelectionModel);
+        var _super2 = _createSuper(MatRangeDateSelectionModel);
 
         function MatRangeDateSelectionModel(adapter) {
           _classCallCheck(this, MatRangeDateSelectionModel);
 
-          return _super4.call(this, new DateRange(null, null), adapter);
+          return _super2.call(this, new DateRange(null, null), adapter);
         }
         /**
          * Adds a date to the current selection. In the case of a date range selection, the added date
@@ -3301,15 +3147,32 @@
         return MatRangeDateSelectionModel;
       }(MatDateSelectionModel);
 
-      MatRangeDateSelectionModel.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"]
-      }];
+      MatRangeDateSelectionModel.ɵfac = function MatRangeDateSelectionModel_Factory(t) {
+        return new (t || MatRangeDateSelectionModel)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]));
+      };
+
+      MatRangeDateSelectionModel.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({
+        token: MatRangeDateSelectionModel,
+        factory: MatRangeDateSelectionModel.ɵfac
+      });
 
       MatRangeDateSelectionModel.ctorParameters = function () {
         return [{
           type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatRangeDateSelectionModel, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"]
+        }], function () {
+          return [{
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
+          }];
+        }, null);
+      })();
       /** @docs-private */
 
 
@@ -3392,15 +3255,32 @@
         return DefaultMatCalendarRangeStrategy;
       }();
 
-      DefaultMatCalendarRangeStrategy.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"]
-      }];
+      DefaultMatCalendarRangeStrategy.ɵfac = function DefaultMatCalendarRangeStrategy_Factory(t) {
+        return new (t || DefaultMatCalendarRangeStrategy)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]));
+      };
+
+      DefaultMatCalendarRangeStrategy.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({
+        token: DefaultMatCalendarRangeStrategy,
+        factory: DefaultMatCalendarRangeStrategy.ɵfac
+      });
 
       DefaultMatCalendarRangeStrategy.ctorParameters = function () {
         return [{
           type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](DefaultMatCalendarRangeStrategy, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"]
+        }], function () {
+          return [{
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
+          }];
+        }, null);
+      })();
       /** @docs-private */
 
 
@@ -3469,10 +3349,10 @@
         _createClass(MatMonthView, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this5 = this;
+            var _this3 = this;
 
             this._rerenderSubscription = this._dateAdapter.localeChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["startWith"])(null)).subscribe(function () {
-              return _this5._init();
+              return _this3._init();
             });
           }
         }, {
@@ -3835,16 +3715,93 @@
         return MatMonthView;
       }();
 
-      MatMonthView.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-month-view',
-          template: "<table class=\"mat-calendar-table\" role=\"presentation\">\n  <thead class=\"mat-calendar-table-header\">\n    <tr>\n      <th scope=\"col\" *ngFor=\"let day of _weekdays\" [attr.aria-label]=\"day.long\">{{day.narrow}}</th>\n    </tr>\n    <tr><th class=\"mat-calendar-table-header-divider\" colspan=\"7\" aria-hidden=\"true\"></th></tr>\n  </thead>\n  <tbody mat-calendar-body\n         [label]=\"_monthLabel\"\n         [rows]=\"_weeks\"\n         [todayValue]=\"_todayDate!\"\n         [startValue]=\"_rangeStart!\"\n         [endValue]=\"_rangeEnd!\"\n         [comparisonStart]=\"_comparisonRangeStart\"\n         [comparisonEnd]=\"_comparisonRangeEnd\"\n         [previewStart]=\"_previewStart\"\n         [previewEnd]=\"_previewEnd\"\n         [isRange]=\"_isRange\"\n         [labelMinRequiredCells]=\"3\"\n         [activeCell]=\"_dateAdapter.getDate(activeDate) - 1\"\n         (selectedValueChange)=\"_dateSelected($event)\"\n         (previewChange)=\"_previewChanged($event)\"\n         (keydown)=\"_handleCalendarBodyKeydown($event)\">\n  </tbody>\n</table>\n",
-          exportAs: 'matMonthView',
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush
-        }]
-      }];
+      MatMonthView.ɵfac = function MatMonthView_Factory(t) {
+        return new (t || MatMonthView)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_11__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_DATE_RANGE_SELECTION_STRATEGY, 8));
+      };
+
+      MatMonthView.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatMonthView,
+        selectors: [["mat-month-view"]],
+        viewQuery: function MatMonthView_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](MatCalendarBody, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._matCalendarBody = _t.first);
+          }
+        },
+        inputs: {
+          activeDate: "activeDate",
+          selected: "selected",
+          minDate: "minDate",
+          maxDate: "maxDate",
+          dateFilter: "dateFilter",
+          dateClass: "dateClass",
+          comparisonStart: "comparisonStart",
+          comparisonEnd: "comparisonEnd"
+        },
+        outputs: {
+          selectedChange: "selectedChange",
+          _userSelection: "_userSelection",
+          activeDateChange: "activeDateChange"
+        },
+        exportAs: ["matMonthView"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵNgOnChangesFeature"]],
+        decls: 7,
+        vars: 13,
+        consts: [["role", "presentation", 1, "mat-calendar-table"], [1, "mat-calendar-table-header"], ["scope", "col", 4, "ngFor", "ngForOf"], ["colspan", "7", "aria-hidden", "true", 1, "mat-calendar-table-header-divider"], ["mat-calendar-body", "", 3, "label", "rows", "todayValue", "startValue", "endValue", "comparisonStart", "comparisonEnd", "previewStart", "previewEnd", "isRange", "labelMinRequiredCells", "activeCell", "selectedValueChange", "previewChange", "keydown"], ["scope", "col"]],
+        template: function MatMonthView_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "table", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "thead", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, MatMonthView_th_3_Template, 2, 2, "th", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "th", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](6, "tbody", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("selectedValueChange", function MatMonthView_Template_tbody_selectedValueChange_6_listener($event) {
+              return ctx._dateSelected($event);
+            })("previewChange", function MatMonthView_Template_tbody_previewChange_6_listener($event) {
+              return ctx._previewChanged($event);
+            })("keydown", function MatMonthView_Template_tbody_keydown_6_listener($event) {
+              return ctx._handleCalendarBodyKeydown($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx._weekdays);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("label", ctx._monthLabel)("rows", ctx._weeks)("todayValue", ctx._todayDate)("startValue", ctx._rangeStart)("endValue", ctx._rangeEnd)("comparisonStart", ctx._comparisonRangeStart)("comparisonEnd", ctx._comparisonRangeEnd)("previewStart", ctx._previewStart)("previewEnd", ctx._previewEnd)("isRange", ctx._isRange)("labelMinRequiredCells", 3)("activeCell", ctx._dateAdapter.getDate(ctx.activeDate) - 1);
+          }
+        },
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], MatCalendarBody],
+        encapsulation: 2,
+        changeDetection: 0
+      });
 
       MatMonthView.ctorParameters = function () {
         return [{
@@ -3917,6 +3874,88 @@
           args: [MatCalendarBody]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatMonthView, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-month-view',
+            template: "<table class=\"mat-calendar-table\" role=\"presentation\">\n  <thead class=\"mat-calendar-table-header\">\n    <tr>\n      <th scope=\"col\" *ngFor=\"let day of _weekdays\" [attr.aria-label]=\"day.long\">{{day.narrow}}</th>\n    </tr>\n    <tr><th class=\"mat-calendar-table-header-divider\" colspan=\"7\" aria-hidden=\"true\"></th></tr>\n  </thead>\n  <tbody mat-calendar-body\n         [label]=\"_monthLabel\"\n         [rows]=\"_weeks\"\n         [todayValue]=\"_todayDate!\"\n         [startValue]=\"_rangeStart!\"\n         [endValue]=\"_rangeEnd!\"\n         [comparisonStart]=\"_comparisonRangeStart\"\n         [comparisonEnd]=\"_comparisonRangeEnd\"\n         [previewStart]=\"_previewStart\"\n         [previewEnd]=\"_previewEnd\"\n         [isRange]=\"_isRange\"\n         [labelMinRequiredCells]=\"3\"\n         [activeCell]=\"_dateAdapter.getDate(activeDate) - 1\"\n         (selectedValueChange)=\"_dateSelected($event)\"\n         (previewChange)=\"_previewChanged($event)\"\n         (keydown)=\"_handleCalendarBodyKeydown($event)\">\n  </tbody>\n</table>\n",
+            exportAs: 'matMonthView',
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_11__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_DATE_RANGE_SELECTION_STRATEGY]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }];
+        }, {
+          selectedChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          _userSelection: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          activeDateChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          activeDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          selected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          minDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          maxDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateFilter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateClass: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          comparisonStart: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          comparisonEnd: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          _matCalendarBody: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatCalendarBody]
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -3924,6 +3963,7 @@
        * Use of this source code is governed by an MIT-style license that can be
        * found in the LICENSE file at https://angular.io/license
        */
+
 
       var yearsPerPage = 24;
       var yearsPerRow = 4;
@@ -3962,10 +4002,10 @@
         _createClass(MatMultiYearView, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this6 = this;
+            var _this4 = this;
 
             this._rerenderSubscription = this._dateAdapter.localeChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["startWith"])(null)).subscribe(function () {
-              return _this6._init();
+              return _this4._init();
             });
           }
         }, {
@@ -3978,7 +4018,7 @@
         }, {
           key: "_init",
           value: function _init() {
-            var _this7 = this;
+            var _this5 = this;
 
             this._todayYear = this._dateAdapter.getYear(this._dateAdapter.today()); // We want a range years such that we maximize the number of
             // enabled dates visible at once. This prevents issues where the minimum year
@@ -3996,7 +4036,7 @@
 
               if (row.length == yearsPerRow) {
                 this._years.push(row.map(function (year) {
-                  return _this7._createCellForYear(year);
+                  return _this5._createCellForYear(year);
                 }));
 
                 row = [];
@@ -4215,16 +4255,78 @@
         return MatMultiYearView;
       }();
 
-      MatMultiYearView.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-multi-year-view',
-          template: "<table class=\"mat-calendar-table\" role=\"presentation\">\n  <thead class=\"mat-calendar-table-header\">\n    <tr><th class=\"mat-calendar-table-header-divider\" colspan=\"4\"></th></tr>\n  </thead>\n  <tbody mat-calendar-body\n         [rows]=\"_years\"\n         [todayValue]=\"_todayYear\"\n         [startValue]=\"_selectedYear!\"\n         [endValue]=\"_selectedYear!\"\n         [numCols]=\"4\"\n         [cellAspectRatio]=\"4 / 7\"\n         [activeCell]=\"_getActiveCell()\"\n         (selectedValueChange)=\"_yearSelected($event)\"\n         (keydown)=\"_handleCalendarBodyKeydown($event)\">\n  </tbody>\n</table>\n",
-          exportAs: 'matMultiYearView',
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush
-        }]
-      }];
+      MatMultiYearView.ɵfac = function MatMultiYearView_Factory(t) {
+        return new (t || MatMultiYearView)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_11__["Directionality"], 8));
+      };
+
+      MatMultiYearView.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatMultiYearView,
+        selectors: [["mat-multi-year-view"]],
+        viewQuery: function MatMultiYearView_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](MatCalendarBody, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._matCalendarBody = _t.first);
+          }
+        },
+        inputs: {
+          activeDate: "activeDate",
+          selected: "selected",
+          minDate: "minDate",
+          maxDate: "maxDate",
+          dateFilter: "dateFilter",
+          dateClass: "dateClass"
+        },
+        outputs: {
+          selectedChange: "selectedChange",
+          yearSelected: "yearSelected",
+          activeDateChange: "activeDateChange"
+        },
+        exportAs: ["matMultiYearView"],
+        decls: 5,
+        vars: 7,
+        consts: [["role", "presentation", 1, "mat-calendar-table"], [1, "mat-calendar-table-header"], ["colspan", "4", 1, "mat-calendar-table-header-divider"], ["mat-calendar-body", "", 3, "rows", "todayValue", "startValue", "endValue", "numCols", "cellAspectRatio", "activeCell", "selectedValueChange", "keydown"]],
+        template: function MatMultiYearView_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "table", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "thead", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "th", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "tbody", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("selectedValueChange", function MatMultiYearView_Template_tbody_selectedValueChange_4_listener($event) {
+              return ctx._yearSelected($event);
+            })("keydown", function MatMultiYearView_Template_tbody_keydown_4_listener($event) {
+              return ctx._handleCalendarBodyKeydown($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("rows", ctx._years)("todayValue", ctx._todayYear)("startValue", ctx._selectedYear)("endValue", ctx._selectedYear)("numCols", 4)("cellAspectRatio", 4 / 7)("activeCell", ctx._getActiveCell());
+          }
+        },
+        directives: [MatCalendarBody],
+        encapsulation: 2,
+        changeDetection: 0
+      });
 
       MatMultiYearView.ctorParameters = function () {
         return [{
@@ -4275,6 +4377,66 @@
           args: [MatCalendarBody]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatMultiYearView, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-multi-year-view',
+            template: "<table class=\"mat-calendar-table\" role=\"presentation\">\n  <thead class=\"mat-calendar-table-header\">\n    <tr><th class=\"mat-calendar-table-header-divider\" colspan=\"4\"></th></tr>\n  </thead>\n  <tbody mat-calendar-body\n         [rows]=\"_years\"\n         [todayValue]=\"_todayYear\"\n         [startValue]=\"_selectedYear!\"\n         [endValue]=\"_selectedYear!\"\n         [numCols]=\"4\"\n         [cellAspectRatio]=\"4 / 7\"\n         [activeCell]=\"_getActiveCell()\"\n         (selectedValueChange)=\"_yearSelected($event)\"\n         (keydown)=\"_handleCalendarBodyKeydown($event)\">\n  </tbody>\n</table>\n",
+            exportAs: 'matMultiYearView',
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_11__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }];
+        }, {
+          selectedChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          yearSelected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          activeDateChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          activeDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          selected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          minDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          maxDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateFilter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateClass: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          _matCalendarBody: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatCalendarBody]
+          }]
+        });
+      })();
 
       function isSameMultiYearView(dateAdapter, date1, date2, minDate, maxDate) {
         var year1 = dateAdapter.getYear(date1);
@@ -4368,10 +4530,10 @@
         _createClass(MatYearView, [{
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this8 = this;
+            var _this6 = this;
 
             this._rerenderSubscription = this._dateAdapter.localeChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["startWith"])(null)).subscribe(function () {
-              return _this8._init();
+              return _this6._init();
             });
           }
         }, {
@@ -4467,7 +4629,7 @@
         }, {
           key: "_init",
           value: function _init() {
-            var _this9 = this;
+            var _this7 = this;
 
             this._setSelectedMonth(this.selected);
 
@@ -4479,7 +4641,7 @@
 
             this._months = [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11]].map(function (row) {
               return row.map(function (month) {
-                return _this9._createCellForMonth(month, monthNames[month]);
+                return _this7._createCellForMonth(month, monthNames[month]);
               });
             });
 
@@ -4651,16 +4813,78 @@
         return MatYearView;
       }();
 
-      MatYearView.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-year-view',
-          template: "<table class=\"mat-calendar-table\" role=\"presentation\">\n  <thead class=\"mat-calendar-table-header\">\n    <tr><th class=\"mat-calendar-table-header-divider\" colspan=\"4\"></th></tr>\n  </thead>\n  <tbody mat-calendar-body\n         [label]=\"_yearLabel\"\n         [rows]=\"_months\"\n         [todayValue]=\"_todayMonth!\"\n         [startValue]=\"_selectedMonth!\"\n         [endValue]=\"_selectedMonth!\"\n         [labelMinRequiredCells]=\"2\"\n         [numCols]=\"4\"\n         [cellAspectRatio]=\"4 / 7\"\n         [activeCell]=\"_dateAdapter.getMonth(activeDate)\"\n         (selectedValueChange)=\"_monthSelected($event)\"\n         (keydown)=\"_handleCalendarBodyKeydown($event)\">\n  </tbody>\n</table>\n",
-          exportAs: 'matYearView',
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush
-        }]
-      }];
+      MatYearView.ɵfac = function MatYearView_Factory(t) {
+        return new (t || MatYearView)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_11__["Directionality"], 8));
+      };
+
+      MatYearView.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatYearView,
+        selectors: [["mat-year-view"]],
+        viewQuery: function MatYearView_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](MatCalendarBody, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._matCalendarBody = _t.first);
+          }
+        },
+        inputs: {
+          activeDate: "activeDate",
+          selected: "selected",
+          minDate: "minDate",
+          maxDate: "maxDate",
+          dateFilter: "dateFilter",
+          dateClass: "dateClass"
+        },
+        outputs: {
+          selectedChange: "selectedChange",
+          monthSelected: "monthSelected",
+          activeDateChange: "activeDateChange"
+        },
+        exportAs: ["matYearView"],
+        decls: 5,
+        vars: 9,
+        consts: [["role", "presentation", 1, "mat-calendar-table"], [1, "mat-calendar-table-header"], ["colspan", "4", 1, "mat-calendar-table-header-divider"], ["mat-calendar-body", "", 3, "label", "rows", "todayValue", "startValue", "endValue", "labelMinRequiredCells", "numCols", "cellAspectRatio", "activeCell", "selectedValueChange", "keydown"]],
+        template: function MatYearView_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "table", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "thead", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "tr");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](3, "th", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](4, "tbody", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("selectedValueChange", function MatYearView_Template_tbody_selectedValueChange_4_listener($event) {
+              return ctx._monthSelected($event);
+            })("keydown", function MatYearView_Template_tbody_keydown_4_listener($event) {
+              return ctx._handleCalendarBodyKeydown($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("label", ctx._yearLabel)("rows", ctx._months)("todayValue", ctx._todayMonth)("startValue", ctx._selectedMonth)("endValue", ctx._selectedMonth)("labelMinRequiredCells", 2)("numCols", 4)("cellAspectRatio", 4 / 7)("activeCell", ctx._dateAdapter.getMonth(ctx.activeDate));
+          }
+        },
+        directives: [MatCalendarBody],
+        encapsulation: 2,
+        changeDetection: 0
+      });
 
       MatYearView.ctorParameters = function () {
         return [{
@@ -4719,6 +4943,74 @@
           args: [MatCalendarBody]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatYearView, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-year-view',
+            template: "<table class=\"mat-calendar-table\" role=\"presentation\">\n  <thead class=\"mat-calendar-table-header\">\n    <tr><th class=\"mat-calendar-table-header-divider\" colspan=\"4\"></th></tr>\n  </thead>\n  <tbody mat-calendar-body\n         [label]=\"_yearLabel\"\n         [rows]=\"_months\"\n         [todayValue]=\"_todayMonth!\"\n         [startValue]=\"_selectedMonth!\"\n         [endValue]=\"_selectedMonth!\"\n         [labelMinRequiredCells]=\"2\"\n         [numCols]=\"4\"\n         [cellAspectRatio]=\"4 / 7\"\n         [activeCell]=\"_dateAdapter.getMonth(activeDate)\"\n         (selectedValueChange)=\"_monthSelected($event)\"\n         (keydown)=\"_handleCalendarBodyKeydown($event)\">\n  </tbody>\n</table>\n",
+            exportAs: 'matYearView',
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_11__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }];
+        }, {
+          selectedChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          monthSelected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          activeDateChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          activeDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          selected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          minDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          maxDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateFilter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateClass: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          _matCalendarBody: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatCalendarBody]
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -4728,6 +5020,7 @@
        */
 
       /** Default header for MatCalendar */
+
 
       var MatCalendarHeader = /*#__PURE__*/function () {
         function MatCalendarHeader(_intl, calendar, _dateAdapter, _dateFormats, changeDetectorRef) {
@@ -4856,16 +5149,95 @@
         return MatCalendarHeader;
       }();
 
-      MatCalendarHeader.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-calendar-header',
-          template: "<div class=\"mat-calendar-header\">\n  <div class=\"mat-calendar-controls\">\n    <button mat-button type=\"button\" class=\"mat-calendar-period-button\"\n            (click)=\"currentPeriodClicked()\" [attr.aria-label]=\"periodButtonLabel\"\n            cdkAriaLive=\"polite\">\n      {{periodButtonText}}\n      <div class=\"mat-calendar-arrow\"\n           [class.mat-calendar-invert]=\"calendar.currentView != 'month'\"></div>\n    </button>\n\n    <div class=\"mat-calendar-spacer\"></div>\n\n    <ng-content></ng-content>\n\n    <button mat-icon-button type=\"button\" class=\"mat-calendar-previous-button\"\n            [disabled]=\"!previousEnabled()\" (click)=\"previousClicked()\"\n            [attr.aria-label]=\"prevButtonLabel\">\n    </button>\n\n    <button mat-icon-button type=\"button\" class=\"mat-calendar-next-button\"\n            [disabled]=\"!nextEnabled()\" (click)=\"nextClicked()\"\n            [attr.aria-label]=\"nextButtonLabel\">\n    </button>\n  </div>\n</div>\n",
-          exportAs: 'matCalendarHeader',
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush
-        }]
-      }];
+      MatCalendarHeader.ɵfac = function MatCalendarHeader_Factory(t) {
+        return new (t || MatCalendarHeader)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MatDatepickerIntl), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["forwardRef"])(function () {
+          return MatCalendar;
+        })), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]));
+      };
+
+      MatCalendarHeader.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatCalendarHeader,
+        selectors: [["mat-calendar-header"]],
+        exportAs: ["matCalendarHeader"],
+        ngContentSelectors: _c1,
+        decls: 9,
+        vars: 8,
+        consts: [[1, "mat-calendar-header"], [1, "mat-calendar-controls"], ["mat-button", "", "type", "button", "cdkAriaLive", "polite", 1, "mat-calendar-period-button", 3, "click"], [1, "mat-calendar-arrow"], [1, "mat-calendar-spacer"], ["mat-icon-button", "", "type", "button", 1, "mat-calendar-previous-button", 3, "disabled", "click"], ["mat-icon-button", "", "type", "button", 1, "mat-calendar-next-button", 3, "disabled", "click"]],
+        template: function MatCalendarHeader_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojectionDef"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "button", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MatCalendarHeader_Template_button_click_2_listener() {
+              return ctx.currentPeriodClicked();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](5, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojection"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "button", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MatCalendarHeader_Template_button_click_7_listener() {
+              return ctx.previousClicked();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "button", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MatCalendarHeader_Template_button_click_8_listener() {
+              return ctx.nextClicked();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-label", ctx.periodButtonLabel);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", ctx.periodButtonText, " ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-calendar-invert", ctx.calendar.currentView != "month");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", !ctx.previousEnabled());
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-label", ctx.prevButtonLabel);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", !ctx.nextEnabled());
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-label", ctx.nextButtonLabel);
+          }
+        },
+        directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["CdkAriaLive"]],
+        encapsulation: 2,
+        changeDetection: 0
+      });
 
       MatCalendarHeader.ctorParameters = function () {
         return [{
@@ -4895,6 +5267,48 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatCalendarHeader, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-calendar-header',
+            template: "<div class=\"mat-calendar-header\">\n  <div class=\"mat-calendar-controls\">\n    <button mat-button type=\"button\" class=\"mat-calendar-period-button\"\n            (click)=\"currentPeriodClicked()\" [attr.aria-label]=\"periodButtonLabel\"\n            cdkAriaLive=\"polite\">\n      {{periodButtonText}}\n      <div class=\"mat-calendar-arrow\"\n           [class.mat-calendar-invert]=\"calendar.currentView != 'month'\"></div>\n    </button>\n\n    <div class=\"mat-calendar-spacer\"></div>\n\n    <ng-content></ng-content>\n\n    <button mat-icon-button type=\"button\" class=\"mat-calendar-previous-button\"\n            [disabled]=\"!previousEnabled()\" (click)=\"previousClicked()\"\n            [attr.aria-label]=\"prevButtonLabel\">\n    </button>\n\n    <button mat-icon-button type=\"button\" class=\"mat-calendar-next-button\"\n            [disabled]=\"!nextEnabled()\" (click)=\"nextClicked()\"\n            [attr.aria-label]=\"nextButtonLabel\">\n    </button>\n  </div>\n</div>\n",
+            exportAs: 'matCalendarHeader',
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush
+          }]
+        }], function () {
+          return [{
+            type: MatDatepickerIntl
+          }, {
+            type: MatCalendar,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["forwardRef"])(function () {
+                return MatCalendar;
+              })]
+            }]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }];
+        }, null);
+      })();
       /**
        * A calendar that is used as part of the datepicker.
        * @docs-private
@@ -4903,7 +5317,7 @@
 
       var MatCalendar = /*#__PURE__*/function () {
         function MatCalendar(_intl, _dateAdapter, _dateFormats, _changeDetectorRef) {
-          var _this10 = this;
+          var _this8 = this;
 
           _classCallCheck(this, MatCalendar);
 
@@ -4960,7 +5374,7 @@
           this._intlChanges = _intl.changes.subscribe(function () {
             _changeDetectorRef.markForCheck();
 
-            _this10.stateChanges.next();
+            _this8.stateChanges.next();
           });
         }
         /** A date representing the period (month or year) to start the calendar in. */
@@ -5151,21 +5565,94 @@
         return MatCalendar;
       }();
 
-      MatCalendar.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-calendar',
-          template: "<ng-template [cdkPortalOutlet]=\"_calendarHeaderPortal\"></ng-template>\n\n<div class=\"mat-calendar-content\" [ngSwitch]=\"currentView\" cdkMonitorSubtreeFocus tabindex=\"-1\">\n  <mat-month-view\n      *ngSwitchCase=\"'month'\"\n      [(activeDate)]=\"activeDate\"\n      [selected]=\"selected\"\n      [dateFilter]=\"dateFilter\"\n      [maxDate]=\"maxDate\"\n      [minDate]=\"minDate\"\n      [dateClass]=\"dateClass\"\n      [comparisonStart]=\"comparisonStart\"\n      [comparisonEnd]=\"comparisonEnd\"\n      (_userSelection)=\"_dateSelected($event)\">\n  </mat-month-view>\n\n  <mat-year-view\n      *ngSwitchCase=\"'year'\"\n      [(activeDate)]=\"activeDate\"\n      [selected]=\"selected\"\n      [dateFilter]=\"dateFilter\"\n      [maxDate]=\"maxDate\"\n      [minDate]=\"minDate\"\n      [dateClass]=\"dateClass\"\n      (monthSelected)=\"_monthSelectedInYearView($event)\"\n      (selectedChange)=\"_goToDateInView($event, 'month')\">\n  </mat-year-view>\n\n  <mat-multi-year-view\n      *ngSwitchCase=\"'multi-year'\"\n      [(activeDate)]=\"activeDate\"\n      [selected]=\"selected\"\n      [dateFilter]=\"dateFilter\"\n      [maxDate]=\"maxDate\"\n      [minDate]=\"minDate\"\n      [dateClass]=\"dateClass\"\n      (yearSelected)=\"_yearSelectedInMultiYearView($event)\"\n      (selectedChange)=\"_goToDateInView($event, 'year')\">\n  </mat-multi-year-view>\n</div>\n",
-          host: {
-            'class': 'mat-calendar'
-          },
-          exportAs: 'matCalendar',
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
-          providers: [MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER],
-          styles: [".mat-calendar{display:block}.mat-calendar-header{padding:8px 8px 0 8px}.mat-calendar-content{padding:0 8px 8px 8px;outline:none}.mat-calendar-controls{display:flex;margin:5% calc(33% / 7 - 16px)}.mat-calendar-controls .mat-icon-button:hover .mat-button-focus-overlay{opacity:.04}.mat-calendar-spacer{flex:1 1 auto}.mat-calendar-period-button{min-width:0}.mat-calendar-arrow{display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top-width:5px;border-top-style:solid;margin:0 0 0 5px;vertical-align:middle}.mat-calendar-arrow.mat-calendar-invert{transform:rotate(180deg)}[dir=rtl] .mat-calendar-arrow{margin:0 5px 0 0}.mat-calendar-previous-button,.mat-calendar-next-button{position:relative}.mat-calendar-previous-button::after,.mat-calendar-next-button::after{top:0;left:0;right:0;bottom:0;position:absolute;content:\"\";margin:15.5px;border:0 solid currentColor;border-top-width:2px}[dir=rtl] .mat-calendar-previous-button,[dir=rtl] .mat-calendar-next-button{transform:rotate(180deg)}.mat-calendar-previous-button::after{border-left-width:2px;transform:translateX(2px) rotate(-45deg)}.mat-calendar-next-button::after{border-right-width:2px;transform:translateX(-2px) rotate(45deg)}.mat-calendar-table{border-spacing:0;border-collapse:collapse;width:100%}.mat-calendar-table-header th{text-align:center;padding:0 0 8px 0}.mat-calendar-table-header-divider{position:relative;height:1px}.mat-calendar-table-header-divider::after{content:\"\";position:absolute;top:0;left:-8px;right:-8px;height:1px}\n"]
-        }]
-      }];
+      MatCalendar.ɵfac = function MatCalendar_Factory(t) {
+        return new (t || MatCalendar)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MatDatepickerIntl), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]));
+      };
+
+      MatCalendar.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatCalendar,
+        selectors: [["mat-calendar"]],
+        viewQuery: function MatCalendar_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](MatMonthView, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](MatYearView, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](MatMultiYearView, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.monthView = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.yearView = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.multiYearView = _t.first);
+          }
+        },
+        hostAttrs: [1, "mat-calendar"],
+        inputs: {
+          startView: "startView",
+          startAt: "startAt",
+          selected: "selected",
+          minDate: "minDate",
+          maxDate: "maxDate",
+          headerComponent: "headerComponent",
+          dateFilter: "dateFilter",
+          dateClass: "dateClass",
+          comparisonStart: "comparisonStart",
+          comparisonEnd: "comparisonEnd"
+        },
+        outputs: {
+          selectedChange: "selectedChange",
+          yearSelected: "yearSelected",
+          monthSelected: "monthSelected",
+          _userSelection: "_userSelection"
+        },
+        exportAs: ["matCalendar"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵNgOnChangesFeature"]],
+        decls: 5,
+        vars: 5,
+        consts: [[3, "cdkPortalOutlet"], ["cdkMonitorSubtreeFocus", "", "tabindex", "-1", 1, "mat-calendar-content", 3, "ngSwitch"], [3, "activeDate", "selected", "dateFilter", "maxDate", "minDate", "dateClass", "comparisonStart", "comparisonEnd", "activeDateChange", "_userSelection", 4, "ngSwitchCase"], [3, "activeDate", "selected", "dateFilter", "maxDate", "minDate", "dateClass", "activeDateChange", "monthSelected", "selectedChange", 4, "ngSwitchCase"], [3, "activeDate", "selected", "dateFilter", "maxDate", "minDate", "dateClass", "activeDateChange", "yearSelected", "selectedChange", 4, "ngSwitchCase"], [3, "activeDate", "selected", "dateFilter", "maxDate", "minDate", "dateClass", "comparisonStart", "comparisonEnd", "activeDateChange", "_userSelection"], [3, "activeDate", "selected", "dateFilter", "maxDate", "minDate", "dateClass", "activeDateChange", "monthSelected", "selectedChange"], [3, "activeDate", "selected", "dateFilter", "maxDate", "minDate", "dateClass", "activeDateChange", "yearSelected", "selectedChange"]],
+        template: function MatCalendar_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, MatCalendar_ng_template_0_Template, 0, 0, "ng-template", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, MatCalendar_mat_month_view_2_Template, 1, 8, "mat-month-view", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, MatCalendar_mat_year_view_3_Template, 1, 6, "mat-year-view", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, MatCalendar_mat_multi_year_view_4_Template, 1, 6, "mat-multi-year-view", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("cdkPortalOutlet", ctx._calendarHeaderPortal);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngSwitch", ctx.currentView);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngSwitchCase", "month");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngSwitchCase", "year");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngSwitchCase", "multi-year");
+          }
+        },
+        directives: [_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["CdkPortalOutlet"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["CdkMonitorFocus"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgSwitchCase"], MatMonthView, MatYearView, MatMultiYearView],
+        styles: [".mat-calendar{display:block}.mat-calendar-header{padding:8px 8px 0 8px}.mat-calendar-content{padding:0 8px 8px 8px;outline:none}.mat-calendar-controls{display:flex;margin:5% calc(33% / 7 - 16px)}.mat-calendar-controls .mat-icon-button:hover .mat-button-focus-overlay{opacity:.04}.mat-calendar-spacer{flex:1 1 auto}.mat-calendar-period-button{min-width:0}.mat-calendar-arrow{display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top-width:5px;border-top-style:solid;margin:0 0 0 5px;vertical-align:middle}.mat-calendar-arrow.mat-calendar-invert{transform:rotate(180deg)}[dir=rtl] .mat-calendar-arrow{margin:0 5px 0 0}.mat-calendar-previous-button,.mat-calendar-next-button{position:relative}.mat-calendar-previous-button::after,.mat-calendar-next-button::after{top:0;left:0;right:0;bottom:0;position:absolute;content:\"\";margin:15.5px;border:0 solid currentColor;border-top-width:2px}[dir=rtl] .mat-calendar-previous-button,[dir=rtl] .mat-calendar-next-button{transform:rotate(180deg)}.mat-calendar-previous-button::after{border-left-width:2px;transform:translateX(2px) rotate(-45deg)}.mat-calendar-next-button::after{border-right-width:2px;transform:translateX(-2px) rotate(45deg)}.mat-calendar-table{border-spacing:0;border-collapse:collapse;width:100%}.mat-calendar-table-header th{text-align:center;padding:0 0 8px 0}.mat-calendar-table-header-divider{position:relative;height:1px}.mat-calendar-table-header-divider::after{content:\"\";position:absolute;top:0;left:-8px;right:-8px;height:1px}\n"],
+        encapsulation: 2,
+        changeDetection: 0
+      });
 
       MatCalendar.ctorParameters = function () {
         return [{
@@ -5244,6 +5731,99 @@
           args: [MatMultiYearView]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatCalendar, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-calendar',
+            template: "<ng-template [cdkPortalOutlet]=\"_calendarHeaderPortal\"></ng-template>\n\n<div class=\"mat-calendar-content\" [ngSwitch]=\"currentView\" cdkMonitorSubtreeFocus tabindex=\"-1\">\n  <mat-month-view\n      *ngSwitchCase=\"'month'\"\n      [(activeDate)]=\"activeDate\"\n      [selected]=\"selected\"\n      [dateFilter]=\"dateFilter\"\n      [maxDate]=\"maxDate\"\n      [minDate]=\"minDate\"\n      [dateClass]=\"dateClass\"\n      [comparisonStart]=\"comparisonStart\"\n      [comparisonEnd]=\"comparisonEnd\"\n      (_userSelection)=\"_dateSelected($event)\">\n  </mat-month-view>\n\n  <mat-year-view\n      *ngSwitchCase=\"'year'\"\n      [(activeDate)]=\"activeDate\"\n      [selected]=\"selected\"\n      [dateFilter]=\"dateFilter\"\n      [maxDate]=\"maxDate\"\n      [minDate]=\"minDate\"\n      [dateClass]=\"dateClass\"\n      (monthSelected)=\"_monthSelectedInYearView($event)\"\n      (selectedChange)=\"_goToDateInView($event, 'month')\">\n  </mat-year-view>\n\n  <mat-multi-year-view\n      *ngSwitchCase=\"'multi-year'\"\n      [(activeDate)]=\"activeDate\"\n      [selected]=\"selected\"\n      [dateFilter]=\"dateFilter\"\n      [maxDate]=\"maxDate\"\n      [minDate]=\"minDate\"\n      [dateClass]=\"dateClass\"\n      (yearSelected)=\"_yearSelectedInMultiYearView($event)\"\n      (selectedChange)=\"_goToDateInView($event, 'year')\">\n  </mat-multi-year-view>\n</div>\n",
+            host: {
+              'class': 'mat-calendar'
+            },
+            exportAs: 'matCalendar',
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
+            providers: [MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER],
+            styles: [".mat-calendar{display:block}.mat-calendar-header{padding:8px 8px 0 8px}.mat-calendar-content{padding:0 8px 8px 8px;outline:none}.mat-calendar-controls{display:flex;margin:5% calc(33% / 7 - 16px)}.mat-calendar-controls .mat-icon-button:hover .mat-button-focus-overlay{opacity:.04}.mat-calendar-spacer{flex:1 1 auto}.mat-calendar-period-button{min-width:0}.mat-calendar-arrow{display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top-width:5px;border-top-style:solid;margin:0 0 0 5px;vertical-align:middle}.mat-calendar-arrow.mat-calendar-invert{transform:rotate(180deg)}[dir=rtl] .mat-calendar-arrow{margin:0 5px 0 0}.mat-calendar-previous-button,.mat-calendar-next-button{position:relative}.mat-calendar-previous-button::after,.mat-calendar-next-button::after{top:0;left:0;right:0;bottom:0;position:absolute;content:\"\";margin:15.5px;border:0 solid currentColor;border-top-width:2px}[dir=rtl] .mat-calendar-previous-button,[dir=rtl] .mat-calendar-next-button{transform:rotate(180deg)}.mat-calendar-previous-button::after{border-left-width:2px;transform:translateX(2px) rotate(-45deg)}.mat-calendar-next-button::after{border-right-width:2px;transform:translateX(-2px) rotate(45deg)}.mat-calendar-table{border-spacing:0;border-collapse:collapse;width:100%}.mat-calendar-table-header th{text-align:center;padding:0 0 8px 0}.mat-calendar-table-header-divider{position:relative;height:1px}.mat-calendar-table-header-divider::after{content:\"\";position:absolute;top:0;left:-8px;right:-8px;height:1px}\n"]
+          }]
+        }], function () {
+          return [{
+            type: MatDatepickerIntl
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }];
+        }, {
+          startView: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          selectedChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          yearSelected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          monthSelected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          _userSelection: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          startAt: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          selected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          minDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          maxDate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          headerComponent: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateFilter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateClass: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          comparisonStart: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          comparisonEnd: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          monthView: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatMonthView]
+          }],
+          yearView: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatYearView]
+          }],
+          multiYearView: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatMultiYearView]
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -5256,6 +5836,7 @@
        * Animations used by the Material datepicker.
        * @docs-private
        */
+
 
       var matDatepickerAnimations = {
         /** Transforms the height of the datepicker's calendar. */
@@ -5329,7 +5910,7 @@
       var MatDatepickerContent = /*#__PURE__*/function (_MatDatepickerContent) {
         _inherits(MatDatepickerContent, _MatDatepickerContent);
 
-        var _super5 = _createSuper(MatDatepickerContent);
+        var _super3 = _createSuper(MatDatepickerContent);
 
         function MatDatepickerContent(elementRef,
         /**
@@ -5338,34 +5919,34 @@
          * @breaking-change 11.0.0
          */
         _changeDetectorRef, _model, _dateAdapter, _rangeSelectionStrategy) {
-          var _this11;
+          var _this9;
 
           _classCallCheck(this, MatDatepickerContent);
 
-          _this11 = _super5.call(this, elementRef);
-          _this11._changeDetectorRef = _changeDetectorRef;
-          _this11._model = _model;
-          _this11._dateAdapter = _dateAdapter;
-          _this11._rangeSelectionStrategy = _rangeSelectionStrategy;
-          _this11._subscriptions = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subscription"]();
+          _this9 = _super3.call(this, elementRef);
+          _this9._changeDetectorRef = _changeDetectorRef;
+          _this9._model = _model;
+          _this9._dateAdapter = _dateAdapter;
+          _this9._rangeSelectionStrategy = _rangeSelectionStrategy;
+          _this9._subscriptions = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subscription"]();
           /** Current state of the animation. */
 
-          _this11._animationState = 'enter';
+          _this9._animationState = 'enter';
           /** Emits when an animation has finished. */
 
-          _this11._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
-          return _this11;
+          _this9._animationDone = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+          return _this9;
         }
 
         _createClass(MatDatepickerContent, [{
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this12 = this;
+            var _this10 = this;
 
             // @breaking-change 11.0.0 Remove null check for `_changeDetectorRef.
             if (this._changeDetectorRef) {
               this._subscriptions.add(this.datepicker._stateChanges.subscribe(function () {
-                _this12._changeDetectorRef.markForCheck();
+                _this10._changeDetectorRef.markForCheck();
               }));
             }
 
@@ -5425,25 +6006,74 @@
         return MatDatepickerContent;
       }(_MatDatepickerContentMixinBase);
 
-      MatDatepickerContent.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-datepicker-content',
-          template: "<mat-calendar cdkTrapFocus\n    [id]=\"datepicker.id\"\n    [ngClass]=\"datepicker.panelClass\"\n    [startAt]=\"datepicker.startAt\"\n    [startView]=\"datepicker.startView\"\n    [minDate]=\"datepicker._getMinDate()\"\n    [maxDate]=\"datepicker._getMaxDate()\"\n    [dateFilter]=\"datepicker._getDateFilter()\"\n    [headerComponent]=\"datepicker.calendarHeaderComponent\"\n    [selected]=\"_getSelected()\"\n    [dateClass]=\"datepicker.dateClass\"\n    [comparisonStart]=\"comparisonStart\"\n    [comparisonEnd]=\"comparisonEnd\"\n    [@fadeInCalendar]=\"'enter'\"\n    (yearSelected)=\"datepicker._selectYear($event)\"\n    (monthSelected)=\"datepicker._selectMonth($event)\"\n    (_userSelection)=\"_handleUserSelection($event)\">\n</mat-calendar>\n",
-          host: {
-            'class': 'mat-datepicker-content',
-            '[@transformPanel]': '_animationState',
-            '(@transformPanel.done)': '_animationDone.next()',
-            '[class.mat-datepicker-content-touch]': 'datepicker.touchUi'
-          },
-          animations: [matDatepickerAnimations.transformPanel, matDatepickerAnimations.fadeInCalendar],
-          exportAs: 'matDatepickerContent',
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
-          inputs: ['color'],
-          styles: [".mat-datepicker-content{display:block;border-radius:4px}.mat-datepicker-content .mat-calendar{width:296px;height:354px}.mat-datepicker-content-touch{display:block;max-height:80vh;overflow:auto;margin:-24px}.mat-datepicker-content-touch .mat-calendar{min-width:250px;min-height:312px;max-width:750px;max-height:788px}@media all and (orientation: landscape){.mat-datepicker-content-touch .mat-calendar{width:64vh;height:80vh}}@media all and (orientation: portrait){.mat-datepicker-content-touch .mat-calendar{width:80vw;height:100vw}}\n"]
-        }]
-      }];
+      MatDatepickerContent.ɵfac = function MatDatepickerContent_Factory(t) {
+        return new (t || MatDatepickerContent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MatDateSelectionModel), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_DATE_RANGE_SELECTION_STRATEGY, 8));
+      };
+
+      MatDatepickerContent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatDatepickerContent,
+        selectors: [["mat-datepicker-content"]],
+        viewQuery: function MatDatepickerContent_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](MatCalendar, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._calendar = _t.first);
+          }
+        },
+        hostAttrs: [1, "mat-datepicker-content"],
+        hostVars: 3,
+        hostBindings: function MatDatepickerContent_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsyntheticHostListener"]("@transformPanel.done", function MatDatepickerContent_animation_transformPanel_done_HostBindingHandler() {
+              return ctx._animationDone.next();
+            });
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsyntheticHostProperty"]("@transformPanel", ctx._animationState);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-datepicker-content-touch", ctx.datepicker.touchUi);
+          }
+        },
+        inputs: {
+          color: "color"
+        },
+        exportAs: ["matDatepickerContent"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
+        decls: 1,
+        vars: 13,
+        consts: [["cdkTrapFocus", "", 3, "id", "ngClass", "startAt", "startView", "minDate", "maxDate", "dateFilter", "headerComponent", "selected", "dateClass", "comparisonStart", "comparisonEnd", "yearSelected", "monthSelected", "_userSelection"]],
+        template: function MatDatepickerContent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-calendar", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("yearSelected", function MatDatepickerContent_Template_mat_calendar_yearSelected_0_listener($event) {
+              return ctx.datepicker._selectYear($event);
+            })("monthSelected", function MatDatepickerContent_Template_mat_calendar_monthSelected_0_listener($event) {
+              return ctx.datepicker._selectMonth($event);
+            })("_userSelection", function MatDatepickerContent_Template_mat_calendar__userSelection_0_listener($event) {
+              return ctx._handleUserSelection($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("id", ctx.datepicker.id)("ngClass", ctx.datepicker.panelClass)("startAt", ctx.datepicker.startAt)("startView", ctx.datepicker.startView)("minDate", ctx.datepicker._getMinDate())("maxDate", ctx.datepicker._getMaxDate())("dateFilter", ctx.datepicker._getDateFilter())("headerComponent", ctx.datepicker.calendarHeaderComponent)("selected", ctx._getSelected())("dateClass", ctx.datepicker.dateClass)("comparisonStart", ctx.comparisonStart)("comparisonEnd", ctx.comparisonEnd)("@fadeInCalendar", "enter");
+          }
+        },
+        directives: [MatCalendar, _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["CdkTrapFocus"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgClass"]],
+        styles: [".mat-datepicker-content{display:block;border-radius:4px}.mat-datepicker-content .mat-calendar{width:296px;height:354px}.mat-datepicker-content-touch{display:block;max-height:80vh;overflow:auto;margin:-24px}.mat-datepicker-content-touch .mat-calendar{min-width:250px;min-height:312px;max-width:750px;max-height:788px}@media all and (orientation: landscape){.mat-datepicker-content-touch .mat-calendar{width:64vh;height:80vh}}@media all and (orientation: portrait){.mat-datepicker-content-touch .mat-calendar{width:80vw;height:100vw}}\n"],
+        encapsulation: 2,
+        data: {
+          animation: [matDatepickerAnimations.transformPanel, matDatepickerAnimations.fadeInCalendar]
+        },
+        changeDetection: 0
+      });
 
       MatDatepickerContent.ctorParameters = function () {
         return [{
@@ -5471,7 +6101,54 @@
           args: [MatCalendar]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepickerContent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-datepicker-content',
+            template: "<mat-calendar cdkTrapFocus\n    [id]=\"datepicker.id\"\n    [ngClass]=\"datepicker.panelClass\"\n    [startAt]=\"datepicker.startAt\"\n    [startView]=\"datepicker.startView\"\n    [minDate]=\"datepicker._getMinDate()\"\n    [maxDate]=\"datepicker._getMaxDate()\"\n    [dateFilter]=\"datepicker._getDateFilter()\"\n    [headerComponent]=\"datepicker.calendarHeaderComponent\"\n    [selected]=\"_getSelected()\"\n    [dateClass]=\"datepicker.dateClass\"\n    [comparisonStart]=\"comparisonStart\"\n    [comparisonEnd]=\"comparisonEnd\"\n    [@fadeInCalendar]=\"'enter'\"\n    (yearSelected)=\"datepicker._selectYear($event)\"\n    (monthSelected)=\"datepicker._selectMonth($event)\"\n    (_userSelection)=\"_handleUserSelection($event)\">\n</mat-calendar>\n",
+            host: {
+              'class': 'mat-datepicker-content',
+              '[@transformPanel]': '_animationState',
+              '(@transformPanel.done)': '_animationDone.next()',
+              '[class.mat-datepicker-content-touch]': 'datepicker.touchUi'
+            },
+            animations: [matDatepickerAnimations.transformPanel, matDatepickerAnimations.fadeInCalendar],
+            exportAs: 'matDatepickerContent',
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
+            inputs: ['color'],
+            styles: [".mat-datepicker-content{display:block;border-radius:4px}.mat-datepicker-content .mat-calendar{width:296px;height:354px}.mat-datepicker-content-touch{display:block;max-height:80vh;overflow:auto;margin:-24px}.mat-datepicker-content-touch .mat-calendar{min-width:250px;min-height:312px;max-width:750px;max-height:788px}@media all and (orientation: landscape){.mat-datepicker-content-touch .mat-calendar{width:64vh;height:80vh}}@media all and (orientation: portrait){.mat-datepicker-content-touch .mat-calendar{width:80vw;height:100vw}}\n"]
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: MatDateSelectionModel
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_DATE_RANGE_SELECTION_STRATEGY]
+            }]
+          }];
+        }, {
+          _calendar: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatCalendar]
+          }]
+        });
+      })();
       /** Base class for a datepicker. */
+
 
       var MatDatepickerBase = /*#__PURE__*/function () {
         function MatDatepickerBase(_dialog, _overlay, _ngZone, _viewContainerRef, scrollStrategy, _dateAdapter, _dir, _document, _model) {
@@ -5612,7 +6289,7 @@
         }, {
           key: "_registerInput",
           value: function _registerInput(input) {
-            var _this13 = this;
+            var _this11 = this;
 
             if (this._datepickerInput && (typeof ngDevMode === 'undefined' || ngDevMode)) {
               throw Error('A MatDatepicker can only be associated with a single input.');
@@ -5622,7 +6299,7 @@
 
             this._datepickerInput = input;
             this._inputStateChanges = input.stateChanges.subscribe(function () {
-              return _this13._stateChanges.next(undefined);
+              return _this11._stateChanges.next(undefined);
             });
             return this._model;
           }
@@ -5652,7 +6329,7 @@
         }, {
           key: "close",
           value: function close() {
-            var _this14 = this;
+            var _this12 = this;
 
             if (!this._opened) {
               return;
@@ -5664,7 +6341,7 @@
               instance._startExitAnimation();
 
               instance._animationDone.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function () {
-                return _this14._destroyPopup();
+                return _this12._destroyPopup();
               });
             }
 
@@ -5677,12 +6354,12 @@
             var completeClose = function completeClose() {
               // The `_opened` could've been reset already if
               // we got two events in quick succession.
-              if (_this14._opened) {
-                _this14._opened = false;
+              if (_this12._opened) {
+                _this12._opened = false;
 
-                _this14.closedStream.emit();
+                _this12.closedStream.emit();
 
-                _this14._focusedElementBeforeOpen = null;
+                _this12._focusedElementBeforeOpen = null;
               }
             };
 
@@ -5704,7 +6381,7 @@
         }, {
           key: "_openAsDialog",
           value: function _openAsDialog() {
-            var _this15 = this;
+            var _this13 = this;
 
             // Usually this would be handled by `open` which ensures that we can only have one overlay
             // open at a time, however since we reset the variables in async handlers some overlays
@@ -5741,7 +6418,7 @@
             });
 
             this._dialogRef.afterClosed().subscribe(function () {
-              return _this15.close();
+              return _this13.close();
             });
 
             this._forwardContentValues(this._dialogRef.componentInstance);
@@ -5751,7 +6428,7 @@
         }, {
           key: "_openAsPopup",
           value: function _openAsPopup() {
-            var _this16 = this;
+            var _this14 = this;
 
             var portal = new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["ComponentPortal"](MatDatepickerContent, this._viewContainerRef);
 
@@ -5765,7 +6442,7 @@
 
 
             this._ngZone.onStable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["take"])(1)).subscribe(function () {
-              _this16._popupRef.updatePosition();
+              _this14._popupRef.updatePosition();
             });
           }
           /** Forwards relevant values from the datepicker to the datepicker content inside the overlay. */
@@ -5781,7 +6458,7 @@
         }, {
           key: "_createPopup",
           value: function _createPopup() {
-            var _this17 = this;
+            var _this15 = this;
 
             var positionStrategy = this._overlay.position().flexibleConnectedTo(this._datepickerInput.getConnectedOverlayOrigin()).withTransformOriginOn('.mat-datepicker-content').withFlexibleDimensions(false).withViewportMargin(8).withLockedPosition();
 
@@ -5799,13 +6476,13 @@
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(this._popupRef.backdropClick(), this._popupRef.detachments(), this._popupRef.keydownEvents().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_12__["filter"])(function (event) {
               // Closing on alt + up is only valid when there's an input associated with the datepicker.
-              return event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_10__["ESCAPE"] || _this17._datepickerInput && event.altKey && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_10__["UP_ARROW"];
+              return event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_10__["ESCAPE"] || _this15._datepickerInput && event.altKey && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_10__["UP_ARROW"];
             }))).subscribe(function (event) {
               if (event) {
                 event.preventDefault();
               }
 
-              _this17.close();
+              _this15.close();
             });
           }
           /** Destroys the current popup overlay. */
@@ -5914,9 +6591,33 @@
         return MatDatepickerBase;
       }();
 
-      MatDatepickerBase.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      MatDatepickerBase.ɵfac = function MatDatepickerBase_Factory(t) {
+        return new (t || MatDatepickerBase)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["Overlay"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewContainerRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_DATEPICKER_SCROLL_STRATEGY), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_11__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MatDateSelectionModel));
+      };
+
+      MatDatepickerBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatDatepickerBase,
+        inputs: {
+          startView: "startView",
+          xPosition: "xPosition",
+          yPosition: "yPosition",
+          startAt: "startAt",
+          color: "color",
+          touchUi: "touchUi",
+          disabled: "disabled",
+          opened: "opened",
+          calendarHeaderComponent: "calendarHeaderComponent",
+          panelClass: "panelClass",
+          dateClass: "dateClass"
+        },
+        outputs: {
+          yearSelected: "yearSelected",
+          monthSelected: "monthSelected",
+          openedStream: "opened",
+          closedStream: "closed"
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵNgOnChangesFeature"]]
+      });
 
       MatDatepickerBase.ctorParameters = function () {
         return [{
@@ -6005,6 +6706,97 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepickerBase, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]
+          }, {
+            type: _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["Overlay"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewContainerRef"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_DATEPICKER_SCROLL_STRATEGY]
+            }]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_11__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]]
+            }]
+          }, {
+            type: MatDateSelectionModel
+          }];
+        }, {
+          startView: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          xPosition: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          yPosition: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          yearSelected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          monthSelected: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          openedStream: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"],
+            args: ['opened']
+          }],
+          closedStream: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"],
+            args: ['closed']
+          }],
+          startAt: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          color: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          touchUi: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          disabled: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          opened: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          calendarHeaderComponent: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          panelClass: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateClass: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -6018,31 +6810,54 @@
 
       /** Component responsible for managing the datepicker popup/dialog. */
 
+
       var MatDatepicker = /*#__PURE__*/function (_MatDatepickerBase) {
         _inherits(MatDatepicker, _MatDatepickerBase);
 
-        var _super6 = _createSuper(MatDatepicker);
+        var _super4 = _createSuper(MatDatepicker);
 
         function MatDatepicker() {
           _classCallCheck(this, MatDatepicker);
 
-          return _super6.apply(this, arguments);
+          return _super4.apply(this, arguments);
         }
 
         return MatDatepicker;
       }(MatDatepickerBase);
 
-      MatDatepicker.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-datepicker',
-          template: '',
-          exportAs: 'matDatepicker',
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          providers: [MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER]
-        }]
-      }];
+      MatDatepicker.ɵfac = function MatDatepicker_Factory(t) {
+        return ɵMatDatepicker_BaseFactory(t || MatDatepicker);
+      };
+
+      MatDatepicker.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatDatepicker,
+        selectors: [["mat-datepicker"]],
+        exportAs: ["matDatepicker"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
+        decls: 0,
+        vars: 0,
+        template: function MatDatepicker_Template(rf, ctx) {},
+        encapsulation: 2,
+        changeDetection: 0
+      });
+
+      var ɵMatDatepicker_BaseFactory = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetInheritedFactory"](MatDatepicker);
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepicker, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-datepicker',
+            template: '',
+            exportAs: 'matDatepicker',
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            providers: [MAT_SINGLE_DATE_SELECTION_MODEL_PROVIDER]
+          }]
+        }], null, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -6056,6 +6871,7 @@
        * input or change event because the event may have been triggered by the user clicking on the
        * calendar popup. For consistency, we always use MatDatepickerInputEvent instead.
        */
+
 
       var MatDatepickerInputEvent = function MatDatepickerInputEvent(
       /** Reference to the datepicker input component that emitted the event. */
@@ -6073,7 +6889,7 @@
 
       var MatDatepickerInputBase = /*#__PURE__*/function () {
         function MatDatepickerInputBase(_elementRef, _dateAdapter, _dateFormats) {
-          var _this18 = this;
+          var _this16 = this;
 
           _classCallCheck(this, MatDatepickerInputBase);
 
@@ -6104,9 +6920,9 @@
           /** The form control validator for whether the input parses. */
 
           this._parseValidator = function () {
-            return _this18._lastValueValid ? null : {
+            return _this16._lastValueValid ? null : {
               'matDatepickerParse': {
-                'text': _this18._elementRef.nativeElement.value
+                'text': _this16._elementRef.nativeElement.value
               }
             };
           };
@@ -6114,9 +6930,9 @@
 
 
           this._filterValidator = function (control) {
-            var controlValue = _this18._dateAdapter.getValidDateOrNull(_this18._dateAdapter.deserialize(control.value));
+            var controlValue = _this16._dateAdapter.getValidDateOrNull(_this16._dateAdapter.deserialize(control.value));
 
-            var dateFilter = _this18._getDateFilter();
+            var dateFilter = _this16._getDateFilter();
 
             return !dateFilter || !controlValue || dateFilter(controlValue) ? null : {
               'matDatepickerFilter': true
@@ -6126,11 +6942,11 @@
 
 
           this._minValidator = function (control) {
-            var controlValue = _this18._dateAdapter.getValidDateOrNull(_this18._dateAdapter.deserialize(control.value));
+            var controlValue = _this16._dateAdapter.getValidDateOrNull(_this16._dateAdapter.deserialize(control.value));
 
-            var min = _this18._getMinDate();
+            var min = _this16._getMinDate();
 
-            return !min || !controlValue || _this18._dateAdapter.compareDate(min, controlValue) <= 0 ? null : {
+            return !min || !controlValue || _this16._dateAdapter.compareDate(min, controlValue) <= 0 ? null : {
               'matDatepickerMin': {
                 'min': min,
                 'actual': controlValue
@@ -6141,11 +6957,11 @@
 
 
           this._maxValidator = function (control) {
-            var controlValue = _this18._dateAdapter.getValidDateOrNull(_this18._dateAdapter.deserialize(control.value));
+            var controlValue = _this16._dateAdapter.getValidDateOrNull(_this16._dateAdapter.deserialize(control.value));
 
-            var max = _this18._getMaxDate();
+            var max = _this16._getMaxDate();
 
-            return !max || !controlValue || _this18._dateAdapter.compareDate(max, controlValue) >= 0 ? null : {
+            return !max || !controlValue || _this16._dateAdapter.compareDate(max, controlValue) >= 0 ? null : {
               'matDatepickerMax': {
                 'max': max,
                 'actual': controlValue
@@ -6169,7 +6985,7 @@
 
 
           this._localeSubscription = _dateAdapter.localeChanges.subscribe(function () {
-            _this18.value = _this18.value;
+            _this16.value = _this16.value;
           });
         }
         /** The value of the input. */
@@ -6187,7 +7003,7 @@
         }, {
           key: "_registerModel",
           value: function _registerModel(model) {
-            var _this19 = this;
+            var _this17 = this;
 
             this._model = model;
 
@@ -6198,28 +7014,28 @@
             }
 
             this._valueChangesSubscription = this._model.selectionChanged.subscribe(function (event) {
-              if (event.source !== _this19) {
-                var _value3 = _this19._getValueFromModel(event.selection);
+              if (event.source !== _this17) {
+                var _value3 = _this17._getValueFromModel(event.selection);
 
-                _this19._lastValueValid = _this19._isValidValue(_value3);
+                _this17._lastValueValid = _this17._isValidValue(_value3);
 
-                _this19._cvaOnChange(_value3);
+                _this17._cvaOnChange(_value3);
 
-                _this19._onTouched();
+                _this17._onTouched();
 
-                _this19._formatValue(_value3); // Note that we can't wrap the entire block with this logic, because for the range inputs
+                _this17._formatValue(_value3); // Note that we can't wrap the entire block with this logic, because for the range inputs
                 // we want to revalidate whenever either one of the inputs changes and we don't have a
                 // good way of distinguishing it at the moment.
 
 
-                if (_this19._canEmitChangeEvent(event)) {
-                  _this19.dateInput.emit(new MatDatepickerInputEvent(_this19, _this19._elementRef.nativeElement));
+                if (_this17._canEmitChangeEvent(event)) {
+                  _this17.dateInput.emit(new MatDatepickerInputEvent(_this17, _this17._elementRef.nativeElement));
 
-                  _this19.dateChange.emit(new MatDatepickerInputEvent(_this19, _this19._elementRef.nativeElement));
+                  _this17.dateChange.emit(new MatDatepickerInputEvent(_this17, _this17._elementRef.nativeElement));
                 }
 
-                if (_this19._outsideValueChanged) {
-                  _this19._outsideValueChanged();
+                if (_this17._outsideValueChanged) {
+                  _this17._outsideValueChanged();
                 }
               }
             });
@@ -6433,9 +7249,22 @@
         return MatDatepickerInputBase;
       }();
 
-      MatDatepickerInputBase.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      MatDatepickerInputBase.ɵfac = function MatDatepickerInputBase_Factory(t) {
+        return new (t || MatDatepickerInputBase)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8));
+      };
+
+      MatDatepickerInputBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatDatepickerInputBase,
+        inputs: {
+          value: "value",
+          disabled: "disabled"
+        },
+        outputs: {
+          dateChange: "dateChange",
+          dateInput: "dateInput"
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵNgOnChangesFeature"]]
+      });
 
       MatDatepickerInputBase.ctorParameters = function () {
         return [{
@@ -6470,10 +7299,48 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepickerInputBase, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }];
+        }, {
+          dateChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          dateInput: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          value: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          disabled: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /**
        * Checks whether the `SimpleChanges` object from an `ngOnChanges`
        * callback has any changes, accounting for date objects.
        */
+
 
       function dateInputsHaveChanged(changes, adapter) {
         var keys = Object.keys(changes);
@@ -6527,17 +7394,17 @@
       var MatDatepickerInput = /*#__PURE__*/function (_MatDatepickerInputBa) {
         _inherits(MatDatepickerInput, _MatDatepickerInputBa);
 
-        var _super7 = _createSuper(MatDatepickerInput);
+        var _super5 = _createSuper(MatDatepickerInput);
 
         function MatDatepickerInput(elementRef, dateAdapter, dateFormats, _formField) {
-          var _thisSuper, _this20;
+          var _thisSuper, _this18;
 
           _classCallCheck(this, MatDatepickerInput);
 
-          _this20 = _super7.call(this, elementRef, dateAdapter, dateFormats);
-          _this20._formField = _formField;
-          _this20._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose(_get((_thisSuper = _assertThisInitialized(_this20), _getPrototypeOf(MatDatepickerInput.prototype)), "_getValidators", _thisSuper).call(_thisSuper));
-          return _this20;
+          _this18 = _super5.call(this, elementRef, dateAdapter, dateFormats);
+          _this18._formField = _formField;
+          _this18._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose(_get((_thisSuper = _assertThisInitialized(_this18), _getPrototypeOf(MatDatepickerInput.prototype)), "_getValidators", _thisSuper).call(_thisSuper));
+          return _this18;
         }
         /** The datepicker that this input is associated with. */
 
@@ -6681,32 +7548,46 @@
         return MatDatepickerInput;
       }(MatDatepickerInputBase);
 
-      MatDatepickerInput.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: 'input[matDatepicker]',
-          providers: [MAT_DATEPICKER_VALUE_ACCESSOR, MAT_DATEPICKER_VALIDATORS, {
-            provide: _angular_material_input__WEBPACK_IMPORTED_MODULE_17__["MAT_INPUT_VALUE_ACCESSOR"],
-            useExisting: MatDatepickerInput
-          }],
-          host: {
-            'class': 'mat-datepicker-input',
-            '[attr.aria-haspopup]': '_datepicker ? "dialog" : null',
-            '[attr.aria-owns]': '(_datepicker?.opened && _datepicker.id) || null',
-            '[attr.min]': 'min ? _dateAdapter.toIso8601(min) : null',
-            '[attr.max]': 'max ? _dateAdapter.toIso8601(max) : null',
-            // Used by the test harness to tie this input to its calendar. We can't depend on
-            // `aria-owns` for this, because it's only defined while the calendar is open.
-            '[attr.data-mat-calendar]': '_datepicker ? _datepicker.id : null',
-            '[disabled]': 'disabled',
-            '(input)': '_onInput($event.target.value)',
-            '(change)': '_onChange()',
-            '(blur)': '_onBlur()',
-            '(keydown)': '_onKeydown($event)'
-          },
-          exportAs: 'matDatepickerInput'
-        }]
-      }];
+      MatDatepickerInput.ɵfac = function MatDatepickerInput_Factory(t) {
+        return new (t || MatDatepickerInput)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MAT_FORM_FIELD"], 8));
+      };
+
+      MatDatepickerInput.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatDatepickerInput,
+        selectors: [["input", "matDatepicker", ""]],
+        hostAttrs: [1, "mat-datepicker-input"],
+        hostVars: 6,
+        hostBindings: function MatDatepickerInput_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("input", function MatDatepickerInput_input_HostBindingHandler($event) {
+              return ctx._onInput($event.target.value);
+            })("change", function MatDatepickerInput_change_HostBindingHandler() {
+              return ctx._onChange();
+            })("blur", function MatDatepickerInput_blur_HostBindingHandler() {
+              return ctx._onBlur();
+            })("keydown", function MatDatepickerInput_keydown_HostBindingHandler($event) {
+              return ctx._onKeydown($event);
+            });
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵhostProperty"]("disabled", ctx.disabled);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-haspopup", ctx._datepicker ? "dialog" : null)("aria-owns", (ctx._datepicker == null ? null : ctx._datepicker.opened) && ctx._datepicker.id || null)("min", ctx.min ? ctx._dateAdapter.toIso8601(ctx.min) : null)("max", ctx.max ? ctx._dateAdapter.toIso8601(ctx.max) : null)("data-mat-calendar", ctx._datepicker ? ctx._datepicker.id : null);
+          }
+        },
+        inputs: {
+          matDatepicker: "matDatepicker",
+          min: "min",
+          max: "max",
+          dateFilter: ["matDatepickerFilter", "dateFilter"]
+        },
+        exportAs: ["matDatepickerInput"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([MAT_DATEPICKER_VALUE_ACCESSOR, MAT_DATEPICKER_VALIDATORS, {
+          provide: _angular_material_input__WEBPACK_IMPORTED_MODULE_17__["MAT_INPUT_VALUE_ACCESSOR"],
+          useExisting: MatDatepickerInput
+        }]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       MatDatepickerInput.ctorParameters = function () {
         return [{
@@ -6750,6 +7631,75 @@
           args: ['matDatepickerFilter']
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepickerInput, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: 'input[matDatepicker]',
+            providers: [MAT_DATEPICKER_VALUE_ACCESSOR, MAT_DATEPICKER_VALIDATORS, {
+              provide: _angular_material_input__WEBPACK_IMPORTED_MODULE_17__["MAT_INPUT_VALUE_ACCESSOR"],
+              useExisting: MatDatepickerInput
+            }],
+            host: {
+              'class': 'mat-datepicker-input',
+              '[attr.aria-haspopup]': '_datepicker ? "dialog" : null',
+              '[attr.aria-owns]': '(_datepicker?.opened && _datepicker.id) || null',
+              '[attr.min]': 'min ? _dateAdapter.toIso8601(min) : null',
+              '[attr.max]': 'max ? _dateAdapter.toIso8601(max) : null',
+              // Used by the test harness to tie this input to its calendar. We can't depend on
+              // `aria-owns` for this, because it's only defined while the calendar is open.
+              '[attr.data-mat-calendar]': '_datepicker ? _datepicker.id : null',
+              '[disabled]': 'disabled',
+              '(input)': '_onInput($event.target.value)',
+              '(change)': '_onChange()',
+              '(blur)': '_onBlur()',
+              '(keydown)': '_onKeydown($event)'
+            },
+            exportAs: 'matDatepickerInput'
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }, {
+            type: _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MatFormField"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MAT_FORM_FIELD"]]
+            }]
+          }];
+        }, {
+          matDatepicker: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          min: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          max: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateFilter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"],
+            args: ['matDatepickerFilter']
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -6760,16 +7710,29 @@
 
       /** Can be used to override the icon of a `matDatepickerToggle`. */
 
+
       var MatDatepickerToggleIcon = function MatDatepickerToggleIcon() {
         _classCallCheck(this, MatDatepickerToggleIcon);
       };
 
-      MatDatepickerToggleIcon.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: '[matDatepickerToggleIcon]'
-        }]
-      }];
+      MatDatepickerToggleIcon.ɵfac = function MatDatepickerToggleIcon_Factory(t) {
+        return new (t || MatDatepickerToggleIcon)();
+      };
+
+      MatDatepickerToggleIcon.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatDatepickerToggleIcon,
+        selectors: [["", "matDatepickerToggleIcon", ""]]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepickerToggleIcon, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: '[matDatepickerToggleIcon]'
+          }]
+        }], null, null);
+      })();
 
       var MatDatepickerToggle = /*#__PURE__*/function () {
         function MatDatepickerToggle(_intl, _changeDetectorRef, defaultTabIndex) {
@@ -6812,7 +7775,7 @@
         }, {
           key: "_watchStateChanges",
           value: function _watchStateChanges() {
-            var _this21 = this;
+            var _this19 = this;
 
             var datepickerStateChanged = this.datepicker ? this.datepicker._stateChanges : Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["of"])();
             var inputStateChanged = this.datepicker && this.datepicker._datepickerInput ? this.datepicker._datepickerInput.stateChanges : Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["of"])();
@@ -6821,7 +7784,7 @@
             this._stateChanges.unsubscribe();
 
             this._stateChanges = Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(this._intl.changes, datepickerStateChanged, inputStateChanged, datepickerToggled).subscribe(function () {
-              return _this21._changeDetectorRef.markForCheck();
+              return _this19._changeDetectorRef.markForCheck();
             });
           }
         }, {
@@ -6841,29 +7804,94 @@
         return MatDatepickerToggle;
       }();
 
-      MatDatepickerToggle.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-datepicker-toggle',
-          template: "<button\n  #button\n  mat-icon-button\n  type=\"button\"\n  [attr.aria-haspopup]=\"datepicker ? 'dialog' : null\"\n  [attr.aria-label]=\"_intl.openCalendarLabel\"\n  [attr.tabindex]=\"disabled ? -1 : tabIndex\"\n  [disabled]=\"disabled\"\n  [disableRipple]=\"disableRipple\"\n  (click)=\"_open($event)\">\n\n  <svg\n    *ngIf=\"!_customIcon\"\n    class=\"mat-datepicker-toggle-default-icon\"\n    viewBox=\"0 0 24 24\"\n    width=\"24px\"\n    height=\"24px\"\n    fill=\"currentColor\"\n    focusable=\"false\">\n    <path d=\"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z\"/>\n  </svg>\n\n  <ng-content select=\"[matDatepickerToggleIcon]\"></ng-content>\n</button>\n",
-          host: {
-            'class': 'mat-datepicker-toggle',
-            // Always set the tabindex to -1 so that it doesn't overlap with any custom tabindex the
-            // consumer may have provided, while still being able to receive focus.
-            '[attr.tabindex]': 'disabled ? null : -1',
-            '[class.mat-datepicker-toggle-active]': 'datepicker && datepicker.opened',
-            '[class.mat-accent]': 'datepicker && datepicker.color === "accent"',
-            '[class.mat-warn]': 'datepicker && datepicker.color === "warn"',
-            // Used by the test harness to tie this toggle to its datepicker.
-            '[attr.data-mat-calendar]': 'datepicker ? datepicker.id : null',
-            '(focus)': '_button.focus()'
-          },
-          exportAs: 'matDatepickerToggle',
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
-          styles: [".mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon,.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon{width:1em}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-datepicker-toggle-default-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-datepicker-toggle-default-icon{display:block;width:1.5em;height:1.5em}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-datepicker-toggle-default-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-datepicker-toggle-default-icon{margin:auto}\n"]
-        }]
-      }];
+      MatDatepickerToggle.ɵfac = function MatDatepickerToggle_Factory(t) {
+        return new (t || MatDatepickerToggle)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MatDatepickerIntl), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinjectAttribute"]('tabindex'));
+      };
+
+      MatDatepickerToggle.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatDatepickerToggle,
+        selectors: [["mat-datepicker-toggle"]],
+        contentQueries: function MatDatepickerToggle_ContentQueries(rf, ctx, dirIndex) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵcontentQuery"](dirIndex, MatDatepickerToggleIcon, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._customIcon = _t.first);
+          }
+        },
+        viewQuery: function MatDatepickerToggle_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c2, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._button = _t.first);
+          }
+        },
+        hostAttrs: [1, "mat-datepicker-toggle"],
+        hostVars: 8,
+        hostBindings: function MatDatepickerToggle_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("focus", function MatDatepickerToggle_focus_HostBindingHandler() {
+              return ctx._button.focus();
+            });
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("tabindex", ctx.disabled ? null : 0 - 1)("data-mat-calendar", ctx.datepicker ? ctx.datepicker.id : null);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-datepicker-toggle-active", ctx.datepicker && ctx.datepicker.opened)("mat-accent", ctx.datepicker && ctx.datepicker.color === "accent")("mat-warn", ctx.datepicker && ctx.datepicker.color === "warn");
+          }
+        },
+        inputs: {
+          tabIndex: "tabIndex",
+          disabled: "disabled",
+          datepicker: ["for", "datepicker"],
+          disableRipple: "disableRipple"
+        },
+        exportAs: ["matDatepickerToggle"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵNgOnChangesFeature"]],
+        ngContentSelectors: _c4,
+        decls: 4,
+        vars: 6,
+        consts: [["mat-icon-button", "", "type", "button", 3, "disabled", "disableRipple", "click"], ["button", ""], ["class", "mat-datepicker-toggle-default-icon", "viewBox", "0 0 24 24", "width", "24px", "height", "24px", "fill", "currentColor", "focusable", "false", 4, "ngIf"], ["viewBox", "0 0 24 24", "width", "24px", "height", "24px", "fill", "currentColor", "focusable", "false", 1, "mat-datepicker-toggle-default-icon"], ["d", "M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"]],
+        template: function MatDatepickerToggle_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojectionDef"](_c3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "button", 0, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MatDatepickerToggle_Template_button_click_0_listener($event) {
+              return ctx._open($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, MatDatepickerToggle__svg_svg_2_Template, 2, 0, "svg", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojection"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", ctx.disabled)("disableRipple", ctx.disableRipple);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-haspopup", ctx.datepicker ? "dialog" : null)("aria-label", ctx._intl.openCalendarLabel)("tabindex", ctx.disabled ? 0 - 1 : ctx.tabIndex);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !ctx._customIcon);
+          }
+        },
+        directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"]],
+        styles: [".mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon,.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon{width:1em}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-datepicker-toggle-default-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-datepicker-toggle-default-icon{display:block;width:1.5em;height:1.5em}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-datepicker-toggle-default-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-datepicker-toggle-default-icon{margin:auto}\n"],
+        encapsulation: 2,
+        changeDetection: 0
+      });
 
       MatDatepickerToggle.ctorParameters = function () {
         return [{
@@ -6902,6 +7930,67 @@
           args: ['button']
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepickerToggle, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-datepicker-toggle',
+            template: "<button\n  #button\n  mat-icon-button\n  type=\"button\"\n  [attr.aria-haspopup]=\"datepicker ? 'dialog' : null\"\n  [attr.aria-label]=\"_intl.openCalendarLabel\"\n  [attr.tabindex]=\"disabled ? -1 : tabIndex\"\n  [disabled]=\"disabled\"\n  [disableRipple]=\"disableRipple\"\n  (click)=\"_open($event)\">\n\n  <svg\n    *ngIf=\"!_customIcon\"\n    class=\"mat-datepicker-toggle-default-icon\"\n    viewBox=\"0 0 24 24\"\n    width=\"24px\"\n    height=\"24px\"\n    fill=\"currentColor\"\n    focusable=\"false\">\n    <path d=\"M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z\"/>\n  </svg>\n\n  <ng-content select=\"[matDatepickerToggleIcon]\"></ng-content>\n</button>\n",
+            host: {
+              'class': 'mat-datepicker-toggle',
+              // Always set the tabindex to -1 so that it doesn't overlap with any custom tabindex the
+              // consumer may have provided, while still being able to receive focus.
+              '[attr.tabindex]': 'disabled ? null : -1',
+              '[class.mat-datepicker-toggle-active]': 'datepicker && datepicker.opened',
+              '[class.mat-accent]': 'datepicker && datepicker.color === "accent"',
+              '[class.mat-warn]': 'datepicker && datepicker.color === "warn"',
+              // Used by the test harness to tie this toggle to its datepicker.
+              '[attr.data-mat-calendar]': 'datepicker ? datepicker.id : null',
+              '(focus)': '_button.focus()'
+            },
+            exportAs: 'matDatepickerToggle',
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
+            styles: [".mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon,.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon{width:1em}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-datepicker-toggle-default-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-datepicker-toggle-default-icon{display:block;width:1.5em;height:1.5em}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-datepicker-toggle-default-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-datepicker-toggle-default-icon{margin:auto}\n"]
+          }]
+        }], function () {
+          return [{
+            type: MatDatepickerIntl
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Attribute"],
+              args: ['tabindex']
+            }]
+          }];
+        }, {
+          tabIndex: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          disabled: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          datepicker: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"],
+            args: ['for']
+          }],
+          disableRipple: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          _customIcon: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChild"],
+            args: [MatDatepickerToggleIcon]
+          }],
+          _button: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['button']
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -6915,6 +8004,7 @@
        * to the parts without circular dependencies.
        */
 
+
       var MAT_DATE_RANGE_INPUT_PARENT = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["InjectionToken"]('MAT_DATE_RANGE_INPUT_PARENT');
       /**
        * Base class for the individual inputs that can be projected inside a `mat-date-range-input`.
@@ -6923,27 +8013,27 @@
       var MatDateRangeInputPartBase = /*#__PURE__*/function (_MatDatepickerInputBa2) {
         _inherits(MatDateRangeInputPartBase, _MatDatepickerInputBa2);
 
-        var _super8 = _createSuper(MatDateRangeInputPartBase);
+        var _super6 = _createSuper(MatDateRangeInputPartBase);
 
         function MatDateRangeInputPartBase(_rangeInput, elementRef, _defaultErrorStateMatcher, _injector, _parentForm, _parentFormGroup, dateAdapter, dateFormats) {
-          var _this22;
+          var _this20;
 
           _classCallCheck(this, MatDateRangeInputPartBase);
 
-          _this22 = _super8.call(this, elementRef, dateAdapter, dateFormats);
-          _this22._rangeInput = _rangeInput;
-          _this22._defaultErrorStateMatcher = _defaultErrorStateMatcher;
-          _this22._injector = _injector;
-          _this22._parentForm = _parentForm;
-          _this22._parentFormGroup = _parentFormGroup;
+          _this20 = _super6.call(this, elementRef, dateAdapter, dateFormats);
+          _this20._rangeInput = _rangeInput;
+          _this20._defaultErrorStateMatcher = _defaultErrorStateMatcher;
+          _this20._injector = _injector;
+          _this20._parentForm = _parentForm;
+          _this20._parentFormGroup = _parentFormGroup;
 
-          _this22._outsideValueChanged = function () {
+          _this20._outsideValueChanged = function () {
             // Whenever the value changes outside the input we need to revalidate, because
             // the validation state of each of the inputs depends on the other one.
-            _this22._validatorOnChange();
+            _this20._validatorOnChange();
           };
 
-          return _this22;
+          return _this20;
         }
 
         _createClass(MatDateRangeInputPartBase, [{
@@ -7039,9 +8129,14 @@
         return MatDateRangeInputPartBase;
       }(MatDatepickerInputBase);
 
-      MatDateRangeInputPartBase.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      MatDateRangeInputPartBase.ɵfac = function MatDateRangeInputPartBase_Factory(t) {
+        return new (t || MatDateRangeInputPartBase)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_DATE_RANGE_INPUT_PARENT), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["Injector"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_15__["NgForm"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormGroupDirective"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8));
+      };
+
+      MatDateRangeInputPartBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatDateRangeInputPartBase,
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       MatDateRangeInputPartBase.ctorParameters = function () {
         return [{
@@ -7081,6 +8176,51 @@
           }]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDateRangeInputPartBase, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_DATE_RANGE_INPUT_PARENT]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injector"]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NgForm"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormGroupDirective"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }];
+        }, null);
+      })();
 
       var _MatDateRangeInputBase = // Needs to be `as any`, because the base class is abstract.
       Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["mixinErrorState"])(MatDateRangeInputPartBase);
@@ -7090,24 +8230,24 @@
       var MatStartDate = /*#__PURE__*/function (_MatDateRangeInputBas) {
         _inherits(MatStartDate, _MatDateRangeInputBas);
 
-        var _super9 = _createSuper(MatStartDate);
+        var _super7 = _createSuper(MatStartDate);
 
         function MatStartDate(rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats) {
-          var _thisSuper2, _this23;
+          var _thisSuper2, _this21;
 
           _classCallCheck(this, MatStartDate);
 
           // TODO(crisbeto): this constructor shouldn't be necessary, but ViewEngine doesn't seem to
           // handle DI correctly when it is inherited from `MatDateRangeInputPartBase`. We can drop this
           // constructor once ViewEngine is removed.
-          _this23 = _super9.call(this, rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats);
+          _this21 = _super7.call(this, rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats);
           /** Validator that checks that the start date isn't after the end date. */
 
-          _this23._startValidator = function (control) {
-            var start = _this23._dateAdapter.getValidDateOrNull(_this23._dateAdapter.deserialize(control.value));
+          _this21._startValidator = function (control) {
+            var start = _this21._dateAdapter.getValidDateOrNull(_this21._dateAdapter.deserialize(control.value));
 
-            var end = _this23._model ? _this23._model.selection.end : null;
-            return !start || !end || _this23._dateAdapter.compareDate(start, end) <= 0 ? null : {
+            var end = _this21._model ? _this21._model.selection.end : null;
+            return !start || !end || _this21._dateAdapter.compareDate(start, end) <= 0 ? null : {
               'matStartDateInvalid': {
                 'end': end,
                 'actual': start
@@ -7115,13 +8255,13 @@
             };
           };
 
-          _this23._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose([].concat(_toConsumableArray(_get((_thisSuper2 = _assertThisInitialized(_this23), _getPrototypeOf(MatStartDate.prototype)), "_getValidators", _thisSuper2).call(_thisSuper2)), [_this23._startValidator]));
+          _this21._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose([].concat(_toConsumableArray(_get((_thisSuper2 = _assertThisInitialized(_this21), _getPrototypeOf(MatStartDate.prototype)), "_getValidators", _thisSuper2).call(_thisSuper2)), [_this21._startValidator]));
 
-          _this23._canEmitChangeEvent = function (event) {
-            return event.source !== _this23._rangeInput._endInput;
+          _this21._canEmitChangeEvent = function (event) {
+            return event.source !== _this21._rangeInput._endInput;
           };
 
-          return _this23;
+          return _this21;
         }
 
         _createClass(MatStartDate, [{
@@ -7184,35 +8324,44 @@
         return MatStartDate;
       }(_MatDateRangeInputBase);
 
-      MatStartDate.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: 'input[matStartDate]',
-          host: {
-            'class': 'mat-start-date mat-date-range-input-inner',
-            '[disabled]': 'disabled',
-            '(input)': '_onInput($event.target.value)',
-            '(change)': '_onChange()',
-            '(keydown)': '_onKeydown($event)',
-            '[attr.id]': '_rangeInput.id',
-            '[attr.aria-haspopup]': '_rangeInput.rangePicker ? "dialog" : null',
-            '[attr.aria-owns]': '(_rangeInput.rangePicker?.opened && _rangeInput.rangePicker.id) || null',
-            '[attr.min]': '_getMinDate() ? _dateAdapter.toIso8601(_getMinDate()) : null',
-            '[attr.max]': '_getMaxDate() ? _dateAdapter.toIso8601(_getMaxDate()) : null',
-            '(blur)': '_onBlur()',
-            'type': 'text'
-          },
-          providers: [{
-            provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALUE_ACCESSOR"],
-            useExisting: MatStartDate,
-            multi: true
-          }, {
-            provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALIDATORS"],
-            useExisting: MatStartDate,
-            multi: true
-          }]
-        }]
-      }];
+      MatStartDate.ɵfac = function MatStartDate_Factory(t) {
+        return new (t || MatStartDate)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_DATE_RANGE_INPUT_PARENT), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["Injector"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_15__["NgForm"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormGroupDirective"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8));
+      };
+
+      MatStartDate.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatStartDate,
+        selectors: [["input", "matStartDate", ""]],
+        hostAttrs: ["type", "text", 1, "mat-start-date", "mat-date-range-input-inner"],
+        hostVars: 6,
+        hostBindings: function MatStartDate_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("input", function MatStartDate_input_HostBindingHandler($event) {
+              return ctx._onInput($event.target.value);
+            })("change", function MatStartDate_change_HostBindingHandler() {
+              return ctx._onChange();
+            })("keydown", function MatStartDate_keydown_HostBindingHandler($event) {
+              return ctx._onKeydown($event);
+            })("blur", function MatStartDate_blur_HostBindingHandler() {
+              return ctx._onBlur();
+            });
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵhostProperty"]("disabled", ctx.disabled);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("id", ctx._rangeInput.id)("aria-haspopup", ctx._rangeInput.rangePicker ? "dialog" : null)("aria-owns", (ctx._rangeInput.rangePicker == null ? null : ctx._rangeInput.rangePicker.opened) && ctx._rangeInput.rangePicker.id || null)("min", ctx._getMinDate() ? ctx._dateAdapter.toIso8601(ctx._getMinDate()) : null)("max", ctx._getMaxDate() ? ctx._dateAdapter.toIso8601(ctx._getMaxDate()) : null);
+          }
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([{
+          provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALUE_ACCESSOR"],
+          useExisting: MatStartDate,
+          multi: true
+        }, {
+          provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALIDATORS"],
+          useExisting: MatStartDate,
+          multi: true
+        }]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       MatStartDate.ctorParameters = function () {
         return [{
@@ -7252,30 +8401,101 @@
           }]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatStartDate, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: 'input[matStartDate]',
+            host: {
+              'class': 'mat-start-date mat-date-range-input-inner',
+              '[disabled]': 'disabled',
+              '(input)': '_onInput($event.target.value)',
+              '(change)': '_onChange()',
+              '(keydown)': '_onKeydown($event)',
+              '[attr.id]': '_rangeInput.id',
+              '[attr.aria-haspopup]': '_rangeInput.rangePicker ? "dialog" : null',
+              '[attr.aria-owns]': '(_rangeInput.rangePicker?.opened && _rangeInput.rangePicker.id) || null',
+              '[attr.min]': '_getMinDate() ? _dateAdapter.toIso8601(_getMinDate()) : null',
+              '[attr.max]': '_getMaxDate() ? _dateAdapter.toIso8601(_getMaxDate()) : null',
+              '(blur)': '_onBlur()',
+              'type': 'text'
+            },
+            providers: [{
+              provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALUE_ACCESSOR"],
+              useExisting: MatStartDate,
+              multi: true
+            }, {
+              provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALIDATORS"],
+              useExisting: MatStartDate,
+              multi: true
+            }]
+          }]
+        }], function () {
+          return [{
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_DATE_RANGE_INPUT_PARENT]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injector"]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NgForm"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormGroupDirective"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }];
+        }, null);
+      })();
       /** Input for entering the end date in a `mat-date-range-input`. */
 
 
       var MatEndDate = /*#__PURE__*/function (_MatDateRangeInputBas2) {
         _inherits(MatEndDate, _MatDateRangeInputBas2);
 
-        var _super10 = _createSuper(MatEndDate);
+        var _super8 = _createSuper(MatEndDate);
 
         function MatEndDate(rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats) {
-          var _thisSuper3, _this24;
+          var _thisSuper3, _this22;
 
           _classCallCheck(this, MatEndDate);
 
           // TODO(crisbeto): this constructor shouldn't be necessary, but ViewEngine doesn't seem to
           // handle DI correctly when it is inherited from `MatDateRangeInputPartBase`. We can drop this
           // constructor once ViewEngine is removed.
-          _this24 = _super10.call(this, rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats);
+          _this22 = _super8.call(this, rangeInput, elementRef, defaultErrorStateMatcher, injector, parentForm, parentFormGroup, dateAdapter, dateFormats);
           /** Validator that checks that the end date isn't before the start date. */
 
-          _this24._endValidator = function (control) {
-            var end = _this24._dateAdapter.getValidDateOrNull(_this24._dateAdapter.deserialize(control.value));
+          _this22._endValidator = function (control) {
+            var end = _this22._dateAdapter.getValidDateOrNull(_this22._dateAdapter.deserialize(control.value));
 
-            var start = _this24._model ? _this24._model.selection.start : null;
-            return !end || !start || _this24._dateAdapter.compareDate(end, start) >= 0 ? null : {
+            var start = _this22._model ? _this22._model.selection.start : null;
+            return !end || !start || _this22._dateAdapter.compareDate(end, start) >= 0 ? null : {
               'matEndDateInvalid': {
                 'start': start,
                 'actual': end
@@ -7283,13 +8503,13 @@
             };
           };
 
-          _this24._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose([].concat(_toConsumableArray(_get((_thisSuper3 = _assertThisInitialized(_this24), _getPrototypeOf(MatEndDate.prototype)), "_getValidators", _thisSuper3).call(_thisSuper3)), [_this24._endValidator]));
+          _this22._validator = _angular_forms__WEBPACK_IMPORTED_MODULE_15__["Validators"].compose([].concat(_toConsumableArray(_get((_thisSuper3 = _assertThisInitialized(_this22), _getPrototypeOf(MatEndDate.prototype)), "_getValidators", _thisSuper3).call(_thisSuper3)), [_this22._endValidator]));
 
-          _this24._canEmitChangeEvent = function (event) {
-            return event.source !== _this24._rangeInput._startInput;
+          _this22._canEmitChangeEvent = function (event) {
+            return event.source !== _this22._rangeInput._startInput;
           };
 
-          return _this24;
+          return _this22;
         }
 
         _createClass(MatEndDate, [{
@@ -7345,34 +8565,44 @@
         return MatEndDate;
       }(_MatDateRangeInputBase);
 
-      MatEndDate.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: 'input[matEndDate]',
-          host: {
-            'class': 'mat-end-date mat-date-range-input-inner',
-            '[disabled]': 'disabled',
-            '(input)': '_onInput($event.target.value)',
-            '(change)': '_onChange()',
-            '(keydown)': '_onKeydown($event)',
-            '[attr.aria-haspopup]': '_rangeInput.rangePicker ? "dialog" : null',
-            '[attr.aria-owns]': '(_rangeInput.rangePicker?.opened && _rangeInput.rangePicker.id) || null',
-            '[attr.min]': '_getMinDate() ? _dateAdapter.toIso8601(_getMinDate()) : null',
-            '[attr.max]': '_getMaxDate() ? _dateAdapter.toIso8601(_getMaxDate()) : null',
-            '(blur)': '_onBlur()',
-            'type': 'text'
-          },
-          providers: [{
-            provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALUE_ACCESSOR"],
-            useExisting: MatEndDate,
-            multi: true
-          }, {
-            provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALIDATORS"],
-            useExisting: MatEndDate,
-            multi: true
-          }]
-        }]
-      }];
+      MatEndDate.ɵfac = function MatEndDate_Factory(t) {
+        return new (t || MatEndDate)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_DATE_RANGE_INPUT_PARENT), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["Injector"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_15__["NgForm"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormGroupDirective"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"], 8));
+      };
+
+      MatEndDate.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatEndDate,
+        selectors: [["input", "matEndDate", ""]],
+        hostAttrs: ["type", "text", 1, "mat-end-date", "mat-date-range-input-inner"],
+        hostVars: 5,
+        hostBindings: function MatEndDate_HostBindings(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("input", function MatEndDate_input_HostBindingHandler($event) {
+              return ctx._onInput($event.target.value);
+            })("change", function MatEndDate_change_HostBindingHandler() {
+              return ctx._onChange();
+            })("keydown", function MatEndDate_keydown_HostBindingHandler($event) {
+              return ctx._onKeydown($event);
+            })("blur", function MatEndDate_blur_HostBindingHandler() {
+              return ctx._onBlur();
+            });
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵhostProperty"]("disabled", ctx.disabled);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-haspopup", ctx._rangeInput.rangePicker ? "dialog" : null)("aria-owns", (ctx._rangeInput.rangePicker == null ? null : ctx._rangeInput.rangePicker.opened) && ctx._rangeInput.rangePicker.id || null)("min", ctx._getMinDate() ? ctx._dateAdapter.toIso8601(ctx._getMinDate()) : null)("max", ctx._getMaxDate() ? ctx._dateAdapter.toIso8601(ctx._getMaxDate()) : null);
+          }
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([{
+          provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALUE_ACCESSOR"],
+          useExisting: MatEndDate,
+          multi: true
+        }, {
+          provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALIDATORS"],
+          useExisting: MatEndDate,
+          multi: true
+        }]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       MatEndDate.ctorParameters = function () {
         return [{
@@ -7412,6 +8642,76 @@
           }]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatEndDate, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: 'input[matEndDate]',
+            host: {
+              'class': 'mat-end-date mat-date-range-input-inner',
+              '[disabled]': 'disabled',
+              '(input)': '_onInput($event.target.value)',
+              '(change)': '_onChange()',
+              '(keydown)': '_onKeydown($event)',
+              '[attr.aria-haspopup]': '_rangeInput.rangePicker ? "dialog" : null',
+              '[attr.aria-owns]': '(_rangeInput.rangePicker?.opened && _rangeInput.rangePicker.id) || null',
+              '[attr.min]': '_getMinDate() ? _dateAdapter.toIso8601(_getMinDate()) : null',
+              '[attr.max]': '_getMaxDate() ? _dateAdapter.toIso8601(_getMaxDate()) : null',
+              '(blur)': '_onBlur()',
+              'type': 'text'
+            },
+            providers: [{
+              provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALUE_ACCESSOR"],
+              useExisting: MatEndDate,
+              multi: true
+            }, {
+              provide: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NG_VALIDATORS"],
+              useExisting: MatEndDate,
+              multi: true
+            }]
+          }]
+        }], function () {
+          return [{
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_DATE_RANGE_INPUT_PARENT]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["ErrorStateMatcher"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injector"]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["NgForm"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["FormGroupDirective"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MAT_DATE_FORMATS"]]
+            }]
+          }];
+        }, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -7429,12 +8729,12 @@
       var MatDateRangePicker = /*#__PURE__*/function (_MatDatepickerBase2) {
         _inherits(MatDateRangePicker, _MatDatepickerBase2);
 
-        var _super11 = _createSuper(MatDateRangePicker);
+        var _super9 = _createSuper(MatDateRangePicker);
 
         function MatDateRangePicker() {
           _classCallCheck(this, MatDateRangePicker);
 
-          return _super11.apply(this, arguments);
+          return _super9.apply(this, arguments);
         }
 
         _createClass(MatDateRangePicker, [{
@@ -7454,17 +8754,39 @@
         return MatDateRangePicker;
       }(MatDatepickerBase);
 
-      MatDateRangePicker.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-date-range-picker',
-          template: '',
-          exportAs: 'matDateRangePicker',
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          providers: [MAT_RANGE_DATE_SELECTION_MODEL_PROVIDER, MAT_CALENDAR_RANGE_STRATEGY_PROVIDER]
-        }]
-      }];
+      MatDateRangePicker.ɵfac = function MatDateRangePicker_Factory(t) {
+        return ɵMatDateRangePicker_BaseFactory(t || MatDateRangePicker);
+      };
+
+      MatDateRangePicker.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatDateRangePicker,
+        selectors: [["mat-date-range-picker"]],
+        exportAs: ["matDateRangePicker"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([MAT_RANGE_DATE_SELECTION_MODEL_PROVIDER, MAT_CALENDAR_RANGE_STRATEGY_PROVIDER]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
+        decls: 0,
+        vars: 0,
+        template: function MatDateRangePicker_Template(rf, ctx) {},
+        encapsulation: 2,
+        changeDetection: 0
+      });
+
+      var ɵMatDateRangePicker_BaseFactory = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetInheritedFactory"](MatDateRangePicker);
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDateRangePicker, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-date-range-picker',
+            template: '',
+            exportAs: 'matDateRangePicker',
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            providers: [MAT_RANGE_DATE_SELECTION_MODEL_PROVIDER, MAT_CALENDAR_RANGE_STRATEGY_PROVIDER]
+          }]
+        }], null, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -7472,6 +8794,7 @@
        * Use of this source code is governed by an MIT-style license that can be
        * found in the LICENSE file at https://angular.io/license
        */
+
 
       var nextUniqueId = 0;
 
@@ -7548,7 +8871,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this25 = this;
+            var _this23 = this;
 
             if (typeof ngDevMode === 'undefined' || ngDevMode) {
               if (!this._startInput) {
@@ -7567,7 +8890,7 @@
 
 
             Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(this._startInput.stateChanges, this._endInput.stateChanges).subscribe(function () {
-              _this25.stateChanges.next(undefined);
+              _this23.stateChanges.next(undefined);
             });
           }
         }, {
@@ -7812,36 +9135,115 @@
         return MatDateRangeInput;
       }();
 
-      MatDateRangeInput.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-date-range-input',
-          template: "<div\n  class=\"mat-date-range-input-container\"\n  cdkMonitorSubtreeFocus\n  (cdkFocusChange)=\"focused = $event !== null\">\n  <div class=\"mat-date-range-input-start-wrapper\">\n    <ng-content select=\"input[matStartDate]\"></ng-content>\n    <span\n      class=\"mat-date-range-input-mirror\"\n      aria-hidden=\"true\">{{_getInputMirrorValue()}}</span>\n  </div>\n\n  <span\n    class=\"mat-date-range-input-separator\"\n    [class.mat-date-range-input-separator-hidden]=\"_shouldHideSeparator()\">{{separator}}</span>\n\n  <div class=\"mat-date-range-input-end-wrapper\">\n    <ng-content select=\"input[matEndDate]\"></ng-content>\n  </div>\n</div>\n\n",
-          exportAs: 'matDateRangeInput',
-          host: {
-            'class': 'mat-date-range-input',
-            '[class.mat-date-range-input-hide-placeholders]': '_shouldHidePlaceholders()',
-            '[class.mat-date-range-input-required]': 'required',
-            '[attr.id]': 'null',
-            'role': 'group',
-            '[attr.aria-labelledby]': '_getAriaLabelledby()',
-            '[attr.aria-describedby]': '_ariaDescribedBy',
-            // Used by the test harness to tie this input to its calendar. We can't depend on
-            // `aria-owns` for this, because it's only defined while the calendar is open.
-            '[attr.data-mat-calendar]': 'rangePicker ? rangePicker.id : null'
-          },
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          providers: [{
-            provide: _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MatFormFieldControl"],
-            useExisting: MatDateRangeInput
-          }, {
-            provide: MAT_DATE_RANGE_INPUT_PARENT,
-            useExisting: MatDateRangeInput
-          }],
-          styles: [".mat-date-range-input{display:block;width:100%}.mat-date-range-input-container{display:flex;align-items:center}.mat-date-range-input-separator{transition:opacity 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);margin:0 4px}.mat-date-range-input-separator-hidden{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0;transition:none}.mat-date-range-input-inner{font:inherit;background:transparent;color:currentColor;border:none;outline:none;padding:0;margin:0;vertical-align:bottom;text-align:inherit;-webkit-appearance:none;width:100%}.mat-date-range-input-inner::-ms-clear,.mat-date-range-input-inner::-ms-reveal{display:none}.mat-date-range-input-inner:-moz-ui-invalid{box-shadow:none}.mat-date-range-input-inner::placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner::-moz-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner::-webkit-input-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner:-ms-input-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-form-field-hide-placeholder .mat-date-range-input-inner::placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner::-moz-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::-moz-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner::-webkit-input-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::-webkit-input-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner:-ms-input-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner:-ms-input-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-date-range-input-mirror{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;visibility:hidden;white-space:nowrap;display:inline-block;min-width:2px}.mat-date-range-input-start-wrapper{position:relative;overflow:hidden;max-width:calc(50% - 4px)}.mat-date-range-input-start-wrapper .mat-date-range-input-inner{position:absolute;top:0;left:0}.mat-date-range-input-end-wrapper{flex-grow:1;max-width:calc(50% - 4px)}.mat-form-field-type-mat-date-range-input .mat-form-field-infix{width:200px}\n"]
-        }]
-      }];
+      MatDateRangeInput.ɵfac = function MatDateRangeInput_Factory(t) {
+        return new (t || MatDateRangeInput)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_15__["ControlContainer"], 10), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MAT_FORM_FIELD"], 8));
+      };
+
+      MatDateRangeInput.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatDateRangeInput,
+        selectors: [["mat-date-range-input"]],
+        contentQueries: function MatDateRangeInput_ContentQueries(rf, ctx, dirIndex) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵcontentQuery"](dirIndex, MatStartDate, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵcontentQuery"](dirIndex, MatEndDate, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._startInput = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._endInput = _t.first);
+          }
+        },
+        hostAttrs: ["role", "group", 1, "mat-date-range-input"],
+        hostVars: 8,
+        hostBindings: function MatDateRangeInput_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("id", null)("aria-labelledby", ctx._getAriaLabelledby())("aria-describedby", ctx._ariaDescribedBy)("data-mat-calendar", ctx.rangePicker ? ctx.rangePicker.id : null);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-date-range-input-hide-placeholders", ctx._shouldHidePlaceholders())("mat-date-range-input-required", ctx.required);
+          }
+        },
+        inputs: {
+          separator: "separator",
+          comparisonStart: "comparisonStart",
+          comparisonEnd: "comparisonEnd",
+          rangePicker: "rangePicker",
+          required: "required",
+          dateFilter: "dateFilter",
+          min: "min",
+          max: "max",
+          disabled: "disabled"
+        },
+        exportAs: ["matDateRangeInput"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([{
+          provide: _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MatFormFieldControl"],
+          useExisting: MatDateRangeInput
+        }, {
+          provide: MAT_DATE_RANGE_INPUT_PARENT,
+          useExisting: MatDateRangeInput
+        }]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵNgOnChangesFeature"]],
+        ngContentSelectors: _c6,
+        decls: 9,
+        vars: 4,
+        consts: [["cdkMonitorSubtreeFocus", "", 1, "mat-date-range-input-container", 3, "cdkFocusChange"], [1, "mat-date-range-input-start-wrapper"], ["aria-hidden", "true", 1, "mat-date-range-input-mirror"], [1, "mat-date-range-input-separator"], [1, "mat-date-range-input-end-wrapper"]],
+        template: function MatDateRangeInput_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojectionDef"](_c5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("cdkFocusChange", function MatDateRangeInput_Template_div_cdkFocusChange_0_listener($event) {
+              return ctx.focused = $event !== null;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojection"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "span", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "span", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojection"](8, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx._getInputMirrorValue());
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-date-range-input-separator-hidden", ctx._shouldHideSeparator());
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx.separator);
+          }
+        },
+        directives: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["CdkMonitorFocus"]],
+        styles: [".mat-date-range-input{display:block;width:100%}.mat-date-range-input-container{display:flex;align-items:center}.mat-date-range-input-separator{transition:opacity 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);margin:0 4px}.mat-date-range-input-separator-hidden{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0;transition:none}.mat-date-range-input-inner{font:inherit;background:transparent;color:currentColor;border:none;outline:none;padding:0;margin:0;vertical-align:bottom;text-align:inherit;-webkit-appearance:none;width:100%}.mat-date-range-input-inner::-ms-clear,.mat-date-range-input-inner::-ms-reveal{display:none}.mat-date-range-input-inner:-moz-ui-invalid{box-shadow:none}.mat-date-range-input-inner::placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner::-moz-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner::-webkit-input-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner:-ms-input-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-form-field-hide-placeholder .mat-date-range-input-inner::placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner::-moz-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::-moz-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner::-webkit-input-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::-webkit-input-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner:-ms-input-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner:-ms-input-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-date-range-input-mirror{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;visibility:hidden;white-space:nowrap;display:inline-block;min-width:2px}.mat-date-range-input-start-wrapper{position:relative;overflow:hidden;max-width:calc(50% - 4px)}.mat-date-range-input-start-wrapper .mat-date-range-input-inner{position:absolute;top:0;left:0}.mat-date-range-input-end-wrapper{flex-grow:1;max-width:calc(50% - 4px)}.mat-form-field-type-mat-date-range-input .mat-form-field-infix{width:200px}\n"],
+        encapsulation: 2,
+        changeDetection: 0
+      });
 
       MatDateRangeInput.ctorParameters = function () {
         return [{
@@ -7908,6 +9310,102 @@
           args: [MatEndDate]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDateRangeInput, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-date-range-input',
+            template: "<div\n  class=\"mat-date-range-input-container\"\n  cdkMonitorSubtreeFocus\n  (cdkFocusChange)=\"focused = $event !== null\">\n  <div class=\"mat-date-range-input-start-wrapper\">\n    <ng-content select=\"input[matStartDate]\"></ng-content>\n    <span\n      class=\"mat-date-range-input-mirror\"\n      aria-hidden=\"true\">{{_getInputMirrorValue()}}</span>\n  </div>\n\n  <span\n    class=\"mat-date-range-input-separator\"\n    [class.mat-date-range-input-separator-hidden]=\"_shouldHideSeparator()\">{{separator}}</span>\n\n  <div class=\"mat-date-range-input-end-wrapper\">\n    <ng-content select=\"input[matEndDate]\"></ng-content>\n  </div>\n</div>\n\n",
+            exportAs: 'matDateRangeInput',
+            host: {
+              'class': 'mat-date-range-input',
+              '[class.mat-date-range-input-hide-placeholders]': '_shouldHidePlaceholders()',
+              '[class.mat-date-range-input-required]': 'required',
+              '[attr.id]': 'null',
+              'role': 'group',
+              '[attr.aria-labelledby]': '_getAriaLabelledby()',
+              '[attr.aria-describedby]': '_ariaDescribedBy',
+              // Used by the test harness to tie this input to its calendar. We can't depend on
+              // `aria-owns` for this, because it's only defined while the calendar is open.
+              '[attr.data-mat-calendar]': 'rangePicker ? rangePicker.id : null'
+            },
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].OnPush,
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            providers: [{
+              provide: _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MatFormFieldControl"],
+              useExisting: MatDateRangeInput
+            }, {
+              provide: MAT_DATE_RANGE_INPUT_PARENT,
+              useExisting: MatDateRangeInput
+            }],
+            styles: [".mat-date-range-input{display:block;width:100%}.mat-date-range-input-container{display:flex;align-items:center}.mat-date-range-input-separator{transition:opacity 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);margin:0 4px}.mat-date-range-input-separator-hidden{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0;transition:none}.mat-date-range-input-inner{font:inherit;background:transparent;color:currentColor;border:none;outline:none;padding:0;margin:0;vertical-align:bottom;text-align:inherit;-webkit-appearance:none;width:100%}.mat-date-range-input-inner::-ms-clear,.mat-date-range-input-inner::-ms-reveal{display:none}.mat-date-range-input-inner:-moz-ui-invalid{box-shadow:none}.mat-date-range-input-inner::placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner::-moz-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner::-webkit-input-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-date-range-input-inner:-ms-input-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1)}.mat-form-field-hide-placeholder .mat-date-range-input-inner::placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner::-moz-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::-moz-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner::-webkit-input-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner::-webkit-input-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-form-field-hide-placeholder .mat-date-range-input-inner:-ms-input-placeholder,.mat-date-range-input-hide-placeholders .mat-date-range-input-inner:-ms-input-placeholder{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:transparent !important;-webkit-text-fill-color:transparent;transition:none}.mat-date-range-input-mirror{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;visibility:hidden;white-space:nowrap;display:inline-block;min-width:2px}.mat-date-range-input-start-wrapper{position:relative;overflow:hidden;max-width:calc(50% - 4px)}.mat-date-range-input-start-wrapper .mat-date-range-input-inner{position:absolute;top:0;left:0}.mat-date-range-input-end-wrapper{flex-grow:1;max-width:calc(50% - 4px)}.mat-form-field-type-mat-date-range-input .mat-form-field-infix{width:200px}\n"]
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_forms__WEBPACK_IMPORTED_MODULE_15__["ControlContainer"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Self"]
+            }]
+          }, {
+            type: _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["DateAdapter"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MatFormField"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_16__["MAT_FORM_FIELD"]]
+            }]
+          }];
+        }, {
+          separator: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          comparisonStart: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          comparisonEnd: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          rangePicker: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          required: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dateFilter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          min: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          max: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          disabled: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          _startInput: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChild"],
+            args: [MatStartDate]
+          }],
+          _endInput: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChild"],
+            args: [MatEndDate]
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -7916,20 +9414,50 @@
        * found in the LICENSE file at https://angular.io/license
        */
 
+
       var MatDatepickerModule = function MatDatepickerModule() {
         _classCallCheck(this, MatDatepickerModule);
       };
 
-      MatDatepickerModule.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"],
-        args: [{
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["OverlayModule"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalModule"]],
-          exports: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_7__["CdkScrollableModule"], MatCalendar, MatCalendarBody, MatDatepicker, MatDatepickerContent, MatDatepickerInput, MatDatepickerToggle, MatDatepickerToggleIcon, MatMonthView, MatYearView, MatMultiYearView, MatCalendarHeader, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker],
-          declarations: [MatCalendar, MatCalendarBody, MatDatepicker, MatDatepickerContent, MatDatepickerInput, MatDatepickerToggle, MatDatepickerToggleIcon, MatMonthView, MatYearView, MatMultiYearView, MatCalendarHeader, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker],
-          providers: [MatDatepickerIntl, MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER],
-          entryComponents: [MatDatepickerContent, MatCalendarHeader]
-        }]
-      }];
+      MatDatepickerModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
+        type: MatDatepickerModule
+      });
+      MatDatepickerModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
+        factory: function MatDatepickerModule_Factory(t) {
+          return new (t || MatDatepickerModule)();
+        },
+        providers: [MatDatepickerIntl, MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER],
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["OverlayModule"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalModule"]], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_7__["CdkScrollableModule"]]
+      });
+
+      (function () {
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](MatDatepickerModule, {
+          declarations: function declarations() {
+            return [MatCalendar, MatCalendarBody, MatDatepicker, MatDatepickerContent, MatDatepickerInput, MatDatepickerToggle, MatDatepickerToggleIcon, MatMonthView, MatYearView, MatMultiYearView, MatCalendarHeader, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker];
+          },
+          imports: function imports() {
+            return [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["OverlayModule"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalModule"]];
+          },
+          exports: function exports() {
+            return [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_7__["CdkScrollableModule"], MatCalendar, MatCalendarBody, MatDatepicker, MatDatepickerContent, MatDatepickerInput, MatDatepickerToggle, MatDatepickerToggleIcon, MatMonthView, MatYearView, MatMultiYearView, MatCalendarHeader, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker];
+          }
+        });
+      })();
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatDatepickerModule, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"],
+          args: [{
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButtonModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_1__["OverlayModule"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalModule"]],
+            exports: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_7__["CdkScrollableModule"], MatCalendar, MatCalendarBody, MatDatepicker, MatDatepickerContent, MatDatepickerInput, MatDatepickerToggle, MatDatepickerToggleIcon, MatMonthView, MatYearView, MatMultiYearView, MatCalendarHeader, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker],
+            declarations: [MatCalendar, MatCalendarBody, MatDatepicker, MatDatepickerContent, MatDatepickerInput, MatDatepickerToggle, MatDatepickerToggleIcon, MatMonthView, MatYearView, MatMultiYearView, MatCalendarHeader, MatDateRangeInput, MatStartDate, MatEndDate, MatDateRangePicker],
+            providers: [MatDatepickerIntl, MAT_DATEPICKER_SCROLL_STRATEGY_FACTORY_PROVIDER],
+            entryComponents: [MatDatepickerContent, MatCalendarHeader]
+          }]
+        }], null, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -7944,6 +9472,7 @@
       //# sourceMappingURL=datepicker.js.map
 
       /***/
+
     },
 
     /***/

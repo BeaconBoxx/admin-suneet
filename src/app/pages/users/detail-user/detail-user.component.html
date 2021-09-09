@@ -14,17 +14,17 @@
       <div class="col-md-6">
         <div class="card-body p-3 bg-light border h-100">
           <div class=" text-center">
-            <img src="assets/images/users/1.jpg" class="rounded-circle" width="150" />
+            <img [src]="items?.image?.media_file_url" class="rounded-circle" width="150" />
           </div>
           <ul class="list-block pl-0 ">
             <!-- <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Name:</span> Hanna Gover</li> -->
             <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Phone No. :</span> <a
-                href="tel:+919564345452">+91-9564345452</a>
+                href="tel:+919564345452">{{items?.country_code}} {{items?.phone_no}}</a>
             </li>
             <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Email:</span> <a
-                href="mailto:hanna@example.com">hanna@@example.com</a></li>
+                href="mailto:hanna@example.com">{{items?.email}}</a></li>
             <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Address:</span> <a
-                href="javascript:void()">#454 1st Block, Rammurthy, Bangalore-560016</a>
+                href="javascript:void()">{{items?.address}}</a>
             </li>
 
           </ul>
@@ -43,14 +43,13 @@
             </div>
             <div class="col-md-4">
               <ul class="list-block pl-0">
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Full Name: </span>Hanna
-                  Gover</li>
+                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Full Name: </span>{{items?.first_name}} {{items?.last_name}}</li>
                </ul>
             </div>
             <div class="col-md-8">
               <ul class="list-block pl-0 ">
                 <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Date of Birth:
-                </span>19-02-1960</li>                  
+                </span>{{items?.dob}}</li>                  
               </ul>
             </div>
             <!-- <div class="col-md-12">
@@ -59,12 +58,12 @@
             <div class="col-md-4">
               <ul class="list-block pl-0 list-style-none">
                                
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Gender:</span>Male
+                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Gender:</span>{{items?.gender==1?"Male":(items?.gender==2?"Female":"Others")}}
                 </li>
                 <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Property Access Code 
-                </span>23432</li>
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Locbox Code 
-                </span>23432</li>
+                </span>{{items?.property_access_code}}</li>
+                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Lockbox Code 
+                </span>{{items?.lock_box_code}}</li>
                 <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Device intergrated
                     </span>5</li>
                 <!-- <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Payment Not Completed:</span>0</li> -->
@@ -73,10 +72,10 @@
             <div class="col-md-8">
               <ul class="list-block pl-0 list-style-none">
                 <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Heart Rate:
-                </span>80</li> 
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Sp02:</span>96  
+                </span>{{items?.max_heart_rate}}</li> 
+                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Sp02:</span>{{items?.max_spo2}}  
                 </li> <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Heart Rate Variability:</span>
-                  <span></span>96  
+                  <span></span>{{items?.max_heart_rate_variability}}  
                 </li>
                
               
@@ -85,7 +84,7 @@
             </div>
             <div class="col-md-12">
               <p class="font-weight-600 d-block mb-0">Medical Information</p>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti numquam officiis atque modi quisquam commodi accusamus vitae voluptate veritatis nisi.</p>
+              <p>{{items?.medical_information}}</p>
             </div>
             <!-- <div class="col-md-6">            
               <div class="card">

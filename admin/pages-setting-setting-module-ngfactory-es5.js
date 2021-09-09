@@ -7,207 +7,6 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pages-setting-setting-module-ngfactory"], {
     /***/
-    "./node_modules/ngx-google-places-autocomplete/bundles/ngx-google-places-autocomplete.umd.js":
-    /*!***************************************************************************************************!*\
-      !*** ./node_modules/ngx-google-places-autocomplete/bundles/ngx-google-places-autocomplete.umd.js ***!
-      \***************************************************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function node_modulesNgxGooglePlacesAutocompleteBundlesNgxGooglePlacesAutocompleteUmdJs(module, exports, __webpack_require__) {
-      (function (global, factory) {
-        true ? factory(exports, __webpack_require__(
-        /*! @angular/core */
-        "./node_modules/@angular/core/fesm2015/core.js")) : undefined;
-      })(this, function (exports, _angular_core) {
-        'use strict';
-
-        var Options = function () {
-          /**
-           * @param {?=} opt
-           */
-          function Options(opt) {
-            if (!opt) return;
-            Object.assign(this, opt);
-          }
-
-          return Options;
-        }();
-
-        var GooglePlaceDirective = function () {
-          /**
-           * @param {?} el
-           * @param {?} ngZone
-           */
-          function GooglePlaceDirective(el, ngZone) {
-            this.el = el;
-            this.ngZone = ngZone;
-            this.onAddressChange = new _angular_core.EventEmitter();
-          }
-          /**
-           * @return {?}
-           */
-
-
-          GooglePlaceDirective.prototype.ngAfterViewInit = function () {
-            if (!this.options) this.options = new Options();
-            this.initialize();
-          };
-          /**
-           * @return {?}
-           */
-
-
-          GooglePlaceDirective.prototype.isGoogleLibExists = function () {
-            return !(!google || !google.maps || !google.maps.places);
-          };
-          /**
-           * @return {?}
-           */
-
-
-          GooglePlaceDirective.prototype.initialize = function () {
-            var _this = this;
-
-            if (!this.isGoogleLibExists()) throw new Error("Google maps library can not be found");
-            this.autocomplete = new google.maps.places.Autocomplete(this.el.nativeElement, this.options);
-            if (!this.autocomplete) throw new Error("Autocomplete is not initialized");
-
-            if (!this.autocomplete.addListener != null) {
-              this.eventListener = this.autocomplete.addListener('place_changed', function () {
-                _this.handleChangeEvent();
-              });
-            }
-
-            this.el.nativeElement.addEventListener('keydown', function (event) {
-              if (!event.key) {
-                return;
-              }
-
-              var
-              /** @type {?} */
-              key = event.key.toLowerCase();
-
-              if (key == 'enter' && event.target === _this.el.nativeElement) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-            }); // according to https://gist.github.com/schoenobates/ef578a02ac8ab6726487
-
-            if (window && window.navigator && window.navigator.userAgent && navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
-              setTimeout(function () {
-                var
-                /** @type {?} */
-                containers = document.getElementsByClassName('pac-container');
-
-                if (containers) {
-                  var
-                  /** @type {?} */
-                  arr = Array.from(containers);
-
-                  if (arr) {
-                    for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
-                      var container = arr_1[_i];
-                      if (!container) continue;
-                      container.addEventListener('touchend', function (e) {
-                        e.stopImmediatePropagation();
-                      });
-                    }
-                  }
-                }
-              }, 500);
-            }
-          };
-          /**
-           * @return {?}
-           */
-
-
-          GooglePlaceDirective.prototype.reset = function () {
-            this.autocomplete.setComponentRestrictions(this.options.componentRestrictions);
-            this.autocomplete.setTypes(this.options.types);
-          };
-          /**
-           * @return {?}
-           */
-
-
-          GooglePlaceDirective.prototype.handleChangeEvent = function () {
-            var _this = this;
-
-            this.ngZone.run(function () {
-              _this.place = _this.autocomplete.getPlace();
-
-              if (_this.place) {
-                _this.onAddressChange.emit(_this.place);
-              }
-            });
-          };
-
-          GooglePlaceDirective.decorators = [{
-            type: _angular_core.Directive,
-            args: [{
-              selector: '[ngx-google-places-autocomplete]',
-              exportAs: 'ngx-places'
-            }]
-          }];
-          /**
-           * @nocollapse
-           */
-
-          GooglePlaceDirective.ctorParameters = function () {
-            return [{
-              type: _angular_core.ElementRef
-            }, {
-              type: _angular_core.NgZone
-            }];
-          };
-
-          GooglePlaceDirective.propDecorators = {
-            'options': [{
-              type: _angular_core.Input,
-              args: ['options']
-            }],
-            'onAddressChange': [{
-              type: _angular_core.Output
-            }]
-          };
-          return GooglePlaceDirective;
-        }();
-
-        var GooglePlaceModule = function () {
-          function GooglePlaceModule() {}
-
-          GooglePlaceModule.decorators = [{
-            type: _angular_core.NgModule,
-            args: [{
-              declarations: [GooglePlaceDirective],
-              exports: [GooglePlaceDirective]
-            }]
-          }];
-          /**
-           * @nocollapse
-           */
-
-          GooglePlaceModule.ctorParameters = function () {
-            return [];
-          };
-
-          return GooglePlaceModule;
-        }();
-
-        exports.GooglePlaceModule = GooglePlaceModule;
-        exports.GooglePlaceDirective = GooglePlaceDirective;
-        Object.defineProperty(exports, '__esModule', {
-          value: true
-        });
-      });
-      /***/
-
-    },
-
-    /***/
     "./src/app/pages/setting/profile/profile.component.css.shim.ngstyle.js":
     /*!*****************************************************************************!*\
       !*** ./src/app/pages/setting/profile/profile.component.css.shim.ngstyle.js ***!
@@ -1469,39 +1268,39 @@
         }, {
           key: "getProfile",
           value: function getProfile() {
-            var _this2 = this;
+            var _this = this;
 
             this.commn_.get("user/get-user-profile-by-token/").subscribe(function (res) {
               var _a, _b, _c, _d, _e, _f, _g, _h;
 
               console.log(res);
-              _this2.items = res === null || res === void 0 ? void 0 : res.data;
-              _this2.lati = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.latitude;
-              _this2["long"] = (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.longitude;
-              console.log(_this2.lati, _this2["long"]);
+              _this.items = res === null || res === void 0 ? void 0 : res.data;
+              _this.lati = (_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.latitude;
+              _this["long"] = (_b = res === null || res === void 0 ? void 0 : res.data) === null || _b === void 0 ? void 0 : _b.longitude;
+              console.log(_this.lati, _this["long"]);
 
-              _this2.profileForm.get('first_name').patchValue((_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.first_name);
+              _this.profileForm.get('first_name').patchValue((_c = res === null || res === void 0 ? void 0 : res.data) === null || _c === void 0 ? void 0 : _c.first_name);
 
-              _this2.profileForm.get('last_name').patchValue((_d = res === null || res === void 0 ? void 0 : res.data) === null || _d === void 0 ? void 0 : _d.last_name);
+              _this.profileForm.get('last_name').patchValue((_d = res === null || res === void 0 ? void 0 : res.data) === null || _d === void 0 ? void 0 : _d.last_name);
 
-              _this2.profileForm.get('address').patchValue((_e = res === null || res === void 0 ? void 0 : res.data) === null || _e === void 0 ? void 0 : _e.address);
+              _this.profileForm.get('address').patchValue((_e = res === null || res === void 0 ? void 0 : res.data) === null || _e === void 0 ? void 0 : _e.address);
 
-              _this2.profileForm.get('cnfaddress').patchValue((_f = res === null || res === void 0 ? void 0 : res.data) === null || _f === void 0 ? void 0 : _f.address);
+              _this.profileForm.get('cnfaddress').patchValue((_f = res === null || res === void 0 ? void 0 : res.data) === null || _f === void 0 ? void 0 : _f.address);
 
-              _this2.profileForm.get('phone_no').patchValue((_g = res === null || res === void 0 ? void 0 : res.data) === null || _g === void 0 ? void 0 : _g.phone_no);
+              _this.profileForm.get('phone_no').patchValue((_g = res === null || res === void 0 ? void 0 : res.data) === null || _g === void 0 ? void 0 : _g.phone_no);
 
-              _this2.profileForm.get('email').patchValue((_h = res === null || res === void 0 ? void 0 : res.data) === null || _h === void 0 ? void 0 : _h.email);
+              _this.profileForm.get('email').patchValue((_h = res === null || res === void 0 ? void 0 : res.data) === null || _h === void 0 ? void 0 : _h.email);
 
-              _this2.profileForm.get('email').disable();
+              _this.profileForm.get('email').disable();
 
-              _this2.profileForm.get('phone_no').disable();
+              _this.profileForm.get('phone_no').disable();
             });
           } //setting Form
 
         }, {
           key: "update",
           value: function update() {
-            var _this3 = this;
+            var _this2 = this;
 
             var body = {
               "first_name": this.profileForm.get('first_name').value.trim(),
@@ -1521,15 +1320,15 @@
             if (this.profileForm.valid) {
               this.commn_.put("user/update-user-profile-by-token/", body).subscribe(function (res) {
                 if (res.code == 200) {
-                  _this3.commn_.imageFlag.next("Flag");
+                  _this2.commn_.imageFlag.next("Flag");
 
-                  _this3.toastr.success(res.message, "Success", {
+                  _this2.toastr.success(res.message, "Success", {
                     timeOut: 1500
                   });
 
-                  _this3.getProfile();
+                  _this2.getProfile();
                 } else {
-                  _this3.toastr.error(res.message, "Error", {
+                  _this2.toastr.error(res.message, "Error", {
                     timeOut: 1500
                   });
                 }
@@ -1542,7 +1341,7 @@
         }, {
           key: "onImageSelect",
           value: function onImageSelect(e) {
-            var _this4 = this;
+            var _this3 = this;
 
             var files = e.target.files;
 
@@ -1554,13 +1353,13 @@
                 console.log(res);
 
                 if (res.code == 200) {
-                  _this4.imageId = res.data[0].id;
+                  _this3.imageId = res.data[0].id;
 
-                  _this4.update();
+                  _this3.update();
 
-                  _this4.getProfile();
+                  _this3.getProfile();
                 } else {
-                  _this4.toastr.error(res.message, "Error");
+                  _this3.toastr.error(res.message, "Error");
                 }
               });
             } else {
@@ -1571,7 +1370,7 @@
         }, {
           key: "updatePassword",
           value: function updatePassword() {
-            var _this5 = this;
+            var _this4 = this;
 
             var body = {
               "current_password": this.passwordForm.get('current_password').value,
@@ -1582,11 +1381,11 @@
             if (this.passwordForm.valid) {
               this.commn_.put("user/change-password/", body).subscribe(function (res) {
                 if (res.code == 200) {
-                  _this5.toastr.success(res.message, "Success", {
+                  _this4.toastr.success(res.message, "Success", {
                     timeOut: 2000
                   });
                 } else {
-                  _this5.toastr.error(res.message, "Error", {
+                  _this4.toastr.error(res.message, "Error", {
                     timeOut: 2000
                   });
                 }

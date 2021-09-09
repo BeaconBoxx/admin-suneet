@@ -306,6 +306,153 @@
       /** Injection token for the MatInkBar's Positioner. */
 
 
+      function MatTab_ng_template_0_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojection"](0);
+        }
+      }
+
+      var _c0 = ["*"];
+
+      function MatTabBody_ng_template_2_Template(rf, ctx) {}
+
+      var _c1 = function _c1(a0) {
+        return {
+          animationDuration: a0
+        };
+      };
+
+      var _c2 = function _c2(a0, a1) {
+        return {
+          value: a0,
+          params: a1
+        };
+      };
+
+      var _c3 = ["tabBodyWrapper"];
+      var _c4 = ["tabHeader"];
+
+      function MatTabGroup_div_2_ng_template_2_ng_template_0_Template(rf, ctx) {}
+
+      function MatTabGroup_div_2_ng_template_2_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, MatTabGroup_div_2_ng_template_2_ng_template_0_Template, 0, 0, "ng-template", 9);
+        }
+
+        if (rf & 2) {
+          var tab_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("cdkPortalOutlet", tab_r4.templateLabel);
+        }
+      }
+
+      function MatTabGroup_div_2_ng_template_3_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](0);
+        }
+
+        if (rf & 2) {
+          var tab_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]().$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](tab_r4.textLabel);
+        }
+      }
+
+      function MatTabGroup_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MatTabGroup_div_2_Template_div_click_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r12);
+
+            var tab_r4 = ctx.$implicit;
+            var i_r5 = ctx.index;
+
+            var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            var _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵreference"](1);
+
+            return ctx_r11._handleClick(tab_r4, _r0, i_r5);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, MatTabGroup_div_2_ng_template_2_Template, 1, 1, "ng-template", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, MatTabGroup_div_2_ng_template_3_Template, 1, 1, "ng-template", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var tab_r4 = ctx.$implicit;
+          var i_r5 = ctx.index;
+
+          var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-label-active", ctx_r1.selectedIndex == i_r5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("id", ctx_r1._getTabLabelId(i_r5))("disabled", tab_r4.disabled)("matRippleDisabled", tab_r4.disabled || ctx_r1.disableRipple);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("tabIndex", ctx_r1._getTabIndex(tab_r4, i_r5))("aria-posinset", i_r5 + 1)("aria-setsize", ctx_r1._tabs.length)("aria-controls", ctx_r1._getTabContentId(i_r5))("aria-selected", ctx_r1.selectedIndex == i_r5)("aria-label", tab_r4.ariaLabel || null)("aria-labelledby", !tab_r4.ariaLabel && tab_r4.ariaLabelledby ? tab_r4.ariaLabelledby : null);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", tab_r4.templateLabel);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !tab_r4.templateLabel);
+        }
+      }
+
+      function MatTabGroup_mat_tab_body_5_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-tab-body", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("_onCentered", function MatTabGroup_mat_tab_body_5_Template_mat_tab_body__onCentered_0_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r16);
+
+            var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r15._removeTabBodyWrapperHeight();
+          })("_onCentering", function MatTabGroup_mat_tab_body_5_Template_mat_tab_body__onCentering_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r16);
+
+            var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+            return ctx_r17._setTabBodyWrapperHeight($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var tab_r13 = ctx.$implicit;
+          var i_r14 = ctx.index;
+
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-body-active", ctx_r3.selectedIndex == i_r14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("id", ctx_r3._getTabContentId(i_r14))("content", tab_r13.content)("position", tab_r13.position)("origin", tab_r13.origin)("animationDuration", ctx_r3.animationDuration);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-labelledby", ctx_r3._getTabLabelId(i_r14));
+        }
+      }
+
+      var _c5 = ["tabListContainer"];
+      var _c6 = ["tabList"];
+      var _c7 = ["nextPaginator"];
+      var _c8 = ["previousPaginator"];
+      var _c9 = ["mat-tab-nav-bar", ""];
+
       var _MAT_INK_BAR_POSITIONER = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["InjectionToken"]('MatInkBarPositioner', {
         providedIn: 'root',
         factory: _MAT_INK_BAR_POSITIONER_FACTORY
@@ -398,16 +545,21 @@
         return MatInkBar;
       }();
 
-      MatInkBar.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: 'mat-ink-bar',
-          host: {
-            'class': 'mat-ink-bar',
-            '[class._mat-animation-noopable]': "_animationMode === 'NoopAnimations'"
+      MatInkBar.ɵfac = function MatInkBar_Factory(t) {
+        return new (t || MatInkBar)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_MAT_INK_BAR_POSITIONER), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      MatInkBar.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatInkBar,
+        selectors: [["mat-ink-bar"]],
+        hostAttrs: [1, "mat-ink-bar"],
+        hostVars: 2,
+        hostBindings: function MatInkBar_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("_mat-animation-noopable", ctx._animationMode === "NoopAnimations");
           }
-        }]
-      }];
+        }
+      });
 
       MatInkBar.ctorParameters = function () {
         return [{
@@ -430,6 +582,41 @@
           }]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatInkBar, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: 'mat-ink-bar',
+            host: {
+              'class': 'mat-ink-bar',
+              '[class._mat-animation-noopable]': "_animationMode === 'NoopAnimations'"
+            }
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_MAT_INK_BAR_POSITIONER]
+            }]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -456,22 +643,43 @@
         this.template = template;
       };
 
-      MatTabContent.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: '[matTabContent]',
-          providers: [{
-            provide: MAT_TAB_CONTENT,
-            useExisting: MatTabContent
-          }]
-        }]
-      }];
+      MatTabContent.ɵfac = function MatTabContent_Factory(t) {
+        return new (t || MatTabContent)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["TemplateRef"]));
+      };
+
+      MatTabContent.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatTabContent,
+        selectors: [["", "matTabContent", ""]],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([{
+          provide: MAT_TAB_CONTENT,
+          useExisting: MatTabContent
+        }])]
+      });
 
       MatTabContent.ctorParameters = function () {
         return [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["TemplateRef"]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabContent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: '[matTabContent]',
+            providers: [{
+              provide: MAT_TAB_CONTENT,
+              useExisting: MatTabContent
+            }]
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["TemplateRef"]
+          }];
+        }, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -504,16 +712,35 @@
         return MatTabLabel;
       }(_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["CdkPortal"]);
 
-      MatTabLabel.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: '[mat-tab-label], [matTabLabel]',
-          providers: [{
-            provide: MAT_TAB_LABEL,
-            useExisting: MatTabLabel
+      MatTabLabel.ɵfac = function MatTabLabel_Factory(t) {
+        return ɵMatTabLabel_BaseFactory(t || MatTabLabel);
+      };
+
+      MatTabLabel.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatTabLabel,
+        selectors: [["", "mat-tab-label", ""], ["", "matTabLabel", ""]],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([{
+          provide: MAT_TAB_LABEL,
+          useExisting: MatTabLabel
+        }]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
+
+      var ɵMatTabLabel_BaseFactory = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetInheritedFactory"](MatTabLabel);
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabLabel, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: '[mat-tab-label], [matTabLabel]',
+            providers: [{
+              provide: MAT_TAB_LABEL,
+              useExisting: MatTabLabel
+            }]
           }]
-        }]
-      }];
+        }], null, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -524,6 +751,7 @@
       // Boilerplate for applying mixins to MatTab.
 
       /** @docs-private */
+
 
       var MatTabBase = function MatTabBase() {
         _classCallCheck(this, MatTabBase);
@@ -642,18 +870,58 @@
         return MatTab;
       }(_MatTabMixinBase);
 
-      MatTab.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-tab',
-          template: "<!-- Create a template for the content of the <mat-tab> so that we can grab a reference to this\n    TemplateRef and use it in a Portal to render the tab content in the appropriate place in the\n    tab-group. -->\n<ng-template><ng-content></ng-content></ng-template>\n",
-          inputs: ['disabled'],
-          // tslint:disable-next-line:validate-decorators
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          exportAs: 'matTab'
-        }]
-      }];
+      MatTab.ɵfac = function MatTab_Factory(t) {
+        return new (t || MatTab)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewContainerRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_TAB_GROUP, 8));
+      };
+
+      MatTab.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatTab,
+        selectors: [["mat-tab"]],
+        contentQueries: function MatTab_ContentQueries(rf, ctx, dirIndex) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵcontentQuery"](dirIndex, MAT_TAB_LABEL, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstaticContentQuery"](dirIndex, MAT_TAB_CONTENT, true, _angular_core__WEBPACK_IMPORTED_MODULE_4__["TemplateRef"]);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.templateLabel = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._explicitContent = _t.first);
+          }
+        },
+        viewQuery: function MatTab_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstaticViewQuery"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["TemplateRef"], true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._implicitContent = _t.first);
+          }
+        },
+        inputs: {
+          disabled: "disabled",
+          textLabel: ["label", "textLabel"],
+          ariaLabel: ["aria-label", "ariaLabel"],
+          ariaLabelledby: ["aria-labelledby", "ariaLabelledby"]
+        },
+        exportAs: ["matTab"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵNgOnChangesFeature"]],
+        ngContentSelectors: _c0,
+        decls: 1,
+        vars: 0,
+        template: function MatTab_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojectionDef"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](0, MatTab_ng_template_0_Template, 1, 0, "ng-template");
+          }
+        },
+        encapsulation: 2
+      });
 
       MatTab.ctorParameters = function () {
         return [{
@@ -700,6 +968,64 @@
           args: ['aria-labelledby']
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTab, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-tab',
+            template: "<!-- Create a template for the content of the <mat-tab> so that we can grab a reference to this\n    TemplateRef and use it in a Portal to render the tab content in the appropriate place in the\n    tab-group. -->\n<ng-template><ng-content></ng-content></ng-template>\n",
+            inputs: ['disabled'],
+            // tslint:disable-next-line:validate-decorators
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            exportAs: 'matTab'
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewContainerRef"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_TAB_GROUP]
+            }]
+          }];
+        }, {
+          textLabel: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"],
+            args: ['label']
+          }],
+          templateLabel: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChild"],
+            args: [MAT_TAB_LABEL]
+          }],
+          _explicitContent: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChild"],
+            args: [MAT_TAB_CONTENT, {
+              read: _angular_core__WEBPACK_IMPORTED_MODULE_4__["TemplateRef"],
+              "static": true
+            }]
+          }],
+          _implicitContent: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["TemplateRef"], {
+              "static": true
+            }]
+          }],
+          ariaLabel: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"],
+            args: ['aria-label']
+          }],
+          ariaLabelledby: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"],
+            args: ['aria-labelledby']
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -712,6 +1038,7 @@
        * Animations used by the Material tabs.
        * @docs-private
        */
+
 
       var matTabsAnimations = {
         /** Animation translates a tab along the X axis. */
@@ -807,12 +1134,17 @@
         return MatTabBodyPortal;
       }(_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["CdkPortalOutlet"]);
 
-      MatTabBodyPortal.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: '[matTabBodyHost]'
-        }]
-      }];
+      MatTabBodyPortal.ɵfac = function MatTabBodyPortal_Factory(t) {
+        return new (t || MatTabBodyPortal)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ComponentFactoryResolver"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewContainerRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["forwardRef"])(function () {
+          return MatTabBody;
+        })), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]));
+      };
+
+      MatTabBodyPortal.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatTabBodyPortal,
+        selectors: [["", "matTabBodyHost", ""]],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       MatTabBodyPortal.ctorParameters = function () {
         return [{
@@ -835,6 +1167,37 @@
           }]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabBodyPortal, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: '[matTabBodyHost]'
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ComponentFactoryResolver"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewContainerRef"]
+          }, {
+            type: MatTabBody,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["forwardRef"])(function () {
+                return MatTabBody;
+              })]
+            }]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["DOCUMENT"]]
+            }]
+          }];
+        }, null);
+      })();
       /**
        * Base class with all of the `MatTabBody` functionality.
        * @docs-private
@@ -986,9 +1349,25 @@
         return _MatTabBodyBase;
       }();
 
-      _MatTabBodyBase.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      _MatTabBodyBase.ɵfac = function _MatTabBodyBase_Factory(t) {
+        return new (t || _MatTabBodyBase)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]));
+      };
+
+      _MatTabBodyBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: _MatTabBodyBase,
+        inputs: {
+          animationDuration: "animationDuration",
+          position: "position",
+          _content: ["content", "_content"],
+          origin: "origin"
+        },
+        outputs: {
+          _onCentering: "_onCentering",
+          _beforeCentering: "_beforeCentering",
+          _afterLeavingCenter: "_afterLeavingCenter",
+          _onCentered: "_onCentered"
+        }
+      });
 
       _MatTabBodyBase.ctorParameters = function () {
         return [{
@@ -1030,10 +1409,55 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](_MatTabBodyBase, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }];
+        }, {
+          _onCentering: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          _beforeCentering: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          _afterLeavingCenter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          _onCentered: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          animationDuration: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          position: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          _content: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"],
+            args: ['content']
+          }],
+          origin: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /**
        * Wrapper for the contents of a tab.
        * @docs-private
        */
+
 
       var MatTabBody = /*#__PURE__*/function (_MatTabBodyBase2) {
         _inherits(MatTabBody, _MatTabBodyBase2);
@@ -1049,21 +1473,55 @@
         return MatTabBody;
       }(_MatTabBodyBase);
 
-      MatTabBody.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-tab-body',
-          template: "<div class=\"mat-tab-body-content\" #content\n     [@translateTab]=\"{\n        value: _position,\n        params: {animationDuration: animationDuration}\n     }\"\n     (@translateTab.start)=\"_onTranslateTabStarted($event)\"\n     (@translateTab.done)=\"_translateTabComplete.next($event)\">\n  <ng-template matTabBodyHost></ng-template>\n</div>\n",
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          // tslint:disable-next-line:validate-decorators
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
-          animations: [matTabsAnimations.translateTab],
-          host: {
-            'class': 'mat-tab-body'
-          },
-          styles: [".mat-tab-body-content{height:100%;overflow:auto}.mat-tab-group-dynamic-height .mat-tab-body-content{overflow:hidden}\n"]
-        }]
-      }];
+      MatTabBody.ɵfac = function MatTabBody_Factory(t) {
+        return new (t || MatTabBody)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]));
+      };
+
+      MatTabBody.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatTabBody,
+        selectors: [["mat-tab-body"]],
+        viewQuery: function MatTabBody_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalHostDirective"], true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._portalHost = _t.first);
+          }
+        },
+        hostAttrs: [1, "mat-tab-body"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
+        decls: 3,
+        vars: 6,
+        consts: [[1, "mat-tab-body-content"], ["content", ""], ["matTabBodyHost", ""]],
+        template: function MatTabBody_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("@translateTab.start", function MatTabBody_Template_div_animation_translateTab_start_0_listener($event) {
+              return ctx._onTranslateTabStarted($event);
+            })("@translateTab.done", function MatTabBody_Template_div_animation_translateTab_done_0_listener($event) {
+              return ctx._translateTabComplete.next($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, MatTabBody_ng_template_2_Template, 0, 0, "ng-template", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("@translateTab", _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction2"](3, _c2, ctx._position, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpureFunction1"](1, _c1, ctx.animationDuration)));
+          }
+        },
+        directives: [MatTabBodyPortal],
+        styles: [".mat-tab-body-content{height:100%;overflow:auto}.mat-tab-group-dynamic-height .mat-tab-body-content{overflow:hidden}\n"],
+        encapsulation: 2,
+        data: {
+          animation: [matTabsAnimations.translateTab]
+        }
+      });
 
       MatTabBody.ctorParameters = function () {
         return [{
@@ -1084,6 +1542,41 @@
           args: [_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalHostDirective"]]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabBody, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-tab-body',
+            template: "<div class=\"mat-tab-body-content\" #content\n     [@translateTab]=\"{\n        value: _position,\n        params: {animationDuration: animationDuration}\n     }\"\n     (@translateTab.start)=\"_onTranslateTabStarted($event)\"\n     (@translateTab.done)=\"_translateTabComplete.next($event)\">\n  <ng-template matTabBodyHost></ng-template>\n</div>\n",
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            // tslint:disable-next-line:validate-decorators
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
+            animations: [matTabsAnimations.translateTab],
+            host: {
+              'class': 'mat-tab-body'
+            },
+            styles: [".mat-tab-body-content{height:100%;overflow:auto}.mat-tab-group-dynamic-height .mat-tab-body-content{overflow:hidden}\n"]
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }];
+        }, {
+          _portalHost: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [_angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalHostDirective"]]
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -1093,6 +1586,7 @@
        */
 
       /** Injection token that can be used to provide the default options the tabs module. */
+
 
       var MAT_TABS_CONFIG = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["InjectionToken"]('MAT_TABS_CONFIG');
       /**
@@ -1469,9 +1963,28 @@
         return _MatTabGroupBase;
       }(_MatTabGroupMixinBase);
 
-      _MatTabGroupBase.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      _MatTabGroupBase.ɵfac = function _MatTabGroupBase_Factory(t) {
+        return new (t || _MatTabGroupBase)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_TABS_CONFIG, 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      _MatTabGroupBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: _MatTabGroupBase,
+        inputs: {
+          headerPosition: "headerPosition",
+          animationDuration: "animationDuration",
+          disablePagination: "disablePagination",
+          dynamicHeight: "dynamicHeight",
+          selectedIndex: "selectedIndex",
+          backgroundColor: "backgroundColor"
+        },
+        outputs: {
+          selectedIndexChange: "selectedIndexChange",
+          focusChange: "focusChange",
+          animationDone: "animationDone",
+          selectedTabChange: "selectedTabChange"
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       _MatTabGroupBase.ctorParameters = function () {
         return [{
@@ -1529,11 +2042,72 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](_MatTabGroupBase, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_TABS_CONFIG]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, {
+          headerPosition: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          selectedIndexChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          focusChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          animationDone: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          selectedTabChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"]
+          }],
+          animationDuration: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          disablePagination: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          dynamicHeight: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          selectedIndex: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          backgroundColor: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /**
        * Material design tab-group component. Supports basic tab pairs (label + content) and includes
        * animated ink-bar, keyboard navigation, and screen reader.
        * See: https://material.io/design/components/tabs.html
        */
+
 
       var MatTabGroup = /*#__PURE__*/function (_MatTabGroupBase2) {
         _inherits(MatTabGroup, _MatTabGroupBase2);
@@ -1549,28 +2123,100 @@
         return MatTabGroup;
       }(_MatTabGroupBase);
 
-      MatTabGroup.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-tab-group',
-          exportAs: 'matTabGroup',
-          template: "<mat-tab-header #tabHeader\n               [selectedIndex]=\"selectedIndex || 0\"\n               [disableRipple]=\"disableRipple\"\n               [disablePagination]=\"disablePagination\"\n               (indexFocused)=\"_focusChanged($event)\"\n               (selectFocusedIndex)=\"selectedIndex = $event\">\n  <div class=\"mat-tab-label mat-focus-indicator\" role=\"tab\" matTabLabelWrapper mat-ripple cdkMonitorElementFocus\n       *ngFor=\"let tab of _tabs; let i = index\"\n       [id]=\"_getTabLabelId(i)\"\n       [attr.tabIndex]=\"_getTabIndex(tab, i)\"\n       [attr.aria-posinset]=\"i + 1\"\n       [attr.aria-setsize]=\"_tabs.length\"\n       [attr.aria-controls]=\"_getTabContentId(i)\"\n       [attr.aria-selected]=\"selectedIndex == i\"\n       [attr.aria-label]=\"tab.ariaLabel || null\"\n       [attr.aria-labelledby]=\"(!tab.ariaLabel && tab.ariaLabelledby) ? tab.ariaLabelledby : null\"\n       [class.mat-tab-label-active]=\"selectedIndex == i\"\n       [disabled]=\"tab.disabled\"\n       [matRippleDisabled]=\"tab.disabled || disableRipple\"\n       (click)=\"_handleClick(tab, tabHeader, i)\">\n\n\n    <div class=\"mat-tab-label-content\">\n      <!-- If there is a label template, use it. -->\n      <ng-template [ngIf]=\"tab.templateLabel\">\n        <ng-template [cdkPortalOutlet]=\"tab.templateLabel\"></ng-template>\n      </ng-template>\n\n      <!-- If there is not a label template, fall back to the text label. -->\n      <ng-template [ngIf]=\"!tab.templateLabel\">{{tab.textLabel}}</ng-template>\n    </div>\n  </div>\n</mat-tab-header>\n\n<div\n  class=\"mat-tab-body-wrapper\"\n  [class._mat-animation-noopable]=\"_animationMode === 'NoopAnimations'\"\n  #tabBodyWrapper>\n  <mat-tab-body role=\"tabpanel\"\n               *ngFor=\"let tab of _tabs; let i = index\"\n               [id]=\"_getTabContentId(i)\"\n               [attr.aria-labelledby]=\"_getTabLabelId(i)\"\n               [class.mat-tab-body-active]=\"selectedIndex == i\"\n               [content]=\"tab.content!\"\n               [position]=\"tab.position!\"\n               [origin]=\"tab.origin\"\n               [animationDuration]=\"animationDuration\"\n               (_onCentered)=\"_removeTabBodyWrapperHeight()\"\n               (_onCentering)=\"_setTabBodyWrapperHeight($event)\">\n  </mat-tab-body>\n</div>\n",
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          // tslint:disable-next-line:validate-decorators
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
-          inputs: ['color', 'disableRipple'],
-          providers: [{
-            provide: MAT_TAB_GROUP,
-            useExisting: MatTabGroup
-          }],
-          host: {
-            'class': 'mat-tab-group',
-            '[class.mat-tab-group-dynamic-height]': 'dynamicHeight',
-            '[class.mat-tab-group-inverted-header]': 'headerPosition === "below"'
-          },
-          styles: [".mat-tab-group{display:flex;flex-direction:column}.mat-tab-group.mat-tab-group-inverted-header{flex-direction:column-reverse}.mat-tab-label{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;position:relative}.mat-tab-label:focus{outline:none}.mat-tab-label:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-label:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-label.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-label.mat-tab-disabled{opacity:.5}.mat-tab-label .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-label{opacity:1}@media(max-width: 599px){.mat-tab-label{padding:0 12px}}@media(max-width: 959px){.mat-tab-label{padding:0 12px}}.mat-tab-group[mat-stretch-tabs]>.mat-tab-header .mat-tab-label{flex-basis:0;flex-grow:1}.mat-tab-body-wrapper{position:relative;overflow:hidden;display:flex;transition:height 500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-tab-body-wrapper{transition:none;animation:none}.mat-tab-body{top:0;left:0;right:0;bottom:0;position:absolute;display:block;overflow:hidden;flex-basis:100%}.mat-tab-body.mat-tab-body-active{position:relative;overflow-x:hidden;overflow-y:auto;z-index:1;flex-grow:1}.mat-tab-group.mat-tab-group-dynamic-height .mat-tab-body.mat-tab-body-active{overflow-y:hidden}\n"]
-        }]
-      }];
+      MatTabGroup.ɵfac = function MatTabGroup_Factory(t) {
+        return new (t || MatTabGroup)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MAT_TABS_CONFIG, 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      MatTabGroup.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatTabGroup,
+        selectors: [["mat-tab-group"]],
+        contentQueries: function MatTabGroup_ContentQueries(rf, ctx, dirIndex) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵcontentQuery"](dirIndex, MatTab, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._allTabs = _t);
+          }
+        },
+        viewQuery: function MatTabGroup_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c3, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c4, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._tabBodyWrapper = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._tabHeader = _t.first);
+          }
+        },
+        hostAttrs: [1, "mat-tab-group"],
+        hostVars: 4,
+        hostBindings: function MatTabGroup_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-group-dynamic-height", ctx.dynamicHeight)("mat-tab-group-inverted-header", ctx.headerPosition === "below");
+          }
+        },
+        inputs: {
+          color: "color",
+          disableRipple: "disableRipple"
+        },
+        exportAs: ["matTabGroup"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵProvidersFeature"]([{
+          provide: MAT_TAB_GROUP,
+          useExisting: MatTabGroup
+        }]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
+        decls: 6,
+        vars: 7,
+        consts: [[3, "selectedIndex", "disableRipple", "disablePagination", "indexFocused", "selectFocusedIndex"], ["tabHeader", ""], ["class", "mat-tab-label mat-focus-indicator", "role", "tab", "matTabLabelWrapper", "", "mat-ripple", "", "cdkMonitorElementFocus", "", 3, "id", "mat-tab-label-active", "disabled", "matRippleDisabled", "click", 4, "ngFor", "ngForOf"], [1, "mat-tab-body-wrapper"], ["tabBodyWrapper", ""], ["role", "tabpanel", 3, "id", "mat-tab-body-active", "content", "position", "origin", "animationDuration", "_onCentered", "_onCentering", 4, "ngFor", "ngForOf"], ["role", "tab", "matTabLabelWrapper", "", "mat-ripple", "", "cdkMonitorElementFocus", "", 1, "mat-tab-label", "mat-focus-indicator", 3, "id", "disabled", "matRippleDisabled", "click"], [1, "mat-tab-label-content"], [3, "ngIf"], [3, "cdkPortalOutlet"], ["role", "tabpanel", 3, "id", "content", "position", "origin", "animationDuration", "_onCentered", "_onCentering"]],
+        template: function MatTabGroup_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-tab-header", 0, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("indexFocused", function MatTabGroup_Template_mat_tab_header_indexFocused_0_listener($event) {
+              return ctx._focusChanged($event);
+            })("selectFocusedIndex", function MatTabGroup_Template_mat_tab_header_selectFocusedIndex_0_listener($event) {
+              return ctx.selectedIndex = $event;
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](2, MatTabGroup_div_2_Template, 4, 14, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 3, 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](5, MatTabGroup_mat_tab_body_5_Template, 1, 8, "mat-tab-body", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("selectedIndex", ctx.selectedIndex || 0)("disableRipple", ctx.disableRipple)("disablePagination", ctx.disablePagination);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx._tabs);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("_mat-animation-noopable", ctx._animationMode === "NoopAnimations");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngForOf", ctx._tabs);
+          }
+        },
+        directives: function directives() {
+          return [MatTabHeader, _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], MatTabLabelWrapper, _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatRipple"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["CdkMonitorFocus"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["CdkPortalOutlet"], MatTabBody];
+        },
+        styles: [".mat-tab-group{display:flex;flex-direction:column}.mat-tab-group.mat-tab-group-inverted-header{flex-direction:column-reverse}.mat-tab-label{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;position:relative}.mat-tab-label:focus{outline:none}.mat-tab-label:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-label:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-label.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-label.mat-tab-disabled{opacity:.5}.mat-tab-label .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-label{opacity:1}@media(max-width: 599px){.mat-tab-label{padding:0 12px}}@media(max-width: 959px){.mat-tab-label{padding:0 12px}}.mat-tab-group[mat-stretch-tabs]>.mat-tab-header .mat-tab-label{flex-basis:0;flex-grow:1}.mat-tab-body-wrapper{position:relative;overflow:hidden;display:flex;transition:height 500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-tab-body-wrapper{transition:none;animation:none}.mat-tab-body{top:0;left:0;right:0;bottom:0;position:absolute;display:block;overflow:hidden;flex-basis:100%}.mat-tab-body.mat-tab-body-active{position:relative;overflow-x:hidden;overflow-y:auto;z-index:1;flex-grow:1}.mat-tab-group.mat-tab-group-dynamic-height .mat-tab-body.mat-tab-body-active{overflow-y:hidden}\n"],
+        encapsulation: 2
+      });
 
       MatTabGroup.ctorParameters = function () {
         return [{
@@ -1612,6 +2258,69 @@
           args: ['tabHeader']
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabGroup, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-tab-group',
+            exportAs: 'matTabGroup',
+            template: "<mat-tab-header #tabHeader\n               [selectedIndex]=\"selectedIndex || 0\"\n               [disableRipple]=\"disableRipple\"\n               [disablePagination]=\"disablePagination\"\n               (indexFocused)=\"_focusChanged($event)\"\n               (selectFocusedIndex)=\"selectedIndex = $event\">\n  <div class=\"mat-tab-label mat-focus-indicator\" role=\"tab\" matTabLabelWrapper mat-ripple cdkMonitorElementFocus\n       *ngFor=\"let tab of _tabs; let i = index\"\n       [id]=\"_getTabLabelId(i)\"\n       [attr.tabIndex]=\"_getTabIndex(tab, i)\"\n       [attr.aria-posinset]=\"i + 1\"\n       [attr.aria-setsize]=\"_tabs.length\"\n       [attr.aria-controls]=\"_getTabContentId(i)\"\n       [attr.aria-selected]=\"selectedIndex == i\"\n       [attr.aria-label]=\"tab.ariaLabel || null\"\n       [attr.aria-labelledby]=\"(!tab.ariaLabel && tab.ariaLabelledby) ? tab.ariaLabelledby : null\"\n       [class.mat-tab-label-active]=\"selectedIndex == i\"\n       [disabled]=\"tab.disabled\"\n       [matRippleDisabled]=\"tab.disabled || disableRipple\"\n       (click)=\"_handleClick(tab, tabHeader, i)\">\n\n\n    <div class=\"mat-tab-label-content\">\n      <!-- If there is a label template, use it. -->\n      <ng-template [ngIf]=\"tab.templateLabel\">\n        <ng-template [cdkPortalOutlet]=\"tab.templateLabel\"></ng-template>\n      </ng-template>\n\n      <!-- If there is not a label template, fall back to the text label. -->\n      <ng-template [ngIf]=\"!tab.templateLabel\">{{tab.textLabel}}</ng-template>\n    </div>\n  </div>\n</mat-tab-header>\n\n<div\n  class=\"mat-tab-body-wrapper\"\n  [class._mat-animation-noopable]=\"_animationMode === 'NoopAnimations'\"\n  #tabBodyWrapper>\n  <mat-tab-body role=\"tabpanel\"\n               *ngFor=\"let tab of _tabs; let i = index\"\n               [id]=\"_getTabContentId(i)\"\n               [attr.aria-labelledby]=\"_getTabLabelId(i)\"\n               [class.mat-tab-body-active]=\"selectedIndex == i\"\n               [content]=\"tab.content!\"\n               [position]=\"tab.position!\"\n               [origin]=\"tab.origin\"\n               [animationDuration]=\"animationDuration\"\n               (_onCentered)=\"_removeTabBodyWrapperHeight()\"\n               (_onCentering)=\"_setTabBodyWrapperHeight($event)\">\n  </mat-tab-body>\n</div>\n",
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            // tslint:disable-next-line:validate-decorators
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
+            inputs: ['color', 'disableRipple'],
+            providers: [{
+              provide: MAT_TAB_GROUP,
+              useExisting: MatTabGroup
+            }],
+            host: {
+              'class': 'mat-tab-group',
+              '[class.mat-tab-group-dynamic-height]': 'dynamicHeight',
+              '[class.mat-tab-group-inverted-header]': 'headerPosition === "below"'
+            },
+            styles: [".mat-tab-group{display:flex;flex-direction:column}.mat-tab-group.mat-tab-group-inverted-header{flex-direction:column-reverse}.mat-tab-label{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;position:relative}.mat-tab-label:focus{outline:none}.mat-tab-label:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-label:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-label.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-label.mat-tab-disabled{opacity:.5}.mat-tab-label .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-label{opacity:1}@media(max-width: 599px){.mat-tab-label{padding:0 12px}}@media(max-width: 959px){.mat-tab-label{padding:0 12px}}.mat-tab-group[mat-stretch-tabs]>.mat-tab-header .mat-tab-label{flex-basis:0;flex-grow:1}.mat-tab-body-wrapper{position:relative;overflow:hidden;display:flex;transition:height 500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-tab-body-wrapper{transition:none;animation:none}.mat-tab-body{top:0;left:0;right:0;bottom:0;position:absolute;display:block;overflow:hidden;flex-basis:100%}.mat-tab-body.mat-tab-body-active{position:relative;overflow-x:hidden;overflow-y:auto;z-index:1;flex-grow:1}.mat-tab-group.mat-tab-group-dynamic-height .mat-tab-body.mat-tab-body-active{overflow-y:hidden}\n"]
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [MAT_TABS_CONFIG]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, {
+          _allTabs: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChildren"],
+            args: [MatTab, {
+              descendants: true
+            }]
+          }],
+          _tabBodyWrapper: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['tabBodyWrapper']
+          }],
+          _tabHeader: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['tabHeader']
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -1622,6 +2331,7 @@
       // Boilerplate for applying mixins to MatTabLabelWrapper.
 
       /** @docs-private */
+
 
       var MatTabLabelWrapperBase = function MatTabLabelWrapperBase() {
         _classCallCheck(this, MatTabLabelWrapperBase);
@@ -1671,23 +2381,52 @@
         return MatTabLabelWrapper;
       }(_MatTabLabelWrapperMixinBase);
 
-      MatTabLabelWrapper.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: '[matTabLabelWrapper]',
-          inputs: ['disabled'],
-          host: {
-            '[class.mat-tab-disabled]': 'disabled',
-            '[attr.aria-disabled]': '!!disabled'
+      MatTabLabelWrapper.ɵfac = function MatTabLabelWrapper_Factory(t) {
+        return new (t || MatTabLabelWrapper)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]));
+      };
+
+      MatTabLabelWrapper.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatTabLabelWrapper,
+        selectors: [["", "matTabLabelWrapper", ""]],
+        hostVars: 3,
+        hostBindings: function MatTabLabelWrapper_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-disabled", !!ctx.disabled);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-disabled", ctx.disabled);
           }
-        }]
-      }];
+        },
+        inputs: {
+          disabled: "disabled"
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       MatTabLabelWrapper.ctorParameters = function () {
         return [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabLabelWrapper, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: '[matTabLabelWrapper]',
+            inputs: ['disabled'],
+            host: {
+              '[class.mat-tab-disabled]': 'disabled',
+              '[attr.aria-disabled]': '!!disabled'
+            }
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }];
+        }, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -2301,9 +3040,16 @@
         return MatPaginatedTabHeader;
       }();
 
-      MatPaginatedTabHeader.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      MatPaginatedTabHeader.ɵfac = function MatPaginatedTabHeader_Factory(t) {
+        return new (t || MatPaginatedTabHeader)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      MatPaginatedTabHeader.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatPaginatedTabHeader,
+        inputs: {
+          disablePagination: "disablePagination"
+        }
+      });
 
       MatPaginatedTabHeader.ctorParameters = function () {
         return [{
@@ -2337,6 +3083,42 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatPaginatedTabHeader, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }, {
+            type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, {
+          disablePagination: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -2349,6 +3131,7 @@
        * Base class with all of the `MatTabHeader` functionality.
        * @docs-private
        */
+
 
       var _MatTabHeaderBase = /*#__PURE__*/function (_MatPaginatedTabHeade) {
         _inherits(_MatTabHeaderBase, _MatPaginatedTabHeade);
@@ -2386,9 +3169,17 @@
         return _MatTabHeaderBase;
       }(MatPaginatedTabHeader);
 
-      _MatTabHeaderBase.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      _MatTabHeaderBase.ɵfac = function _MatTabHeaderBase_Factory(t) {
+        return new (t || _MatTabHeaderBase)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      _MatTabHeaderBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: _MatTabHeaderBase,
+        inputs: {
+          disableRipple: "disableRipple"
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       _MatTabHeaderBase.ctorParameters = function () {
         return [{
@@ -2422,6 +3213,42 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](_MatTabHeaderBase, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }, {
+            type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, {
+          disableRipple: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /**
        * The header of the tab group which displays a list of all the tabs in the tab group. Includes
        * an ink bar that follows the currently selected tab. When the tabs list's width exceeds the
@@ -2429,6 +3256,7 @@
        * left and right across the header.
        * @docs-private
        */
+
 
       var MatTabHeader = /*#__PURE__*/function (_MatTabHeaderBase2) {
         _inherits(MatTabHeader, _MatTabHeaderBase2);
@@ -2445,24 +3273,143 @@
         return MatTabHeader;
       }(_MatTabHeaderBase);
 
-      MatTabHeader.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: 'mat-tab-header',
-          template: "<div class=\"mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4\"\n     #previousPaginator\n     aria-hidden=\"true\"\n     mat-ripple [matRippleDisabled]=\"_disableScrollBefore || disableRipple\"\n     [class.mat-tab-header-pagination-disabled]=\"_disableScrollBefore\"\n     (click)=\"_handlePaginatorClick('before')\"\n     (mousedown)=\"_handlePaginatorPress('before', $event)\"\n     (touchend)=\"_stopInterval()\">\n  <div class=\"mat-tab-header-pagination-chevron\"></div>\n</div>\n\n<div class=\"mat-tab-label-container\" #tabListContainer (keydown)=\"_handleKeydown($event)\">\n  <div\n    #tabList\n    class=\"mat-tab-list\"\n    [class._mat-animation-noopable]=\"_animationMode === 'NoopAnimations'\"\n    role=\"tablist\"\n    (cdkObserveContent)=\"_onContentChanges()\">\n    <div class=\"mat-tab-labels\">\n      <ng-content></ng-content>\n    </div>\n    <mat-ink-bar></mat-ink-bar>\n  </div>\n</div>\n\n<div class=\"mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4\"\n     #nextPaginator\n     aria-hidden=\"true\"\n     mat-ripple [matRippleDisabled]=\"_disableScrollAfter || disableRipple\"\n     [class.mat-tab-header-pagination-disabled]=\"_disableScrollAfter\"\n     (mousedown)=\"_handlePaginatorPress('after', $event)\"\n     (click)=\"_handlePaginatorClick('after')\"\n     (touchend)=\"_stopInterval()\">\n  <div class=\"mat-tab-header-pagination-chevron\"></div>\n</div>\n",
-          inputs: ['selectedIndex'],
-          outputs: ['selectFocusedIndex', 'indexFocused'],
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          // tslint:disable-next-line:validate-decorators
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
-          host: {
-            'class': 'mat-tab-header',
-            '[class.mat-tab-header-pagination-controls-enabled]': '_showPaginationControls',
-            '[class.mat-tab-header-rtl]': "_getLayoutDirection() == 'rtl'"
-          },
-          styles: [".mat-tab-header{display:flex;overflow:hidden;position:relative;flex-shrink:0}.mat-tab-header-pagination{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;display:none;justify-content:center;align-items:center;min-width:32px;cursor:pointer;z-index:2;-webkit-tap-highlight-color:transparent;touch-action:none}.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{display:flex}.mat-tab-header-pagination-before,.mat-tab-header-rtl .mat-tab-header-pagination-after{padding-left:4px}.mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-rtl .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(-135deg)}.mat-tab-header-rtl .mat-tab-header-pagination-before,.mat-tab-header-pagination-after{padding-right:4px}.mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(45deg)}.mat-tab-header-pagination-chevron{border-style:solid;border-width:2px 2px 0 0;content:\"\";height:8px;width:8px}.mat-tab-header-pagination-disabled{box-shadow:none;cursor:default}.mat-tab-list{flex-grow:1;position:relative;transition:transform 500ms cubic-bezier(0.35, 0, 0.25, 1)}.mat-ink-bar{position:absolute;bottom:0;height:2px;transition:500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-ink-bar{transition:none;animation:none}.mat-tab-group-inverted-header .mat-ink-bar{bottom:auto;top:0}.cdk-high-contrast-active .mat-ink-bar{outline:solid 2px;height:0}.mat-tab-labels{display:flex}[mat-align-tabs=center]>.mat-tab-header .mat-tab-labels{justify-content:center}[mat-align-tabs=end]>.mat-tab-header .mat-tab-labels{justify-content:flex-end}.mat-tab-label-container{display:flex;flex-grow:1;overflow:hidden;z-index:1}._mat-animation-noopable.mat-tab-list{transition:none;animation:none}.mat-tab-label{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;position:relative}.mat-tab-label:focus{outline:none}.mat-tab-label:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-label:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-label.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-label.mat-tab-disabled{opacity:.5}.mat-tab-label .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-label{opacity:1}@media(max-width: 599px){.mat-tab-label{min-width:72px}}\n"]
-        }]
-      }];
+      MatTabHeader.ɵfac = function MatTabHeader_Factory(t) {
+        return new (t || MatTabHeader)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      MatTabHeader.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatTabHeader,
+        selectors: [["mat-tab-header"]],
+        contentQueries: function MatTabHeader_ContentQueries(rf, ctx, dirIndex) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵcontentQuery"](dirIndex, MatTabLabelWrapper, false);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._items = _t);
+          }
+        },
+        viewQuery: function MatTabHeader_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstaticViewQuery"](MatInkBar, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstaticViewQuery"](_c5, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstaticViewQuery"](_c6, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c7, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c8, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._inkBar = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._tabListContainer = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._tabList = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._nextPaginator = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._previousPaginator = _t.first);
+          }
+        },
+        hostAttrs: [1, "mat-tab-header"],
+        hostVars: 4,
+        hostBindings: function MatTabHeader_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-header-pagination-controls-enabled", ctx._showPaginationControls)("mat-tab-header-rtl", ctx._getLayoutDirection() == "rtl");
+          }
+        },
+        inputs: {
+          selectedIndex: "selectedIndex"
+        },
+        outputs: {
+          selectFocusedIndex: "selectFocusedIndex",
+          indexFocused: "indexFocused"
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
+        ngContentSelectors: _c0,
+        decls: 13,
+        vars: 8,
+        consts: [["aria-hidden", "true", "mat-ripple", "", 1, "mat-tab-header-pagination", "mat-tab-header-pagination-before", "mat-elevation-z4", 3, "matRippleDisabled", "click", "mousedown", "touchend"], ["previousPaginator", ""], [1, "mat-tab-header-pagination-chevron"], [1, "mat-tab-label-container", 3, "keydown"], ["tabListContainer", ""], ["role", "tablist", 1, "mat-tab-list", 3, "cdkObserveContent"], ["tabList", ""], [1, "mat-tab-labels"], ["aria-hidden", "true", "mat-ripple", "", 1, "mat-tab-header-pagination", "mat-tab-header-pagination-after", "mat-elevation-z4", 3, "matRippleDisabled", "mousedown", "click", "touchend"], ["nextPaginator", ""]],
+        template: function MatTabHeader_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojectionDef"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MatTabHeader_Template_div_click_0_listener() {
+              return ctx._handlePaginatorClick("before");
+            })("mousedown", function MatTabHeader_Template_div_mousedown_0_listener($event) {
+              return ctx._handlePaginatorPress("before", $event);
+            })("touchend", function MatTabHeader_Template_div_touchend_0_listener() {
+              return ctx._stopInterval();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 3, 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("keydown", function MatTabHeader_Template_div_keydown_3_listener($event) {
+              return ctx._handleKeydown($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 5, 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("cdkObserveContent", function MatTabHeader_Template_div_cdkObserveContent_5_listener() {
+              return ctx._onContentChanges();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "div", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojection"](8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](9, "mat-ink-bar");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 8, 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("mousedown", function MatTabHeader_Template_div_mousedown_10_listener($event) {
+              return ctx._handlePaginatorPress("after", $event);
+            })("click", function MatTabHeader_Template_div_click_10_listener() {
+              return ctx._handlePaginatorClick("after");
+            })("touchend", function MatTabHeader_Template_div_touchend_10_listener() {
+              return ctx._stopInterval();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-header-pagination-disabled", ctx._disableScrollBefore);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("matRippleDisabled", ctx._disableScrollBefore || ctx.disableRipple);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("_mat-animation-noopable", ctx._animationMode === "NoopAnimations");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-header-pagination-disabled", ctx._disableScrollAfter);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("matRippleDisabled", ctx._disableScrollAfter || ctx.disableRipple);
+          }
+        },
+        directives: [_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatRipple"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_1__["CdkObserveContent"], MatInkBar],
+        styles: [".mat-tab-header{display:flex;overflow:hidden;position:relative;flex-shrink:0}.mat-tab-header-pagination{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;display:none;justify-content:center;align-items:center;min-width:32px;cursor:pointer;z-index:2;-webkit-tap-highlight-color:transparent;touch-action:none}.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{display:flex}.mat-tab-header-pagination-before,.mat-tab-header-rtl .mat-tab-header-pagination-after{padding-left:4px}.mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-rtl .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(-135deg)}.mat-tab-header-rtl .mat-tab-header-pagination-before,.mat-tab-header-pagination-after{padding-right:4px}.mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(45deg)}.mat-tab-header-pagination-chevron{border-style:solid;border-width:2px 2px 0 0;content:\"\";height:8px;width:8px}.mat-tab-header-pagination-disabled{box-shadow:none;cursor:default}.mat-tab-list{flex-grow:1;position:relative;transition:transform 500ms cubic-bezier(0.35, 0, 0.25, 1)}.mat-ink-bar{position:absolute;bottom:0;height:2px;transition:500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-ink-bar{transition:none;animation:none}.mat-tab-group-inverted-header .mat-ink-bar{bottom:auto;top:0}.cdk-high-contrast-active .mat-ink-bar{outline:solid 2px;height:0}.mat-tab-labels{display:flex}[mat-align-tabs=center]>.mat-tab-header .mat-tab-labels{justify-content:center}[mat-align-tabs=end]>.mat-tab-header .mat-tab-labels{justify-content:flex-end}.mat-tab-label-container{display:flex;flex-grow:1;overflow:hidden;z-index:1}._mat-animation-noopable.mat-tab-list{transition:none;animation:none}.mat-tab-label{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;position:relative}.mat-tab-label:focus{outline:none}.mat-tab-label:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-label:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-label.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-label.mat-tab-disabled{opacity:.5}.mat-tab-label .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-label{opacity:1}@media(max-width: 599px){.mat-tab-label{min-width:72px}}\n"],
+        encapsulation: 2
+      });
 
       MatTabHeader.ctorParameters = function () {
         return [{
@@ -2525,6 +3472,86 @@
           args: ['previousPaginator']
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabHeader, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: 'mat-tab-header',
+            template: "<div class=\"mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4\"\n     #previousPaginator\n     aria-hidden=\"true\"\n     mat-ripple [matRippleDisabled]=\"_disableScrollBefore || disableRipple\"\n     [class.mat-tab-header-pagination-disabled]=\"_disableScrollBefore\"\n     (click)=\"_handlePaginatorClick('before')\"\n     (mousedown)=\"_handlePaginatorPress('before', $event)\"\n     (touchend)=\"_stopInterval()\">\n  <div class=\"mat-tab-header-pagination-chevron\"></div>\n</div>\n\n<div class=\"mat-tab-label-container\" #tabListContainer (keydown)=\"_handleKeydown($event)\">\n  <div\n    #tabList\n    class=\"mat-tab-list\"\n    [class._mat-animation-noopable]=\"_animationMode === 'NoopAnimations'\"\n    role=\"tablist\"\n    (cdkObserveContent)=\"_onContentChanges()\">\n    <div class=\"mat-tab-labels\">\n      <ng-content></ng-content>\n    </div>\n    <mat-ink-bar></mat-ink-bar>\n  </div>\n</div>\n\n<div class=\"mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4\"\n     #nextPaginator\n     aria-hidden=\"true\"\n     mat-ripple [matRippleDisabled]=\"_disableScrollAfter || disableRipple\"\n     [class.mat-tab-header-pagination-disabled]=\"_disableScrollAfter\"\n     (mousedown)=\"_handlePaginatorPress('after', $event)\"\n     (click)=\"_handlePaginatorClick('after')\"\n     (touchend)=\"_stopInterval()\">\n  <div class=\"mat-tab-header-pagination-chevron\"></div>\n</div>\n",
+            inputs: ['selectedIndex'],
+            outputs: ['selectFocusedIndex', 'indexFocused'],
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            // tslint:disable-next-line:validate-decorators
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
+            host: {
+              'class': 'mat-tab-header',
+              '[class.mat-tab-header-pagination-controls-enabled]': '_showPaginationControls',
+              '[class.mat-tab-header-rtl]': "_getLayoutDirection() == 'rtl'"
+            },
+            styles: [".mat-tab-header{display:flex;overflow:hidden;position:relative;flex-shrink:0}.mat-tab-header-pagination{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;display:none;justify-content:center;align-items:center;min-width:32px;cursor:pointer;z-index:2;-webkit-tap-highlight-color:transparent;touch-action:none}.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{display:flex}.mat-tab-header-pagination-before,.mat-tab-header-rtl .mat-tab-header-pagination-after{padding-left:4px}.mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-rtl .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(-135deg)}.mat-tab-header-rtl .mat-tab-header-pagination-before,.mat-tab-header-pagination-after{padding-right:4px}.mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(45deg)}.mat-tab-header-pagination-chevron{border-style:solid;border-width:2px 2px 0 0;content:\"\";height:8px;width:8px}.mat-tab-header-pagination-disabled{box-shadow:none;cursor:default}.mat-tab-list{flex-grow:1;position:relative;transition:transform 500ms cubic-bezier(0.35, 0, 0.25, 1)}.mat-ink-bar{position:absolute;bottom:0;height:2px;transition:500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-ink-bar{transition:none;animation:none}.mat-tab-group-inverted-header .mat-ink-bar{bottom:auto;top:0}.cdk-high-contrast-active .mat-ink-bar{outline:solid 2px;height:0}.mat-tab-labels{display:flex}[mat-align-tabs=center]>.mat-tab-header .mat-tab-labels{justify-content:center}[mat-align-tabs=end]>.mat-tab-header .mat-tab-labels{justify-content:flex-end}.mat-tab-label-container{display:flex;flex-grow:1;overflow:hidden;z-index:1}._mat-animation-noopable.mat-tab-list{transition:none;animation:none}.mat-tab-label{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;position:relative}.mat-tab-label:focus{outline:none}.mat-tab-label:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-label:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-label.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-label.mat-tab-disabled{opacity:.5}.mat-tab-label .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-label{opacity:1}@media(max-width: 599px){.mat-tab-label{min-width:72px}}\n"]
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }, {
+            type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, {
+          _items: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChildren"],
+            args: [MatTabLabelWrapper, {
+              descendants: false
+            }]
+          }],
+          _inkBar: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatInkBar, {
+              "static": true
+            }]
+          }],
+          _tabListContainer: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['tabListContainer', {
+              "static": true
+            }]
+          }],
+          _tabList: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['tabList', {
+              "static": true
+            }]
+          }],
+          _nextPaginator: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['nextPaginator']
+          }],
+          _previousPaginator: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['previousPaginator']
+          }]
+        });
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -2537,6 +3564,7 @@
        * Base class with all of the `MatTabNav` functionality.
        * @docs-private
        */
+
 
       var _MatTabNavBase = /*#__PURE__*/function (_MatPaginatedTabHeade2) {
         _inherits(_MatTabNavBase, _MatPaginatedTabHeade2);
@@ -2638,9 +3666,19 @@
         return _MatTabNavBase;
       }(MatPaginatedTabHeader);
 
-      _MatTabNavBase.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      _MatTabNavBase.ɵfac = function _MatTabNavBase_Factory(t) {
+        return new (t || _MatTabNavBase)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      _MatTabNavBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: _MatTabNavBase,
+        inputs: {
+          color: "color",
+          backgroundColor: "backgroundColor",
+          disableRipple: "disableRipple"
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       _MatTabNavBase.ctorParameters = function () {
         return [{
@@ -2680,10 +3718,53 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](_MatTabNavBase, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]
+          }, {
+            type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, {
+          color: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          backgroundColor: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }],
+          disableRipple: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /**
        * Navigation component matching the styles of the tab group header.
        * Provides anchored navigation with animated ink bar.
        */
+
 
       var MatTabNav = /*#__PURE__*/function (_MatTabNavBase2) {
         _inherits(MatTabNav, _MatTabNavBase2);
@@ -2703,27 +3784,141 @@
         return MatTabNav;
       }(_MatTabNavBase);
 
-      MatTabNav.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
-        args: [{
-          selector: '[mat-tab-nav-bar]',
-          exportAs: 'matTabNavBar, matTabNav',
-          inputs: ['color'],
-          template: "<div class=\"mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4\"\n     #previousPaginator\n     aria-hidden=\"true\"\n     mat-ripple [matRippleDisabled]=\"_disableScrollBefore || disableRipple\"\n     [class.mat-tab-header-pagination-disabled]=\"_disableScrollBefore\"\n     (click)=\"_handlePaginatorClick('before')\"\n     (mousedown)=\"_handlePaginatorPress('before', $event)\"\n     (touchend)=\"_stopInterval()\">\n  <div class=\"mat-tab-header-pagination-chevron\"></div>\n</div>\n\n<div class=\"mat-tab-link-container\" #tabListContainer (keydown)=\"_handleKeydown($event)\">\n  <div\n    class=\"mat-tab-list\"\n    [class._mat-animation-noopable]=\"_animationMode === 'NoopAnimations'\"\n    #tabList\n    (cdkObserveContent)=\"_onContentChanges()\">\n    <div class=\"mat-tab-links\">\n      <ng-content></ng-content>\n    </div>\n    <mat-ink-bar></mat-ink-bar>\n  </div>\n</div>\n\n<div class=\"mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4\"\n     #nextPaginator\n     aria-hidden=\"true\"\n     mat-ripple [matRippleDisabled]=\"_disableScrollAfter || disableRipple\"\n     [class.mat-tab-header-pagination-disabled]=\"_disableScrollAfter\"\n     (mousedown)=\"_handlePaginatorPress('after', $event)\"\n     (click)=\"_handlePaginatorClick('after')\"\n     (touchend)=\"_stopInterval()\">\n  <div class=\"mat-tab-header-pagination-chevron\"></div>\n</div>\n",
-          host: {
-            'class': 'mat-tab-nav-bar mat-tab-header',
-            '[class.mat-tab-header-pagination-controls-enabled]': '_showPaginationControls',
-            '[class.mat-tab-header-rtl]': "_getLayoutDirection() == 'rtl'",
-            '[class.mat-primary]': 'color !== "warn" && color !== "accent"',
-            '[class.mat-accent]': 'color === "accent"',
-            '[class.mat-warn]': 'color === "warn"'
-          },
-          encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-          // tslint:disable-next-line:validate-decorators
-          changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
-          styles: [".mat-tab-header{display:flex;overflow:hidden;position:relative;flex-shrink:0}.mat-tab-header-pagination{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;display:none;justify-content:center;align-items:center;min-width:32px;cursor:pointer;z-index:2;-webkit-tap-highlight-color:transparent;touch-action:none}.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{display:flex}.mat-tab-header-pagination-before,.mat-tab-header-rtl .mat-tab-header-pagination-after{padding-left:4px}.mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-rtl .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(-135deg)}.mat-tab-header-rtl .mat-tab-header-pagination-before,.mat-tab-header-pagination-after{padding-right:4px}.mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(45deg)}.mat-tab-header-pagination-chevron{border-style:solid;border-width:2px 2px 0 0;content:\"\";height:8px;width:8px}.mat-tab-header-pagination-disabled{box-shadow:none;cursor:default}.mat-tab-list{flex-grow:1;position:relative;transition:transform 500ms cubic-bezier(0.35, 0, 0.25, 1)}.mat-tab-links{display:flex}[mat-align-tabs=center]>.mat-tab-link-container .mat-tab-links{justify-content:center}[mat-align-tabs=end]>.mat-tab-link-container .mat-tab-links{justify-content:flex-end}.mat-ink-bar{position:absolute;bottom:0;height:2px;transition:500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-ink-bar{transition:none;animation:none}.mat-tab-group-inverted-header .mat-ink-bar{bottom:auto;top:0}.cdk-high-contrast-active .mat-ink-bar{outline:solid 2px;height:0}.mat-tab-link-container{display:flex;flex-grow:1;overflow:hidden;z-index:1}.mat-tab-link{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;vertical-align:top;text-decoration:none;position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}.mat-tab-link:focus{outline:none}.mat-tab-link:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-link:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-link.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-link.mat-tab-disabled{opacity:.5}.mat-tab-link .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-link{opacity:1}[mat-stretch-tabs] .mat-tab-link{flex-basis:0;flex-grow:1}.mat-tab-link.mat-tab-disabled{pointer-events:none}@media(max-width: 599px){.mat-tab-link{min-width:72px}}\n"]
-        }]
-      }];
+      MatTabNav.ɵfac = function MatTabNav_Factory(t) {
+        return new (t || MatTabNav)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      MatTabNav.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+        type: MatTabNav,
+        selectors: [["", "mat-tab-nav-bar", ""]],
+        contentQueries: function MatTabNav_ContentQueries(rf, ctx, dirIndex) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵcontentQuery"](dirIndex, MatTabLink, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._items = _t);
+          }
+        },
+        viewQuery: function MatTabNav_Query(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstaticViewQuery"](MatInkBar, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstaticViewQuery"](_c5, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵstaticViewQuery"](_c6, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c7, true);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c8, true);
+          }
+
+          if (rf & 2) {
+            var _t;
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._inkBar = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._tabListContainer = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._tabList = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._nextPaginator = _t.first);
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx._previousPaginator = _t.first);
+          }
+        },
+        hostAttrs: [1, "mat-tab-nav-bar", "mat-tab-header"],
+        hostVars: 10,
+        hostBindings: function MatTabNav_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-header-pagination-controls-enabled", ctx._showPaginationControls)("mat-tab-header-rtl", ctx._getLayoutDirection() == "rtl")("mat-primary", ctx.color !== "warn" && ctx.color !== "accent")("mat-accent", ctx.color === "accent")("mat-warn", ctx.color === "warn");
+          }
+        },
+        inputs: {
+          color: "color"
+        },
+        exportAs: ["matTabNavBar", "matTabNav"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]],
+        attrs: _c9,
+        ngContentSelectors: _c0,
+        decls: 13,
+        vars: 8,
+        consts: [["aria-hidden", "true", "mat-ripple", "", 1, "mat-tab-header-pagination", "mat-tab-header-pagination-before", "mat-elevation-z4", 3, "matRippleDisabled", "click", "mousedown", "touchend"], ["previousPaginator", ""], [1, "mat-tab-header-pagination-chevron"], [1, "mat-tab-link-container", 3, "keydown"], ["tabListContainer", ""], [1, "mat-tab-list", 3, "cdkObserveContent"], ["tabList", ""], [1, "mat-tab-links"], ["aria-hidden", "true", "mat-ripple", "", 1, "mat-tab-header-pagination", "mat-tab-header-pagination-after", "mat-elevation-z4", 3, "matRippleDisabled", "mousedown", "click", "touchend"], ["nextPaginator", ""]],
+        template: function MatTabNav_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojectionDef"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0, 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MatTabNav_Template_div_click_0_listener() {
+              return ctx._handlePaginatorClick("before");
+            })("mousedown", function MatTabNav_Template_div_mousedown_0_listener($event) {
+              return ctx._handlePaginatorPress("before", $event);
+            })("touchend", function MatTabNav_Template_div_touchend_0_listener() {
+              return ctx._stopInterval();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](2, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "div", 3, 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("keydown", function MatTabNav_Template_div_keydown_3_listener($event) {
+              return ctx._handleKeydown($event);
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "div", 5, 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("cdkObserveContent", function MatTabNav_Template_div_cdkObserveContent_5_listener() {
+              return ctx._onContentChanges();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "div", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojection"](8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](9, "mat-ink-bar");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](10, "div", 8, 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("mousedown", function MatTabNav_Template_div_mousedown_10_listener($event) {
+              return ctx._handlePaginatorPress("after", $event);
+            })("click", function MatTabNav_Template_div_click_10_listener() {
+              return ctx._handlePaginatorClick("after");
+            })("touchend", function MatTabNav_Template_div_touchend_10_listener() {
+              return ctx._stopInterval();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](12, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-header-pagination-disabled", ctx._disableScrollBefore);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("matRippleDisabled", ctx._disableScrollBefore || ctx.disableRipple);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("_mat-animation-noopable", ctx._animationMode === "NoopAnimations");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-header-pagination-disabled", ctx._disableScrollAfter);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("matRippleDisabled", ctx._disableScrollAfter || ctx.disableRipple);
+          }
+        },
+        directives: [_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatRipple"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_1__["CdkObserveContent"], MatInkBar],
+        styles: [".mat-tab-header{display:flex;overflow:hidden;position:relative;flex-shrink:0}.mat-tab-header-pagination{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;display:none;justify-content:center;align-items:center;min-width:32px;cursor:pointer;z-index:2;-webkit-tap-highlight-color:transparent;touch-action:none}.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{display:flex}.mat-tab-header-pagination-before,.mat-tab-header-rtl .mat-tab-header-pagination-after{padding-left:4px}.mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-rtl .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(-135deg)}.mat-tab-header-rtl .mat-tab-header-pagination-before,.mat-tab-header-pagination-after{padding-right:4px}.mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(45deg)}.mat-tab-header-pagination-chevron{border-style:solid;border-width:2px 2px 0 0;content:\"\";height:8px;width:8px}.mat-tab-header-pagination-disabled{box-shadow:none;cursor:default}.mat-tab-list{flex-grow:1;position:relative;transition:transform 500ms cubic-bezier(0.35, 0, 0.25, 1)}.mat-tab-links{display:flex}[mat-align-tabs=center]>.mat-tab-link-container .mat-tab-links{justify-content:center}[mat-align-tabs=end]>.mat-tab-link-container .mat-tab-links{justify-content:flex-end}.mat-ink-bar{position:absolute;bottom:0;height:2px;transition:500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-ink-bar{transition:none;animation:none}.mat-tab-group-inverted-header .mat-ink-bar{bottom:auto;top:0}.cdk-high-contrast-active .mat-ink-bar{outline:solid 2px;height:0}.mat-tab-link-container{display:flex;flex-grow:1;overflow:hidden;z-index:1}.mat-tab-link{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;vertical-align:top;text-decoration:none;position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}.mat-tab-link:focus{outline:none}.mat-tab-link:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-link:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-link.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-link.mat-tab-disabled{opacity:.5}.mat-tab-link .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-link{opacity:1}[mat-stretch-tabs] .mat-tab-link{flex-basis:0;flex-grow:1}.mat-tab-link.mat-tab-disabled{pointer-events:none}@media(max-width: 599px){.mat-tab-link{min-width:72px}}\n"],
+        encapsulation: 2
+      });
 
       MatTabNav.ctorParameters = function () {
         return [{
@@ -2787,7 +3982,93 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
           args: ['previousPaginator']
         }]
-      }; // Boilerplate for applying mixins to MatTabLink.
+      };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabNav, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"],
+          args: [{
+            selector: '[mat-tab-nav-bar]',
+            exportAs: 'matTabNavBar, matTabNav',
+            inputs: ['color'],
+            template: "<div class=\"mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4\"\n     #previousPaginator\n     aria-hidden=\"true\"\n     mat-ripple [matRippleDisabled]=\"_disableScrollBefore || disableRipple\"\n     [class.mat-tab-header-pagination-disabled]=\"_disableScrollBefore\"\n     (click)=\"_handlePaginatorClick('before')\"\n     (mousedown)=\"_handlePaginatorPress('before', $event)\"\n     (touchend)=\"_stopInterval()\">\n  <div class=\"mat-tab-header-pagination-chevron\"></div>\n</div>\n\n<div class=\"mat-tab-link-container\" #tabListContainer (keydown)=\"_handleKeydown($event)\">\n  <div\n    class=\"mat-tab-list\"\n    [class._mat-animation-noopable]=\"_animationMode === 'NoopAnimations'\"\n    #tabList\n    (cdkObserveContent)=\"_onContentChanges()\">\n    <div class=\"mat-tab-links\">\n      <ng-content></ng-content>\n    </div>\n    <mat-ink-bar></mat-ink-bar>\n  </div>\n</div>\n\n<div class=\"mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4\"\n     #nextPaginator\n     aria-hidden=\"true\"\n     mat-ripple [matRippleDisabled]=\"_disableScrollAfter || disableRipple\"\n     [class.mat-tab-header-pagination-disabled]=\"_disableScrollAfter\"\n     (mousedown)=\"_handlePaginatorPress('after', $event)\"\n     (click)=\"_handlePaginatorClick('after')\"\n     (touchend)=\"_stopInterval()\">\n  <div class=\"mat-tab-header-pagination-chevron\"></div>\n</div>\n",
+            host: {
+              'class': 'mat-tab-nav-bar mat-tab-header',
+              '[class.mat-tab-header-pagination-controls-enabled]': '_showPaginationControls',
+              '[class.mat-tab-header-rtl]': "_getLayoutDirection() == 'rtl'",
+              '[class.mat-primary]': 'color !== "warn" && color !== "accent"',
+              '[class.mat-accent]': 'color === "accent"',
+              '[class.mat-warn]': 'color === "warn"'
+            },
+            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
+            // tslint:disable-next-line:validate-decorators
+            changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectionStrategy"].Default,
+            styles: [".mat-tab-header{display:flex;overflow:hidden;position:relative;flex-shrink:0}.mat-tab-header-pagination{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:relative;display:none;justify-content:center;align-items:center;min-width:32px;cursor:pointer;z-index:2;-webkit-tap-highlight-color:transparent;touch-action:none}.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{display:flex}.mat-tab-header-pagination-before,.mat-tab-header-rtl .mat-tab-header-pagination-after{padding-left:4px}.mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-rtl .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(-135deg)}.mat-tab-header-rtl .mat-tab-header-pagination-before,.mat-tab-header-pagination-after{padding-right:4px}.mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,.mat-tab-header-pagination-after .mat-tab-header-pagination-chevron{transform:rotate(45deg)}.mat-tab-header-pagination-chevron{border-style:solid;border-width:2px 2px 0 0;content:\"\";height:8px;width:8px}.mat-tab-header-pagination-disabled{box-shadow:none;cursor:default}.mat-tab-list{flex-grow:1;position:relative;transition:transform 500ms cubic-bezier(0.35, 0, 0.25, 1)}.mat-tab-links{display:flex}[mat-align-tabs=center]>.mat-tab-link-container .mat-tab-links{justify-content:center}[mat-align-tabs=end]>.mat-tab-link-container .mat-tab-links{justify-content:flex-end}.mat-ink-bar{position:absolute;bottom:0;height:2px;transition:500ms cubic-bezier(0.35, 0, 0.25, 1)}._mat-animation-noopable.mat-ink-bar{transition:none;animation:none}.mat-tab-group-inverted-header .mat-ink-bar{bottom:auto;top:0}.cdk-high-contrast-active .mat-ink-bar{outline:solid 2px;height:0}.mat-tab-link-container{display:flex;flex-grow:1;overflow:hidden;z-index:1}.mat-tab-link{height:48px;padding:0 24px;cursor:pointer;box-sizing:border-box;opacity:.6;min-width:160px;text-align:center;display:inline-flex;justify-content:center;align-items:center;white-space:nowrap;vertical-align:top;text-decoration:none;position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}.mat-tab-link:focus{outline:none}.mat-tab-link:focus:not(.mat-tab-disabled){opacity:1}.cdk-high-contrast-active .mat-tab-link:focus{outline:dotted 2px;outline-offset:-2px}.mat-tab-link.mat-tab-disabled{cursor:default}.cdk-high-contrast-active .mat-tab-link.mat-tab-disabled{opacity:.5}.mat-tab-link .mat-tab-label-content{display:inline-flex;justify-content:center;align-items:center;white-space:nowrap}.cdk-high-contrast-active .mat-tab-link{opacity:1}[mat-stretch-tabs] .mat-tab-link{flex-basis:0;flex-grow:1}.mat-tab-link.mat-tab-disabled{pointer-events:none}@media(max-width: 599px){.mat-tab-link{min-width:72px}}\n"]
+          }]
+        }], function () {
+          return [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_8__["Directionality"],
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"]
+          }, {
+            type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__["ViewportRuler"]
+          }, {
+            type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, {
+          _items: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChildren"],
+            args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["forwardRef"])(function () {
+              return MatTabLink;
+            }), {
+              descendants: true
+            }]
+          }],
+          _inkBar: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: [MatInkBar, {
+              "static": true
+            }]
+          }],
+          _tabListContainer: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['tabListContainer', {
+              "static": true
+            }]
+          }],
+          _tabList: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['tabList', {
+              "static": true
+            }]
+          }],
+          _nextPaginator: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['nextPaginator']
+          }],
+          _previousPaginator: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"],
+            args: ['previousPaginator']
+          }]
+        });
+      })(); // Boilerplate for applying mixins to MatTabLink.
+
 
       var MatTabLinkMixinBase = function MatTabLinkMixinBase() {
         _classCallCheck(this, MatTabLinkMixinBase);
@@ -2877,9 +4158,17 @@
         return _MatTabLinkBase;
       }(_MatTabLinkMixinBase);
 
-      _MatTabLinkBase.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
-      }];
+      _MatTabLinkBase.ɵfac = function _MatTabLinkBase_Factory(t) {
+        return new (t || _MatTabLinkBase)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_MatTabNavBase), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MAT_RIPPLE_GLOBAL_OPTIONS"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinjectAttribute"]('tabindex'), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      _MatTabLinkBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: _MatTabLinkBase,
+        inputs: {
+          active: "active"
+        },
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       _MatTabLinkBase.ctorParameters = function () {
         return [{
@@ -2918,9 +4207,51 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
         }]
       };
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](_MatTabLinkBase, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"]
+        }], function () {
+          return [{
+            type: _MatTabNavBase
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MAT_RIPPLE_GLOBAL_OPTIONS"]]
+            }]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Attribute"],
+              args: ['tabindex']
+            }]
+          }, {
+            type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, {
+          active: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
+          }]
+        });
+      })();
       /**
        * Link inside of a `mat-tab-nav-bar`.
        */
+
 
       var MatTabLink = /*#__PURE__*/function (_MatTabLinkBase2) {
         _inherits(MatTabLink, _MatTabLinkBase2);
@@ -2952,22 +4283,30 @@
         return MatTabLink;
       }(_MatTabLinkBase);
 
-      MatTabLink.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
-        args: [{
-          selector: '[mat-tab-link], [matTabLink]',
-          exportAs: 'matTabLink',
-          inputs: ['disabled', 'disableRipple', 'tabIndex'],
-          host: {
-            'class': 'mat-tab-link mat-focus-indicator',
-            '[attr.aria-current]': 'active ? "page" : null',
-            '[attr.aria-disabled]': 'disabled',
-            '[attr.tabIndex]': 'tabIndex',
-            '[class.mat-tab-disabled]': 'disabled',
-            '[class.mat-tab-label-active]': 'active'
+      MatTabLink.ɵfac = function MatTabLink_Factory(t) {
+        return new (t || MatTabLink)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](MatTabNav), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MAT_RIPPLE_GLOBAL_OPTIONS"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinjectAttribute"]('tabindex'), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"], 8));
+      };
+
+      MatTabLink.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineDirective"]({
+        type: MatTabLink,
+        selectors: [["", "mat-tab-link", ""], ["", "matTabLink", ""]],
+        hostAttrs: [1, "mat-tab-link", "mat-focus-indicator"],
+        hostVars: 7,
+        hostBindings: function MatTabLink_HostBindings(rf, ctx) {
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵattribute"]("aria-current", ctx.active ? "page" : null)("aria-disabled", ctx.disabled)("tabIndex", ctx.tabIndex);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵclassProp"]("mat-tab-disabled", ctx.disabled)("mat-tab-label-active", ctx.active);
           }
-        }]
-      }];
+        },
+        inputs: {
+          disabled: "disabled",
+          disableRipple: "disableRipple",
+          tabIndex: "tabIndex"
+        },
+        exportAs: ["matTabLink"],
+        features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵInheritDefinitionFeature"]]
+      });
 
       MatTabLink.ctorParameters = function () {
         return [{
@@ -3004,6 +4343,61 @@
           }]
         }];
       };
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabLink, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Directive"],
+          args: [{
+            selector: '[mat-tab-link], [matTabLink]',
+            exportAs: 'matTabLink',
+            inputs: ['disabled', 'disableRipple', 'tabIndex'],
+            host: {
+              'class': 'mat-tab-link mat-focus-indicator',
+              '[attr.aria-current]': 'active ? "page" : null',
+              '[attr.aria-disabled]': 'disabled',
+              '[attr.tabIndex]': 'tabIndex',
+              '[class.mat-tab-disabled]': 'disabled',
+              '[class.mat-tab-label-active]': 'active'
+            }
+          }]
+        }], function () {
+          return [{
+            type: MatTabNav
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
+          }, {
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgZone"]
+          }, {
+            type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_13__["Platform"]
+          }, {
+            type: undefined,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MAT_RIPPLE_GLOBAL_OPTIONS"]]
+            }]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Attribute"],
+              args: ['tabindex']
+            }]
+          }, {
+            type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"]
+          }, {
+            type: String,
+            decorators: [{
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Optional"]
+            }, {
+              type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"],
+              args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_6__["ANIMATION_MODULE_TYPE"]]
+            }]
+          }];
+        }, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -3017,15 +4411,43 @@
         _classCallCheck(this, MatTabsModule);
       };
 
-      MatTabsModule.decorators = [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"],
-        args: [{
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatCommonModule"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatRippleModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_1__["ObserversModule"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"]],
-          // Don't export all components because some are only to be used internally.
-          exports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatCommonModule"], MatTabGroup, MatTabLabel, MatTab, MatTabNav, MatTabLink, MatTabContent],
-          declarations: [MatTabGroup, MatTabLabel, MatTab, MatInkBar, MatTabLabelWrapper, MatTabNav, MatTabLink, MatTabBody, MatTabBodyPortal, MatTabHeader, MatTabContent]
-        }]
-      }];
+      MatTabsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({
+        type: MatTabsModule
+      });
+      MatTabsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({
+        factory: function MatTabsModule_Factory(t) {
+          return new (t || MatTabsModule)();
+        },
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatCommonModule"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatRippleModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_1__["ObserversModule"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"]], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatCommonModule"]]
+      });
+
+      (function () {
+        (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](MatTabsModule, {
+          declarations: function declarations() {
+            return [MatTabGroup, MatTabLabel, MatTab, MatInkBar, MatTabLabelWrapper, MatTabNav, MatTabLink, MatTabBody, MatTabBodyPortal, MatTabHeader, MatTabContent];
+          },
+          imports: function imports() {
+            return [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatCommonModule"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatRippleModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_1__["ObserversModule"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"]];
+          },
+          exports: function exports() {
+            return [_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatCommonModule"], MatTabGroup, MatTabLabel, MatTab, MatTabNav, MatTabLink, MatTabContent];
+          }
+        });
+      })();
+      /*@__PURE__*/
+
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](MatTabsModule, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["NgModule"],
+          args: [{
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatCommonModule"], _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_2__["PortalModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatRippleModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_1__["ObserversModule"], _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["A11yModule"]],
+            // Don't export all components because some are only to be used internally.
+            exports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_5__["MatCommonModule"], MatTabGroup, MatTabLabel, MatTab, MatTabNav, MatTabLink, MatTabContent],
+            declarations: [MatTabGroup, MatTabLabel, MatTab, MatInkBar, MatTabLabelWrapper, MatTabNav, MatTabLink, MatTabBody, MatTabBodyPortal, MatTabHeader, MatTabContent]
+          }]
+        }], null, null);
+      })();
       /**
        * @license
        * Copyright Google LLC All Rights Reserved.
@@ -3048,6 +4470,7 @@
       //# sourceMappingURL=tabs.js.map
 
       /***/
+
     }
   }]);
 })();

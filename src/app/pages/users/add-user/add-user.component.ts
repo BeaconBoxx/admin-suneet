@@ -26,14 +26,14 @@ export class AddUserComponent implements OnInit {
   changePreferredCountries() {
     this.preferredCountries = [CountryISO.India, CountryISO.Canada];
   }
-  constructor(private fb: FormBuilder,public router: Router, private commn_: CommonService, private customvalidator: CustomValidationService, private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, public router: Router, private commn_: CommonService, private customvalidator: CustomValidationService, private toastr: ToastrService) {
     this.userForm = this.fb.group({
-      first_name: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(3)]],
-      middle_name: ['', [Validators.maxLength(10), Validators.minLength(3)]],
-      last_name: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(3)]],
+      first_name: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(3), Validators.pattern("[a-zA-Z ]*")]],
+      middle_name: ['', [Validators.maxLength(10), Validators.minLength(3), Validators.pattern("[a-zA-Z ]*")]],
+      last_name: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(3), Validators.pattern("[a-zA-Z ]*")]],
       dob: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      fullPhone: ['',[Validators.required,Validators.minLength(7), Validators.maxLength(15)]],
+      fullPhone: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]],
       address: ['', [Validators.required]],
       city: ['', [Validators.required]],
       gender: ['', [Validators.required]],
@@ -43,27 +43,26 @@ export class AddUserComponent implements OnInit {
       lock_box_code: ['', [Validators.required]],
       zip_code: ['', [Validators.required]],
       cnfaddress: [''],
-      phone:[''],
-      country_code:[''],
-      password:['',[Validators.required, Validators.minLength(7), Validators.maxLength(15)]]
+      phone: [''],
+      country_code: [''],
+      password: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]]
     }, {
       validator: this.customvalidator.passwordMatchValidator("address", "cnfaddress")
     });
-    this.userForm.get('fullPhone')?.valueChanges.subscribe(x=>{
-      if(this.userForm.get('fullPhone')?.value) {
-          this.userForm.get('phone')?.setValue(this.userForm.get('fullPhone')?.value.number);
-          this.userForm.get('country_code')?.setValue(this.userForm.get('fullPhone')?.value.dialCode);
+    this.userForm.get('fullPhone')?.valueChanges.subscribe(x => {
+      if (this.userForm.get('fullPhone')?.value) {
+        this.userForm.get('phone')?.setValue(this.userForm.get('fullPhone')?.value.number);
+        this.userForm.get('country_code')?.setValue(this.userForm.get('fullPhone')?.value.dialCode);
       }
-  });
+    });
   }
   ngOnInit(): void {
-  
+
   }
 
   addUser() {
     console.log(this.userForm);
     let body = {
-      "image": 1,
       "first_name": this.userForm.get('first_name').value,
       "last_name": this.userForm.get('last_name').value,
       "dob": this.userForm.get('dob').value,
@@ -77,8 +76,8 @@ export class AddUserComponent implements OnInit {
       "lock_box_code": this.userForm.get('lock_box_code').value,
       "medical_information": this.userForm.get('medical_information').value,
       "gender": this.userForm.get('gender').value,
-      "password":this.userForm.get('password').value,
-      "zip_code":this.userForm.get('zip_code').value,
+      "password": this.userForm.get('password').value,
+      "zip_code": this.userForm.get('zip_code').value,
     }
     if (this.userForm.get('middle_name').value) {
       body['middle_name'] = this.userForm.get('middle_name').value
@@ -89,17 +88,15 @@ export class AddUserComponent implements OnInit {
 
     if (this.userForm.valid) {
       if (this.imageId) {
-      this.commn_.post("admin/add-user/",body).subscribe(res=>{
-        if(res.code==200)
-        {
-          this.router.navigate(["users/userlist"]);
-          this.toastr.success(res.message,"Success");
-        }
-        else
-        {
-          this.toastr.error(res.message,"Error");
-        }
-      })
+        this.commn_.post("admin/add-user/", body).subscribe(res => {
+          if (res.code == 200) {
+            this.router.navigate(["users/userlist"]);
+            this.toastr.success(res.message, "Success");
+          }
+          else {
+            this.toastr.error(res.message, "Error");
+          }
+        })
       }
       else {
         this.toastr.error("Select Image", "Error");
@@ -167,7 +164,7 @@ export class AddUserComponent implements OnInit {
   }
 
   // Alphabatic text only
- public Alphabet(event) {
+  public Alphabet(event) {
     const charCode = event.which ? event.which : event.keyCode;
     if (
       (charCode >= 65 && charCode <= 90) ||

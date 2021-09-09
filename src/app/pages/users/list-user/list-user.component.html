@@ -57,9 +57,9 @@
               </button>
 
               <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item" routerLink="/users/useredit"><i class="ti-marker-alt"></i>
+                <button class="dropdown-item" (click)="sendID(person?.id)"><i class="ti-marker-alt"></i>
                   Edit</button>
-                <a class="dropdown-item" routerLink="/users/userdetail"><i class="ti-eye"></i>
+                <a class="dropdown-item" (click)="ViewSendID(person?.id)"><i class="ti-eye"></i>
                   View
                 </a>
 
