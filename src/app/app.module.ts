@@ -37,6 +37,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { AuthService } from './_services/auth.service';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { OtpComponent } from './_shared/otp/otp.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -80,6 +81,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
             RouterModule,
             NgxSpinnerModule,
             NgOtpInputModule,
+            NgxIntlTelInputModule
     ],
     entryComponents: [OtpComponent],
     providers: [

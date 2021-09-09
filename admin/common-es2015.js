@@ -145,6 +145,47 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! rxjs-compat/Subject */ "./node_modules/rxjs-compat/Subject.js"));
 //# sourceMappingURL=Subject.js.map
 
+/***/ }),
+
+/***/ "./src/app/_services/custom-validation.service.ts":
+/*!********************************************************!*\
+  !*** ./src/app/_services/custom-validation.service.ts ***!
+  \********************************************************/
+/*! exports provided: CustomValidationService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomValidationService", function() { return CustomValidationService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+class CustomValidationService {
+    constructor() { }
+    passwordMatchValidator(password, confirmPassword) {
+        return (formGroup) => {
+            const passwordControl = formGroup.controls[password];
+            const confirmPasswordControl = formGroup.controls[confirmPassword];
+            if (!passwordControl || !confirmPasswordControl) {
+                return null;
+            }
+            if (confirmPasswordControl.errors &&
+                !confirmPasswordControl.errors.passwordMismatch) {
+                return null;
+            }
+            if (passwordControl.value !== confirmPasswordControl.value) {
+                confirmPasswordControl.setErrors({ passwordMismatch: true });
+                return true;
+            }
+            else {
+                confirmPasswordControl.setErrors(null);
+                return null;
+            }
+        };
+    }
+}
+CustomValidationService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ factory: function CustomValidationService_Factory() { return new CustomValidationService(); }, token: CustomValidationService, providedIn: "root" });
+
+
 /***/ })
 
 }]);

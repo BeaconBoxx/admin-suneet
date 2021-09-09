@@ -533,6 +533,8 @@ class ListUserComponent {
     }
     ngOnInit() {
     }
+    userList() {
+    }
 }
 
 

@@ -13,6 +13,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { RequestListComponent } from './detail-user/request-list/request-list.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { StudentListComponent } from './detail-user/student-list/student-list.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { AgmCoreModule } from '@agm/core';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 @NgModule({
   declarations: [UsersComponent, EditUserComponent, ListUserComponent, AddUserComponent, DetailUserComponent, RequestListComponent, StudentListComponent],
   imports: [
@@ -23,7 +27,14 @@ import { StudentListComponent } from './detail-user/student-list/student-list.co
     NgbModule,
     MatSlideToggleModule,
     MatSelectModule,
-    MatTabsModule
+    MatTabsModule,
+    MatPaginatorModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0",
+      libraries: ["places", "drawing", "geometry"],
+        }),
+        GooglePlaceModule,
+        NgxIntlTelInputModule
   ]
 })
 export class UsersModule { }

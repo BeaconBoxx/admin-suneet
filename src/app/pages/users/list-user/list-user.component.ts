@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CommonService } from '../../../_services/common.service';
+import { PageEvent } from '@angular/material/paginator';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
+import { ExportToCsv } from 'export-to-csv';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
@@ -7,57 +12,197 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListUserComponent implements OnInit {
   closeResult: string;
-
+  is_active: any = null;
+  constructor(private commn_: CommonService, private spinner: NgxSpinnerService, private toastr: ToastrService) { }
   //table: any
-  action:string;
+  action: string;
+  page = 1;
+  pageSize = 10;
+  people = []
+  length = 0;
+  searchText = ""
+  pageEvent: PageEvent;
 
-
- 
   ngOnInit(): void {
+    this.userList();
   }
-  people = [
-    { 
-      serial_no:'1',
-      firstname: 'Sandy', 
-      lastname: 'Doe',  
-      dob: "19-09-1950",    
-      contact:"+91-33434343",
-      heartrate:"90",
-      sp:"80",
-      heartvariability:"80",
-      email:"sand@example.com",
-      address:"#454 1st Block, Rammurthy, Bangalore-560016",
-      status:"",
-      action:"1",      
-    },
-    { 
-      serial_no:'2',
-      firstname: 'Rohan', 
-      lastname: 'Arya',  
-      dob: "04-02-1955",  
-      contact:"+91-33434343",
-      heartrate:"90",
-      sp:"80",
-      heartvariability:"70",
-      email:"sand@example.com",  
-      address:"#454 1st Block, Rammurthy, Bangalore-560016",
-      status:"",
-      action:"1",      
-    },
-    { 
-      serial_no:'3',   
-      firstname: 'john', 
-      lastname: 'Root',  
-      dob: "19-02-1955",    
-      contact:"+91-33434343",
-      heartrate:"90",
-      sp:"80",
-      heartvariability:"60",
-      email:"sand@example.com", 
-      address:"#454 1st Block, Rammurthy, Bangalore-560016",   
-      status:"",
-      action:"1",      
-    },
-   
-  ]
+
+  //get all users
+  userList() {
+    let body = {
+      "is_active": this.is_active,
+      "draw": 2,
+      "columns": [
+        {
+          "data": "first_name",
+          "name": "",
+          "searchable": true,
+          "orderable": true,
+          "search": {
+            "value": "",
+            "regex": false
+          }
+        },
+        {
+          "data": "last_name",
+          "name": "",
+          "searchable": true,
+          "orderable": true,
+          "search": {
+            "value": "",
+            "regex": false
+          }
+        },
+        {
+          "data": "phone_number",
+          "name": "",
+          "searchable": true,
+          "orderable": true,
+          "search": {
+            "value": "",
+            "regex": false
+          }
+        },
+        {
+          "data": "email",
+          "name": "",
+          "searchable": true,
+          "orderable": true,
+          "search": {
+            "value": "",
+            "regex": false
+          }
+        },
+        {
+          "data": "id",
+          "name": "",
+          "searchable": true,
+          "orderable": true,
+          "search": {
+            "value": "",
+            "regex": false
+          }
+        }
+      ],
+      "order": [
+        {
+          "column": 3,
+          "dir": "undefined"
+        }
+      ],
+      "start": this.page,
+      "length": this.pageSize,
+      "search": {
+        "value": this.searchText,
+        "regex": false
+      }
+    }
+    this.commn_.post("admin/get-all-users-with-pagination/", body).subscribe(res => {
+      this.people = res.data;
+      this.length = res.recordsTotal;
+    });
+  }
+
+  //pagination
+  pageSizeChanged(e): PageEvent {
+    if (e.pageIndex == 0) {
+      this.page = e.pageIndex;
+    } else {
+      if (e.previousPageIndex < e.pageIndex) {
+        this.page = this.page + e.pageSize;
+      } else {
+        this.page = this.page - e.pageSize;
+      }
+    }
+    this.pageSize = e.pageSize
+    this.userList();
+    return e;
+  }
+
+  // Search
+  timer: any;
+  search(event) {
+    this.spinner.show();
+    window.clearTimeout(this.timer);
+    this.timer = window.setTimeout(() => {
+      this.searchText = event.target.value;
+      this.userList();
+      this.spinner.hide();
+    }, 1000);
+  }
+
+  // toggle Button 
+  changeStatus(id) {
+    this.commn_.put("admin/change-user-status-by-id/" + id + "/", {}).subscribe(res => {
+      if (res.code == 200) {
+        this.toastr.success(res.message, "Success");
+        this.userList();
+      }
+      else {
+        this.toastr.error(res.message, "Error");
+      }
+    });
+  }
+
+  // change status button
+  changeStatusList(key) {
+    this.spinner.show();
+    this.is_active = key;
+    this.userList();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
+  }
+
+  //Export Csv
+  exportCsv() {
+    const options = {
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalSeparator: '.',
+      showLabels: true,
+      showTitle: true,
+      title: '',
+      useTextFile: false,
+      useBom: true,
+      useKeysAsHeaders: true,
+    };
+    this.commn_.get("admin/get-all-users-without-pagination/").subscribe(res => {
+      console.log(res);
+      const csvExporter = new ExportToCsv(options);
+      res.data.map((item, index) => {
+        item["#"] = parseInt(index) + 1;
+        delete item.image;
+        return item;
+      })
+      csvExporter.generateCsv(res.data);
+    });
+  }
+
+  //Delete User 
+  deleteUser(id) {
+    Swal.fire({
+      title: 'Are you sure want to delete this user?',
+      text: '',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.spinner.show();
+        this.commn_.delete("admin/delete-users-by-id/" + id + "/").subscribe(res => {
+          if (res.code == 200) {
+            Swal.fire('Success!','Deleted Successfully!','success');
+            this.userList();
+            this.spinner.hide();
+          }
+          else {
+            this.toastr.error(res.message, "Error");
+            this.spinner.hide();
+          }
+        });
+      }
+    });
+  }
 }

@@ -20,6 +20,8 @@ export class ProfileComponent implements OnInit {
   autoAddress: any;
   profileForm:FormGroup;
   passwordForm:FormGroup;
+  Pic: any;
+  imageId: any;
   constructor(private commn_:CommonService,private fb:FormBuilder,private toastr:ToastrService,private customvalidator:CustomValidationService) { 
     this.profileForm=this.fb.group({
       first_name:['',[Validators.required,Validators.maxLength(10),Validators.minLength(3)]],
@@ -34,7 +36,7 @@ export class ProfileComponent implements OnInit {
     this.passwordForm=this.fb.group({
       current_password:['',[Validators.required,Validators.minLength(8)]],
       new_password:['',[Validators.required,Validators.minLength(8)]],
-      cnfnew_password:['']
+      cnfnew_password:['',[Validators.required]]
     },{
       validator:this.customvalidator.passwordMatchValidator("new_password","cnfnew_password")
      });
@@ -61,7 +63,7 @@ export class ProfileComponent implements OnInit {
     this.profileForm.get('phone_no').disable();
     });
   }
-  
+  //setting Form
   update()
   {
     let body={
@@ -72,10 +74,16 @@ export class ProfileComponent implements OnInit {
     "longitude":this.long,
     "role":1
     };
+    if(this.imageId)
+    {
+      body['image']=this.imageId;
+    }
     console.log(body);
+    if(this.profileForm.valid){
     this.commn_.put("user/update-user-profile-by-token/",body).subscribe(res=>{
       if(res.code==200)
       {
+      this.commn_.imageFlag.next("Flag");
       this.toastr.success(res.message,"Success",{timeOut:1500});
       this.getProfile();
       }
@@ -83,6 +91,62 @@ export class ProfileComponent implements OnInit {
         this.toastr.error(res.message,"Error",{timeOut:1500});
       }
     })
+  }
+  else{
+    this.profileForm.markAllAsTouched();
+  }
+
+  }
+   
+  //Image Select
+  onImageSelect(e) {
+    var files = e.target.files;
+    if (files[0].size <= 10000000) {
+      this.Pic = files[0];
+      const formdata = new FormData();
+      formdata.append("media",this.Pic);
+      this.commn_.post("upload/media/",formdata).subscribe(res=>{
+        console.log(res);
+      if(res.code==200)
+      {
+        this.imageId=res.data[0].id;
+        this.update();
+        this.getProfile();
+      }
+      else
+      {
+        this.toastr.error(res.message,"Error");
+      }
+      });
+    } else {
+      this.Pic = null;
+    }
+  }
+
+  //change-password
+  updatePassword()
+  {
+    let body={
+      "current_password":this.passwordForm.get('current_password').value,
+      "new_password":this.passwordForm.get('new_password').value
+  };
+  console.log(body);
+  if(this.passwordForm.valid){
+    this.commn_.put("user/change-password/",body).subscribe(res=>{
+      if(res.code==200)
+      {
+        this.toastr.success(res.message,"Success",{timeOut:2000});
+      }
+      else
+      {
+        this.toastr.error(res.message,"Error",{timeOut:2000});
+      }
+    })
+  }
+  else
+  {
+    this.passwordForm.markAllAsTouched();
+  }
   }
 
    //Location Dropdown

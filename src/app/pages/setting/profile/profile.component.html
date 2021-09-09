@@ -8,6 +8,10 @@
           <h4 class="card-title m-t-10">{{items?.first_name}} {{items?.last_name}}</h4>
           <h6 class="card-subtitle">Admin</h6>
         </div>
+        <div class="upload-btn-wrapper">
+          <button class="btn-upload"><i class="mdi mdi-pencil"></i></button>
+          <input type="file" (change)="onImageSelect($event)" accept="image/jpeg" name="myfile" />
+        </div>
       </div>
       <div>
         <hr>
@@ -76,12 +80,12 @@
                     <p class="text-danger"
                       *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('maxlength')"
                       class="text-danger d-inline-block pt-1">
-                      *Max Character Length 10!
+                      *Must have at most 10 character!
                     </p>
                     <p class="text-danger"
                       *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('minlength')"
                       class="text-danger d-inline-block pt-1">
-                      *Min Character Length 3!
+                      *Must have at least 3 character!
                     </p>
                     <p class="text-danger"
                       *ngIf="profileForm.controls['first_name'].touched && profileForm.controls['first_name'].hasError('required')">
@@ -97,12 +101,12 @@
                     <p class="text-danger"
                       *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('maxlength')"
                       class="text-danger d-inline-block pt-1">
-                      *Max Character Length 10!
+                      *Must have at most 10 character!
                     </p>
                     <p class="text-danger"
                       *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('minlength')"
                       class="text-danger d-inline-block pt-1">
-                      *Min Character Length 3!
+                      *Must have at least 3 character!
                     </p>
                     <p class="text-danger"
                       *ngIf="profileForm.controls['last_name'].touched && profileForm.controls['last_name'].hasError('required')">
@@ -149,12 +153,12 @@
                     <p class="text-danger"
                       *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('maxlength')"
                       class="text-danger d-inline-block pt-1">
-                      *Max Length 15!
+                      *Must have at most 15 character!
                     </p>
                     <p class="text-danger"
                       *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('minlength')"
                       class="text-danger d-inline-block pt-1">
-                      *Min Length 7!
+                      *Must have at least 7 character!
                     </p>
                     <p class="text-danger"
                       *ngIf="profileForm.controls['phone_no'].touched && profileForm.controls['phone_no'].hasError('required')">
@@ -164,7 +168,7 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <button class="btn btn-primary" (click)="update()">Update Profile</button>
+                    <button class="btn btn-primary" type="submit" (click)="update()">Update Profile</button>
                   </div>
                 </div>
               </form>
@@ -183,11 +187,11 @@
                       class="form-control form-control-line">
                     <p class="text-danger"
                       *ngIf="passwordForm.get('current_password').touched && passwordForm.get('current_password').hasError('required')">
-                      Please enter Old Password.
+                      *Please enter Old Password.
                     </p>
                     <p class="text-danger"
                       *ngIf="passwordForm.get('current_password').touched && passwordForm.get('current_password').hasError('minlength')">
-                      Minlength should 8.
+                      *Must have at least 8 character!
                     </p>
                   </div>
                 </div>
@@ -198,11 +202,11 @@
                       class="form-control form-control-line" name="example-email" id="example-email">
                     <p class="text-danger"
                       *ngIf="passwordForm.get('new_password').touched && passwordForm.get('new_password').hasError('required')">
-                      Please enter New Password.
+                      *Please enter New Password.
                     </p>
                     <p class="text-danger"
                       *ngIf="passwordForm.get('new_password').touched && passwordForm.get('new_password').hasError('minlength')">
-                      Minlength should 8.
+                      *Must have at least 8 character!
                     </p>
                   </div>
                 </div>
@@ -211,6 +215,10 @@
                   <div class="col-md-12">
                     <input type="password" formControlName="cnfnew_password" placeholder="Confirm Passowrd"
                       class="form-control form-control-line" name="example-email" id="example-email">
+                      <p class="text-danger"
+                      *ngIf="passwordForm.get('cnfnew_password').touched && passwordForm.get('cnfnew_password').hasError('required')">
+                      *Please enter Confirm Password.
+                    </p>
                     <p class="text-danger"
                       *ngIf="passwordForm.get('cnfnew_password').touched && passwordForm.get('cnfnew_password').hasError('passwordMismatch')">
                       *Password don't match
@@ -220,7 +228,7 @@
 
                 <div class="form-group">
                   <div class="col-sm-12">
-                    <button class="btn btn-primary">Save</button>
+                    <button class="btn btn-primary" (click)="updatePassword()" type="submit">Save</button>
                   </div>
                 </div>
               </form>

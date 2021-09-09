@@ -1505,6 +1505,9 @@
         _createClass(ListUserComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {}
+        }, {
+          key: "userList",
+          value: function userList() {}
         }]);
 
         return ListUserComponent;

@@ -1,3 +1,11 @@
 agm-map {
 	height: 300px;
   }
+   /* custom upload btn */
+   .upload-btn-wrapper {
+    position: absolute;
+    overflow: hidden;
+    display: inline-block;
+    top: 30px;
+    right: 75px;
+}

@@ -7,78 +7,6 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["authentication-authentication-module-ngfactory"], {
     /***/
-    "./src/app/_services/custom-validation.service.ts":
-    /*!********************************************************!*\
-      !*** ./src/app/_services/custom-validation.service.ts ***!
-      \********************************************************/
-
-    /*! exports provided: CustomValidationService */
-
-    /***/
-    function srcApp_servicesCustomValidationServiceTs(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "CustomValidationService", function () {
-        return CustomValidationService;
-      });
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! @angular/core */
-      "./node_modules/@angular/core/fesm2015/core.js");
-
-      var CustomValidationService = /*#__PURE__*/function () {
-        function CustomValidationService() {
-          _classCallCheck(this, CustomValidationService);
-        }
-
-        _createClass(CustomValidationService, [{
-          key: "passwordMatchValidator",
-          value: function passwordMatchValidator(password, confirmPassword) {
-            return function (formGroup) {
-              var passwordControl = formGroup.controls[password];
-              var confirmPasswordControl = formGroup.controls[confirmPassword];
-
-              if (!passwordControl || !confirmPasswordControl) {
-                return null;
-              }
-
-              if (confirmPasswordControl.errors && !confirmPasswordControl.errors.passwordMismatch) {
-                return null;
-              }
-
-              if (passwordControl.value !== confirmPasswordControl.value) {
-                confirmPasswordControl.setErrors({
-                  passwordMismatch: true
-                });
-                return true;
-              } else {
-                confirmPasswordControl.setErrors(null);
-                return null;
-              }
-            };
-          }
-        }]);
-
-        return CustomValidationService;
-      }();
-
-      CustomValidationService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-        factory: function CustomValidationService_Factory() {
-          return new CustomValidationService();
-        },
-        token: CustomValidationService,
-        providedIn: "root"
-      });
-      /***/
-    },
-
-    /***/
     "./src/app/authentication/404/not-found.component.css.shim.ngstyle.js":
     /*!****************************************************************************!*\
       !*** ./src/app/authentication/404/not-found.component.css.shim.ngstyle.js ***!
@@ -1050,12 +978,12 @@
           return [p0_0];
         }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["CheckboxControlValueAccessor"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](42, 671744, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"], [[3, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ControlContainer"]], [8, null], [8, null], [6, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"]], [2, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_p"]]], {
           name: [0, "name"]
-        }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](2048, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"], null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](44, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], [[4, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"]]], null, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](45, 0, null, null, 1, "label", [["class", "ml-2"], ["for", "checkbox-signup "]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" Remember me "])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](47, 0, null, null, 1, "a", [["class", "text-dark pull-right"], ["href", "javascript:void(0)"], ["id", "to-recover"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["Forgot Password?"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](49, 0, null, null, 5, "div", [["class", "form-group text-center m-t-20"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](50, 0, null, null, 4, "div", [["class", "col-xs-12"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](51, 0, null, null, 3, "a", [["class", "btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light"]], [[1, "target", 0], [8, "href", 4]], [[null, "click"]], function (_v, en, $event) {
+        }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](2048, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"], null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](44, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], [[4, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"]]], null, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](45, 0, null, null, 1, "label", [["class", "ml-2"], ["for", "checkbox-signup "]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" Remember me "])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](47, 0, null, null, 1, "a", [["class", "text-dark pull-right"], ["href", "javascript:void(0)"], ["id", "to-recover"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["Forgot Password?"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](49, 0, null, null, 5, "div", [["class", "form-group text-center m-t-20"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](50, 0, null, null, 4, "div", [["class", "col-xs-12"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](51, 0, null, null, 3, "button", [["class", "btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light"], ["type", "submit"]], null, [[null, "click"]], function (_v, en, $event) {
           var ad = true;
           var _co = _v.component;
 
           if ("click" === en) {
-            var pd_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 52).onClick($event.button, $event.ctrlKey, $event.metaKey, $event.shiftKey) !== false;
+            var pd_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 52).onClick() !== false;
             ad = pd_0 && ad;
           }
 
@@ -1065,7 +993,7 @@
           }
 
           return ad;
-        }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](52, 671744, null, 0, _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"], [_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["LocationStrategy"]], {
+        }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](52, 16384, null, 0, _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLink"], [_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"], [8, null], _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]], {
           routerLink: [0, "routerLink"]
         }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpad"](53, 1), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["Log In"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](55, 0, null, null, 31, "form", [["action", "index.html"], ["class", "form-horizontal"], ["id", "recoverform"], ["novalidate", ""]], [[2, "ng-untouched", null], [2, "ng-touched", null], [2, "ng-pristine", null], [2, "ng-dirty", null], [2, "ng-valid", null], [2, "ng-invalid", null], [2, "ng-pending", null]], [[null, "submit"], [null, "reset"]], function (_v, en, $event) {
           var ad = true;
@@ -1167,29 +1095,29 @@
 
           _ck(_v, 42, 0, currVal_38);
 
-          var currVal_41 = _ck(_v, 53, 0, "/dashboard/dashboard");
+          var currVal_39 = _ck(_v, 53, 0, "/dashboard/dashboard");
 
-          _ck(_v, 52, 0, currVal_41);
+          _ck(_v, 52, 0, currVal_39);
 
-          var currVal_49 = _co.forgotPassword;
+          var currVal_47 = _co.forgotPassword;
 
-          _ck(_v, 57, 0, currVal_49);
+          _ck(_v, 57, 0, currVal_47);
 
-          var currVal_58 = "";
+          var currVal_56 = "";
 
-          _ck(_v, 70, 0, currVal_58);
+          _ck(_v, 70, 0, currVal_56);
 
-          var currVal_59 = "email";
+          var currVal_57 = "email";
 
-          _ck(_v, 73, 0, currVal_59);
+          _ck(_v, 73, 0, currVal_57);
 
-          var currVal_60 = _co.forgotPassword.get("email").touched && _co.forgotPassword.get("email").hasError("required");
+          var currVal_58 = _co.forgotPassword.get("email").touched && _co.forgotPassword.get("email").hasError("required");
 
-          _ck(_v, 77, 0, currVal_60);
+          _ck(_v, 77, 0, currVal_58);
 
-          var currVal_61 = _co.forgotPassword.get("email").hasError("email") || _co.forgotPassword.get("email").hasError("pattern");
+          var currVal_59 = _co.forgotPassword.get("email").hasError("email") || _co.forgotPassword.get("email").hasError("pattern");
 
-          _ck(_v, 79, 0, currVal_61);
+          _ck(_v, 79, 0, currVal_59);
         }, function (_ck, _v) {
           var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).ngClassUntouched;
 
@@ -1259,45 +1187,39 @@
 
           _ck(_v, 39, 0, currVal_31, currVal_32, currVal_33, currVal_34, currVal_35, currVal_36, currVal_37);
 
-          var currVal_39 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 52).target;
+          var currVal_40 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassUntouched;
 
-          var currVal_40 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 52).href;
+          var currVal_41 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassTouched;
 
-          _ck(_v, 51, 0, currVal_39, currVal_40);
+          var currVal_42 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassPristine;
 
-          var currVal_42 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassUntouched;
+          var currVal_43 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassDirty;
 
-          var currVal_43 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassTouched;
+          var currVal_44 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassValid;
 
-          var currVal_44 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassPristine;
+          var currVal_45 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassInvalid;
 
-          var currVal_45 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassDirty;
+          var currVal_46 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassPending;
 
-          var currVal_46 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassValid;
+          _ck(_v, 55, 0, currVal_40, currVal_41, currVal_42, currVal_43, currVal_44, currVal_45, currVal_46);
 
-          var currVal_47 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassInvalid;
+          var currVal_48 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 70).required ? "" : null;
 
-          var currVal_48 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 59).ngClassPending;
+          var currVal_49 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassUntouched;
 
-          _ck(_v, 55, 0, currVal_42, currVal_43, currVal_44, currVal_45, currVal_46, currVal_47, currVal_48);
+          var currVal_50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassTouched;
 
-          var currVal_50 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 70).required ? "" : null;
+          var currVal_51 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassPristine;
 
-          var currVal_51 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassUntouched;
+          var currVal_52 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassDirty;
 
-          var currVal_52 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassTouched;
+          var currVal_53 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassValid;
 
-          var currVal_53 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassPristine;
+          var currVal_54 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassInvalid;
 
-          var currVal_54 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassDirty;
+          var currVal_55 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassPending;
 
-          var currVal_55 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassValid;
-
-          var currVal_56 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassInvalid;
-
-          var currVal_57 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 75).ngClassPending;
-
-          _ck(_v, 68, 0, currVal_50, currVal_51, currVal_52, currVal_53, currVal_54, currVal_55, currVal_56, currVal_57);
+          _ck(_v, 68, 0, currVal_48, currVal_49, currVal_50, currVal_51, currVal_52, currVal_53, currVal_54, currVal_55);
         });
       }
 
@@ -2047,7 +1969,7 @@
       }
 
       function View_SetpasswordComponent_2(_l) {
-        return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 3, "mat-error", [["class", "mat-error"], ["role", "alert"]], [[1, "id", 0]], null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 16384, null, 0, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__["MatError"], [], null, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](2048, [[6, 4]], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__["MAT_ERROR"], null, [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__["MatError"]]), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" Minlength should 8. "]))], null, function (_ck, _v) {
+        return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 3, "mat-error", [["class", "mat-error"], ["role", "alert"]], [[1, "id", 0]], null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 16384, null, 0, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__["MatError"], [], null, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](2048, [[6, 4]], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__["MAT_ERROR"], null, [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_2__["MatError"]]), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, [" Must have at least 8 character! "]))], null, function (_ck, _v) {
           var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 1).id;
 
           _ck(_v, 0, 0, currVal_0);

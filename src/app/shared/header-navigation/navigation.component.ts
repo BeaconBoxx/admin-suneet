@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, EventEmitter, Output } from '@angular/core';
+import { Component, AfterViewInit, EventEmitter, Output, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   NgbModal,
@@ -10,16 +10,18 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { environment } from '../../../environments/environment';
 declare var $: any;
 import Swal from 'sweetalert2';
+import { CommonService } from '../../_services/common.service';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls:['./navigation.component.scss']
 })
-export class NavigationComponent implements AfterViewInit {
+export class NavigationComponent implements AfterViewInit,OnInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
-  constructor(private modalService: NgbModal,private _router: Router) {}
+  items: any;
+  constructor(private modalService: NgbModal,private _router: Router,private commn_:CommonService) {}
 
   // This is for Notifications
   notifications: Object[] = [
@@ -84,9 +86,24 @@ export class NavigationComponent implements AfterViewInit {
       time: '9:00 AM'
     }
   ];
-   
+  
+  ngOnInit(): void {
+  this.getProfile();
+  }
+
   ngAfterViewInit() {}
 
+  //grt profile data
+  getProfile(){
+  this.commn_.imageFlag.subscribe(res=>{
+    this.commn_.get("user/get-user-profile-by-token/").subscribe(res=>{
+      console.log(res);
+      this.items=res?.data;
+    });
+  });
+  }
+
+ // log out button
   logoutMe() {
     Swal.fire({
       title: 'Are you sure?',
