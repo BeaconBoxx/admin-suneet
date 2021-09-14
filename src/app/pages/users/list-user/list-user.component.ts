@@ -21,7 +21,7 @@ export class ListUserComponent implements OnInit {
   pageSize = 10;
   people = []
   length = 0;
-  searchText = ""
+  searchText = "";
   pageEvent: PageEvent;
 
   ngOnInit(): void {
@@ -146,10 +146,12 @@ export class ListUserComponent implements OnInit {
 
   // toggle Button 
   changeStatus(id) {
+    this.spinner.show();
     this.commn_.put("admin/change-user-status-by-id/" + id + "/", {}).subscribe(res => {
       if (res.code == 200) {
         this.toastr.success(res.message, "Success");
         this.userList();
+        setTimeout(()=>{this.spinner.hide()},2000);
       }
       else {
         this.toastr.error(res.message, "Error");
@@ -180,15 +182,30 @@ export class ListUserComponent implements OnInit {
       useBom: true,
       useKeysAsHeaders: true,
     };
+    let items=[];
     this.commn_.get("admin/get-all-users-without-pagination/").subscribe(res => {
-      console.log(res);
+      console.log(res);     
       const csvExporter = new ExportToCsv(options);
       res.data.map((item, index) => {
         item["#"] = parseInt(index) + 1;
         delete item.image;
+        items.push({
+          "#":item["#"],
+          "id":item["id"],
+          "email":item["email"],
+          "first_name":item["first_name"],
+          "last_name":item["last_name"],
+          "phone_no":item["phone_no"],
+          "dob":item["dob"],
+          "is_active":item["is_active"],
+          "heart_rate":item["heart_rate"],
+          "spo2":item["spo2"],
+          "heart_rate_variability":item["heart_rate_variability"],
+        });
         return item;
       })
-      csvExporter.generateCsv(res.data);
+      console.log(items);
+      csvExporter.generateCsv(items);
     });
   }
 
@@ -206,7 +223,7 @@ export class ListUserComponent implements OnInit {
         this.spinner.show();
         this.commn_.delete("admin/delete-users-by-id/" + id + "/").subscribe(res => {
           if (res.code == 200) {
-            Swal.fire('Success!','Deleted Successfully!','success');
+            this.toastr.success(res.message,"Success");
             this.userList();
             this.spinner.hide();
           }

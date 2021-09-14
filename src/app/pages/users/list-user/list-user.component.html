@@ -47,7 +47,7 @@
           <td class="text-center">{{person?.spo2 || '-'}}</td>
           <td class="text-center">{{person?.heart_rate_variability || '-'}}</td>
           <td>
-            <mat-slide-toggle [(ngModel)]="person.is_active" (click)="changeStatus(person?.id)"></mat-slide-toggle>
+            <mat-slide-toggle [checked]="person.is_active" (change)="changeStatus(person?.id)"></mat-slide-toggle>
           </td>
 
           <td>

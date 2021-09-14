@@ -1,0 +1,21 @@
+<div class="table-responsive">
+  <table class="table">
+    <tr *ngIf="length!=0">
+      <th class="text-nowrap">#</th>
+      <th class="text-nowrap">Users</th>
+      <th class="text-nowrap">Message</th>
+    </tr>
+    <tr *ngFor="let item of items;let i=index">
+      <td>{{page==0?page+ i+1:page+i}}</td>
+      <td>{{item?.notification_users[0]?.full_name}} <a href="javascript:void(0)" *ngIf="item?.notification_users.length>1" (click)="userListModel(item?.notification_users)">...</a></td>
+      <td>{{item?.message | slice:0:50}}<a href="javascript:void(0)" *ngIf="item?.message?.length>50" (click)="readModel(item?.message)">Read More</a>
+      </td>
+    </tr>
+	<tr *ngIf="length==0">
+		<td colspan="3" class="text-center">No Data Found</td>
+	</tr>
+  </table>
+</div>
+<mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]"
+    (page)="pageEvent = pageSizeChanged($event)">
+  </mat-paginator>

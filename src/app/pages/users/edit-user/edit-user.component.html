@@ -4,20 +4,20 @@
   </div>
 </div>
 <div class="card p-3">
-  <form action="" [formGroup]="userForm">
+  <form action="" [formGroup]="userForm" ngxScrollToFirstInvalid>
     <div class="row">
       <div class="col-md-6">
         <label>Upload Profile </label>
         <div class="custom-file">
-          <input type="file" (change)="onImageSelect($event)"  accept=".png, .jpg, .jpeg" id="customFile" class="custom-file-input">
+          <input type="file" (change)="onImageSelect($event)" accept=".png, .jpg, .jpeg" id="customFile"
+            class="custom-file-input">
           <label for="customFile" class="custom-file-label">{{text}}</label>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label>First Name</label>
-          <input type="text"  formControlName="first_name" placeholder="First Name"
-            class="form-control" />
+          <input type="text" formControlName="first_name" placeholder="First Name" class="form-control" #first_name (keydown.space)="!first_name.value?$event.preventDefault():null" />
           <p class="text-danger"
             *ngIf="userForm.controls['first_name'].touched && userForm.controls['first_name'].hasError('required')">
             *First Name is required!
@@ -42,8 +42,8 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Middle Name</label>
-          <input type="text"  formControlName="middle_name" placeholder="Middle Name"
-            class="form-control" />
+          <input type="text" formControlName="middle_name" placeholder="Middle Name" class="form-control" #middle_name
+          (keydown.space)="!middle_name.value?$event.preventDefault():null" />
           <p class="text-danger"
             *ngIf="userForm.controls['middle_name'].touched && userForm.controls['middle_name'].hasError('maxlength')">
             *Must have at most 10 character!
@@ -62,8 +62,8 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Last Name</label>
-          <input type="text"  formControlName="last_name" placeholder="Last Name"
-            class="form-control" />
+          <input type="text" formControlName="last_name" placeholder="Last Name" class="form-control" #last_name
+          (keydown.space)="!last_name.value?$event.preventDefault():null" />
           <p class="text-danger"
             *ngIf="userForm.controls['last_name'].touched && userForm.controls['last_name'].hasError('required')">
             *Last Name is required!
@@ -104,7 +104,8 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Email</label>
-          <input type="email" formControlName="email" placeholder="Email" class="form-control" />
+          <input type="email" formControlName="email" placeholder="Email" class="form-control" #email
+          (keydown.space)="!email.value?$event.preventDefault():null" />
           <p class="text-danger"
             *ngIf="userForm.controls['email'].touched && userForm.controls['email'].hasError('pattern')"
             class="text-danger d-inline-block pt-1">
@@ -119,23 +120,13 @@
       <div class="col-md-6">
         <div class="form-group d-flex flex-column">
           <label>Phone No</label>
-          <ngx-intl-tel-input [cssClass]="'form-control'"  [preferredCountries]="preferredCountries"
-          [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
-          [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
-          [selectedCountryISO]="CountryISO.India" [maxLength]="15"
-          [phoneValidation]="true" [separateDialCode]="separateDialCode"
-          [numberFormat]="PhoneNumberFormat.National" name="phone" formControlName="fullPhone" >
-        </ngx-intl-tel-input>
-          <p class="text-danger"
-            *ngIf="userForm.controls['fullPhone'].touched && userForm.controls['fullPhone'].hasError('maxlength')"
-            class="text-danger d-inline-block pt-1">
-            *Must have at most 15 character!
-          </p>
-          <p class="text-danger"
-            *ngIf="userForm.controls['fullPhone'].touched && userForm.controls['fullPhone'].hasError('minlength')"
-            class="text-danger d-inline-block pt-1">
-            *Must have at least 7 character!
-          </p>
+          <ngx-intl-tel-input [cssClass]="'form-control'" [preferredCountries]="preferredCountries"
+            [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+            [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+            [selectedCountryISO]="CountryISO.India" [maxLength]="15" [phoneValidation]="true"
+            [separateDialCode]="separateDialCode" [numberFormat]="PhoneNumberFormat.National" name="phone"
+            formControlName="fullPhone">
+          </ngx-intl-tel-input>
           <p class="text-danger"
             *ngIf="userForm.controls['fullPhone'].touched && userForm.controls['fullPhone'].invalid && !(userForm.controls['fullPhone'].hasError('required'))"
             class="text-danger d-inline-block pt-1">
@@ -167,7 +158,8 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>City</label>
-          <input type="text" placeholder="City" formControlName="city" class="form-control">
+          <input type="text" placeholder="City" formControlName="city" class="form-control" #city
+          (keydown.space)="!city.value?$event.preventDefault():null">
           <p class="text-danger"
             *ngIf="userForm.controls['city'].touched && userForm.controls['city'].hasError('required')">
             *City is required!
@@ -178,7 +170,8 @@
     <div class="row">
       <div class="col-md-6">
         <label>Zip Code</label>
-        <input type="text" placeholder="Zip code" formControlName="zip_code" class="form-control">
+        <input type="text" placeholder="Zip code" formControlName="zip_code" class="form-control" #zip_code
+        (keydown.space)="!zip_code.value?$event.preventDefault():null">
         <p class="text-danger"
           *ngIf="userForm.controls['zip_code'].touched && userForm.controls['zip_code'].hasError('required')">
           *Zip Code is required!
@@ -187,48 +180,73 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>State</label>
-          <input type="text" placeholder="State" formControlName="state" class="form-control">
+          <input type="text" placeholder="State" formControlName="state" class="form-control" #state
+          (keydown.space)="!state.value?$event.preventDefault():null">
           <p class="text-danger"
-          *ngIf="userForm.controls['state'].touched && userForm.controls['state'].hasError('required')">
-          *State is required!
-        </p>
+            *ngIf="userForm.controls['state'].touched && userForm.controls['state'].hasError('required')">
+            *State is required!
+          </p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6">
         <label>Property Access Code </label>
-        <input type="text" placeholder="Property Access Code" formControlName="property_access_code"
+        <input type="text" placeholder="Property Access Code" formControlName="property_access_code" #property_access_code (keydown.space)="!property_access_code.value?$event.preventDefault():null"
           class="form-control">
-          <p class="text-danger"
+        <p class="text-danger"
           *ngIf="userForm.controls['property_access_code'].touched && userForm.controls['property_access_code'].hasError('required')">
           *Property Access Code is required!
         </p>
+        <p class="text-danger"
+            *ngIf="userForm.controls['property_access_code'].touched && userForm.controls['property_access_code'].hasError('maxlength') ">
+            *Must have at most 10 character!
+          </p>
+          <p class="text-danger"
+            *ngIf="userForm.controls['property_access_code'].touched && userForm.controls['property_access_code'].hasError('minlength') && !(userForm.controls['property_access_code'].hasError('required'))">
+            *Must have at least 3 character!
+          </p>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label>Lockbox Code</label>
-          <input type="text" placeholder="Lockbox Code" formControlName="lock_box_code" class="form-control">
+          <input type="text" placeholder="Lockbox Code" formControlName="lock_box_code" class="form-control" #lock_box_code (keydown.space)="!lock_box_code.value?$event.preventDefault():null">
           <p class="text-danger"
-          *ngIf="userForm.controls['lock_box_code'].touched && userForm.controls['lock_box_code'].hasError('required')">
-          *Lockbox Code is required!
-        </p>
+            *ngIf="userForm.controls['lock_box_code'].touched && userForm.controls['lock_box_code'].hasError('required')">
+            *Lockbox Code is required!
+          </p>
+          <p class="text-danger"
+            *ngIf="userForm.controls['lock_box_code'].touched && userForm.controls['lock_box_code'].hasError('maxlength') ">
+            *Must have at most 10 character!
+          </p>
+          <p class="text-danger"
+            *ngIf="userForm.controls['lock_box_code'].touched && userForm.controls['lock_box_code'].hasError('minlength') && !(userForm.controls['lock_box_code'].hasError('required')) ">
+            *Must have at least 3 character!
+          </p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <label>Medical Information</label>
-        <textarea name="" id="" cols="10" rows="5" formControlName="medical_information"
+        <textarea name="" id="" cols="10" rows="5" formControlName="medical_information" #medical_information (keydown.space)="!medical_information.value?$event.preventDefault():null"
           class="form-control"></textarea>
-          <p class="text-danger"
+        <p class="text-danger"
           *ngIf="userForm.controls['medical_information'].touched && userForm.controls['medical_information'].hasError('required')">
-          *Lockbox Code is required!
+          *Medical Information is required!
         </p>
+        <p class="text-danger"
+            *ngIf="userForm.controls['medical_information'].touched && userForm.controls['medical_information'].hasError('maxlength') ">
+            *Must have at most 100 character!
+          </p>
+          <p class="text-danger"
+            *ngIf="userForm.controls['medical_information'].touched && userForm.controls['medical_information'].hasError('minlength') && !(userForm.controls['medical_information'].hasError('required'))">
+            *Must have at least 10 character!
+          </p>
       </div>
     </div>
     <div class="col-md-12 pl-0">
-      <button class="btn btn-primary px-4" (click)="addUser()">Save</button>
+      <button class="btn btn-primary px-4" (click)="addUser()">Update</button>
     </div>
   </form>
 </div>

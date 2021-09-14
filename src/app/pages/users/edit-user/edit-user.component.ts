@@ -40,14 +40,15 @@ export class EditUserComponent implements OnInit {
       address: ['', [Validators.required]],
       city: ['', [Validators.required]],
       gender: ['', [Validators.required]],
-      medical_information: ['', [Validators.required]],
+      medical_information: ['', [Validators.required,,Validators.maxLength(100), Validators.minLength(10)]],
       state: ['', [Validators.required]],
-      property_access_code: ['', [Validators.required]],
-      lock_box_code: ['', [Validators.required]],
+      property_access_code: ['', [Validators.required,Validators.maxLength(10), Validators.minLength(3)]],
+      lock_box_code: ['', [Validators.required,Validators.maxLength(10), Validators.minLength(3)]],
       zip_code: ['', [Validators.required]],
       cnfaddress: [''],
       phone: [''],
-      country_code: ['']
+      country_code: [''],
+      country:['']
     }, {
       validator: this.customvalidator.passwordMatchValidator("address", "cnfaddress")
     });
@@ -55,6 +56,7 @@ export class EditUserComponent implements OnInit {
       if (this.userForm.get('fullPhone')?.value) {
         this.userForm.get('phone')?.setValue(this.userForm.get('fullPhone')?.value.number);
         this.userForm.get('country_code')?.setValue(this.userForm.get('fullPhone')?.value.dialCode);
+        this.userForm.get('country')?.setValue(this.userForm.get('fullPhone')?.value.countryCode);
       }
     });
    }
@@ -69,20 +71,21 @@ export class EditUserComponent implements OnInit {
   addUser() {
     console.log(this.userForm);
     let body = {
-      "first_name": this.userForm.get('first_name').value,
-      "last_name": this.userForm.get('last_name').value,
+      "first_name": this.userForm.get('first_name').value.trim(),
+      "last_name": this.userForm.get('last_name').value.trim(),
       "dob": this.userForm.get('dob').value,
-      "email": this.userForm.get('email').value,
+      "email": this.userForm.get('email').value.trim(),
       "phone_no": this.userForm.get('fullPhone')?.value.number,
       "country_code": this.userForm.get('fullPhone')?.value.dialCode,
-      "address": this.userForm.get('address').value,
-      "city": this.userForm.get('city').value,
-      "state": this.userForm.get('state').value,
-      "property_access_code": this.userForm.get('property_access_code').value,
-      "lock_box_code": this.userForm.get('lock_box_code').value,
-      "medical_information": this.userForm.get('medical_information').value,
+      "address": this.userForm.get('address').value.trim(),
+      "city": this.userForm.get('city').value.trim(),
+      "state": this.userForm.get('state').value.trim(),
+      "property_access_code": this.userForm.get('property_access_code').value.trim(),
+      "lock_box_code": this.userForm.get('lock_box_code').value.trim(),
+      "medical_information": this.userForm.get('medical_information').value.trim(),
       "gender": this.userForm.get('gender').value,
-      "zip_code": this.userForm.get('zip_code').value,
+      "zip_code": this.userForm.get('zip_code').value.trim(),
+      "country":this.userForm.get('country').value
     }
     if (this.userForm.get('middle_name').value) {
       body['middle_name'] = this.userForm.get('middle_name').value
@@ -145,9 +148,7 @@ export class EditUserComponent implements OnInit {
       this.userForm.get('last_name').patchValue(res?.data?.last_name);
       this.userForm.get('dob').patchValue(moment(res?.data?.dob).format('YYYY-MM-DD'));
       this.userForm.get('email').patchValue(res?.data?.email);
-      this.userForm.get('country_code')?.patchValue(res?.data?.country_code);
-      this.userForm.get('fullPhone')?.patchValue({number:res?.data?.phone_no,dialCode:res?.data?.country_code});
-      this.userForm.get('phone')?.patchValue(res?.data?.phone_no);
+      this.userForm.get('fullPhone')?.patchValue({number:res?.data?.phone_no,internationalNumber:res.data.country_code+" "+res?.data?.phone_no,dialCode:res?.data?.country_code,countryCode:res?.data?.country});
       this.userForm.get('address').patchValue(res?.data?.address);
       this.userForm.get('cnfaddress').patchValue(res?.data?.address);
       this.userForm.get('city').patchValue(res?.data?.city);
@@ -159,7 +160,7 @@ export class EditUserComponent implements OnInit {
       this.userForm.get('zip_code').patchValue(res?.data?.zip_code);
       this.imageId=res?.data?.image?.id;
       this.text=res?.data?.image?.media_file_name;
-    })
+    });
   }
 
   //Location Dropdown
@@ -194,28 +195,5 @@ export class EditUserComponent implements OnInit {
       }
     });
   }
-
-  // Alphabatic text only
-  public Alphabet(event) {
-    const charCode = event.which ? event.which : event.keyCode;
-    if (
-      (charCode >= 65 && charCode <= 90) ||
-      (charCode >= 97 && charCode <= 122) ||
-      charCode == 32
-    ) {
-      return true;
-    }
-    return false;
-  }
-
-  // Allow Numberic input only
-  phoneNoInput(event) {
-    const charCode = event.which ? event.which : event.keyCode;
-    if ((charCode >= 48 && charCode <= 57) || charCode == 43) {
-      return true;
-    }
-    return false;
-  }
-
 
 }

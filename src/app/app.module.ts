@@ -38,6 +38,7 @@ import { AuthService } from './_services/auth.service';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { OtpComponent } from './_shared/otp/otp.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { ReadMoreComponent } from './_shared/read-more/read-more.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -56,6 +57,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         SidebarComponent,
         HeaderVerticalComponent,
         OtpComponent,
+        ReadMoreComponent,
     ], 
     imports: [
         CommonModule,
@@ -83,7 +85,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
             NgOtpInputModule,
             NgxIntlTelInputModule
     ],
-    entryComponents: [OtpComponent],
+    entryComponents: [OtpComponent,ReadMoreComponent],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

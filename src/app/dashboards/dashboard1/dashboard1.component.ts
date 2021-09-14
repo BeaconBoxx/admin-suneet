@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from '../../_services/common.service';
-
+import { Color, Label } from 'ng2-charts';
+import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   templateUrl: './dashboard1.component.html',
   styleUrls: ['./dashboard1.component.css']
@@ -13,7 +15,7 @@ export class Dashboard1Component implements OnInit{
   data2:any;
   data3:any;
   status: boolean = false;
-  constructor(private http:CommonService) {
+  constructor(private http:CommonService,private spinner: NgxSpinnerService) {
     this.subtitle = 'This is some text within a card block.';
   }
 
@@ -26,22 +28,25 @@ export class Dashboard1Component implements OnInit{
   }
 
   getUserData(type:any){
+    this.spinner.show();
     var params={
       'filter_type':type
     }
      this.http.post('admin/get-total-users-graph/',params).subscribe((res :any) => {
         if(res.code == 200){
-          this.userData=res.data;
-          this.data = this.userData.map(val => val.date);
+        this.userData=res.data;
+        this.data = this.userData.map(val => val.date);
         this.lineChartLabels = [...this.data];
         this.data1 = this.userData.map(val => val.count);
         this.lineChartData[0]['data'] = [...this.data1];
         this.status = true;
+        setTimeout(()=>{this.spinner.hide()},1000);
         }
      })
   }
 
   getEmergencyData(type:any){
+    this.spinner.show();
     var params={
       'filter_type':type
     }
@@ -53,14 +58,14 @@ export class Dashboard1Component implements OnInit{
         this.data3 = this.emergencyData.map(val => val.count);
         this.barChartData[0]['data'] = [...this.data3];
         this.status = true;
+        setTimeout(()=>{this.spinner.hide()},1000);
      }
   })
  }
-  // This is for the dashboar line chart
+  // This is for the dashboard line chart
   // lineChart
-  public lineChartData: Array<any> = [
-    { data: [50, 130, 80, 70, 180, 105, 250], label: 'Sales' },
-    // { data: [80, 100, 60, 200, 150, 100, 150], label: 'Earnings' }
+  public lineChartData:ChartDataSets[] = [
+    { data: [], label: 'Users' },
   ];
 
   public lineChartLabels: Array<any> = [];
@@ -86,7 +91,7 @@ export class Dashboard1Component implements OnInit{
     },
     lineTension: 10,
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: true
   };
   public lineChartColors: Array<any> = [
     {
@@ -108,7 +113,7 @@ export class Dashboard1Component implements OnInit{
       pointHoverBorderColor: 'rgba(38,218,210,0.5)'
     }
   ];
-  public lineChartLegend = false;
+  public lineChartLegend = true;
   public lineChartType = 'line';
 
   // Doughnut
@@ -126,32 +131,23 @@ export class Dashboard1Component implements OnInit{
   public pieChartData: number[] = [300, 500, 100];
   public pieChartType = 'pie';
 
-  // bar chart
-  public barChartData: Array<any> = [
-    { data: [1.1, 1.4, 1.1, 0.9, 2.1, 1, 0.3], label: 'Cost' }
-  ];
-  public barChartLabels: Array<any> = [
-  ];
-  public barChartOptions: any = {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    tooltips: {
-      enabled: false
-    },
-    
-    scales: {
-      
-      xAxes: [{
-        display: false,
-        
-      }],
-      yAxes: [{
-        display: false
-      }]
-    }
+
+
+
+// bar chart
+
+  barChartOptions: ChartOptions = {
+    responsive: true,
   };
+  barChartLabels: Label[] = [];
+  barChartType: ChartType = 'bar';
+  barChartLegend = true;
+  barChartPlugins = [];
+
+  barChartData: ChartDataSets[] = [
+    { data: [], label: 'Messages Sent' }
+  ];
+
   public barChartColors: Array<any> = [
     {
       backgroundColor: '#1a1d4a',
@@ -160,6 +156,4 @@ export class Dashboard1Component implements OnInit{
       hoverBorderColor: '#1a1d4a'
     }
   ];
-  public barChartLegend = false;
-  public barChartType = 'bar';
 }

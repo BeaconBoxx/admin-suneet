@@ -17,6 +17,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { AgmCoreModule } from '@agm/core';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import {NgxScrollToFirstInvalidModule} from '@ismaestro/ngx-scroll-to-first-invalid';
 @NgModule({
   declarations: [UsersComponent, EditUserComponent, ListUserComponent, AddUserComponent, DetailUserComponent, RequestListComponent, StudentListComponent],
   imports: [
@@ -34,7 +35,8 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
       libraries: ["places", "drawing", "geometry"],
         }),
         GooglePlaceModule,
-        NgxIntlTelInputModule
+        NgxIntlTelInputModule,
+        NgxScrollToFirstInvalidModule
   ]
 })
 export class UsersModule { }

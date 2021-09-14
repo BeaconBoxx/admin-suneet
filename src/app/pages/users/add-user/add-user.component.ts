@@ -33,19 +33,20 @@ export class AddUserComponent implements OnInit {
       last_name: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(3), Validators.pattern("[a-zA-Z ]*")]],
       dob: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      fullPhone: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]],
+      fullPhone: [{}, [Validators.required, Validators.minLength(7), Validators.maxLength(15)]],
       address: ['', [Validators.required]],
       city: ['', [Validators.required]],
       gender: ['', [Validators.required]],
-      medical_information: ['', [Validators.required]],
+      medical_information: ['', [Validators.required,Validators.maxLength(100), Validators.minLength(10)]],
       state: ['', [Validators.required]],
-      property_access_code: ['', [Validators.required]],
-      lock_box_code: ['', [Validators.required]],
+      property_access_code: ['', [Validators.required,Validators.maxLength(10), Validators.minLength(3)]],
+      lock_box_code: ['', [Validators.required,Validators.maxLength(10), Validators.minLength(3)]],
       zip_code: ['', [Validators.required]],
       cnfaddress: [''],
       phone: [''],
       country_code: [''],
-      password: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]]
+      password: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]],
+      country:['']
     }, {
       validator: this.customvalidator.passwordMatchValidator("address", "cnfaddress")
     });
@@ -53,6 +54,7 @@ export class AddUserComponent implements OnInit {
       if (this.userForm.get('fullPhone')?.value) {
         this.userForm.get('phone')?.setValue(this.userForm.get('fullPhone')?.value.number);
         this.userForm.get('country_code')?.setValue(this.userForm.get('fullPhone')?.value.dialCode);
+        this.userForm.get('country')?.setValue(this.userForm.get('fullPhone')?.value.countryCode);
       }
     });
   }
@@ -63,21 +65,22 @@ export class AddUserComponent implements OnInit {
   addUser() {
     console.log(this.userForm);
     let body = {
-      "first_name": this.userForm.get('first_name').value,
-      "last_name": this.userForm.get('last_name').value,
+      "first_name": this.userForm.get('first_name').value.trim(),
+      "last_name": this.userForm.get('last_name').value.trim(),
       "dob": this.userForm.get('dob').value,
-      "email": this.userForm.get('email').value,
+      "email": this.userForm.get('email').value.trim(),
       "phone_no": this.userForm.get('fullPhone')?.value.number,
       "country_code": this.userForm.get('fullPhone')?.value.dialCode,
-      "address": this.userForm.get('address').value,
-      "city": this.userForm.get('city').value,
-      "state": this.userForm.get('state').value,
-      "property_access_code": this.userForm.get('property_access_code').value,
-      "lock_box_code": this.userForm.get('lock_box_code').value,
-      "medical_information": this.userForm.get('medical_information').value,
+      "address": this.userForm.get('address').value.trim(),
+      "city": this.userForm.get('city').value.trim(),
+      "state": this.userForm.get('state').value.trim(),
+      "property_access_code": this.userForm.get('property_access_code').value.trim(),
+      "lock_box_code": this.userForm.get('lock_box_code').value.trim(),
+      "medical_information": this.userForm.get('medical_information').value.trim(),
       "gender": this.userForm.get('gender').value,
-      "password": this.userForm.get('password').value,
-      "zip_code": this.userForm.get('zip_code').value,
+      "password": this.userForm.get('password').value.trim(),
+      "zip_code": this.userForm.get('zip_code').value.trim(),
+      "country":this.userForm.get('country').value
     }
     if (this.userForm.get('middle_name').value) {
       body['middle_name'] = this.userForm.get('middle_name').value
@@ -162,30 +165,5 @@ export class AddUserComponent implements OnInit {
       }
     });
   }
-
-  // Alphabatic text only
-  public Alphabet(event) {
-    const charCode = event.which ? event.which : event.keyCode;
-    if (
-      (charCode >= 65 && charCode <= 90) ||
-      (charCode >= 97 && charCode <= 122) ||
-      charCode == 32
-    ) {
-      return true;
-    }
-    return false;
-  }
-
-  // Allow Numberic input only
-  phoneNoInput(event) {
-    const charCode = event.which ? event.which : event.keyCode;
-    if ((charCode >= 48 && charCode <= 57) || charCode == 43) {
-      return true;
-    }
-    return false;
-  }
-
-
-
 
 }

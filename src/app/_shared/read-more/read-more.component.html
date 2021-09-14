@@ -1,0 +1,27 @@
+<div class="modal-header">
+	<h4 class="modal-title pull-left">{{title}}</h4>
+	<button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<div *ngIf="message.length>0" class="modal-body text-center">
+	<span>{{message}}</span>
+</div>
+<div *ngIf="items.length>0" class="modal-body">
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>SR No.</th>
+					<th>NAME</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let item of items;let i=index">
+					<td>{{i+1}}</td>
+					<td>{{item.full_name}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

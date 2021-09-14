@@ -14,11 +14,11 @@
       <div class="col-md-6">
         <div class="card-body p-3 bg-light border h-100">
           <div class=" text-center">
-            <img [src]="items?.image?.media_file_url" class="rounded-circle" width="150" />
+            <img [src]="items?.image?.media_file_url || 'assets/images/users/defaultuser.jpg'" class="rounded-circle" width="150" height="150" />
           </div>
           <ul class="list-block pl-0 ">
             <!-- <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Name:</span> Hanna Gover</li> -->
-            <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Phone No. :</span> <a
+            <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Phone No :</span> <a
                 href="tel:+919564345452">{{items?.country_code}} {{items?.phone_no}}</a>
             </li>
             <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Email:</span> <a
@@ -86,137 +86,32 @@
               <p class="font-weight-600 d-block mb-0">Medical Information</p>
               <p>{{items?.medical_information}}</p>
             </div>
-            <!-- <div class="col-md-6">            
-              <div class="card">
-                <div class="card-body card-box ">
-                  <div class="d-flex align-items-center">
-                    <div class="m-r-10">
-                      <span class="btn btn-circle btn-sm  btn-info p-1">
-                        <i class="mdi mdi-account text-white font-16"></i>
-                      </span>
-                    </div>
-                    <div>
-                      Most Used Section
-                      <h5 class=" mb-0">Fastfood</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>            
-            </div>
-           
-            <div class="col-md-6">            
-              <div class="card">
-                <div class="card-body card-box ">
-                  <div class="d-flex align-items-center">
-                    <div class="m-r-10">
-                      <span class="btn btn-circle btn-sm  bg-danger p-1">
-                        <i class="mdi mdi-clock text-white font-16"></i>
-                      </span>
-                    </div>
-                    <div>
-                      <p class="mb-0">Time Spend</p>
-                      <h5 class="m-b-0">30/Min</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>            
-            </div>
-           
-            <div class="col-md-6">            
-              <div class="card ">
-                <div class="card-body card-box ">
-                  <div class="d-flex align-items-center">
-                    <div class="m-r-10">
-                      <span class="btn btn-circle btn-sm  bg-danger p-1">
-                        <i class="mdi mdi-ticket-confirmation text-white font-16"></i>
-                      </span>
-                    </div>
-                    <div>
-                      <p class="mb-0">Most used coupon</p>
-                      <h5 class="m-b-0">BLACK20</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>            -->
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="items?.emergency_contacts.length>0">
   <div class="col-md-12">
     <h4>Emergency Contact</h4>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3" *ngFor="let item of items.emergency_contacts">
     <div class="contact-detail">
       <div class="row">
-        <div class="col-md-3 col-lg-3">
+        <!-- <div class="col-md-3 col-lg-3">
           <figure class=""><img src="assets/images/users/1.jpg" class="img-fluid"></figure>
-        </div>
-        <div class="col-md-8">
-          <h5 class="text-white">Andrew</h5>
-          <p class="mb-0"><span>Primary:</span>+91-986532321</p>
-          <p class="mb-0"><span>Secondary:</span>+91-986532321</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="contact-detail">
-      <div class="row">
-        <div class="col-md-3 col-lg-3">
-          <figure class=""><img src="assets/images/users/1.jpg" class="img-fluid"></figure>
-        </div>
-        <div class="col-md-8">
-          <h5 class="text-white">Andrew</h5>
-          <p class="mb-0"><span>Primary:</span>+91-986532321</p>
-          <p class="mb-0"><span>Secondary:</span>+91-986532321</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="contact-detail">
-      <div class="row">
-        <div class="col-md-3 col-lg-3">
-          <figure class=""><img src="assets/images/users/1.jpg" class="img-fluid"></figure>
-        </div>
-        <div class="col-md-8">
-          <h5 class="text-white">Andrew</h5>
-          <p class="mb-0"><span>Primary:</span>+91-986532321</p>
-          <p class="mb-0"><span>Secondary:</span>+91-986532321</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="contact-detail">
-      <div class="row">
-        <div class="col-md-3 col-lg-3">
-          <figure class=""><img src="assets/images/users/1.jpg" class="img-fluid"></figure>
-        </div>
-        <div class="col-md-8">
-          <h5 class="text-white">Andrew</h5>
-          <p class="mb-0"><span>Primary:</span>+91-986532321</p>
-          <p class="mb-0"><span>Secondary:</span>+91-986532321</p>
+        </div> -->
+        <div class="col-md-12">
+          <h5 class="text-white"><span>Name: </span>{{item?.contact_name}}</h5>
+          <p class="mb-0"><span>Phone No: </span>{{item?.contact_number}}</p>
+          <!-- <p class="mb-0"><span>Secondary:</span>+91-986532321</p> -->
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- <div class="card">
-  <div class="card-body">   
-    <mat-tab-group>
-      <mat-tab label="Student"> 
-      <app-student-list></app-student-list>
-    </mat-tab>
-      <mat-tab label="Comments"><app-request-list></app-request-list> </mat-tab>
-    </mat-tab-group>
 
-</div>
-</div> -->
 <div class="row mt-3">
   <div class="col-md-12">
     <h4>Connected Devices</h4>

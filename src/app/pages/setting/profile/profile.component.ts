@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
       phone_no:['',[Validators.required,Validators.minLength(7),Validators.maxLength(15)]],
       email:['',[Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       address:['',[Validators.required]],
-      cnfaddress:['']
+      cnfaddress:['',[Validators.required]]
     },{
       validator:this.customvalidator.passwordMatchValidator("address","cnfaddress")
      });

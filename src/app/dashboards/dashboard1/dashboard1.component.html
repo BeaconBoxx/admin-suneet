@@ -55,7 +55,7 @@
               </div>
             </div>
           </div>
-          <div style="height:350px;">
+          <div style="height:350px;" *ngIf="barChartLabels && barChartLabels.length>0">
             <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
               [colors]="barChartColors" [legend]="barChartLegend" [chartType]="barChartType"> </canvas>
           </div>

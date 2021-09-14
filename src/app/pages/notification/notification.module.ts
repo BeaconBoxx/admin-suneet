@@ -10,8 +10,12 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotificationTableComponent } from './notification-table/notification-table.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgxScrollToFirstInvalidModule } from '@ismaestro/ngx-scroll-to-first-invalid';
 @NgModule({
-  declarations: [NotificationComponent, NotificatonListComponent, AddNotificationComponent],
+  declarations: [NotificationComponent, NotificatonListComponent, AddNotificationComponent, NotificationTableComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -22,7 +26,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSlideToggleModule,
     MatInputModule,
     NgbModule,
-   
+    MatTabsModule,
+    MatPaginatorModule,
+    NgxScrollToFirstInvalidModule
   ]
 })
 export class NotificationModule { }

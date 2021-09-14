@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Routes } from "@angular/router";
 import { NgForm, FormGroup, FormControl } from "@angular/forms";
 import { FormBuilder, Validators } from "@angular/forms";
+import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import Swal from "sweetalert2";
 import { CommonService } from '../../../_services/common.service';
 import { ToastrService } from 'ngx-toastr';
@@ -36,6 +37,11 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+  }
+  
+   //Location Dropdown
+   public AddressChange(address: any) {
+    this.contactForm.get('address').patchValue(address.formatted_address);
   }
 
   getData() {
@@ -84,13 +90,6 @@ export class ContactComponent implements OnInit {
       return true;
     }
     return false;
-  }
-
-  //Address AutoComplete
-  public AddressChange(address: any) {
-    this.address = address.formatted_address;
-    // this.lat = address.geometry.location.lat();
-    // this.lng = address.geometry.location.lng();
   }
 
   public errorHandling = (control: string, error: string) => {

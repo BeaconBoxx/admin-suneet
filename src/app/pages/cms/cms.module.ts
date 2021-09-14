@@ -12,7 +12,9 @@ import { QuillModule } from 'ngx-quill';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatError ,MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { AgmCoreModule } from '@agm/core';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { NgxSpinnerModule } from "ngx-spinner";
 @NgModule({
   declarations: [CmsComponent, AboutComponent, LegalComponent, PrivacyComponent, FaqComponent, ContactComponent],
   imports: [
@@ -23,8 +25,13 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
-
+    MatInputModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyBUb3jDWJQ28vDJhuQZxkC0NXr_zycm8D0",
+      libraries: ["places", "drawing", "geometry"],
+        }),
+        GooglePlaceModule,
+        NgxSpinnerModule
   ]
 })
 export class CmsModule { }
