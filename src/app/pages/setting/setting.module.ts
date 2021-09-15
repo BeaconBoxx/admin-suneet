@@ -7,7 +7,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from '@agm/core';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
-import { FormModule } from '../../form/forms.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { ReactiveFormsModule } from '@angular/forms';
       libraries: ["places", "drawing", "geometry"],
         }),
         GooglePlaceModule,
-        FormModule,
         ReactiveFormsModule
   ]
 })

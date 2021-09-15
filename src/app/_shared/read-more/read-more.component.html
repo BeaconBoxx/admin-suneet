@@ -5,7 +5,9 @@
 	</button>
 </div>
 <div *ngIf="message.length>0" class="modal-body text-center">
-	<span>{{message}}</span>
+	<textarea class="form-control" rows=5>
+	{{message}}
+	</textarea>
 </div>
 <div *ngIf="items.length>0" class="modal-body">
 	<div class="table-responsive">
