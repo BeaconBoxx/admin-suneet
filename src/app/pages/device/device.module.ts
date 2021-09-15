@@ -15,6 +15,7 @@ import { EditTeacherDeviceComponent } from './device-list/edit-teacher-device/ed
 import { AddStudentDeviceComponent } from './device-list/add-student-device/add-student-device.component';
 import { EditStudentDeviceComponent } from './device-list/edit-student-device/edit-student-device.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [DeviceComponent, DeviceAddComponent, DeviceEditComponent, DeviceListComponent, TeacherDeviceComponent, StudentDeviceComponent, AddTeacherDeviceComponent, EditTeacherDeviceComponent, AddStudentDeviceComponent, EditStudentDeviceComponent],
   imports: [
@@ -23,7 +24,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTabsModule,
     MatSlideToggleModule,
     NgbModule,
-    MatDialogModule
-  ]
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  entryComponents: [AddStudentDeviceComponent,EditStudentDeviceComponent],
 })
 export class DeviceModule { }

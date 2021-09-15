@@ -1416,11 +1416,13 @@
                 if (res.code == 200) {
                   setTimeout(function () {
                     _this2.spinner.hide();
-                  }, 2000);
+                  }, 1000);
 
                   _this2.toastr.success(res.message, "Success", {
                     timeOut: 2000
                   });
+
+                  _this2.notificationForm.reset();
                 } else {
                   _this2.toastr.error(res.message, "Error", {
                     timeOut: 2000

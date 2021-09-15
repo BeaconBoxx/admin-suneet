@@ -316,8 +316,9 @@ class AddNotificationComponent {
             console.log(body);
             this.commn_.post("admin/create-notifications/", body).subscribe(res => {
                 if (res.code == 200) {
-                    setTimeout(() => { this.spinner.hide(); }, 2000);
+                    setTimeout(() => { this.spinner.hide(); }, 1000);
                     this.toastr.success(res.message, "Success", { timeOut: 2000 });
+                    this.notificationForm.reset();
                 }
                 else {
                     this.toastr.error(res.message, "Error", { timeOut: 2000 });

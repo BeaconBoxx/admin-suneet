@@ -42,6 +42,7 @@ export class ContactComponent implements OnInit {
    //Location Dropdown
    public AddressChange(address: any) {
     this.contactForm.get('address').patchValue(address.formatted_address);
+    this.address=address.formatted_address;
   }
 
   getData() {

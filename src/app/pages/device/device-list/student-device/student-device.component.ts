@@ -21,23 +21,7 @@ export class StudentDeviceComponent implements OnInit {
       emi:"FSW4545FEDSE",
       version:"6.8.8",
       action:"1"
-    },
-    {
-      no:1,
-      name:"Apple Watch",
-      id:"A5123",
-      emi:"FSW4545FEDSE",
-      version:"6.8.8",
-      action:"1"
-    },
-    {
-      no:1,
-      name:"Apple Watch",
-      id:"A5123",
-      emi:"FSW4545FEDSE",
-      version:"6.8.8",
-      action:"1"
-    }  
+    }
   ];
   
     addDialog() {

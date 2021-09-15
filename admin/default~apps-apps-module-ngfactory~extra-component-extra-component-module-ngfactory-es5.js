@@ -5370,15 +5370,15 @@
     },
 
     /***/
-    "./node_modules/angular-calendar/node_modules/tslib/tslib.es6.js":
-    /*!***********************************************************************!*\
-      !*** ./node_modules/angular-calendar/node_modules/tslib/tslib.es6.js ***!
-      \***********************************************************************/
+    "./node_modules/@iplab/ngx-file-upload/node_modules/tslib/tslib.es6.js":
+    /*!*****************************************************************************!*\
+      !*** ./node_modules/@iplab/ngx-file-upload/node_modules/tslib/tslib.es6.js ***!
+      \*****************************************************************************/
 
     /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 
     /***/
-    function node_modulesAngularCalendarNode_modulesTslibTslibEs6Js(module, __webpack_exports__, __webpack_require__) {
+    function node_modulesIplabNgxFileUploadNode_modulesTslibTslibEs6Js(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);

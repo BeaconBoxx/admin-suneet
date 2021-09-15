@@ -1629,6 +1629,7 @@
           key: "AddressChange",
           value: function AddressChange(address) {
             this.contactForm.get('address').patchValue(address.formatted_address);
+            this.address = address.formatted_address;
           }
         }, {
           key: "getData",

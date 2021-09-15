@@ -3507,10 +3507,10 @@ DragDropModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInj
 
 /***/ }),
 
-/***/ "./node_modules/angular-calendar/node_modules/tslib/tslib.es6.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/angular-calendar/node_modules/tslib/tslib.es6.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/@iplab/ngx-file-upload/node_modules/tslib/tslib.es6.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@iplab/ngx-file-upload/node_modules/tslib/tslib.es6.js ***!
+  \*****************************************************************************/
 /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

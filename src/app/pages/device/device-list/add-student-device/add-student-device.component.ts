@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonService } from '../../../../_services/common.service';
 
 @Component({
   selector: 'app-add-student-device',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-student-device.component.css']
 })
 export class AddStudentDeviceComponent implements OnInit {
-
-  constructor() { }
+  deviceForm:FormGroup;
+  constructor(private fb:FormBuilder,private commn_:CommonService) {
+    this.deviceForm=this.fb.group({
+    device_name:['',[Validators.required]],
+    model_number:['',[Validators.required]],
+    serial_number:['',[Validators.required]],
+    version:['',[Validators.required]]
+    });
+   }
 
   ngOnInit(): void {
   }
+ 
+  //add device
+  addDevice()
+  {
 
+  }
 }

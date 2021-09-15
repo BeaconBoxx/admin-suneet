@@ -606,6 +606,7 @@ class ContactComponent {
     //Location Dropdown
     AddressChange(address) {
         this.contactForm.get('address').patchValue(address.formatted_address);
+        this.address = address.formatted_address;
     }
     getData() {
         this.http.get('cms/get-cms/').subscribe((res) => {

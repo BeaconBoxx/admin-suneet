@@ -914,7 +914,7 @@ var ɵsNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵccf"]("mwl-cale
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/angular-calendar/node_modules/tslib/tslib.es6.js");
+var tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/@iplab/ngx-file-upload/node_modules/tslib/tslib.es6.js");
 var date_fns_1 = __webpack_require__(/*! calendar-utils/date-adapters/date-fns */ "./node_modules/calendar-utils/date-adapters/date-fns/index.js");
 var date_fns_2 = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/index.js");
 function adapterFactory() {
@@ -984,7 +984,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵq", function() { return CalendarWeekViewEventComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return CalendarWeekViewHourSegmentComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵs", function() { return CalendarWeekViewCurrentTimeMarkerComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/angular-calendar/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/@iplab/ngx-file-upload/node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var positioning__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! positioning */ "./node_modules/positioning/dist/entry.js");

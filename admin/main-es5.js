@@ -108,6 +108,77 @@
     },
 
     /***/
+    "./src/app/_gurads/logged.guard.ts":
+    /*!*****************************************!*\
+      !*** ./src/app/_gurads/logged.guard.ts ***!
+      \*****************************************/
+
+    /*! exports provided: LoggedGuard */
+
+    /***/
+    function srcApp_guradsLoggedGuardTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "LoggedGuard", function () {
+        return LoggedGuard;
+      });
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/fesm2015/router.js");
+      /* harmony import */
+
+
+      var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! ../../environments/environment */
+      "./src/environments/environment.ts");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/fesm2015/core.js");
+
+      var LoggedGuard = /*#__PURE__*/function () {
+        function LoggedGuard(router) {
+          _classCallCheck(this, LoggedGuard);
+
+          this.router = router;
+        }
+
+        _createClass(LoggedGuard, [{
+          key: "canActivate",
+          value: function canActivate() {
+            var userInfo = sessionStorage.getItem(_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].storageKey);
+
+            if (userInfo == null) {
+              return true;
+            } else {
+              this.router.navigate(['/dashboard/dashboard']); // Notify.info('Please login to continue.');
+            }
+          }
+        }]);
+
+        return LoggedGuard;
+      }();
+
+      LoggedGuard.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+        factory: function LoggedGuard_Factory() {
+          return new LoggedGuard(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_0__["Router"]));
+        },
+        token: LoggedGuard,
+        providedIn: "root"
+      });
+      /***/
+    },
+
+    /***/
     "./src/app/_helpers/error.interceptor.ts":
     /*!***********************************************!*\
       !*** ./src/app/_helpers/error.interceptor.ts ***!
@@ -1259,25 +1330,31 @@
       /* harmony import */
 
 
-      var _gurads_auth_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      var _gurads_logged_guard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! ./_gurads/logged.guard */
+      "./src/app/_gurads/logged.guard.ts");
+      /* harmony import */
+
+
+      var _gurads_auth_guard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./_gurads/auth.guard */
       "./src/app/_gurads/auth.guard.ts");
       /* harmony import */
 
 
-      var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/router */
       "./node_modules/@angular/router/fesm2015/router.js");
       /* harmony import */
 
 
-      var _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./layouts/full/full.component */
       "./src/app/layouts/full/full.component.ts");
       /* harmony import */
 
 
-      var _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      var _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./layouts/blank/blank.component */
       "./src/app/layouts/blank/blank.component.ts");
 
@@ -1536,8 +1613,8 @@
 
       var routes = [{
         path: '',
-        component: _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_2__["FullComponent"],
-        canActivate: [_gurads_auth_guard__WEBPACK_IMPORTED_MODULE_0__["AuthGuard"]],
+        component: _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_3__["FullComponent"],
+        canActivate: [_gurads_auth_guard__WEBPACK_IMPORTED_MODULE_1__["AuthGuard"]],
         children: [{
           path: '',
           redirectTo: '/dashboard/dashboard',
@@ -1626,7 +1703,8 @@
         }]
       }, {
         path: '',
-        component: _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_3__["BlankComponent"],
+        component: _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_4__["BlankComponent"],
+        canActivate: [_gurads_logged_guard__WEBPACK_IMPORTED_MODULE_0__["LoggedGuard"]],
         children: [{
           path: 'authentication',
           loadChildren: ɵ27
@@ -2087,55 +2165,61 @@
       /* harmony import */
 
 
-      var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(
+      var _gurads_logged_guard__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(
+      /*! ./_gurads/logged.guard */
+      "./src/app/_gurads/logged.guard.ts");
+      /* harmony import */
+
+
+      var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(
       /*! @angular/cdk/platform */
       "./node_modules/@angular/cdk/fesm2015/platform.js");
       /* harmony import */
 
 
-      var _angular_cdk_text_field__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(
+      var _angular_cdk_text_field__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(
       /*! @angular/cdk/text-field */
       "./node_modules/@angular/cdk/fesm2015/text-field.js");
       /* harmony import */
 
 
-      var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(
+      var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(
       /*! @angular/cdk/bidi */
       "./node_modules/@angular/cdk/fesm2015/bidi.js");
       /* harmony import */
 
 
-      var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(
+      var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(
       /*! @angular/cdk/a11y */
       "./node_modules/@angular/cdk/fesm2015/a11y.js");
       /* harmony import */
 
 
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(
       /*! @angular/material/form-field */
       "./node_modules/@angular/material/fesm2015/form-field.js");
       /* harmony import */
 
 
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(
       /*! @angular/material/input */
       "./node_modules/@angular/material/fesm2015/input.js");
       /* harmony import */
 
 
-      var _angular_material_slider__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(
+      var _angular_material_slider__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(
       /*! @angular/material/slider */
       "./node_modules/@angular/material/fesm2015/slider.js");
       /* harmony import */
 
 
-      var ngx_spinner__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(
+      var ngx_spinner__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(
       /*! ngx-spinner */
       "./node_modules/ngx-spinner/fesm2015/ngx-spinner.js");
       /* harmony import */
 
 
-      var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(
+      var ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(
       /*! ngx-intl-tel-input */
       "./node_modules/ngx-intl-tel-input/fesm2015/ngx-intl-tel-input.js");
       /**
@@ -2251,6 +2335,7 @@
           }, {
             path: "",
             component: _layouts_blank_blank_component__WEBPACK_IMPORTED_MODULE_40__["BlankComponent"],
+            canActivate: [_gurads_logged_guard__WEBPACK_IMPORTED_MODULE_41__["LoggedGuard"]],
             children: [{
               path: "authentication",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ27"]
@@ -2259,7 +2344,7 @@
             path: "**",
             redirectTo: "/authentication/404"
           }]];
-        }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_23__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["ɵangular_packages_router_router_f"], [_angular_router__WEBPACK_IMPORTED_MODULE_23__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["ChildrenOutletContexts"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["ROUTES"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["ROUTER_CONFIGURATION"], [2, _angular_router__WEBPACK_IMPORTED_MODULE_23__["UrlHandlingStrategy"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouteReuseStrategy"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"], [[2, _angular_router__WEBPACK_IMPORTED_MODULE_23__["ɵangular_packages_router_router_a"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_23__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["AppRoutingModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["AppRoutingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _agm_core__WEBPACK_IMPORTED_MODULE_32__["AgmCoreModule"], _agm_core__WEBPACK_IMPORTED_MODULE_32__["AgmCoreModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_41__["PlatformModule"], _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_41__["PlatformModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_text_field__WEBPACK_IMPORTED_MODULE_42__["TextFieldModule"], _angular_cdk_text_field__WEBPACK_IMPORTED_MODULE_42__["TextFieldModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_43__["BidiModule"], _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_43__["BidiModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_core__WEBPACK_IMPORTED_MODULE_26__["MatCommonModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_26__["MatCommonModule"], [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_44__["HighContrastModeDetector"], [2, _angular_material_core__WEBPACK_IMPORTED_MODULE_26__["MATERIAL_SANITY_CHECKS"]], [2, _angular_common__WEBPACK_IMPORTED_MODULE_13__["DOCUMENT"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_25__["ObserversModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_25__["ObserversModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_45__["MatFormFieldModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_45__["MatFormFieldModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_input__WEBPACK_IMPORTED_MODULE_46__["MatInputModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_46__["MatInputModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_slider__WEBPACK_IMPORTED_MODULE_47__["MatSliderModule"], _angular_material_slider__WEBPACK_IMPORTED_MODULE_47__["MatSliderModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ngx_spinner__WEBPACK_IMPORTED_MODULE_48__["NgxSpinnerModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_48__["NgxSpinnerModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ng_otp_input__WEBPACK_IMPORTED_MODULE_27__["NgOtpInputModule"], ng_otp_input__WEBPACK_IMPORTED_MODULE_27__["NgOtpInputModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_30__["BsDropdownModule"], ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_30__["BsDropdownModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_49__["NgxIntlTelInputModule"], ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_49__["NgxIntlTelInputModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_CURRENCY_CODE"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_u"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵINJECTOR_SCOPE"], "root", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_16__["ANIMATION_MODULE_TYPE"], "BrowserAnimations", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_common_http_http_e"], "XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_common_http_http_f"], "X-XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, ngx_toastr__WEBPACK_IMPORTED_MODULE_22__["TOAST_CONFIG"], {
+        }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1024, _angular_router__WEBPACK_IMPORTED_MODULE_23__["Router"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["ɵangular_packages_router_router_f"], [_angular_router__WEBPACK_IMPORTED_MODULE_23__["UrlSerializer"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["ChildrenOutletContexts"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["Location"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleFactoryLoader"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Compiler"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["ROUTES"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["ROUTER_CONFIGURATION"], [2, _angular_router__WEBPACK_IMPORTED_MODULE_23__["UrlHandlingStrategy"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouteReuseStrategy"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"], _angular_router__WEBPACK_IMPORTED_MODULE_23__["RouterModule"], [[2, _angular_router__WEBPACK_IMPORTED_MODULE_23__["ɵangular_packages_router_router_a"]], [2, _angular_router__WEBPACK_IMPORTED_MODULE_23__["Router"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["AppRoutingModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["AppRoutingModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _agm_core__WEBPACK_IMPORTED_MODULE_32__["AgmCoreModule"], _agm_core__WEBPACK_IMPORTED_MODULE_32__["AgmCoreModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_18__["ReactiveFormsModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_42__["PlatformModule"], _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_42__["PlatformModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_text_field__WEBPACK_IMPORTED_MODULE_43__["TextFieldModule"], _angular_cdk_text_field__WEBPACK_IMPORTED_MODULE_43__["TextFieldModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_44__["BidiModule"], _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_44__["BidiModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_core__WEBPACK_IMPORTED_MODULE_26__["MatCommonModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_26__["MatCommonModule"], [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_45__["HighContrastModeDetector"], [2, _angular_material_core__WEBPACK_IMPORTED_MODULE_26__["MATERIAL_SANITY_CHECKS"]], [2, _angular_common__WEBPACK_IMPORTED_MODULE_13__["DOCUMENT"]]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_25__["ObserversModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_25__["ObserversModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_46__["MatFormFieldModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_46__["MatFormFieldModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_input__WEBPACK_IMPORTED_MODULE_47__["MatInputModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_47__["MatInputModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_material_slider__WEBPACK_IMPORTED_MODULE_48__["MatSliderModule"], _angular_material_slider__WEBPACK_IMPORTED_MODULE_48__["MatSliderModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ngx_spinner__WEBPACK_IMPORTED_MODULE_49__["NgxSpinnerModule"], ngx_spinner__WEBPACK_IMPORTED_MODULE_49__["NgxSpinnerModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ng_otp_input__WEBPACK_IMPORTED_MODULE_27__["NgOtpInputModule"], ng_otp_input__WEBPACK_IMPORTED_MODULE_27__["NgOtpInputModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_30__["BsDropdownModule"], ngx_bootstrap_dropdown__WEBPACK_IMPORTED_MODULE_30__["BsDropdownModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_50__["NgxIntlTelInputModule"], ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_50__["NgxIntlTelInputModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], _app_module__WEBPACK_IMPORTED_MODULE_1__["AppModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_CURRENCY_CODE"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵangular_packages_core_core_u"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵINJECTOR_SCOPE"], "root", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_16__["ANIMATION_MODULE_TYPE"], "BrowserAnimations", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_common_http_http_e"], "XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _angular_common_http__WEBPACK_IMPORTED_MODULE_19__["ɵangular_packages_common_http_http_f"], "X-XSRF-TOKEN", []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, ngx_toastr__WEBPACK_IMPORTED_MODULE_22__["TOAST_CONFIG"], {
           "default": ngx_toastr__WEBPACK_IMPORTED_MODULE_22__["DefaultGlobalConfig"],
           config: {}
         }, []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](256, _agm_core__WEBPACK_IMPORTED_MODULE_32__["LAZY_MAPS_API_CONFIG"], {

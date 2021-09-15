@@ -1,3 +1,4 @@
+import { LoggedGuard } from './_gurads/logged.guard';
 import { AuthGuard } from './_gurads/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -43,10 +44,6 @@ export const routes: Routes = [
             {
                 path: 'apps/email',
                 loadChildren: () => import('./apps/email/mail.module').then(m => m.MailModule)
-            },
-            {
-                path: 'sample-pages',
-                loadChildren: () => import('./sample-pages/sample-pages.module').then(m => m.SamplePagesModule)
             },
             {
                 path: 'users',
@@ -113,11 +110,13 @@ export const routes: Routes = [
     {
         path: '',
         component: BlankComponent,
+        canActivate : [LoggedGuard],
         children: [
             {
                 path: 'authentication',
                 loadChildren:
-                    () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
+                    () => import('./authentication/authentication.module').then(m => m.AuthenticationModule),
+                   
             }
         ]
     },
