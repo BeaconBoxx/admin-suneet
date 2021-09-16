@@ -1014,7 +1014,7 @@
       });
 
       function View_ReadMoreComponent_1(_l) {
-        return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "div", [["class", "modal-body text-center"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 1, "span", [], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](2, null, ["", ""]))], null, function (_ck, _v) {
+        return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "div", [["class", "modal-body text-center"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 1, "textarea", [["class", "form-control"], ["rows", "5"]], null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](2, null, ["\t", "\n\t"]))], null, function (_ck, _v) {
           var _co = _v.component;
           var currVal_0 = _co.message;
 
@@ -1140,7 +1140,7 @@
       !*** ./src/app/app-routing.module.ts ***!
       \***************************************/
 
-    /*! exports provided: routes, AppRoutingModule, ɵ0, ɵ1, ɵ2, ɵ3, ɵ4, ɵ5, ɵ6, ɵ7, ɵ8, ɵ9, ɵ10, ɵ11, ɵ12, ɵ13, ɵ14, ɵ15, ɵ16, ɵ17, ɵ18, ɵ19, ɵ20, ɵ21, ɵ22, ɵ23, ɵ24, ɵ25, ɵ26, ɵ27 */
+    /*! exports provided: routes, AppRoutingModule, ɵ0, ɵ1, ɵ2, ɵ3, ɵ4, ɵ5, ɵ6, ɵ7, ɵ8, ɵ9, ɵ10, ɵ11, ɵ12, ɵ13, ɵ14, ɵ15, ɵ16, ɵ17, ɵ18 */
 
     /***/
     function srcAppAppRoutingModuleTs(module, __webpack_exports__, __webpack_require__) {
@@ -1273,60 +1273,6 @@
       __webpack_require__.d(__webpack_exports__, "ɵ18", function () {
         return ɵ18;
       });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ19", function () {
-        return ɵ19;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ20", function () {
-        return ɵ20;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ21", function () {
-        return ɵ21;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ22", function () {
-        return ɵ22;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ23", function () {
-        return ɵ23;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ24", function () {
-        return ɵ24;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ25", function () {
-        return ɵ25;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ26", function () {
-        return ɵ26;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "ɵ27", function () {
-        return ɵ27;
-      });
       /* harmony import */
 
 
@@ -1361,49 +1307,13 @@
       var ɵ0 = function ɵ0() {
         return Promise.all(
         /*! import() | dashboards-dashboard-module-ngfactory */
-        [__webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory~pages-others-others-mod~4893ee9e"), __webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory~pages-others-others-mod~dfd80987"), __webpack_require__.e("default~dashboards-dashboard-module-ngfactory~table-tables-module-ngfactory"), __webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory"), __webpack_require__.e("dashboards-dashboard-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~dashboards-dashboard-module-ngfactory~pages-others-others-module-ngfactory~pages-users-users~29afcd17"), __webpack_require__.e("default~dashboards-dashboard-module-ngfactory~pages-others-others-module-ngfactory"), __webpack_require__.e("default~dashboards-dashboard-module-ngfactory~table-tables-module-ngfactory"), __webpack_require__.e("dashboards-dashboard-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./dashboards/dashboard.module.ngfactory */
         "./src/app/dashboards/dashboard.module.ngfactory.js")).then(function (m) {
           return m.DashboardModuleNgFactory;
         });
       },
           ɵ1 = function ɵ1() {
-        return __webpack_require__.e(
-        /*! import() | starter-starter-module-ngfactory */
-        "starter-starter-module-ngfactory").then(__webpack_require__.bind(null,
-        /*! ./starter/starter.module.ngfactory */
-        "./src/app/starter/starter.module.ngfactory.js")).then(function (m) {
-          return m.StarterModuleNgFactory;
-        });
-      },
-          ɵ2 = function ɵ2() {
-        return __webpack_require__.e(
-        /*! import() | component-component-module-ngfactory */
-        "component-component-module-ngfactory").then(__webpack_require__.bind(null,
-        /*! ./component/component.module.ngfactory */
-        "./src/app/component/component.module.ngfactory.js")).then(function (m) {
-          return m.ComponentsModuleNgFactory;
-        });
-      },
-          ɵ3 = function ɵ3() {
-        return __webpack_require__.e(
-        /*! import() | icons-icons-module-ngfactory */
-        "icons-icons-module-ngfactory").then(__webpack_require__.bind(null,
-        /*! ./icons/icons.module.ngfactory */
-        "./src/app/icons/icons.module.ngfactory.js")).then(function (m) {
-          return m.IconsModuleNgFactory;
-        });
-      },
-          ɵ4 = function ɵ4() {
-        return Promise.all(
-        /*! import() | form-forms-module-ngfactory */
-        [__webpack_require__.e("default~form-forms-module-ngfactory~pages-setting-setting-module-ngfactory"), __webpack_require__.e("form-forms-module-ngfactory")]).then(__webpack_require__.bind(null,
-        /*! ./form/forms.module.ngfactory */
-        "./src/app/form/forms.module.ngfactory.js")).then(function (m) {
-          return m.FormModuleNgFactory;
-        });
-      },
-          ɵ5 = function ɵ5() {
         return Promise.all(
         /*! import() | table-tables-module-ngfactory */
         [__webpack_require__.e("default~dashboards-dashboard-module-ngfactory~table-tables-module-ngfactory"), __webpack_require__.e("table-tables-module-ngfactory")]).then(__webpack_require__.bind(null,
@@ -1412,16 +1322,7 @@
           return m.TablesModuleNgFactory;
         });
       },
-          ɵ6 = function ɵ6() {
-        return Promise.all(
-        /*! import() | charts-charts-module-ngfactory */
-        [__webpack_require__.e("default~charts-charts-module-ngfactory~pages-cms-cms-module-ngfactory~pages-device-device-module-ngf~aa66e0a5"), __webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory~pages-others-others-mod~4893ee9e"), __webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory~pages-others-others-mod~dfd80987"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-others-others-module-ngfactory"), __webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory"), __webpack_require__.e("charts-charts-module-ngfactory")]).then(__webpack_require__.bind(null,
-        /*! ./charts/charts.module.ngfactory */
-        "./src/app/charts/charts.module.ngfactory.js")).then(function (m) {
-          return m.ChartModuleNgFactory;
-        });
-      },
-          ɵ7 = function ɵ7() {
+          ɵ2 = function ɵ2() {
         return __webpack_require__.e(
         /*! import() | widgets-widgets-module-ngfactory */
         "widgets-widgets-module-ngfactory").then(__webpack_require__.bind(null,
@@ -1430,61 +1331,25 @@
           return m.WidgetsModuleNgFactory;
         });
       },
-          ɵ8 = function ɵ8() {
-        return Promise.all(
-        /*! import() | extra-component-extra-component-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~3f32b0c0"), __webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory"), __webpack_require__.e("common"), __webpack_require__.e("extra-component-extra-component-module-ngfactory")]).then(__webpack_require__.bind(null,
-        /*! ./extra-component/extra-component.module.ngfactory */
-        "./src/app/extra-component/extra-component.module.ngfactory.js")).then(function (m) {
-          return m.ExtraComponentModuleNgFactory;
-        });
-      },
-          ɵ9 = function ɵ9() {
-        return Promise.all(
-        /*! import() | apps-apps-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~3f32b0c0"), __webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory"), __webpack_require__.e("common"), __webpack_require__.e("apps-apps-module-ngfactory")]).then(__webpack_require__.bind(null,
-        /*! ./apps/apps.module.ngfactory */
-        "./src/app/apps/apps.module.ngfactory.js")).then(function (m) {
-          return m.AppsModuleNgFactory;
-        });
-      },
-          ɵ10 = function ɵ10() {
-        return Promise.all(
-        /*! import() | apps-email-mail-module-ngfactory */
-        [__webpack_require__.e("common"), __webpack_require__.e("apps-email-mail-module-ngfactory")]).then(__webpack_require__.bind(null,
-        /*! ./apps/email/mail.module.ngfactory */
-        "./src/app/apps/email/mail.module.ngfactory.js")).then(function (m) {
-          return m.MailModuleNgFactory;
-        });
-      },
-          ɵ11 = function ɵ11() {
-        return __webpack_require__.e(
-        /*! import() | sample-pages-sample-pages-module-ngfactory */
-        "sample-pages-sample-pages-module-ngfactory").then(__webpack_require__.bind(null,
-        /*! ./sample-pages/sample-pages.module.ngfactory */
-        "./src/app/sample-pages/sample-pages.module.ngfactory.js")).then(function (m) {
-          return m.SamplePagesModuleNgFactory;
-        });
-      },
-          ɵ12 = function ɵ12() {
+          ɵ3 = function ɵ3() {
         return Promise.all(
         /*! import() | pages-users-users-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-cms-cms-module-ngfactory~pages-device-device-module-ngf~aa66e0a5"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory~pages-others-others-mod~4893ee9e"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~3d4dacc0"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory~pages-ve~d6107e08"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-others-others-module-ngfactory~pages-~1855edc9"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory"), __webpack_require__.e("default~pages-setting-setting-module-ngfactory~pages-users-users-module-ngfactory"), __webpack_require__.e("pages-users-users-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1c63aa11"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~3d4dacc0"), __webpack_require__.e("default~dashboards-dashboard-module-ngfactory~pages-others-others-module-ngfactory~pages-users-users~29afcd17"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory~pages-ve~d6107e08"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-others-others-module-ngfactory~pages-~1855edc9"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory"), __webpack_require__.e("default~pages-setting-setting-module-ngfactory~pages-users-users-module-ngfactory"), __webpack_require__.e("pages-users-users-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./pages/users/users.module.ngfactory */
         "./src/app/pages/users/users.module.ngfactory.js")).then(function (m) {
           return m.UsersModuleNgFactory;
         });
       },
-          ɵ13 = function ɵ13() {
+          ɵ4 = function ɵ4() {
         return Promise.all(
         /*! import() | pages-vendors-vendors-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-cms-cms-module-ngfactory~pages-device-device-module-ngf~aa66e0a5"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~3d4dacc0"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory~pages-ve~d6107e08"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-notification-notification-module-ngfactory~pages-vendor~9e6e17e4"), __webpack_require__.e("pages-vendors-vendors-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1c63aa11"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~3d4dacc0"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory~pages-ve~d6107e08"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-notification-notification-module-ngfactory~pages-vendor~9e6e17e4"), __webpack_require__.e("pages-vendors-vendors-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./pages/vendors/vendors.module.ngfactory */
         "./src/app/pages/vendors/vendors.module.ngfactory.js")).then(function (m) {
           return m.VendorsModuleNgFactory;
         });
       },
-          ɵ14 = function ɵ14() {
+          ɵ5 = function ɵ5() {
         return __webpack_require__.e(
         /*! import() | pages-review-review-module-ngfactory */
         "pages-review-review-module-ngfactory").then(__webpack_require__.bind(null,
@@ -1493,16 +1358,16 @@
           return m.ReviewModuleNgFactory;
         });
       },
-          ɵ15 = function ɵ15() {
+          ɵ6 = function ɵ6() {
         return Promise.all(
         /*! import() | pages-notification-notification-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-cms-cms-module-ngfactory~pages-device-device-module-ngf~aa66e0a5"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~3d4dacc0"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory~pages-ve~d6107e08"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-others-others-module-ngfactory~pages-~1855edc9"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-notification-notification-module-ngfactory~pages-vendor~9e6e17e4"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory"), __webpack_require__.e("pages-notification-notification-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1c63aa11"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~3d4dacc0"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory~pages-ve~d6107e08"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-others-others-module-ngfactory~pages-~1855edc9"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-notification-notification-module-ngfactory~pages-vendor~9e6e17e4"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-users-users-module-ngfactory"), __webpack_require__.e("pages-notification-notification-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./pages/notification/notification.module.ngfactory */
         "./src/app/pages/notification/notification.module.ngfactory.js")).then(function (m) {
           return m.NotificationModuleNgFactory;
         });
       },
-          ɵ16 = function ɵ16() {
+          ɵ7 = function ɵ7() {
         return __webpack_require__.e(
         /*! import() | pages-inventory-inventory-module-ngfactory */
         "pages-inventory-inventory-module-ngfactory").then(__webpack_require__.bind(null,
@@ -1511,34 +1376,34 @@
           return m.InventoryModuleNgFactory;
         });
       },
-          ɵ17 = function ɵ17() {
+          ɵ8 = function ɵ8() {
         return Promise.all(
         /*! import() | pages-setting-setting-module-ngfactory */
-        [__webpack_require__.e("default~form-forms-module-ngfactory~pages-setting-setting-module-ngfactory"), __webpack_require__.e("default~pages-setting-setting-module-ngfactory~pages-users-users-module-ngfactory"), __webpack_require__.e("common"), __webpack_require__.e("pages-setting-setting-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-setting-setting-module-ngfactory~pages-users-users-module-ngfactory"), __webpack_require__.e("common"), __webpack_require__.e("pages-setting-setting-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./pages/setting/setting.module.ngfactory */
         "./src/app/pages/setting/setting.module.ngfactory.js")).then(function (m) {
           return m.SettingModuleNgFactory;
         });
       },
-          ɵ18 = function ɵ18() {
+          ɵ9 = function ɵ9() {
         return Promise.all(
         /*! import() | pages-cms-cms-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-cms-cms-module-ngfactory~pages-device-device-module-ngf~aa66e0a5"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~3f32b0c0"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-notification-notification-module-ngfactory~pages-vendor~9e6e17e4"), __webpack_require__.e("common"), __webpack_require__.e("pages-cms-cms-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1c63aa11"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-notification-notification-module-ngfactory~pages-vendor~9e6e17e4"), __webpack_require__.e("pages-cms-cms-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./pages/cms/cms.module.ngfactory */
         "./src/app/pages/cms/cms.module.ngfactory.js")).then(function (m) {
           return m.CmsModuleNgFactory;
         });
       },
-          ɵ19 = function ɵ19() {
+          ɵ10 = function ɵ10() {
         return Promise.all(
         /*! import() | pages-subscription-subscription-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-cms-cms-module-ngfactory~pages-device-device-module-ngf~aa66e0a5"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-others-others-module-ngfactory~pages-subscription~5d0a476f"), __webpack_require__.e("pages-subscription-subscription-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1c63aa11"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-others-others-module-ngfactory~pages-subscription~5d0a476f"), __webpack_require__.e("pages-subscription-subscription-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./pages/subscription/subscription.module.ngfactory */
         "./src/app/pages/subscription/subscription.module.ngfactory.js")).then(function (m) {
           return m.SubscriptionModuleNgFactory;
         });
       },
-          ɵ20 = function ɵ20() {
+          ɵ11 = function ɵ11() {
         return __webpack_require__.e(
         /*! import() | pages-revenue-revenue-module-ngfactory */
         "pages-revenue-revenue-module-ngfactory").then(__webpack_require__.bind(null,
@@ -1547,7 +1412,7 @@
           return m.RevenueModuleNgFactory;
         });
       },
-          ɵ21 = function ɵ21() {
+          ɵ12 = function ɵ12() {
         return __webpack_require__.e(
         /*! import() | pages-sub-admin-sub-admin-module-ngfactory */
         "pages-sub-admin-sub-admin-module-ngfactory").then(__webpack_require__.bind(null,
@@ -1556,7 +1421,7 @@
           return m.SubAdminModuleNgFactory;
         });
       },
-          ɵ22 = function ɵ22() {
+          ɵ13 = function ɵ13() {
         return __webpack_require__.e(
         /*! import() | pages-orders-orders-module-ngfactory */
         "pages-orders-orders-module-ngfactory").then(__webpack_require__.bind(null,
@@ -1565,7 +1430,7 @@
           return m.OrdersModuleNgFactory;
         });
       },
-          ɵ23 = function ɵ23() {
+          ɵ14 = function ɵ14() {
         return __webpack_require__.e(
         /*! import() | pages-product-product-module-ngfactory */
         "pages-product-product-module-ngfactory").then(__webpack_require__.bind(null,
@@ -1574,16 +1439,16 @@
           return m.ProductModuleNgFactory;
         });
       },
-          ɵ24 = function ɵ24() {
+          ɵ15 = function ɵ15() {
         return Promise.all(
         /*! import() | pages-others-others-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-cms-cms-module-ngfactory~pages-device-device-module-ngf~aa66e0a5"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory~pages-others-others-mod~4893ee9e"), __webpack_require__.e("default~charts-charts-module-ngfactory~dashboards-dashboard-module-ngfactory~pages-others-others-mod~dfd80987"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-others-others-module-ngfactory~pages-subscription~5d0a476f"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-others-others-module-ngfactory~pages-~1855edc9"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-others-others-module-ngfactory"), __webpack_require__.e("pages-others-others-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1c63aa11"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("default~dashboards-dashboard-module-ngfactory~pages-others-others-module-ngfactory~pages-users-users~29afcd17"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-others-others-module-ngfactory~pages-subscription~5d0a476f"), __webpack_require__.e("default~pages-notification-notification-module-ngfactory~pages-others-others-module-ngfactory~pages-~1855edc9"), __webpack_require__.e("default~dashboards-dashboard-module-ngfactory~pages-others-others-module-ngfactory"), __webpack_require__.e("pages-others-others-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./pages/others/others.module.ngfactory */
         "./src/app/pages/others/others.module.ngfactory.js")).then(function (m) {
           return m.OthersModuleNgFactory;
         });
       },
-          ɵ25 = function ɵ25() {
+          ɵ16 = function ɵ16() {
         return Promise.all(
         /*! import() | pages-geofence-geofence-module-ngfactory */
         [__webpack_require__.e("common"), __webpack_require__.e("pages-geofence-geofence-module-ngfactory")]).then(__webpack_require__.bind(null,
@@ -1592,16 +1457,16 @@
           return m.GeofenceModuleNgFactory;
         });
       },
-          ɵ26 = function ɵ26() {
+          ɵ17 = function ɵ17() {
         return Promise.all(
         /*! import() | pages-device-device-module-ngfactory */
-        [__webpack_require__.e("default~apps-apps-module-ngfactory~extra-component-extra-component-module-ngfactory~pages-cms-cms-mo~5d983ff8"), __webpack_require__.e("default~charts-charts-module-ngfactory~pages-cms-cms-module-ngfactory~pages-device-device-module-ngf~aa66e0a5"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~3d4dacc0"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-others-others-module-ngfactory~pages-subscription~5d0a476f"), __webpack_require__.e("pages-device-device-module-ngfactory")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1c63aa11"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~fc34ae0e"), __webpack_require__.e("default~pages-cms-cms-module-ngfactory~pages-device-device-module-ngfactory~pages-notification-notif~1b900d7c"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-notification-notification-module-ngfactory~pages-~3d4dacc0"), __webpack_require__.e("default~pages-device-device-module-ngfactory~pages-others-others-module-ngfactory~pages-subscription~5d0a476f"), __webpack_require__.e("pages-device-device-module-ngfactory")]).then(__webpack_require__.bind(null,
         /*! ./pages/device/device.module.ngfactory */
         "./src/app/pages/device/device.module.ngfactory.js")).then(function (m) {
           return m.DeviceModuleNgFactory;
         });
       },
-          ɵ27 = function ɵ27() {
+          ɵ18 = function ɵ18() {
         return Promise.all(
         /*! import() | authentication-authentication-module-ngfactory */
         [__webpack_require__.e("default~authentication-authentication-module-ngfactory~pages-notification-notification-module-ngfact~d1aceceb"), __webpack_require__.e("authentication-authentication-module-ngfactory")]).then(__webpack_require__.bind(null,
@@ -1623,83 +1488,56 @@
           path: 'dashboard',
           loadChildren: ɵ0
         }, {
-          path: 'starter',
+          path: 'tables',
           loadChildren: ɵ1
         }, {
-          path: 'component',
+          path: 'widgets',
           loadChildren: ɵ2
         }, {
-          path: 'icons',
+          path: 'users',
           loadChildren: ɵ3
         }, {
-          path: 'forms',
+          path: 'vendors',
           loadChildren: ɵ4
         }, {
-          path: 'tables',
+          path: 'review',
           loadChildren: ɵ5
         }, {
-          path: 'charts',
+          path: 'notification',
           loadChildren: ɵ6
         }, {
-          path: 'widgets',
+          path: 'inventory',
           loadChildren: ɵ7
         }, {
-          path: 'extra-component',
+          path: 'setting',
           loadChildren: ɵ8
         }, {
-          path: 'apps',
+          path: 'cms',
           loadChildren: ɵ9
         }, {
-          path: 'apps/email',
+          path: 'subscription',
           loadChildren: ɵ10
         }, {
-          path: 'sample-pages',
+          path: 'revenue',
           loadChildren: ɵ11
         }, {
-          path: 'users',
+          path: 'subadmin',
           loadChildren: ɵ12
         }, {
-          path: 'vendors',
+          path: 'orders',
           loadChildren: ɵ13
         }, {
-          path: 'review',
+          path: 'product',
           loadChildren: ɵ14
         }, {
-          path: 'notification',
+          path: 'others',
           loadChildren: ɵ15
         }, {
-          path: 'inventory',
+          path: 'geofence',
           loadChildren: ɵ16
         }, {
-          path: 'setting',
-          loadChildren: ɵ17
-        }, {
-          path: 'cms',
-          loadChildren: ɵ18
-        }, {
-          path: 'subscription',
-          loadChildren: ɵ19
-        }, {
-          path: 'revenue',
-          loadChildren: ɵ20
-        }, {
-          path: 'subadmin',
-          loadChildren: ɵ21
-        }, {
-          path: 'orders',
-          loadChildren: ɵ22
-        }, {
-          path: 'product',
-          loadChildren: ɵ23
-        }, {
-          path: 'others',
-          loadChildren: ɵ24
-        }, {
-          path: 'geofence',
-          loadChildren: ɵ25
-        }, {
           path: 'device',
-          loadChildren: ɵ26
+          loadChildren: ɵ17
         }]
       }, {
         path: '',
@@ -1707,7 +1545,7 @@
         canActivate: [_gurads_logged_guard__WEBPACK_IMPORTED_MODULE_0__["LoggedGuard"]],
         children: [{
           path: 'authentication',
-          loadChildren: ɵ27
+          loadChildren: ɵ18
         }]
       }, {
         path: '**',
@@ -2254,83 +2092,56 @@
               path: "dashboard",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ0"]
             }, {
-              path: "starter",
+              path: "tables",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ1"]
             }, {
-              path: "component",
+              path: "widgets",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ2"]
             }, {
-              path: "icons",
+              path: "users",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ3"]
             }, {
-              path: "forms",
+              path: "vendors",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ4"]
             }, {
-              path: "tables",
+              path: "review",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ5"]
             }, {
-              path: "charts",
+              path: "notification",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ6"]
             }, {
-              path: "widgets",
+              path: "inventory",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ7"]
             }, {
-              path: "extra-component",
+              path: "setting",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ8"]
             }, {
-              path: "apps",
+              path: "cms",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ9"]
             }, {
-              path: "apps/email",
+              path: "subscription",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ10"]
             }, {
-              path: "sample-pages",
+              path: "revenue",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ11"]
             }, {
-              path: "users",
+              path: "subadmin",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ12"]
             }, {
-              path: "vendors",
+              path: "orders",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ13"]
             }, {
-              path: "review",
+              path: "product",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ14"]
             }, {
-              path: "notification",
+              path: "others",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ15"]
             }, {
-              path: "inventory",
+              path: "geofence",
               loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ16"]
             }, {
-              path: "setting",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ17"]
-            }, {
-              path: "cms",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ18"]
-            }, {
-              path: "subscription",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ19"]
-            }, {
-              path: "revenue",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ20"]
-            }, {
-              path: "subadmin",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ21"]
-            }, {
-              path: "orders",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ22"]
-            }, {
-              path: "product",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ23"]
-            }, {
-              path: "others",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ24"]
-            }, {
-              path: "geofence",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ25"]
-            }, {
               path: "device",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ26"]
+              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ17"]
             }]
           }, {
             path: "",
@@ -2338,7 +2149,7 @@
             canActivate: [_gurads_logged_guard__WEBPACK_IMPORTED_MODULE_41__["LoggedGuard"]],
             children: [{
               path: "authentication",
-              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ27"]
+              loadChildren: _app_routing_module__WEBPACK_IMPORTED_MODULE_39__["ɵ18"]
             }]
           }, {
             path: "**",

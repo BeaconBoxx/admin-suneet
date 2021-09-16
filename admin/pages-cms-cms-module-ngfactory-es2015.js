@@ -1,5 +1,1051 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["pages-cms-cms-module-ngfactory"],{
 
+/***/ "./node_modules/ngx-quill/fesm2015/ngx-quill.js":
+/*!******************************************************!*\
+  !*** ./node_modules/ngx-quill/fesm2015/ngx-quill.js ***!
+  \******************************************************/
+/*! exports provided: QUILL_CONFIG_TOKEN, QuillEditorBase, QuillEditorComponent, QuillModule, QuillService, QuillViewComponent, QuillViewHTMLComponent, defaultModules */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QUILL_CONFIG_TOKEN", function() { return QUILL_CONFIG_TOKEN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillEditorBase", function() { return QuillEditorBase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillEditorComponent", function() { return QuillEditorComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillModule", function() { return QuillModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillService", function() { return QuillService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillViewComponent", function() { return QuillViewComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillViewHTMLComponent", function() { return QuillViewHTMLComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultModules", function() { return defaultModules; });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/@ng-bootstrap/ng-bootstrap/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
+
+
+
+
+
+
+
+
+
+const _c0 = [[["", "quill-editor-toolbar", ""]]];
+const _c1 = ["[quill-editor-toolbar]"];
+const defaultModules = {
+    toolbar: [
+        ['bold', 'italic', 'underline', 'strike'],
+        ['blockquote', 'code-block'],
+        [{ header: 1 }, { header: 2 }],
+        [{ list: 'ordered' }, { list: 'bullet' }],
+        [{ script: 'sub' }, { script: 'super' }],
+        [{ indent: '-1' }, { indent: '+1' }],
+        [{ direction: 'rtl' }],
+        [{ size: ['small', false, 'large', 'huge'] }],
+        [{ header: [1, 2, 3, 4, 5, 6, false] }],
+        [
+            { color: [] },
+            { background: [] }
+        ],
+        [{ font: [] }],
+        [{ align: [] }],
+        ['clean'],
+        ['link', 'image', 'video'] // link and image, video
+    ]
+};
+
+const getFormat = (format, configFormat) => {
+    const passedFormat = format || configFormat;
+    return passedFormat || 'html';
+};
+
+const QUILL_CONFIG_TOKEN = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["InjectionToken"]('config');
+
+class QuillService {
+    constructor(config) {
+        this.config = config;
+        this.count = 0;
+        if (!this.config) {
+            this.config = { modules: defaultModules };
+        }
+    }
+    getQuill() {
+        this.count++;
+        if (!this.Quill && this.count === 1) {
+            this.$importPromise = new Promise((resolve) => Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__awaiter"])(this, void 0, void 0, function* () {
+                var _a, _b;
+                const quillImport = yield __webpack_require__.e(/*! import() | quill */ "quill").then(__webpack_require__.t.bind(null, /*! quill */ "./node_modules/quill/dist/quill.js", 7));
+                this.Quill = (quillImport.default ? quillImport.default : quillImport);
+                // Only register custom options and modules once
+                (_a = this.config.customOptions) === null || _a === void 0 ? void 0 : _a.forEach((customOption) => {
+                    const newCustomOption = this.Quill.import(customOption.import);
+                    newCustomOption.whitelist = customOption.whitelist;
+                    this.Quill.register(newCustomOption, true, this.config.suppressGlobalRegisterWarning);
+                });
+                (_b = this.config.customModules) === null || _b === void 0 ? void 0 : _b.forEach(({ implementation, path }) => {
+                    this.Quill.register(path, implementation, this.config.suppressGlobalRegisterWarning);
+                });
+                resolve(this.Quill);
+            }));
+        }
+        return this.$importPromise;
+    }
+}
+QuillService.ɵfac = function QuillService_Factory(t) { return new (t || QuillService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](QUILL_CONFIG_TOKEN)); };
+QuillService.ɵprov = Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"])({ factory: function QuillService_Factory() { return new QuillService(Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"])(QUILL_CONFIG_TOKEN)); }, token: QuillService, providedIn: "root" });
+QuillService.ctorParameters = () => [
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [QUILL_CONFIG_TOKEN,] }] }
+];
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](QuillService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [QUILL_CONFIG_TOKEN]
+            }] }]; }, null); })();
+
+// tslint:disable-next-line:directive-class-suffix
+class QuillEditorBase {
+    constructor(elementRef, domSanitizer, doc, platformId, renderer, zone, service) {
+        this.elementRef = elementRef;
+        this.domSanitizer = domSanitizer;
+        this.doc = doc;
+        this.platformId = platformId;
+        this.renderer = renderer;
+        this.zone = zone;
+        this.service = service;
+        this.required = false;
+        this.customToolbarPosition = 'top';
+        this.sanitize = false;
+        this.styles = null;
+        this.strict = true;
+        this.customOptions = [];
+        this.customModules = [];
+        this.preserveWhitespace = false;
+        this.trimOnValidation = false;
+        this.onEditorCreated = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.onEditorChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.onContentChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.onSelectionChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.onFocus = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.onBlur = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.disabled = false; // used to store initial value before ViewInit
+        this.valueGetter = (quillEditor, editorElement) => {
+            let html = editorElement.querySelector('.ql-editor').innerHTML;
+            if (html === '<p><br></p>' || html === '<div><br></div>') {
+                html = null;
+            }
+            let modelValue = html;
+            const format = getFormat(this.format, this.service.config.format);
+            if (format === 'text') {
+                modelValue = quillEditor.getText();
+            }
+            else if (format === 'object') {
+                modelValue = quillEditor.getContents();
+            }
+            else if (format === 'json') {
+                try {
+                    modelValue = JSON.stringify(quillEditor.getContents());
+                }
+                catch (e) {
+                    modelValue = quillEditor.getText();
+                }
+            }
+            return modelValue;
+        };
+        this.valueSetter = (quillEditor, value) => {
+            const format = getFormat(this.format, this.service.config.format);
+            if (format === 'html') {
+                if (this.sanitize) {
+                    value = this.domSanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__["SecurityContext"].HTML, value);
+                }
+                return quillEditor.clipboard.convert(value);
+            }
+            else if (format === 'json') {
+                try {
+                    return JSON.parse(value);
+                }
+                catch (e) {
+                    return [{ insert: value }];
+                }
+            }
+            return value;
+        };
+        this.selectionChangeHandler = (range, oldRange, source) => {
+            const shouldTriggerOnModelTouched = !range && !!this.onModelTouched;
+            // only emit changes when there's any listener
+            if (!this.onBlur.observers.length &&
+                !this.onFocus.observers.length &&
+                !this.onSelectionChanged.observers.length &&
+                !shouldTriggerOnModelTouched) {
+                return;
+            }
+            this.zone.run(() => {
+                if (range === null) {
+                    this.onBlur.emit({
+                        editor: this.quillEditor,
+                        source
+                    });
+                }
+                else if (oldRange === null) {
+                    this.onFocus.emit({
+                        editor: this.quillEditor,
+                        source
+                    });
+                }
+                this.onSelectionChanged.emit({
+                    editor: this.quillEditor,
+                    oldRange,
+                    range,
+                    source
+                });
+                if (shouldTriggerOnModelTouched) {
+                    this.onModelTouched();
+                }
+            });
+        };
+        this.textChangeHandler = (delta, oldDelta, source) => {
+            // only emit changes emitted by user interactions
+            const text = this.quillEditor.getText();
+            const content = this.quillEditor.getContents();
+            let html = this.editorElem.querySelector('.ql-editor').innerHTML;
+            if (html === '<p><br></p>' || html === '<div><br></div>') {
+                html = null;
+            }
+            const trackChanges = this.trackChanges || this.service.config.trackChanges;
+            const shouldTriggerOnModelChange = (source === 'user' || trackChanges && trackChanges === 'all') && !!this.onModelChange;
+            // only emit changes when there's any listener
+            if (!this.onContentChanged.observers.length && !shouldTriggerOnModelChange) {
+                return;
+            }
+            this.zone.run(() => {
+                if (shouldTriggerOnModelChange) {
+                    this.onModelChange(this.valueGetter(this.quillEditor, this.editorElem));
+                }
+                this.onContentChanged.emit({
+                    content,
+                    delta,
+                    editor: this.quillEditor,
+                    html,
+                    oldDelta,
+                    source,
+                    text
+                });
+            });
+        };
+        // tslint:disable-next-line:max-line-length
+        this.editorChangeHandler = (event, current, old, source) => {
+            // only emit changes when there's any listener
+            if (!this.onEditorChanged.observers.length) {
+                return;
+            }
+            // only emit changes emitted by user interactions
+            if (event === 'text-change') {
+                const text = this.quillEditor.getText();
+                const content = this.quillEditor.getContents();
+                let html = this.editorElem.querySelector('.ql-editor').innerHTML;
+                if (html === '<p><br></p>' || html === '<div><br></div>') {
+                    html = null;
+                }
+                this.zone.run(() => {
+                    this.onEditorChanged.emit({
+                        content,
+                        delta: current,
+                        editor: this.quillEditor,
+                        event,
+                        html,
+                        oldDelta: old,
+                        source,
+                        text
+                    });
+                });
+            }
+            else {
+                this.onEditorChanged.emit({
+                    editor: this.quillEditor,
+                    event,
+                    oldRange: old,
+                    range: current,
+                    source
+                });
+            }
+        };
+    }
+    static normalizeClassNames(classes) {
+        const classList = classes.trim().split(' ');
+        return classList.reduce((prev, cur) => {
+            const trimmed = cur.trim();
+            if (trimmed) {
+                prev.push(trimmed);
+            }
+            return prev;
+        }, []);
+    }
+    ngAfterViewInit() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__awaiter"])(this, void 0, void 0, function* () {
+            if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformServer"])(this.platformId)) {
+                return;
+            }
+            const Quill = yield this.service.getQuill();
+            this.elementRef.nativeElement.insertAdjacentHTML(this.customToolbarPosition === 'top' ? 'beforeend' : 'afterbegin', this.preserveWhitespace ? '<pre quill-editor-element></pre>' : '<div quill-editor-element></div>');
+            this.editorElem = this.elementRef.nativeElement.querySelector('[quill-editor-element]');
+            const toolbarElem = this.elementRef.nativeElement.querySelector('[quill-editor-toolbar]');
+            const modules = Object.assign({}, this.modules || this.service.config.modules);
+            if (toolbarElem) {
+                modules.toolbar = toolbarElem;
+            }
+            else if (modules.toolbar === undefined) {
+                modules.toolbar = defaultModules.toolbar;
+            }
+            let placeholder = this.placeholder !== undefined ? this.placeholder : this.service.config.placeholder;
+            if (placeholder === undefined) {
+                placeholder = 'Insert text here ...';
+            }
+            if (this.styles) {
+                Object.keys(this.styles).forEach((key) => {
+                    this.renderer.setStyle(this.editorElem, key, this.styles[key]);
+                });
+            }
+            if (this.classes) {
+                this.addClasses(this.classes);
+            }
+            this.customOptions.forEach((customOption) => {
+                const newCustomOption = Quill.import(customOption.import);
+                newCustomOption.whitelist = customOption.whitelist;
+                Quill.register(newCustomOption, true);
+            });
+            this.customModules.forEach(({ implementation, path }) => {
+                Quill.register(path, implementation);
+            });
+            let bounds = this.bounds && this.bounds === 'self' ? this.editorElem : this.bounds;
+            if (!bounds) {
+                bounds = this.service.config.bounds ? this.service.config.bounds : this.doc.body;
+            }
+            let debug = this.debug;
+            if (!debug && debug !== false && this.service.config.debug) {
+                debug = this.service.config.debug;
+            }
+            let readOnly = this.readOnly;
+            if (!readOnly && this.readOnly !== false) {
+                readOnly = this.service.config.readOnly !== undefined ? this.service.config.readOnly : false;
+            }
+            let scrollingContainer = this.scrollingContainer;
+            if (!scrollingContainer && this.scrollingContainer !== null) {
+                scrollingContainer =
+                    this.service.config.scrollingContainer === null
+                        || this.service.config.scrollingContainer ? this.service.config.scrollingContainer : null;
+            }
+            let formats = this.formats;
+            if (!formats && formats === undefined) {
+                formats = this.service.config.formats ? [...this.service.config.formats] : (this.service.config.formats === null ? null : undefined);
+            }
+            this.zone.runOutsideAngular(() => {
+                this.quillEditor = new Quill(this.editorElem, {
+                    bounds,
+                    debug: debug,
+                    formats: formats,
+                    modules,
+                    placeholder,
+                    readOnly,
+                    scrollingContainer: scrollingContainer,
+                    strict: this.strict,
+                    theme: this.theme || (this.service.config.theme ? this.service.config.theme : 'snow')
+                });
+            });
+            if (this.content) {
+                const format = getFormat(this.format, this.service.config.format);
+                if (format === 'object') {
+                    this.quillEditor.setContents(this.content, 'silent');
+                }
+                else if (format === 'text') {
+                    this.quillEditor.setText(this.content, 'silent');
+                }
+                else if (format === 'json') {
+                    try {
+                        this.quillEditor.setContents(JSON.parse(this.content), 'silent');
+                    }
+                    catch (e) {
+                        this.quillEditor.setText(this.content, 'silent');
+                    }
+                }
+                else {
+                    if (this.sanitize) {
+                        this.content = this.domSanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__["SecurityContext"].HTML, this.content);
+                    }
+                    const contents = this.quillEditor.clipboard.convert(this.content);
+                    this.quillEditor.setContents(contents, 'silent');
+                }
+                this.quillEditor.getModule('history').clear();
+            }
+            // initialize disabled status based on this.disabled as default value
+            this.setDisabledState();
+            // triggered if selection or text changed
+            this.quillEditor.on('editor-change', this.editorChangeHandler);
+            // mark model as touched if editor lost focus
+            this.quillEditor.on('selection-change', this.selectionChangeHandler);
+            // update model if text changes
+            this.quillEditor.on('text-change', this.textChangeHandler);
+            // trigger created in a timeout to avoid changed models after checked
+            // if you are using the editor api in created output to change the editor content
+            setTimeout(() => {
+                if (this.onValidatorChanged) {
+                    this.onValidatorChanged();
+                }
+                this.onEditorCreated.emit(this.quillEditor);
+            });
+        });
+    }
+    ngOnDestroy() {
+        if (this.quillEditor) {
+            this.quillEditor.off('selection-change', this.selectionChangeHandler);
+            this.quillEditor.off('text-change', this.textChangeHandler);
+            this.quillEditor.off('editor-change', this.editorChangeHandler);
+        }
+    }
+    ngOnChanges(changes) {
+        if (!this.quillEditor) {
+            return;
+        }
+        // tslint:disable:no-string-literal
+        if (changes['readOnly']) {
+            this.quillEditor.enable(!changes['readOnly'].currentValue);
+        }
+        if (changes['placeholder']) {
+            this.quillEditor.root.dataset.placeholder =
+                changes['placeholder'].currentValue;
+        }
+        if (changes['styles']) {
+            const currentStyling = changes['styles'].currentValue;
+            const previousStyling = changes['styles'].previousValue;
+            if (previousStyling) {
+                Object.keys(previousStyling).forEach((key) => {
+                    this.renderer.removeStyle(this.editorElem, key);
+                });
+            }
+            if (currentStyling) {
+                Object.keys(currentStyling).forEach((key) => {
+                    this.renderer.setStyle(this.editorElem, key, this.styles[key]);
+                });
+            }
+        }
+        if (changes['classes']) {
+            const currentClasses = changes['classes'].currentValue;
+            const previousClasses = changes['classes'].previousValue;
+            if (previousClasses) {
+                this.removeClasses(previousClasses);
+            }
+            if (currentClasses) {
+                this.addClasses(currentClasses);
+            }
+        }
+        // tslint:enable:no-string-literal
+    }
+    addClasses(classList) {
+        QuillEditorBase.normalizeClassNames(classList).forEach((c) => {
+            this.renderer.addClass(this.editorElem, c);
+        });
+    }
+    removeClasses(classList) {
+        QuillEditorBase.normalizeClassNames(classList).forEach((c) => {
+            this.renderer.removeClass(this.editorElem, c);
+        });
+    }
+    writeValue(currentValue) {
+        this.content = currentValue;
+        const format = getFormat(this.format, this.service.config.format);
+        if (this.quillEditor) {
+            if (currentValue) {
+                if (format === 'text') {
+                    this.quillEditor.setText(currentValue);
+                }
+                else {
+                    this.quillEditor.setContents(this.valueSetter(this.quillEditor, this.content));
+                }
+                return;
+            }
+            this.quillEditor.setText('');
+        }
+    }
+    setDisabledState(isDisabled = this.disabled) {
+        // store initial value to set appropriate disabled status after ViewInit
+        this.disabled = isDisabled;
+        if (this.quillEditor) {
+            if (isDisabled) {
+                this.quillEditor.disable();
+                this.renderer.setAttribute(this.elementRef.nativeElement, 'disabled', 'disabled');
+            }
+            else {
+                if (!this.readOnly) {
+                    this.quillEditor.enable();
+                }
+                this.renderer.removeAttribute(this.elementRef.nativeElement, 'disabled');
+            }
+        }
+    }
+    registerOnChange(fn) {
+        this.onModelChange = fn;
+    }
+    registerOnTouched(fn) {
+        this.onModelTouched = fn;
+    }
+    registerOnValidatorChange(fn) {
+        this.onValidatorChanged = fn;
+    }
+    validate() {
+        if (!this.quillEditor) {
+            return null;
+        }
+        const err = {};
+        let valid = true;
+        const text = this.quillEditor.getText();
+        // trim text if wanted + handle special case that an empty editor contains a new line
+        const textLength = this.trimOnValidation ? text.trim().length : (text.length === 1 && text.trim().length === 0 ? 0 : text.length - 1);
+        if (this.minLength && textLength && textLength < this.minLength) {
+            err.minLengthError = {
+                given: textLength,
+                minLength: this.minLength
+            };
+            valid = false;
+        }
+        if (this.maxLength && textLength > this.maxLength) {
+            err.maxLengthError = {
+                given: textLength,
+                maxLength: this.maxLength
+            };
+            valid = false;
+        }
+        if (this.required && !textLength) {
+            err.requiredError = {
+                empty: true
+            };
+            valid = false;
+        }
+        return valid ? null : err;
+    }
+}
+QuillEditorBase.ɵfac = function QuillEditorBase_Factory(t) { return new (t || QuillEditorBase)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__["DOCUMENT"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](QuillService)); };
+QuillEditorBase.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({ type: QuillEditorBase, inputs: { required: "required", customToolbarPosition: "customToolbarPosition", sanitize: "sanitize", styles: "styles", strict: "strict", customOptions: "customOptions", customModules: "customModules", preserveWhitespace: "preserveWhitespace", trimOnValidation: "trimOnValidation", valueGetter: "valueGetter", valueSetter: "valueSetter", format: "format", theme: "theme", modules: "modules", debug: "debug", readOnly: "readOnly", placeholder: "placeholder", maxLength: "maxLength", minLength: "minLength", formats: "formats", scrollingContainer: "scrollingContainer", bounds: "bounds", trackChanges: "trackChanges", classes: "classes" }, outputs: { onEditorCreated: "onEditorCreated", onEditorChanged: "onEditorChanged", onContentChanged: "onContentChanged", onSelectionChanged: "onSelectionChanged", onFocus: "onFocus", onBlur: "onBlur" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]] });
+QuillEditorBase.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["DOCUMENT"],] }] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"],] }] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] },
+    { type: QuillService }
+];
+QuillEditorBase.propDecorators = {
+    format: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    theme: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    modules: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    debug: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    readOnly: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    placeholder: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    maxLength: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    minLength: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    required: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    formats: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    customToolbarPosition: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    sanitize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    styles: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    strict: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    scrollingContainer: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    bounds: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    customOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    customModules: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    trackChanges: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    preserveWhitespace: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    classes: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    trimOnValidation: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    onEditorCreated: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }],
+    onEditorChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }],
+    onContentChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }],
+    onSelectionChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }],
+    onFocus: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }],
+    onBlur: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"] }],
+    valueGetter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    valueSetter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }]
+};
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](QuillEditorBase, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }, { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["DOCUMENT"]]
+            }] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]]
+            }] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] }, { type: QuillService }]; }, { required: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], customToolbarPosition: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], sanitize: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], styles: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], strict: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], customOptions: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], customModules: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], preserveWhitespace: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], trimOnValidation: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], onEditorCreated: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }], onEditorChanged: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }], onContentChanged: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }], onSelectionChanged: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }], onFocus: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }], onBlur: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }], valueGetter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], valueSetter: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], format: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], theme: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], modules: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], debug: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], readOnly: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], placeholder: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], maxLength: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], minLength: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], formats: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], scrollingContainer: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], bounds: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], trackChanges: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], classes: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }] }); })();
+class QuillEditorComponent extends QuillEditorBase {
+    constructor(elementRef, domSanitizer, doc, platformId, renderer, zone, service) {
+        super(elementRef, domSanitizer, doc, platformId, renderer, zone, service);
+    }
+}
+QuillEditorComponent.ɵfac = function QuillEditorComponent_Factory(t) { return new (t || QuillEditorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__["DOCUMENT"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](QuillService)); };
+QuillEditorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: QuillEditorComponent, selectors: [["quill-editor"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([
+            {
+                multi: true,
+                provide: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NG_VALUE_ACCESSOR"],
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(() => QuillEditorComponent)
+            },
+            {
+                multi: true,
+                provide: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NG_VALIDATORS"],
+                // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(() => QuillEditorComponent)
+            }
+        ]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c1, decls: 1, vars: 0, template: function QuillEditorComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](0);
+    } }, encapsulation: 2 });
+QuillEditorComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"],] }] },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"],] }] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["DOCUMENT"],] }] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"],] }] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"],] }] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"],] }] },
+    { type: QuillService, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [QuillService,] }] }
+];
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](QuillEditorComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+        args: [{
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+                providers: [
+                    {
+                        multi: true,
+                        provide: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NG_VALUE_ACCESSOR"],
+                        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                        useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(() => QuillEditorComponent)
+                    },
+                    {
+                        multi: true,
+                        provide: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NG_VALIDATORS"],
+                        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                        useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["forwardRef"])(() => QuillEditorComponent)
+                    }
+                ],
+                selector: 'quill-editor',
+                template: `
+  <ng-content select="[quill-editor-toolbar]"></ng-content>
+`
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]]
+            }] }, { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]]
+            }] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["DOCUMENT"]]
+            }] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]]
+            }] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"], decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"]]
+            }] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"], decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]]
+            }] }, { type: QuillService, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [QuillService]
+            }] }]; }, null); })();
+
+class QuillViewHTMLComponent {
+    constructor(sanitizer, service) {
+        this.sanitizer = sanitizer;
+        this.service = service;
+        this.innerHTML = '';
+        this.themeClass = 'ql-snow';
+        this.content = '';
+    }
+    ngOnChanges(changes) {
+        if (changes.theme) {
+            const theme = changes.theme.currentValue || (this.service.config.theme ? this.service.config.theme : 'snow');
+            this.themeClass = `ql-${theme} ngx-quill-view-html`;
+        }
+        else if (!this.theme) {
+            const theme = this.service.config.theme ? this.service.config.theme : 'snow';
+            this.themeClass = `ql-${theme} ngx-quill-view-html`;
+        }
+        if (changes.content) {
+            this.innerHTML = this.sanitizer.bypassSecurityTrustHtml(changes.content.currentValue);
+        }
+    }
+}
+QuillViewHTMLComponent.ɵfac = function QuillViewHTMLComponent_Factory(t) { return new (t || QuillViewHTMLComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](QuillService)); };
+QuillViewHTMLComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: QuillViewHTMLComponent, selectors: [["quill-view-html"]], inputs: { content: "content", theme: "theme" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 2, vars: 2, consts: [[1, "ql-container", 3, "ngClass"], [1, "ql-editor", 3, "innerHTML"]], template: function QuillViewHTMLComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", ctx.themeClass);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("innerHTML", ctx.innerHTML, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeHtml"]);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["NgClass"]], styles: ["\n.ql-container.ngx-quill-view-html {\n  border: 0;\n}\n"], encapsulation: 2 });
+QuillViewHTMLComponent.ctorParameters = () => [
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"],] }] },
+    { type: QuillService }
+];
+QuillViewHTMLComponent.propDecorators = {
+    content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    theme: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }]
+};
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](QuillViewHTMLComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+        args: [{
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+                selector: 'quill-view-html',
+                template: `
+  <div class="ql-container" [ngClass]="themeClass">
+    <div class="ql-editor" [innerHTML]="innerHTML">
+    </div>
+  </div>
+`,
+                styles: [`
+.ql-container.ngx-quill-view-html {
+  border: 0;
+}
+`]
+            }]
+    }], function () { return [{ type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"], decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]]
+            }] }, { type: QuillService }]; }, { content: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], theme: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }] }); })();
+
+class QuillViewComponent {
+    constructor(elementRef, renderer, zone, service, domSanitizer, platformId) {
+        this.elementRef = elementRef;
+        this.renderer = renderer;
+        this.zone = zone;
+        this.service = service;
+        this.domSanitizer = domSanitizer;
+        this.platformId = platformId;
+        this.sanitize = false;
+        this.strict = true;
+        this.customModules = [];
+        this.customOptions = [];
+        this.preserveWhitespace = false;
+        this.valueSetter = (quillEditor, value) => {
+            const format = getFormat(this.format, this.service.config.format);
+            let content = value;
+            if (format === 'text') {
+                quillEditor.setText(content);
+            }
+            else {
+                if (format === 'html') {
+                    if (this.sanitize) {
+                        value = this.domSanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__["SecurityContext"].HTML, value);
+                    }
+                    content = quillEditor.clipboard.convert(value);
+                }
+                else if (format === 'json') {
+                    try {
+                        content = JSON.parse(value);
+                    }
+                    catch (e) {
+                        content = [{ insert: value }];
+                    }
+                }
+                quillEditor.setContents(content);
+            }
+        };
+    }
+    ngOnChanges(changes) {
+        if (!this.quillEditor) {
+            return;
+        }
+        if (changes.content) {
+            this.valueSetter(this.quillEditor, changes.content.currentValue);
+        }
+    }
+    ngAfterViewInit() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_2__["__awaiter"])(this, void 0, void 0, function* () {
+            if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_0__["isPlatformServer"])(this.platformId)) {
+                return;
+            }
+            const Quill = yield this.service.getQuill();
+            const modules = Object.assign({}, this.modules || this.service.config.modules);
+            modules.toolbar = false;
+            this.customOptions.forEach((customOption) => {
+                const newCustomOption = Quill.import(customOption.import);
+                newCustomOption.whitelist = customOption.whitelist;
+                Quill.register(newCustomOption, true);
+            });
+            this.customModules.forEach(({ implementation, path }) => {
+                Quill.register(path, implementation);
+            });
+            let debug = this.debug;
+            if (!debug && debug !== false && this.service.config.debug) {
+                debug = this.service.config.debug;
+            }
+            let formats = this.formats;
+            if (!formats && formats === undefined) {
+                formats = this.service.config.formats ?
+                    Object.assign({}, this.service.config.formats) : (this.service.config.formats === null ? null : undefined);
+            }
+            const theme = this.theme || (this.service.config.theme ? this.service.config.theme : 'snow');
+            this.elementRef.nativeElement.insertAdjacentHTML('afterbegin', this.preserveWhitespace ? '<pre quill-view-element></pre>' : '<div quill-view-element></div>');
+            this.editorElem = this.elementRef.nativeElement.querySelector('[quill-view-element]');
+            this.zone.runOutsideAngular(() => {
+                this.quillEditor = new Quill(this.editorElem, {
+                    debug: debug,
+                    formats: formats,
+                    modules,
+                    readOnly: true,
+                    strict: this.strict,
+                    theme
+                });
+            });
+            this.renderer.addClass(this.editorElem, 'ngx-quill-view');
+            if (this.content) {
+                this.valueSetter(this.quillEditor, this.content);
+            }
+        });
+    }
+}
+QuillViewComponent.ɵfac = function QuillViewComponent_Factory(t) { return new (t || QuillViewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](QuillService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"])); };
+QuillViewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: QuillViewComponent, selectors: [["quill-view"]], inputs: { sanitize: "sanitize", strict: "strict", customModules: "customModules", customOptions: "customOptions", preserveWhitespace: "preserveWhitespace", format: "format", theme: "theme", modules: "modules", debug: "debug", formats: "formats", content: "content" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 0, vars: 0, template: function QuillViewComponent_Template(rf, ctx) { }, styles: ["\n.ql-container.ngx-quill-view {\n  border: 0;\n}\n"], encapsulation: 2 });
+QuillViewComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] },
+    { type: QuillService },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"],] }] }
+];
+QuillViewComponent.propDecorators = {
+    format: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    theme: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    modules: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    debug: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    formats: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    sanitize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    strict: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    customModules: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    customOptions: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }],
+    preserveWhitespace: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"] }]
+};
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](QuillViewComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
+        args: [{
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+                selector: 'quill-view',
+                template: `
+`,
+                styles: [`
+.ql-container.ngx-quill-view {
+  border: 0;
+}
+`]
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"] }, { type: QuillService }, { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"],
+                args: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"]]
+            }] }]; }, { sanitize: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], strict: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], customModules: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], customOptions: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], preserveWhitespace: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], format: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], theme: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], modules: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], debug: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], formats: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }], content: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"]
+        }] }); })();
+
+class QuillModule {
+    static forRoot(config) {
+        return {
+            ngModule: QuillModule,
+            providers: [
+                {
+                    provide: QUILL_CONFIG_TOKEN,
+                    useValue: config
+                }
+            ]
+        };
+    }
+}
+QuillModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: QuillModule });
+QuillModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function QuillModule_Factory(t) { return new (t || QuillModule)(); }, providers: [QuillService], imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](QuillModule, { declarations: function () { return [QuillEditorComponent, QuillViewComponent, QuillViewHTMLComponent]; }, imports: function () { return [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]]; }, exports: function () { return [QuillEditorComponent, QuillViewComponent, QuillViewHTMLComponent]; } }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](QuillModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
+        args: [{
+                declarations: [
+                    QuillEditorComponent,
+                    QuillViewComponent,
+                    QuillViewHTMLComponent
+                ],
+                exports: [QuillEditorComponent, QuillViewComponent, QuillViewHTMLComponent],
+                imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__["CommonModule"]],
+                providers: [QuillService]
+            }]
+    }], null, null); })();
+
+/*
+ * Public API Surface of ngx-quill
+ */
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+//# sourceMappingURL=ngx-quill.js.map
+
+/***/ }),
+
+/***/ "./node_modules/ngx-quill/ngx-quill.ngfactory.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/ngx-quill/ngx-quill.ngfactory.js ***!
+  \*******************************************************/
+/*! exports provided: QuillModuleNgFactory, RenderType_QuillEditorComponent, View_QuillEditorComponent_0, View_QuillEditorComponent_Host_0, QuillEditorComponentNgFactory, RenderType_QuillViewComponent, View_QuillViewComponent_0, View_QuillViewComponent_Host_0, QuillViewComponentNgFactory, RenderType_QuillViewHTMLComponent, View_QuillViewHTMLComponent_0, View_QuillViewHTMLComponent_Host_0, QuillViewHTMLComponentNgFactory */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillModuleNgFactory", function() { return QuillModuleNgFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_QuillEditorComponent", function() { return RenderType_QuillEditorComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_QuillEditorComponent_0", function() { return View_QuillEditorComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_QuillEditorComponent_Host_0", function() { return View_QuillEditorComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillEditorComponentNgFactory", function() { return QuillEditorComponentNgFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_QuillViewComponent", function() { return RenderType_QuillViewComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_QuillViewComponent_0", function() { return View_QuillViewComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_QuillViewComponent_Host_0", function() { return View_QuillViewComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillViewComponentNgFactory", function() { return QuillViewComponentNgFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RenderType_QuillViewHTMLComponent", function() { return RenderType_QuillViewHTMLComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_QuillViewHTMLComponent_0", function() { return View_QuillViewHTMLComponent_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "View_QuillViewHTMLComponent_Host_0", function() { return View_QuillViewHTMLComponent_Host_0; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuillViewHTMLComponentNgFactory", function() { return QuillViewHTMLComponentNgFactory; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var ngx_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-quill */ "./node_modules/ngx-quill/fesm2015/ngx-quill.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+/**
+ * @fileoverview This file was generated by the Angular template compiler. Do not edit.
+ *
+ * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes,extraRequire}
+ * tslint:disable
+ */ 
+
+
+
+
+
+var QuillModuleNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcmf"](ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillModule"], [], function (_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmod"]([_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](512, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵCodegenComponentFactoryResolver"], [[8, []], [3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ComponentFactoryResolver"]], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModuleRef"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgLocalization"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgLocaleLocalization"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["LOCALE_ID"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](4608, ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillService"], ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillService"], [ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QUILL_CONFIG_TOKEN"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], []), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵmpd"](1073742336, ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillModule"], ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillModule"], [])]); });
+
+var styles_QuillEditorComponent = [];
+var RenderType_QuillEditorComponent = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcrt"]({ encapsulation: 2, styles: styles_QuillEditorComponent, data: {} });
+
+function View_QuillEditorComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](0, [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵncd"](null, 0)], null, null); }
+function View_QuillEditorComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](0, 0, null, null, 3, "quill-editor", [], null, null, null, View_QuillEditorComponent_0, RenderType_QuillEditorComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵprd"](5120, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"], function (p0_0) { return [p0_0]; }, [ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillEditorComponent"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵprd"](5120, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALIDATORS"], function (p0_0) { return [p0_0]; }, [ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillEditorComponent"]]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵdid"](3, 4898816, null, 0, ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillEditorComponent"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillService"]], null, null)], null, null); }
+var QuillEditorComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵccf"]("quill-editor", ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillEditorComponent"], View_QuillEditorComponent_Host_0, { format: "format", theme: "theme", modules: "modules", debug: "debug", readOnly: "readOnly", placeholder: "placeholder", maxLength: "maxLength", minLength: "minLength", required: "required", formats: "formats", customToolbarPosition: "customToolbarPosition", sanitize: "sanitize", styles: "styles", strict: "strict", scrollingContainer: "scrollingContainer", bounds: "bounds", customOptions: "customOptions", customModules: "customModules", trackChanges: "trackChanges", preserveWhitespace: "preserveWhitespace", classes: "classes", trimOnValidation: "trimOnValidation", valueGetter: "valueGetter", valueSetter: "valueSetter" }, { onEditorCreated: "onEditorCreated", onEditorChanged: "onEditorChanged", onContentChanged: "onContentChanged", onSelectionChanged: "onSelectionChanged", onFocus: "onFocus", onBlur: "onBlur" }, ["[quill-editor-toolbar]"]);
+
+var styles_QuillViewComponent = ["\n.ql-container.ngx-quill-view {\n  border: 0;\n}\n"];
+var RenderType_QuillViewComponent = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcrt"]({ encapsulation: 2, styles: styles_QuillViewComponent, data: {} });
+
+function View_QuillViewComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](0, [], null, null); }
+function View_QuillViewComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](0, 0, null, null, 1, "quill-view", [], null, null, null, View_QuillViewComponent_0, RenderType_QuillViewComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵdid"](1, 4767744, null, 0, ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillViewComponent"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"], ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["PLATFORM_ID"]], null, null)], null, null); }
+var QuillViewComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵccf"]("quill-view", ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillViewComponent"], View_QuillViewComponent_Host_0, { format: "format", theme: "theme", modules: "modules", debug: "debug", formats: "formats", sanitize: "sanitize", strict: "strict", content: "content", customModules: "customModules", customOptions: "customOptions", preserveWhitespace: "preserveWhitespace" }, {}, []);
+
+var styles_QuillViewHTMLComponent = ["\n.ql-container.ngx-quill-view-html {\n  border: 0;\n}\n"];
+var RenderType_QuillViewHTMLComponent = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵcrt"]({ encapsulation: 2, styles: styles_QuillViewHTMLComponent, data: {} });
+
+function View_QuillViewHTMLComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](0, 0, null, null, 2, "div", [["class", "ql-container"]], null, null, null, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵdid"](1, 278528, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgClass"], [_angular_core__WEBPACK_IMPORTED_MODULE_0__["IterableDiffers"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["KeyValueDiffers"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]], { klass: [0, "klass"], ngClass: [1, "ngClass"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](2, 0, null, null, 0, "div", [["class", "ql-editor"]], [[8, "innerHTML", 1]], null, null, null, null))], function (_ck, _v) { var _co = _v.component; var currVal_0 = "ql-container"; var currVal_1 = _co.themeClass; _ck(_v, 1, 0, currVal_0, currVal_1); }, function (_ck, _v) { var _co = _v.component; var currVal_2 = _co.innerHTML; _ck(_v, 2, 0, currVal_2); }); }
+function View_QuillViewHTMLComponent_Host_0(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵeld"](0, 0, null, null, 1, "quill-view-html", [], null, null, null, View_QuillViewHTMLComponent_0, RenderType_QuillViewHTMLComponent)), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵdid"](1, 573440, null, 0, ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillViewHTMLComponent"], [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["DomSanitizer"], ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillService"]], null, null)], null, null); }
+var QuillViewHTMLComponentNgFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵccf"]("quill-view-html", ngx_quill__WEBPACK_IMPORTED_MODULE_1__["QuillViewHTMLComponent"], View_QuillViewHTMLComponent_Host_0, { content: "content", theme: "theme" }, {}, []);
+
+
+
+/***/ }),
+
 /***/ "./src/app/pages/cms/about/about.component.css.shim.ngstyle.js":
 /*!*********************************************************************!*\
   !*** ./src/app/pages/cms/about/about.component.css.shim.ngstyle.js ***!
@@ -550,7 +1596,7 @@ function View_ContactComponent_0(_l) { return _angular_core__WEBPACK_IMPORTED_MO
     } if (("onAddressChange" === en)) {
         var pd_5 = (_co.AddressChange($event) !== false);
         ad = (pd_5 && ad);
-    } return ad; }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](44, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], [2, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["COMPOSITION_BUFFER_MODE"]]], null, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](1024, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"], function (p0_0) { return [p0_0]; }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](46, 671744, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"], [[3, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ControlContainer"]], [8, null], [8, null], [6, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"]], [2, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_p"]]], { name: [0, "name"] }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](2048, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"], null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](48, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], [[4, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"]]], null, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](49, 4210688, null, 0, ngx_google_places_autocomplete_ngx_google_places_autocomplete_directive__WEBPACK_IMPORTED_MODULE_5__["GooglePlaceDirective"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]], null, { onAddressChange: "onAddressChange" }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ContactComponent_5)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](51, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ContactComponent_6)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](53, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](54, 0, null, null, 1, "button", [["class", "btn btn-primary"]], null, [[null, "click"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("click" === en)) {
+    } return ad; }, null, null)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](44, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["Renderer2"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], [2, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["COMPOSITION_BUFFER_MODE"]]], null, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](1024, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"], function (p0_0) { return [p0_0]; }, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](46, 671744, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"], [[3, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ControlContainer"]], [8, null], [8, null], [6, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"]], [2, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_p"]]], { name: [0, "name"] }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵprd"](2048, null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"], null, [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControlName"]]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](48, 16384, null, 0, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], [[4, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControl"]]], null, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](49, 4210688, null, 0, ngx_google_places_autocomplete_ngx_google_places_autocomplete_directive__WEBPACK_IMPORTED_MODULE_5__["GooglePlaceDirective"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]], null, { onAddressChange: "onAddressChange" }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ContactComponent_5)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](51, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ContactComponent_6)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](53, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](54, 0, null, null, 1, "button", [["class", "btn btn-primary"], ["type", "submit"]], null, [[null, "click"]], function (_v, en, $event) { var ad = true; var _co = _v.component; if (("click" === en)) {
         var pd_0 = (_co.update() !== false);
         ad = (pd_0 && ad);
     } return ad; }, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["Save"]))], function (_ck, _v) { var _co = _v.component; var currVal_14 = _co.contactForm; _ck(_v, 11, 0, currVal_14); var currVal_22 = "email"; _ck(_v, 20, 0, currVal_22); var currVal_23 = (_co.contactForm.controls["email"].touched && _co.contactForm.controls["email"].invalid); _ck(_v, 24, 0, currVal_23); var currVal_24 = (_co.submitted && _co.errorHandling("email", "required")); _ck(_v, 26, 0, currVal_24); var currVal_32 = "contact"; _ck(_v, 33, 0, currVal_32); var currVal_33 = (_co.contactForm.controls["contact"].touched && _co.contactForm.controls["contact"].invalid); _ck(_v, 37, 0, currVal_33); var currVal_34 = (_co.submitted && _co.errorHandling("contact", "required")); _ck(_v, 39, 0, currVal_34); var currVal_42 = "address"; _ck(_v, 46, 0, currVal_42); var currVal_43 = (_co.contactForm.controls["address"].touched && _co.contactForm.controls["address"].invalid); _ck(_v, 51, 0, currVal_43); var currVal_44 = (_co.submitted && _co.errorHandling("address", "required")); _ck(_v, 53, 0, currVal_44); }, function (_ck, _v) { var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).ngClassUntouched; var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).ngClassTouched; var currVal_2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).ngClassPristine; var currVal_3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).ngClassDirty; var currVal_4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).ngClassValid; var currVal_5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).ngClassInvalid; var currVal_6 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).ngClassPending; _ck(_v, 3, 0, currVal_0, currVal_1, currVal_2, currVal_3, currVal_4, currVal_5, currVal_6); var currVal_7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassUntouched; var currVal_8 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassTouched; var currVal_9 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassPristine; var currVal_10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassDirty; var currVal_11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassValid; var currVal_12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassInvalid; var currVal_13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 13).ngClassPending; _ck(_v, 9, 0, currVal_7, currVal_8, currVal_9, currVal_10, currVal_11, currVal_12, currVal_13); var currVal_15 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 22).ngClassUntouched; var currVal_16 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 22).ngClassTouched; var currVal_17 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 22).ngClassPristine; var currVal_18 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 22).ngClassDirty; var currVal_19 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 22).ngClassValid; var currVal_20 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 22).ngClassInvalid; var currVal_21 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 22).ngClassPending; _ck(_v, 17, 0, currVal_15, currVal_16, currVal_17, currVal_18, currVal_19, currVal_20, currVal_21); var currVal_25 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 35).ngClassUntouched; var currVal_26 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 35).ngClassTouched; var currVal_27 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 35).ngClassPristine; var currVal_28 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 35).ngClassDirty; var currVal_29 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 35).ngClassValid; var currVal_30 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 35).ngClassInvalid; var currVal_31 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 35).ngClassPending; _ck(_v, 30, 0, currVal_25, currVal_26, currVal_27, currVal_28, currVal_29, currVal_30, currVal_31); var currVal_35 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 48).ngClassUntouched; var currVal_36 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 48).ngClassTouched; var currVal_37 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 48).ngClassPristine; var currVal_38 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 48).ngClassDirty; var currVal_39 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 48).ngClassValid; var currVal_40 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 48).ngClassInvalid; var currVal_41 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 48).ngClassPending; _ck(_v, 43, 0, currVal_35, currVal_36, currVal_37, currVal_38, currVal_39, currVal_40, currVal_41); }); }
