@@ -7,7 +7,9 @@
     </tr>
     <tr *ngFor="let item of items;let i=index">
       <td>{{page==0?page+ i+1:page+i}}</td>
-      <td>{{item?.notification_users[0]?.full_name}} <a href="javascript:void(0)" *ngIf="item?.notification_users.length>1" (click)="userListModel(item?.notification_users)">...</a></td>
+      <td>{{item?.notification_users[0]?.full_name}} <a href="javascript:void(0)" *ngIf="item?.notification_users.length>1" (click)="userListModel(item?.notification_users)">
+        <i class="mdi mdi-information ml-2"></i>
+      </a></td>
       <td>{{item?.message | slice:0:50}}<a href="javascript:void(0)" *ngIf="item?.message?.length>50" (click)="readModel(item?.message)">Read More</a>
       </td>
     </tr>
