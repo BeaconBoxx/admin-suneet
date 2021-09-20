@@ -2,7 +2,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">               
-                <quill-editor [(ngModel)]="about" [style]="{height: '300px',display: 'inline-block'}" class="w-100"></quill-editor>
+                <quill-editor [(ngModel)]="about" (keyup)="ValidationChk()" [style]="{height: '300px',display: 'inline-block'}" class="w-100"></quill-editor>
+                <p *ngIf="aboutFlag && (about==null)" class="text-danger" >About is Required !</p>
                <div class="d-block">
                    <button class="btn btn-primary mt-3" (click)="update()">Save</button>
                </div> 

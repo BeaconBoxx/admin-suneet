@@ -10,7 +10,7 @@ import { CommonService } from '../../../_services/common.service';
 export class AboutComponent implements OnInit {
 
   about:any;
-
+  aboutFlag: boolean=false;
   constructor(private http: CommonService, private toastr:ToastrService) { }
 
   ngOnInit(): void {
@@ -24,17 +24,38 @@ export class AboutComponent implements OnInit {
       }
     })
   }
+ 
+  ValidationChk()
+  {
+    if(this.about){
+    if(this.about.replace(/<(.|\n)*?>/g, '').trim().length === 0)
+    {
+      this.about=null;
+      this.aboutFlag=true;
+    }
+    else
+    {
+      this.aboutFlag=false;
+    }
+  }
+  }
 
   update(){
      var params={
        'about':this.about
      }
+     if(this.about){
      this.http.post('cms/create-update-cms/',params).subscribe((res: any) => {
         if(res.code == 200){
           this.toastr.success(res.message,'Success');
           this.getCms();
         }
      })
+    }
+    else
+    {
+      this.aboutFlag=true;
+    }
   }
 
 }

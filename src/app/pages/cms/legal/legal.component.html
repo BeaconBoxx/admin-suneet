@@ -3,8 +3,8 @@
         <div class="card">
             <div class="card-body">
                
-                <quill-editor [(ngModel)]="legal" [style]="{height: '300px',display: 'inline-block'}" class="w-100"></quill-editor>
-
+                <quill-editor [(ngModel)]="legal" (keyup)="ValidationChk()" [style]="{height: '300px',display: 'inline-block'}" class="w-100"></quill-editor>
+                <p class="text-danger" *ngIf="legalFlag">Legal is Required!</p>
                <div class="d-block">
                    <button class="btn btn-primary mt-3" (click)="update()">Save</button>
                </div> 

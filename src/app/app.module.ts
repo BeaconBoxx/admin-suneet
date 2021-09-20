@@ -39,6 +39,8 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { OtpComponent } from './_shared/otp/otp.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { ReadMoreComponent } from './_shared/read-more/read-more.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -83,7 +85,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
             RouterModule,
             NgxSpinnerModule,
             NgOtpInputModule,
-            NgxIntlTelInputModule
+            NgxIntlTelInputModule,
+            ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     ],
     entryComponents: [OtpComponent,ReadMoreComponent],
     providers: [

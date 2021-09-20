@@ -10,6 +10,7 @@ import { CommonService } from '../../../_services/common.service';
 export class PrivacyComponent implements OnInit {
 
   privacy:any;
+  privacyFlag: boolean=false;
 
   constructor(private http: CommonService, private toastr:ToastrService) { }
 
@@ -24,17 +25,35 @@ export class PrivacyComponent implements OnInit {
       }
     })
   }
+  
+  ValidationChk()
+  {
+    if(this.privacy){
+    if(this.privacy.replace(/<(.|\n)*?>/g, '').trim().length === 0)
+    {
+      this.privacy=null;
+      this.privacyFlag=true;
+    }
+    else
+    {
+      this.privacyFlag=false;
+    }
+  }
+  }
 
   update(){
      var params={
        'privacy':this.privacy
      }
+     if(this.privacy){
      this.http.post('cms/create-update-cms/',params).subscribe((res: any) => {
         if(res.code == 200){
           this.toastr.success(res.message,'Success');
           this.getCms();
         }
      })
+    }
+    else{this.privacyFlag=true}
   }
 
 }
