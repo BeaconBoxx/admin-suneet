@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1632208978004,
+  "timestamp": 1632216698119,
   "index": "/beconbox_admin/index.html",
   "assetGroups": [
     {
@@ -430,7 +430,7 @@
     "/beconbox_admin/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/beconbox_admin/assets/images/background/1.jpg": "e29953dd22e4f9e498ce379b3b73a0af9354b6d5",
     "/beconbox_admin/assets/images/background/error-bg.jpg": "bc21029b847ad5e82f0e58e7a3571e1a7d307cf6",
-    "/beconbox_admin/assets/images/background/login-register.jpg": "65731c92ae28216a369a20ba706ee719a62c2750",
+    "/beconbox_admin/assets/images/background/login-register.jpg": "37a3744da66b71ff48cc26782af1e77a22c98c14",
     "/beconbox_admin/assets/images/background/login-register2.jpg": "e7e7f559e064a59ce25eb3596f3b4d0700886053",
     "/beconbox_admin/assets/images/background/megamenubg.jpg": "2020f5de74f60f7adee54228f906cbd59f1e06cc",
     "/beconbox_admin/assets/images/background/profile-bg.jpg": "8c611dc7cf2dba95ffbed4ca06a0cca5d2f2b409",
