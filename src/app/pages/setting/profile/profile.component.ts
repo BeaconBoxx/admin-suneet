@@ -136,6 +136,7 @@ export class ProfileComponent implements OnInit {
       if(res.code==200)
       {
         this.toastr.success(res.message,"Success",{timeOut:2000});
+        this.passwordForm.reset();
       }
       else
       {

@@ -57,14 +57,13 @@
               </button>
 
               <div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button class="dropdown-item" (click)="sendID(person?.id)"><i class="ti-marker-alt"></i>
-                  Edit</button>
-                <a class="dropdown-item" (click)="ViewSendID(person?.id)"><i class="ti-eye"></i>
+                <a class="dropdown-item" href="javascript:void(0)" (click)="sendID(person?.id)"><i class="ti-marker-alt"></i>
+                  Edit</a>
+                <a class="dropdown-item" href="javascript:void(0)" (click)="ViewSendID(person?.id)"><i class="ti-eye"></i>
                   View
                 </a>
-
-                <button class="dropdown-item" (click)="deleteUser(person?.id)"><i class="ti-trash"></i>
-                  Delete</button>
+                <a class="dropdown-item" href="javascript:void(0)" (click)="deleteUser(person?.id)"><i class="ti-trash"></i>
+                  Delete</a>
               </div>
             </div>
           </td>

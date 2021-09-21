@@ -6,6 +6,7 @@ import { CustomValidationService } from '../../../_services/custom-validation.se
 import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -22,7 +23,8 @@ export class AddUserComponent implements OnInit {
   Pic: any;
   imageId: any;
   text: any = "Choose file";
-
+  toDate=new Date();
+  todayDate =moment(this.toDate).format('YYYY-MM-DD')
   changePreferredCountries() {
     this.preferredCountries = [CountryISO.India, CountryISO.Canada];
   }
@@ -69,7 +71,7 @@ export class AddUserComponent implements OnInit {
       "last_name": this.userForm.get('last_name').value.trim(),
       "dob": this.userForm.get('dob').value,
       "email": this.userForm.get('email').value.trim(),
-      "phone_no": this.userForm.get('fullPhone')?.value.number,
+      "phone_no": this.userForm.get('fullPhone')?.value.number.trim(),
       "country_code": this.userForm.get('fullPhone')?.value.dialCode,
       "address": this.userForm.get('address').value.trim(),
       "city": this.userForm.get('city').value.trim(),

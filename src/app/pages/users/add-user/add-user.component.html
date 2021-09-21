@@ -87,7 +87,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Date of Birth</label>
-          <input type="date" formControlName="dob" placeholder="dd-mm-yyyy" class="form-control" />
+          <input type="date" [max]="todayDate" formControlName="dob" placeholder="dd-mm-yyyy" class="form-control" />
           <p class="text-danger"
             *ngIf="userForm.controls['dob'].touched && userForm.controls['dob'].hasError('required')">
             *Date of Birth is required!
@@ -219,7 +219,7 @@
       <div class="col-md-6">
         <div class="form-group">
           <label>Lockbox Code</label>
-          <input type="text" placeholder="Lockbox Code" formControlName="lock_box_code" class="form-control" #lock_box_code (keydown.space)="!lock_box_code.value?$event.preventDefault():null">
+          <input type="number" placeholder="Lockbox Code" formControlName="lock_box_code" class="form-control" #lock_box_code (keydown.space)="!lock_box_code.value?$event.preventDefault():null">
           <p class="text-danger"
             *ngIf="userForm.controls['lock_box_code'].touched && userForm.controls['lock_box_code'].hasError('required')">
             *Lockbox Code is required!
