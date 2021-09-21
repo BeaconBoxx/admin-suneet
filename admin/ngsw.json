@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1632208179031,
+  "timestamp": 1632208978004,
   "index": "/beconbox_admin/index.html",
   "assetGroups": [
     {
@@ -83,8 +83,8 @@
         "/beconbox_admin/common-es5.21a6c4cc7dbd9e5871b5.js",
         "/beconbox_admin/favicon.ico",
         "/beconbox_admin/index.html",
-        "/beconbox_admin/main-es2015.7865e39c243e1e8809bc.js",
-        "/beconbox_admin/main-es5.7865e39c243e1e8809bc.js",
+        "/beconbox_admin/main-es2015.9c0abaa5c499c72788cc.js",
+        "/beconbox_admin/main-es5.9c0abaa5c499c72788cc.js",
         "/beconbox_admin/manifest.webmanifest",
         "/beconbox_admin/polyfills-es2015.439db9a51ed7d910e3cf.js",
         "/beconbox_admin/polyfills-es5.4df643fdeef71c1d5f48.js",
@@ -646,9 +646,9 @@
     "/beconbox_admin/fontawesome-webfont.6878d55e3615ccf40c38.svg": "b5483b11f8ba213e733b5b8af9927a04fec996f6",
     "/beconbox_admin/fontawesome-webfont.8b43027f47b20503057d.eot": "d980c2ce873dc43af460d4d572d441304499f400",
     "/beconbox_admin/fontawesome-webfont.f691f37e57f04c152e23.woff": "28b782240b3e76db824e12c02754a9731a167527",
-    "/beconbox_admin/index.html": "734759d574d960612f13899d55ba945cd71fff56",
-    "/beconbox_admin/main-es2015.7865e39c243e1e8809bc.js": "237768c8d45515a97ded7b5cc04d5eba490ce7d7",
-    "/beconbox_admin/main-es5.7865e39c243e1e8809bc.js": "77d16762a655649c97805bafab4e05b3692bfaca",
+    "/beconbox_admin/index.html": "6fe1177a127f1a70efea61d426534b535fc03a99",
+    "/beconbox_admin/main-es2015.9c0abaa5c499c72788cc.js": "d16e13eed72e55a7dca38a1e36a23ab76696cef9",
+    "/beconbox_admin/main-es5.9c0abaa5c499c72788cc.js": "66391199ad43a7ddc48cbc0566eebb24b6624229",
     "/beconbox_admin/manifest.webmanifest": "5258eb08126fadfc9ffea73a7eed17b47c7d77ca",
     "/beconbox_admin/materialdesignicons-webfont.49d3b4ee7b1dee3671b0.eot": "1ad0f7e1ecdb6217873ec9d961c60f449f5e3225",
     "/beconbox_admin/materialdesignicons-webfont.5cbc1ce0f8ee2c20e27b.woff2": "9be0766a4b2a580e1d27bf275a4526655400d9ca",
