@@ -8,7 +8,7 @@
 		</div>
 		<div class="col-md-8  text-right">
 		  <div ngbDropdown class="d-inline-block">
-			<button class="btn btn-outline-primary btn-sm mr-2" id="dropdownBasic1" ngbDropdownToggle>
+			<button class="btn btn-outline-primary btn-sm mr-3" id="dropdownBasic1" ngbDropdownToggle>
 			  {{is_active==null?"ALL":(is_active==true?"Active":"InActive")}}
 			</button>
 			<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -18,8 +18,8 @@
 			</div>
 		  </div>
 		  <!-- <button class="btn btn-primary btn-sm mr-2" routerLink="/users/useradd"><i class="fa fa-plus"></i> User</button> -->
-		  <button class="btn btn-primary  btn-sm" (click)="exportCsv()"><i class="sl-icon-cloud-download"></i> Export
-			CSV</button>
+		  <!-- <button class="btn btn-primary  btn-sm" (click)="exportCsv()"><i class="sl-icon-cloud-download"></i> Export
+			CSV</button> -->
 		</div>
 	  </div>
 	  <div class="table-responsive">
@@ -40,7 +40,7 @@
 		  <tr *ngFor="let person of people;let i=index">
 			<td>{{page==0?page+ i+1:page+i}}</td>
 			<td>{{person?.first_name || '-'}} {{person?.last_name || '-'}}</td>
-			<td>{{(person?.dob | date) || '-'}}</td>
+			<td class="text-nowrap">{{(person?.dob | date) || '-'}}</td>
 			<td>{{person?.phone_no || '-'}}</td>
 			<td class="text-center">{{person?.email || '-'}}</td>
 			<td class="text-center">{{person?.heart_rate || '-'}}</td>
