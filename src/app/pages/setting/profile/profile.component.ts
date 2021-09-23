@@ -4,6 +4,7 @@ import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { CustomValidationService } from '../../../_services/custom-validation.service';
+import { urls } from '../../../_services/urls';
 
 @Component({
   selector: 'app-profile',
@@ -47,7 +48,7 @@ export class ProfileComponent implements OnInit {
   }
  
   getProfile(){
-    this.commn_.get("user/get-user-profile-by-token/").subscribe(res=>{
+    this.commn_.get(urls.getUserProfileByToken).subscribe(res=>{
     console.log(res);
     this.items=res?.data;
     this.lati=res?.data?.latitude;
@@ -80,7 +81,7 @@ export class ProfileComponent implements OnInit {
     }
     console.log(body);
     if(this.profileForm.valid){
-    this.commn_.put("user/update-user-profile-by-token/",body).subscribe(res=>{
+    this.commn_.put(urls.updateUserProfileByToken,body).subscribe(res=>{
       if(res.code==200)
       {
       this.commn_.imageFlag.next("Flag");
@@ -105,7 +106,7 @@ export class ProfileComponent implements OnInit {
       this.Pic = files[0];
       const formdata = new FormData();
       formdata.append("media",this.Pic);
-      this.commn_.post("upload/media/",formdata).subscribe(res=>{
+      this.commn_.post(urls.uplaodMedia,formdata).subscribe(res=>{
         console.log(res);
       if(res.code==200)
       {
@@ -132,7 +133,7 @@ export class ProfileComponent implements OnInit {
   };
   console.log(body);
   if(this.passwordForm.valid){
-    this.commn_.put("user/change-password/",body).subscribe(res=>{
+    this.commn_.put(urls.changePassword,body).subscribe(res=>{
       if(res.code==200)
       {
         this.toastr.success(res.message,"Success",{timeOut:2000});

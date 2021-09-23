@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { CommonService } from '../../../_services/common.service';
 import { CustomValidationService } from '../../../_services/custom-validation.service';
 import * as moment from 'moment';
+import { urls } from '../../../_services/urls';
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
@@ -96,7 +97,7 @@ export class EditUserComponent implements OnInit {
 
     if (this.userForm.valid) {
       if (this.imageId) {
-        this.commn_.put("admin/update-user-details-by-id/"+this.userId+"/", body).subscribe(res => {
+        this.commn_.put(urls.updateDetailsById+this.userId+"/", body).subscribe(res => {
           if (res.code == 200) {
             this.router.navigate(["users/userlist"]);
             this.toastr.success(res.message, "Success");
@@ -124,7 +125,7 @@ export class EditUserComponent implements OnInit {
       this.text = e.target.files[0].name;
       const formdata = new FormData();
       formdata.append("media", this.Pic);
-      this.commn_.post("upload/media/", formdata).subscribe(res => {
+      this.commn_.post(urls.uplaodMedia, formdata).subscribe(res => {
         console.log(res);
         if (res.code == 200) {
           this.imageId = res.data[0].id;
@@ -142,7 +143,7 @@ export class EditUserComponent implements OnInit {
   
   getUserById()
   {
-    this.commn_.get("admin/get-user-details-by-id/"+this.userId+"/").subscribe(res=>{
+    this.commn_.get(urls.getUserDetailsById+this.userId+"/").subscribe(res=>{
       console.log(res);
        this.userForm.get('first_name').patchValue(res?.data?.first_name);
       this.userForm.get('last_name').patchValue(res?.data?.last_name);

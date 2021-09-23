@@ -39,10 +39,6 @@ export const routes: Routes = [
                 loadChildren: () => import('./pages/notification/notification.module').then(m => m.NotificationModule)
             },
             {
-                path: 'inventory',
-                loadChildren: () => import('./pages/inventory/inventory.module').then(m => m.InventoryModule)
-            },
-            {
                 path: 'setting',
                 loadChildren: () => import('./pages/setting/setting.module').then(m => m.SettingModule)
             },
@@ -62,6 +58,10 @@ export const routes: Routes = [
                 path: 'subadmin',
                 loadChildren: () => import('./pages/sub-admin/sub-admin.module').then(m => m.SubAdminModule)
             },
+            {
+                path: 'emergencyprotocol',
+                loadChildren: () => import('./pages/emergency-protocol/emergency-protocol.module').then(m => m.EmergencyProtocolModule)
+            },
              {
                 path: 'orders',
                 loadChildren: () => import('./pages/orders/orders.module').then(m => m.OrdersModule)
@@ -73,10 +73,6 @@ export const routes: Routes = [
             {
                 path: 'others',
                 loadChildren: () => import('./pages/others/others.module').then(m => m.OthersModule)
-            },
-            {
-                path: 'geofence',
-                loadChildren: () => import('./pages/geofence/geofence.module').then(m => m.GeofenceModule)
             },
             {
                 path: 'device',

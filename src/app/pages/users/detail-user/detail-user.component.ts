@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonService } from '../../../_services/common.service';
+import { urls } from '../../../_services/urls';
 
 @Component({
   selector: 'app-detail-user',
@@ -22,7 +23,7 @@ export class DetailUserComponent implements OnInit {
   
   getUserById()
   {
-    this.commn_.get("admin/get-user-details-by-id/"+this.userId+"/").subscribe(res=>{
+    this.commn_.get(urls.getUserDetailsById+this.userId+"/").subscribe(res=>{
       console.log(res);
       this.items=res?.data;
     });

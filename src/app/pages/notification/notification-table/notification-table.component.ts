@@ -3,6 +3,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 import { CommonService } from '../../../_services/common.service';
+import { urls } from '../../../_services/urls';
 import { ReadMoreComponent } from '../../../_shared/read-more/read-more.component';
 
 @Component({
@@ -82,7 +83,7 @@ export class NotificationTableComponent implements OnInit {
           "regex": false
       }
   }
-  this.commn_.post("admin/get-all-notifications/"+this.status+"/",body).subscribe(res=>{
+  this.commn_.post(urls.getAllNotification+this.status+"/",body).subscribe(res=>{
     console.log(res);
     this.items=res?.data;
     this.length=res.recordsTotal;

@@ -68,6 +68,9 @@
             </div>
           </td>
         </tr>
+        <tr *ngIf="people?.length==0"  class="mt-2">
+          <td colspan="10" class="text-center"><h3>No Data Found</h3></td>
+        </tr>
       </table>
     </div>
     <mat-paginator #paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]"
@@ -75,17 +78,3 @@
     </mat-paginator>
   </div>
 </div>
-
-
-<!-- delete modal -->
-<ng-template #userDelete let-modal>
-  <div class="modal-body">
-    <p>Are you sure want to delete this user?</p>
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary mr-2" aria-label="Close"
-        (click)="modal.dismiss('Cross click')">Yes</button>
-      <button type="button" class="btn btn-seconadary" aria-label="Close"
-        (click)="modal.dismiss('Cross click')">No</button>
-    </div>
-  </div>
-</ng-template>

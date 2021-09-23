@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { CommonService } from '../../../_services/common.service';
+import { urls } from '../../../_services/urls';
 
 @Component({
   selector: 'app-legal',
@@ -19,7 +20,7 @@ export class LegalComponent implements OnInit {
   }
 
   getCms(){
-    this.http.get('cms/get-cms/').subscribe((res:any) => {
+    this.http.get(urls.getCms).subscribe((res:any) => {
       if(res.code == 200){
         this.legal=res.data.legal;
       }
@@ -46,7 +47,7 @@ export class LegalComponent implements OnInit {
        'legal':this.legal
      }
      if(this.legal){
-     this.http.post('cms/create-update-cms/',params).subscribe((res: any) => {
+     this.http.post(urls.createCms,params).subscribe((res: any) => {
         if(res.code == 200){
           this.toastr.success(res.message,'Success');
           this.getCms();

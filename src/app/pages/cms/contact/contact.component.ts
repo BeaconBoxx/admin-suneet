@@ -6,6 +6,7 @@ import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import Swal from "sweetalert2";
 import { CommonService } from '../../../_services/common.service';
 import { ToastrService } from 'ngx-toastr';
+import { urls } from '../../../_services/urls';
 
 @Component({
   selector: 'app-contact',
@@ -46,7 +47,7 @@ export class ContactComponent implements OnInit {
   }
 
   getData() {
-    this.http.get('cms/get-cms/').subscribe((res: any) => {
+    this.http.get(urls.getCms).subscribe((res: any) => {
       if (res.code == 200) {
         this.email = res.data.email;
         this.contact = res.data.contact;
@@ -71,7 +72,7 @@ export class ContactComponent implements OnInit {
       }
       console.log(body);
       // return
-      this.http.post('cms/create-update-cms/',body).subscribe((res: any) => {
+      this.http.post(urls.createCms,body).subscribe((res: any) => {
         if (res.code == 200) {
           this.submitted = false;
           this.toastr.success("Details updated successfully");

@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@ang
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { CommonService } from '../../../_services/common.service';
+import { urls } from '../../../_services/urls';
 
 @Component({
   selector: 'app-faq',
@@ -27,7 +28,7 @@ export class FaqComponent implements OnInit {
     this.GetFaq()
   }
   GetFaq(){ 
-      this.Srvc.get(`cms/get-faq/`).subscribe((res:any)=>
+      this.Srvc.get(urls.getCmsFaq).subscribe((res:any)=>
       {
         if([200,201].includes(res.code)){
           this.setSpecifications(res.data)
@@ -62,7 +63,7 @@ saveFaq()
  
     if(this.Faqcheck.valid && this.Faqcheck.controls['specification'].value.length>0)
     {
-      this.Srvc.post(`cms/get-create-update-delete-faq/`,this.Faqcheck.get('specification').value).subscribe((res:any)=>
+      this.Srvc.post(urls.createCmsFaq,this.Faqcheck.get('specification').value).subscribe((res:any)=>
       {
         if(res.code == 200)
         {

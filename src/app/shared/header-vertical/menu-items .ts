@@ -81,16 +81,6 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [],
   },
-  // {
-  //   path: "/geofence/geofencelist",
-  //   title: "Geofence",
-  //   icon: "mdi mdi-map",
-  //   class: "",
-  //   label: "",
-  //   labelClass: "",
-  //   extralink: false,
-  //   submenu: [],
-  // },
   {
     path: "/device/devicelist",
     title: "Devices",
@@ -101,17 +91,6 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [],
   },
-  
-  // {
-  //   path: "/inventory/inventorylist",
-  //   title: "Inventory",
-  //   icon: "mdi mdi-package-variant",
-  //   class: "",
-  //   label: "",
-  //   labelClass: "",
-  //   extralink: false,
-  //   submenu: [],
-  // },
   // {
   //   path: "/others/groupform",
   //   title: "Group Form",
@@ -223,7 +202,16 @@ export const ROUTES: RouteInfo[] = [
       // },
     ],
   },
-
+  {
+    path: "/emergencyprotocol/emergencylist",
+    title: "Emergency Protocol",
+    icon: "mdi mdi-account-alert",
+    class: "",
+    label: "",
+    labelClass: "",
+    extralink: false,
+    submenu: [],
+  },
   // {
   //     path: '/users/userlist',
   //     title: 'Vendors',

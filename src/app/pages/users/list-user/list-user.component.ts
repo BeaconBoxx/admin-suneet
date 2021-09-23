@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ExportToCsv } from 'export-to-csv';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { urls } from '../../../_services/urls';
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
@@ -110,7 +111,7 @@ export class ListUserComponent implements OnInit {
         "regex": false
       }
     }
-    this.commn_.post("admin/get-all-users-with-pagination/", body).subscribe(res => {
+    this.commn_.post(urls.getAllUserWithPagination, body).subscribe(res => {
       this.people = res.data;
       this.length = res.recordsTotal;
     });
@@ -147,7 +148,7 @@ export class ListUserComponent implements OnInit {
   // toggle Button 
   changeStatus(id) {
     this.spinner.show();
-    this.commn_.put("admin/change-user-status-by-id/" + id + "/", {}).subscribe(res => {
+    this.commn_.put(urls.changeUserStatusById+ id + "/", {}).subscribe(res => {
       if (res.code == 200) {
         this.toastr.success(res.message, "Success");
         this.userList();
@@ -183,7 +184,7 @@ export class ListUserComponent implements OnInit {
       useKeysAsHeaders: true,
     };
     let items=[];
-    this.commn_.get("admin/get-all-users-without-pagination/").subscribe(res => {
+    this.commn_.get(urls.getAllUserWithoutPagination).subscribe(res => {
       console.log(res);     
       const csvExporter = new ExportToCsv(options);
       res.data.map((item, index) => {
@@ -221,7 +222,7 @@ export class ListUserComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.spinner.show();
-        this.commn_.delete("admin/delete-users-by-id/" + id + "/").subscribe(res => {
+        this.commn_.delete(urls.deleteUserById + id + "/").subscribe(res => {
           if (res.code == 200) {
             this.toastr.success(res.message,"Success");
             this.userList();

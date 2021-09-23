@@ -5,6 +5,7 @@ import { MatSelect } from '@angular/material/select';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { CommonService } from '../../../_services/common.service';
+import { urls } from '../../../_services/urls';
 @Component({
   selector: 'app-add-notification',
   templateUrl: './add-notification.component.html',
@@ -33,7 +34,7 @@ export class AddNotificationComponent implements OnInit {
   }
 
   getNotificationUserList() {
-    this.commn_.get("admin/get-user-list/").subscribe(res => {
+    this.commn_.get(urls.getUserList).subscribe(res => {
       console.log(res);
       this.userItems = res.data;
     });
@@ -68,7 +69,7 @@ export class AddNotificationComponent implements OnInit {
       }
     }
       console.log(body);
-      this.commn_.post("admin/create-notifications/", body).subscribe(res => {
+      this.commn_.post(urls.createNotification, body).subscribe(res => {
         if(res.code==200)
         {
           setTimeout(() => {this.spinner.hide();},1000);

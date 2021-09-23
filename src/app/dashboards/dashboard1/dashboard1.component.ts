@@ -1,3 +1,4 @@
+import { urls } from './../../_services/urls';
 import { Component, OnInit } from '@angular/core';
 import { NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CommonService } from '../../_services/common.service';
@@ -32,7 +33,7 @@ export class Dashboard1Component implements OnInit{
     var params={
       'filter_type':type
     }
-     this.http.post('admin/get-total-users-graph/',params).subscribe((res :any) => {
+     this.http.post(urls.getTotalUserGraph,params).subscribe((res :any) => {
         if(res.code == 200){
         this.userData=res.data;
         this.data = this.userData.map(val => val.date);
@@ -50,7 +51,7 @@ export class Dashboard1Component implements OnInit{
     var params={
       'filter_type':type
     }
-    this.http.post('admin/get-total-emergency-messages-graph/',params).subscribe((res :any) => {
+    this.http.post(urls.getTotalEmergencyMessageGraph,params).subscribe((res :any) => {
      if(res.code == 200){
        this.emergencyData=res.data;
        this.data2 = this.emergencyData.map(val => val.date);

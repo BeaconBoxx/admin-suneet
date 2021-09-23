@@ -7,6 +7,7 @@ import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { urls } from '../../../_services/urls';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -93,7 +94,7 @@ export class AddUserComponent implements OnInit {
 
     if (this.userForm.valid) {
       if (this.imageId) {
-        this.commn_.post("admin/add-user/", body).subscribe(res => {
+        this.commn_.post(urls.addUser, body).subscribe(res => {
           if (res.code == 200) {
             this.router.navigate(["users/userlist"]);
             this.toastr.success(res.message, "Success");
@@ -121,7 +122,7 @@ export class AddUserComponent implements OnInit {
       this.text = e.target.files[0].name;
       const formdata = new FormData();
       formdata.append("media", this.Pic);
-      this.commn_.post("upload/media/", formdata).subscribe(res => {
+      this.commn_.post(urls.uplaodMedia, formdata).subscribe(res => {
         console.log(res);
         if (res.code == 200) {
           this.imageId = res.data[0].id;
