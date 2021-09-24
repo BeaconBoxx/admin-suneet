@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CommonService } from '../../../_services/common.service';
-import { urls } from '../../../_services/urls';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-emergency',
@@ -9,29 +8,22 @@ import { urls } from '../../../_services/urls';
   styleUrls: ['./add-emergency.component.scss']
 })
 export class AddEmergencyComponent implements OnInit {
-  userId: any;
-  items: any;
-  constructor(private route: ActivatedRoute,private commn_: CommonService) { }
+  emergencyForm:FormGroup;
+  
+  constructor(private fb:FormBuilder,private dialog:MatDialog,@Inject(MAT_DIALOG_DATA) public id) {
+    this.emergencyForm=this.fb.group({
+      time:['',[Validators.required]],
+      action:['',[Validators.required]]
+    });
+   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      this.userId= params.id;
-      this.getUserById();
-    });
+  console.log(this.id);
   }
   
-  
-  getUserById()
+  close()
   {
-    this.commn_.get(urls.getUserDetailsById+this.userId+"/").subscribe(res=>{
-      console.log(res);
-      this.items=res?.data;
-    });
-  }
-  
-  back()
-  {
-    history.back();
+    this.dialog.closeAll();
   }
 
 }

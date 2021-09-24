@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../../../../_services/common.service';
@@ -9,7 +10,7 @@ import { CommonService } from '../../../../_services/common.service';
 })
 export class AddStudentDeviceComponent implements OnInit {
   deviceForm:FormGroup;
-  constructor(private fb:FormBuilder,private commn_:CommonService) {
+  constructor(private fb:FormBuilder,private commn_:CommonService,private dialog:MatDialog) {
     this.deviceForm=this.fb.group({
     device_name:['',[Validators.required]],
     model_number:['',[Validators.required]],
@@ -26,4 +27,10 @@ export class AddStudentDeviceComponent implements OnInit {
   {
 
   }
+  
+  close()
+  {
+    this.dialog.closeAll();
+  }
+
 }

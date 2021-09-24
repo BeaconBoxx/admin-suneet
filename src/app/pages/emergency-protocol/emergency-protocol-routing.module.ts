@@ -1,4 +1,3 @@
-import { AddEmergencyComponent } from './add-emergency/add-emergency.component';
 import { ListEmergencyComponent } from './list-emergency/list-emergency.component';
 import { EmergencyProtocolComponent } from './emergency-protocol.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,14 +15,7 @@ const routes: Routes = [
 			data: {
 			  title: "Emergency Protocol",
 			}
-		  },
-		  {
-			path:'emergencyadd',
-			component:AddEmergencyComponent,
-			data: {
-			  title: "Add Emergency Protocol",
-			}
-		  },
+		  }
 		]
 	  }
   ];

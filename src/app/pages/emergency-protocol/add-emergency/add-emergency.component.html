@@ -1,133 +1,35 @@
-<div class="row">
-	<!-- Column -->
-	<div class="col-lg-12 ">
-	  <div class="d-flex mb-2">
-		<!-- <a routerLink="/users/useredit" class="btn btn-primary ">Edit</a> -->
-		<a (click)="back()" href="javascript:void(0)" class="btn btn-primary ml-auto">Back</a>
-	  </div>
-	</div>
-  </div>
-<div class="card">
-
-  <div class="card-body">   
+<form [formGroup]="emergencyForm" >
     <div class="row">
-      <div class="col-md-6">
-        <div class="card-body p-3 bg-light border h-100">
-          <div class=" text-center">
-            <img [src]="items?.image?.media_file_url || 'assets/images/users/defaultuser.jpg'" class="rounded-circle" width="150" height="150" />
-          </div>
-          <ul class="list-block pl-0 ">
-            <!-- <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Name:</span> Hanna Gover</li> -->
-            <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Phone No :</span> <a
-                href="tel:+919564345452">{{items?.country_code}} {{items?.phone_no}}</a>
-            </li>
-            <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Email:</span> <a
-                href="mailto:hanna@example.com">{{items?.email}}</a></li>
-            <li class="list-block-listing pr-2 pb-2"><span class="font-weight-600 d-block">Address:</span> <a
-                href="javascript:void()">{{items?.address}}</a>
-            </li>
-
-          </ul>
-          <!-- <div class="map-box mt-2">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.1604841957!2d72.29955005258641!3d23.019996818380896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1493204785508"
-              width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div> -->
+        <div class="col-md-12 text-right">
+            <button type="button" class="close" data-dismiss="modal" (click)="close()">&times;</button>
         </div>
+    </div>
+  <div class="row">
+      <div class="col-md-6">
+          <div class="form-group">
+              <label>Time</label>
+              <ngb-timepicker formControlName="time"  [spinners]="false"  [seconds]="true"></ngb-timepicker>
+              <mat-error *ngIf="emergencyForm.controls.time.touched && emergencyForm.get('time').hasError('required')">Time is Required!</mat-error>
+          </div>
       </div>
       <div class="col-md-6">
-        <div class="card-body h-100 p-3 bg-light border">
-          <div class="row">
-            <div class="col-md-12">
-              <h4>Profile</h4>
-            </div>
-            <div class="col-md-4">
-              <ul class="list-block pl-0">
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Full Name: </span>{{items?.first_name}} {{items?.last_name}}</li>
-               </ul>
-            </div>
-            <div class="col-md-8">
-              <ul class="list-block pl-0 ">
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Date of Birth:
-                </span>{{items?.dob}}</li>                  
-              </ul>
-            </div>
-            <!-- <div class="col-md-12">
-              <h4>Orders</h4>
-            </div> -->
-            <div class="col-md-4">
-              <ul class="list-block pl-0 list-style-none">
-                               
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Gender:</span>{{items?.gender==1?"Male":(items?.gender==2?"Female":"Others")}}
-                </li>
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Property Access Code 
-                </span>{{items?.property_access_code}}</li>
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Lockbox Code 
-                </span>{{items?.lock_box_code}}</li>
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Device intergrated
-                    </span>5</li>
-                <!-- <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Payment Not Completed:</span>0</li> -->
-              </ul>
-            </div>
-            <div class="col-md-8">
-              <ul class="list-block pl-0 list-style-none">
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Heart Rate:
-                </span>{{items?.max_heart_rate}}</li> 
-                <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Sp02:</span>{{items?.max_spo2}}  
-                </li> <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Heart Rate Variability:</span>
-                  <span></span>{{items?.max_heart_rate_variability}}  
-                </li>
-               
-              
-                <!-- <li class="list-block-listing pr-2 pb-2"> <span class="font-weight-600 d-block">Payment Not Completed:</span>0</li> -->
-              </ul>
-            </div>
-            <div class="col-md-12">
-              <p class="font-weight-600 d-block mb-0">Medical Information</p>
-              <p>{{items?.medical_information}}</p>
-            </div>
+          <div class="form-group">
+              <label>Action</label>
+              <select class="form-control"  formControlName="action">
+                <option value="" >Choose Option</option>
+                <option value=1 >Alert</option>
+                <option value=2 >Message</option>
+                <option value=3 >Call</option>
+                <option value=4 >Nothing</option>
+              </select>
+              <mat-error *ngIf="emergencyForm.controls.action.touched && emergencyForm.get('action').hasError('required')">Action is Required!</mat-error>
           </div>
-        </div>
       </div>
+      <div class="col-md-12" *ngIf="emergencyForm.value.action==2" >
+        <textarea class="form-control" cols="5" placeholder="Message"></textarea>
     </div>
-  </div>
-</div>
-<div class="row" *ngIf="items?.emergency_contacts.length>0">
-  <div class="col-md-12">
-    <h4>Emergency Contact</h4>
-  </div>
-  <div class="col-md-3" *ngFor="let item of items.emergency_contacts">
-    <div class="contact-detail">
-      <div class="row">
-        <!-- <div class="col-md-3 col-lg-3">
-          <figure class=""><img src="assets/images/users/1.jpg" class="img-fluid"></figure>
-        </div> -->
-        <div class="col-md-12">
-          <h5 class="text-white"><span>Name: </span>{{item?.contact_name}}</h5>
-          <p class="mb-0"><span>Phone No: </span>{{item?.contact_number}}</p>
-          <!-- <p class="mb-0"><span>Secondary:</span>+91-986532321</p> -->
-        </div>
+      <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Save</button>
       </div>
-    </div>
   </div>
-</div>
-
-<div class="row mt-3">
-  <div class="col-md-12">
-    <h4>Connected Devices</h4>
-  </div>
-  <div class="col-md-3 mb-3">
-    <div class="conected-box">
-      <div class="d-flex">
-        <h4 class="text-white  ">Apple Watch</h4>
-        <p class="text-white mb-0 ml-auto font-size-12">Connected</p>
-      </div>
-      <div class="">     
-        <p class="mb-0">Model Number: A5123</p>
-        <p class="mb-0">Serial Number: A5123</p>
-        <p class="mb-0">Version: 6.8.8</p>       
-      </div>    
-    </div>
-  </div>
-
-</div>
+  </form>

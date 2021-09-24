@@ -87,8 +87,11 @@ Main sidebar
         }
         &.active {
             font-weight: 400;
-            background: #242933;
-            color: $themecolor-alt;
+            background: #fff;
+            color: $themecolor;
+            i{
+                color: $themecolor;
+            }
         }
     }
     > ul > li {

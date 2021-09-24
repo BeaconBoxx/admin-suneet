@@ -14,6 +14,7 @@ import { AgmCoreModule } from '@agm/core';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { NgxScrollToFirstInvalidModule } from '@ismaestro/ngx-scroll-to-first-invalid';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -26,6 +27,7 @@ import { NgxScrollToFirstInvalidModule } from '@ismaestro/ngx-scroll-to-first-in
     FormsModule,
     ReactiveFormsModule,
     MatSlideToggleModule,
+    MatDialogModule,
     MatSelectModule,
     MatTabsModule,
     MatPaginatorModule,
@@ -36,6 +38,7 @@ import { NgxScrollToFirstInvalidModule } from '@ismaestro/ngx-scroll-to-first-in
         GooglePlaceModule,
         NgxIntlTelInputModule,
         NgxScrollToFirstInvalidModule
-  ]
+  ],
+  entryComponents: [AddEmergencyComponent],
 })
 export class EmergencyProtocolModule { }
