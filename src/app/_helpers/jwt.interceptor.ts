@@ -6,9 +6,10 @@ import { NgxSpinnerService } from "ngx-spinner";
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
-  constructor(private spinner:NgxSpinnerService){ this.spinner.show()}
+  constructor(private spinner:NgxSpinnerService){ }
   intercept(request: HttpRequest<any>,next: HttpHandler): Observable<HttpEvent<any>> {
     // add authorization header with jwt token if available
+    this.spinner.show();
     let token = JSON.parse(sessionStorage.getItem(environment.storageKey));
     if (token) {
       request = request.clone({
@@ -17,7 +18,7 @@ export class JwtInterceptor implements HttpInterceptor {
         },
       });
     }
-    setTimeout(() => {this.spinner.hide();},1500);
+    setTimeout(() => {this.spinner.hide();},1000);
     return next.handle(request);
   }
 }

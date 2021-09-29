@@ -11,14 +11,16 @@
 	</div>
 	<div class="row mt-3 ml-1">
 
-		<div class="col-md-3 mb-3">
+		<div *ngFor="let item of items" class="col-md-3 mb-3">
 		  <div class="conected-box">
 			<div class="d-flex">
-			  <h4 class="text-primary">30 Sec</h4>
-			  <button class="text-white mb-0 ml-auto font-size-12 btn-primary btn btn-sm" (click)="editEmergency(3)" ><i class="mdi mdi-pencil"></i></button>
+			  <h4 class="text-primary">{{item?.timer}} Sec</h4>
+			  <button class="text-white mb-0 ml-auto font-size-12 btn-primary btn btn-sm" (click)="editEmergency(item.id)" ><i class="mdi mdi-pencil"></i></button>
 			</div>
 			<div class="">     
-			  <p class="mb-0 font-size-18">Alert</p>			     
+			  <p class="mb-0 font-size-18">{{item?.action?.name}}<a href="javascript:void(0)" *ngIf="item?.message" (click)="readModel(item?.message)">
+				<i class="mdi mdi-information ml-2"></i>
+			  </a></p>		     
 			</div>    
 		  </div>
 		</div>

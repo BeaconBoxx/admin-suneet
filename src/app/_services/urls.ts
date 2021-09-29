@@ -18,5 +18,9 @@ export const urls = {
 	updateUserProfileByToken:'user/update-user-profile-by-token/',
 	changePassword:'user/change-password/',
 	getTotalUserGraph:'admin/get-total-users-graph/',
-	getTotalEmergencyMessageGraph:'admin/get-total-emergency-messages-graph/'
+	getTotalEmergencyMessageGraph:'admin/get-total-emergency-messages-graph/',
+	getEmergencyProtocol:'admin/get-emergency-protocol/',
+	getEmergencyAction:'admin/get-emergency-actions/',
+	addEmergencyProtocol:'admin/add-emergency-protocol/',
+	updateEmergencyProtocol:'admin/update-emergency-protocol/'
 };

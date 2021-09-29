@@ -25,7 +25,12 @@ export class AddStudentDeviceComponent implements OnInit {
   //add device
   addDevice()
   {
+  if(this.deviceForm.valid){
 
+  }
+  else{
+    this.deviceForm.markAllAsTouched();
+  }
   }
   
   close()

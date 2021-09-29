@@ -8,28 +8,26 @@
       <div class="col-md-6">
           <div class="form-group">
               <label>Time</label>
-              <ngb-timepicker formControlName="time"  [spinners]="false"  [seconds]="true"></ngb-timepicker>
-              <mat-error *ngIf="emergencyForm.controls.time.touched && emergencyForm.get('time').hasError('required')">Time is Required!</mat-error>
+              <ngb-timepicker formControlName="timer"  [spinners]="false"  [seconds]="true"></ngb-timepicker>
+              <mat-error *ngIf="emergencyForm.controls.timer.touched && emergencyForm.get('timer').hasError('required')">Time is Required!</mat-error>
           </div>
       </div>
       <div class="col-md-6">
           <div class="form-group">
               <label>Action</label>
-              <select class="form-control"  formControlName="action">
+              <select class="form-control"  formControlName="action" (change)="disabledMessage()">
                 <option value="" >Choose Option</option>
-                <option value=1 >Alert</option>
-                <option value=2 >Message</option>
-                <option value=3 >Call</option>
-                <option value=4 >Nothing</option>
+                <option *ngFor="let item of items" [value]="item.id" >{{item.name}}</option>
               </select>
               <mat-error *ngIf="emergencyForm.controls.action.touched && emergencyForm.get('action').hasError('required')">Action is Required!</mat-error>
           </div>
       </div>
       <div class="col-md-12" *ngIf="emergencyForm.value.action==2" >
-        <textarea class="form-control" cols="5" placeholder="Message"></textarea>
+        <textarea class="form-control" cols="5" #message (keydown.space)="!message.value?$event.preventDefault():null" placeholder="Message" formControlName="message"></textarea>
+        <mat-error *ngIf="emergencyForm.controls.message.touched && emergencyForm.get('message').hasError('required')">Message is Required!</mat-error>
     </div>
       <div class="col-md-12">
-          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" class="btn btn-primary" (click)="this.id?updateEmergency():addEmergency()">{{this.id?"Update":"Save"}}</button>
       </div>
   </div>
   </form>
