@@ -195,6 +195,9 @@ class AddEmergencyComponent {
     updateEmergency() {
         let obj = this.emergencyForm.value;
         obj['timer'] = JSON.stringify(((obj.timer.hour) * 3600) + ((obj.timer.minute) * 60) + ((obj.timer.second)));
+        if (!this.emergencyForm.value.message) {
+            obj['message'] = null;
+        }
         console.log(this.emergencyForm);
         if (this.emergencyForm.valid) {
             this.commn_.put(_services_urls__WEBPACK_IMPORTED_MODULE_0__["urls"].updateEmergencyProtocol + this.id + "/", obj).subscribe(res => {
