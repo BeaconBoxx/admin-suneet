@@ -1,34 +1,40 @@
-<div class="row">
-    <div class="col-md-12 text-right">
-        <button type="button" class="close" data-dismiss="modal" (click)="close()">&times;</button>
+<form [formGroup]="deviceForm" >
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button type="button" class="close" data-dismiss="modal" (click)="close()">&times;</button>
+        </div>
     </div>
-</div>
 <div class="row">
     <div class="col-md-6">
         <div class="form-group">
             <label>Device Name</label>
-            <input type="text" placeholder="name" class="form-control">
+            <input type="text" formControlName="device_name" placeholder="name" class="form-control">
+            <p class="text-danger" *ngIf="deviceForm.get('device_name').touched && deviceForm.get('device_name').hasError('required')">Device Name is required!</p>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label>Model Number</label>
-            <input type="text" placeholder="#4545454" class="form-control">
+            <input type="text" formControlName="model_number" placeholder="#4545454" class="form-control">
+            <p class="text-danger" *ngIf="deviceForm.get('model_number').touched && deviceForm.get('model_number').hasError('required')">Model Number is required!</p>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label>Serial Number</label>
-            <input type="text" placeholder="#4545454" class="form-control">
+            <input type="text" formControlName="serial_number" placeholder="#4545454" class="form-control">
+            <p class="text-danger" *ngIf="deviceForm.get('serial_number').touched && deviceForm.get('serial_number').hasError('required')">Serial Number is required!</p>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
             <label>Version</label>
-            <input type="text" placeholder="6.8.8" class="form-control">
+            <input type="text" formControlName="version" placeholder="6.8.8" class="form-control">
+            <p class="text-danger" *ngIf="deviceForm.get('version').touched && deviceForm.get('version').hasError('required')">Version is required!</p>
         </div>
     </div>
     <div class="col-md-12">
-        <button class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary" (click)="addDevice()">Update</button>
     </div>
 </div>
+</form>

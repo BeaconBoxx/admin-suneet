@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
       <div class="d-block text-right">
-        <button class="button btn btn-primary mr-2">Export CSV</button>
+        <button class="button btn btn-primary mr-2" (click)="ExportToCsv()">Export CSV</button>
         <button class="button btn btn-primary" (click)="addDialog()"><i class="fa fa-plus"></i>Add Device</button>
       </div>
         <div class="table-responsive">
@@ -26,20 +26,10 @@
                         <div ngbDropdown placement="bottom" class="d-inline-block" container="body">
                             <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>
                               Action
-                            </button>
-                
-                            <div *ngIf="list.action==0" ngbDropdownMenu aria-labelledby="dropdownBasic1">                             
-                              <button class="dropdown-item" (click)="userDetailModal(userDetail)"><i 
-                                  class="ti-marker-alt "></i>  Edit</button>
-                
-                              <button class="dropdown-item" (click)="userDeleteModal(userDelete)"><i class="ti-trash"></i>
-                                Reject</button>
-                            </div>
-                
+                            </button>  
                             <div *ngIf="list.action==1" ngbDropdownMenu aria-labelledby="dropdownBasic1">
                               <button class="dropdown-item" (click)="editDialog()"><i class="ti-marker-alt"></i> Edit</button>
-                              <!-- <a class="dropdown-item" ><i class="ti-eye"></i> View </a>                 -->
-                              <button class="dropdown-item" (click)="addDialog(userDelete)"><i class="ti-trash"></i>
+                              <button class="dropdown-item" (click)="confirm()"><i class="ti-trash"></i>
                                 Delete</button>
                             </div>
                           </div>

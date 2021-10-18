@@ -1,5 +1,7 @@
+import { ExportToCsv } from 'export-to-csv';
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
+import Swal from "sweetalert2";
 import { AddStudentDeviceComponent } from "../add-student-device/add-student-device.component";
 import { EditStudentDeviceComponent } from "../edit-student-device/edit-student-device.component";
 
@@ -30,5 +32,23 @@ export class StudentDeviceComponent implements OnInit {
     editDialog() {
       this.dialog.open(EditStudentDeviceComponent);
     }
- 
+   
+   confirm()
+   {
+     Swal.fire({
+       icon:"warning",
+       title:"Are You Sure ?",
+       showDenyButton: true,
+       confirmButtonText: 'Yes',
+       denyButtonText: `No`,
+     }).then((x)=>{
+     console.log(x);
+     })
+   }
+   
+   ExportToCsv()
+   {
+     
+   }
+
 }

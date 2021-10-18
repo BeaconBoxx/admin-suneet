@@ -78,7 +78,7 @@ export class AddUserComponent implements OnInit {
       "city": this.userForm.get('city').value.trim(),
       "state": this.userForm.get('state').value.trim(),
       "property_access_code": this.userForm.get('property_access_code').value.trim(),
-      "lock_box_code": this.userForm.get('lock_box_code').value.trim(),
+      "lock_box_code": this.userForm.get('lock_box_code').value,
       "medical_information": this.userForm.get('medical_information').value.trim(),
       "gender": this.userForm.get('gender').value,
       "password": this.userForm.get('password').value.trim(),
